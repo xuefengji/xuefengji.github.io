@@ -1,0 +1,1336 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+  <meta name="generator" content="django">
+  <meta charset="utf-8">
+  <meta name="keywords" content="elasticsearch内存,es内存,elasticsearch内存优化,es内存优化">
+  <meta name="description" content="Elasticsearch内存分配设置详解_该给ES分配多少内存？”　　“为什么是给ES分配服务器的一半内存？”　　“为什么">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="renderer" content="webkit|ie-stand|ie-comp">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Elasticsearch内存那些事儿 - 程序员的个人博客 | 一个90后程序员的技术人生</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">-->
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/element-ui.css">
+
+  <style type="text/css">
+  
+  </style>
+
+  <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-duotone-light.css" type="text/css"></head>
+
+
+<body>
+
+
+
+  <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent headbar-cover">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">文渊博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-home"></i>
+                    
+                    <span>首页</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/tags" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-tags"></i>
+                    
+                    <span>标签</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/categories" class="waves-effect waves-light">
+
+                    
+                        <i class="fa fa-bookmark"></i>
+                    
+                    <span>分类</span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-nav menus_item_child ">
+                    
+                        <li>
+                            <a href="/categories/基础知识/">
+                                
+                                <span>基础知识</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/前端技术/">
+                                
+                                <span>前端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/后端技术/">
+                                
+                                <span>后端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/日常运维/">
+                                
+                                <span>日常运维</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/机器学习/">
+                                
+                                <span>机器学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/开发环境/">
+                                
+                                <span>开发环境</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/诗和远方/">
+                                
+                                <span>诗和远方</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/about" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-user-circle-o"></i>
+                    
+                    <span>关于我</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/navpage.html" class="waves-effect waves-light">
+                    
+                        <i class="fa fa fa-rocket"></i>
+                    
+                    <span>导航页</span>
+                </a>
+            
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+            <span style="display: inline-block;width:40px;height: 40px;background-image: url('/medias/logo.png');background-size: cover;vertical-align: middle; margin: 15px auto"></span>
+        
+        <div class="logo-name">文渊博客</div>
+        <div class="logo-desc">
+            
+                一个90后程序员，终身学习者。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+            <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                        
+                            <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                    <ul>
+                        
+                            <li>
+                                <a href="/categories/基础知识/">
+                                    
+                                    <span>基础知识</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/前端技术/">
+                                    
+                                    <span>前端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/后端技术/">
+                                    
+                                    <span>后端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/日常运维/">
+                                    
+                                    <span>日常运维</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/机器学习/">
+                                    
+                                    <span>机器学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/开发环境/">
+                                    
+                                    <span>开发环境</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/诗和远方/">
+                                    
+                                    <span>诗和远方</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/navpage.html" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa fa-rocket"></i>
+                        
+                        导航页
+                    </a>
+                
+            </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+  
+
+
+
+<!--<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogimages/elasticsearch.jpg')">-->
+<div class="bg-cover pd-header post-cover">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <!--
+                    <div class="description center-align post-title">
+                        Elasticsearch内存那些事儿
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        /*color: #42b983;*/
+        color: #3498db;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        /*color: #42b983;*/
+        color: #3498db;
+    }
+
+    #toc-content .is-active-link::before {
+        /*background-color: #42b983;*/
+        background-color: #3498db;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+  <div class="card">
+    <div class="card-content article-info">
+      <div class="row tag-cate">
+        <div class="col s7">
+          
+            <div class="article-tag">
+              
+                <a href="/tags/Elasticsearch/" target="_blank">
+                  <span class="chip bg-color">Elasticsearch</span>
+                </a>
+              
+            </div>
+          
+        </div>
+        <div class="col s5 right-align">
+          
+            <div class="post-cate">
+              <i class="fa fa-bookmark fa-fw icon-category"></i>
+              
+                <a href="/categories/后端技术/" class="post-category" target="_blank">
+                  后端技术
+                </a>
+              
+            </div>
+          
+        </div>
+      </div>
+
+      <div class="post-info">
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+          2018-03-20
+        </div>
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>最近更新:&nbsp;&nbsp;
+          2018-08-07
+        </div>
+
+        
+
+        
+          <div id="busuanzi_container_page_pv" class="info-break-policy">
+            <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+            <span id="busuanzi_value_page_pv"></span>
+          </div>
+        
+      </div>
+    </div>
+    <hr class="clearfix">
+    <div class="card-content article-card-content">
+      <div id="articleContent">
+        <div style="text-align: center; font-size: 32px;">Elasticsearch内存那些事儿</div>
+
+<blockquote>
+<p>Elasticsearch内存分配设置详解。</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　“该给ES分配多少内存？”<br>　　“为什么是给ES分配服务器的一半内存？”<br>　　“为什么内存使用率不断升高，没有释放？”<br>　　“为何经常有某个field的数据量超出内存限制的异常？”<br>　　“为何感觉上没多少数据，也会经常Out Of Memory？”<br>　　相信每个ES使用者或者运维人员都遇到过这些问题，也踩过不少坑。<br>　　这里根据我个人的学习和日常工作的使用心得，谈一谈Elasticsearch的内存那些事儿。</p>
+<h2 id="一、Elasticsearch为什么吃内存"><a href="#一、Elasticsearch为什么吃内存" class="headerlink" title="一、Elasticsearch为什么吃内存"></a>一、Elasticsearch为什么吃内存</h2><p>　　1. ES是JAVA应用<br>　　2. 底层存储引擎是基于Lucene的</p>
+<h3 id="1-是JAVA应用，就离不开JVM和GC"><a href="#1-是JAVA应用，就离不开JVM和GC" class="headerlink" title="1. 是JAVA应用，就离不开JVM和GC"></a><span style="font-size: 18px;">1. 是JAVA应用，就离不开JVM和GC</span></h3><p>　　对JVM GC这里不做深入探讨，我们只要知道：应用层面生成大量长生命周期的对象，是给heap造成压力的主要原因，例如读取一大片数据在内存中进行排序，或者在heap内部建cache缓存大量数据。如果GC释放的空间有限，而应用层面持续大量申请新对象，GC频度就开始上升，同时会消耗掉很多CPU时间。严重时可能恶性循环，导致整个集群停工。因此在使用ES的过程中，要知道哪些设置和操作容易造成以上问题，有针对性的予以规避。</p>
+<h3 id="2-Lucene的倒排索引是先在内存里生成"><a href="#2-Lucene的倒排索引是先在内存里生成" class="headerlink" title="2. Lucene的倒排索引是先在内存里生成"></a><span style="font-size: 18px;">2. Lucene的倒排索引是先在内存里生成</span></h3><p>　　Lucene的倒排索引（Inverted Index）是先在内存里生成，然后定期以段文件（segment file）的形式刷到磁盘的。每个段实际就是一个完整的倒排索引，并且一旦写到磁盘上就不会做修改。API层面的文档更新和删除实际上是增量写入的一种特殊文档，会保存在新的段里。不变的段文件易于被操作系统cache，热数据几乎等效于内存访问。</p>
+<h2 id="二、Elasticsearch的内存消耗"><a href="#二、Elasticsearch的内存消耗" class="headerlink" title="二、Elasticsearch的内存消耗"></a>二、Elasticsearch的内存消耗</h2><h3 id="1-预留一半内存给Lucene使用"><a href="#1-预留一半内存给Lucene使用" class="headerlink" title="1. 预留一半内存给Lucene使用"></a><span style="font-size: 18px;">1. 预留一半内存给Lucene使用</span></h3><p>　　我们经常在网上看见别人说“预留一半内存给Lucene使用”。很多人不理解这句话，一开始我也不理解。<br>　　举个实际场景，假设你有一个64G内存的机器，按照正常思维思考，肯定是把64G内存都给Elasticsearch比较好，但现实却不是这样。<br>　　毋庸置疑，内存对于Elasticsearch来说绝对是重要的，但还有一个内存消耗大户-Lucene。<br>　　Lucene的设计目的是把底层OS里的数据缓存到内存中。Lucene的段是分别存储到单个文件中的，这些文件都是不会变化的，所以很利于缓存，同时操作系统也会把这些段文件缓存起来，以便更快的访问。<br>　　Lucene的性能取决于和OS的交互，如果你把所有的内存都分配给Elasticsearch，不留一点给Lucene，那你的全文检索性能会很差的。<br>　　所以，不难理解为何官方建议heap size不要超过系统可用内存的一半，因为heap以外的内存并不会被浪费，Lucene会很开心的利用他们来cache被用读取过的段文件。</p>
+<h3 id="2-不要超过32G"><a href="#2-不要超过32G" class="headerlink" title="2. 不要超过32G"></a><span style="font-size: 18px;">2. 不要超过32G</span></h3><p>　　这里有另外一个原因不分配大内存给Elasticsearch，事实上jvm在内存小于32G的时候会采用一个内存对象指针压缩技术。<br>　　在Java中，所有的对象都分配在堆上，然后有一个指针引用它。指向这些对象的指针大小通常是CPU的字长的大小，不是32bit就是64bit，这取决于你的处理器，指针指向了你的值的精确位置。<br>　　对于32位系统，你的内存最大可使用4G。对于64系统可以使用更大的内存。但是64位的指针意味着更大的浪费，因为你的指针本身大了。浪费内存不算，更糟糕的是，更大的指针在主内存和缓存器（例如LLC, L1等）之间移动数据的时候，会占用更多的带宽。<br>　　Java使用一个叫内存指针压缩的技术来解决这个问题。它的指针不再表示对象在内存中的精确位置，而是表示偏移量。这意味着32位的指针可以引用40亿个对象，而不是40亿个字节。最终，也就是说堆内存长到32G的物理内存，也可以用32bit的指针表示。<br>　　一旦你越过那个神奇的30-32G的边界，指针就会切回普通对象的指针，每个对象的指针都变长了，就会使用更多的CPU内存带宽，也就是说你实际上失去了更多的内存。事实上当内存到达40-50GB的时候，有效内存才相当于使用内存对象指针压缩技术时候的32G内存。<br>　　这段描述的意思就是说：即便你有足够的内存，也尽量不要超过32G，因为它浪费了内存，降低了CPU的性能，还要让GC应对大内存。</p>
+<h3 id="3-JVM参数"><a href="#3-JVM参数" class="headerlink" title="3. JVM参数"></a><span style="font-size: 18px;">3. JVM参数</span></h3><p>　　从官方建议，Heap分配不要超过系统可用内存的一半，并且不要超过32GB。那么JVM参数呢？对于初级用户来说，并不需要做特别调整，仍然遵从官方的建议，将Xms和Xmx设置成和heap一样大小，避免动态分配heap size就好了。虽然有针对性的调整JVM参数可以带来些许GC效率的提升，当有一些“坏”用例的时候，这些调整并不会有什么魔法效果帮你减轻heap压力，甚至可能让问题更糟糕。<br>　　确保Xms和Xmx的大小是相同的，其目的是为了能够在java垃圾回收机制清理完堆区后不需要重新分隔计算堆区的大小而浪费资源，可以减轻伸缩堆大小带来的压力。</p>
+<h3 id="4-ES的几个内存消耗大户"><a href="#4-ES的几个内存消耗大户" class="headerlink" title="4. ES的几个内存消耗大户"></a><span style="font-size: 18px;">4. ES的几个内存消耗大户</span></h3><p>　　通过查阅资料，了解到有几个ES的内存消耗大户，就是他们把ES的heap瓜分掉的：<br>　　1. segment memory<br>　　2. filter cache<br>　　3. field data cache<br>　　4. bulk queue<br>　　5. indexing buffer<br>　　6. state buffer<br>　　7. 超大搜索聚合结果集的fetch<br>　　8. 对高cardinality字段做terms aggregation<br>　　下面对它们分别做解读：<br>　　<span style="color: #FF0000;">Segment Memory</span><br>　　Segment不是file吗？segment memory又是什么？前面提到过，一个segment是一个完备的lucene倒排索引，而倒排索引是通过词典（Term Dictionary）到文档列表（Postings List）的映射关系，快速做查询的。 由于词典的size会很大，全部装载到heap里不现实，因此Lucene为词典做了一层前缀索引（Term Index），这个索引在Lucene4.0以后采用的数据结构是FST（Finite State Transducer）。 这种数据结构占用空间很小，Lucene打开索引的时候将其全量装载到内存中，加快磁盘上词典查询速度的同时减少随机磁盘访问次数。<br>　　说了这么多，要传达的一个意思就是，ES的data node存储数据并非只是耗费磁盘空间的，为了加速数据的访问，每个segment都有会一些索引数据驻留在heap里。因此segment越多，瓜分掉的heap也越多，并且这部分heap是无法被GC掉的！ 理解这点对于监控和管理集群容量很重要，当一个node的segment memory占用过多的时候，就需要考虑删除、归档数据，或者扩容了。<br>　　怎么知道segment memory占用情况呢?  CAT API可以给出答案。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看一个索引所有segment的memory占用情况，重点看size.segment这一列</span>
+GET /_cat/segments/cc-xxxx-2018-03-20?v<span class="token operator">&amp;</span>h<span class="token operator">=</span>shard,segment,size,size.segment
+<span class="token comment" spellcheck="true"># 查看一个node上所有segment占用的memory总和</span>
+GET /_cat/nodes?v<span class="token operator">&amp;</span>h<span class="token operator">=</span>name,port,sm
+</code></pre>
+<p>　　那么有哪些途径减少data node上的segment memory占用呢？ 总结起来有三种方法:<br>　　<strong>1. 删除不用的索引。</strong><br>　　<strong>2. 关闭索引（文件仍然存在于磁盘，只是释放掉内存）。需要的时候可以重新打开。</strong><br>　　<strong>3. 定期对不再更新的索引做force merge api（ES2.0及更早版本叫做optimize）。也就是强制段合并，可以节省大量的segment memory。</strong>　　<br>　　<span style="color: #FF0000;">Request cache(5.x以前叫做Filter Cache)</span><br>　　Request cache是用来缓存查询中参数size=0的请求，所以就不会缓存hits 而是缓存 hits.total，aggregations和suggestions，需要注意的是这个缓存也是常驻heap，在被evict掉之前，是无法被GC的。我的经验是默认的10% heap设置工作得够好了，如果实际使用中heap没什么压力的情况下，才考虑加大这个设置。<br>　　<span style="color: #FF0000;">Field Data cache</span><br>　　在有大量排序、数据聚合的应用场景，可以说field data cache是性能和稳定性的杀手。 对搜索结果做排序或者聚合操作，需要将倒排索引里的数据进行解析，按列构造成docid-&gt;value的形式才能够做后续快速计算。 对于数据量很大的索引，这个构造过程会非常耗费时间，因此ES 2.0以前的版本会将构造好的数据缓存起来，提升性能。但是由于heap空间有限，当遇到用户对海量数据做计算的时候，就很容易导致heap吃紧，集群频繁GC，根本无法完成计算过程。 ES2.0以后，正式默认启用Doc Values特性(1.x需要手动更改mapping开启)，将field data在indexing time构建在磁盘上，经过一系列优化，可以达到比之前采用field data cache机制更好的性能。因此需要限制对field data cache的使用，最好是完全不用，可以极大释放heap压力。 需要注意的是，很多同学已经升级到ES2.0，或者1.0里已经设置mapping启用了doc values，在kibana里仍然会遇到问题。 这里一个陷阱就在于kibana的table panel可以对所有字段排序。 设想如果有一个字段是analyzed过的，而用户去点击对应字段的排序表头是什么后果？ 一来排序的结果并不是用户想要的，排序的对象实际是词典； 二来analyzed过的字段无法利用doc values，需要装载到field data cache，数据量很大的情况下可能集群就在忙着GC或者根本出不来结果。<br>　　<span style="color: #FF0000;">Bulk Queue</span><br>　　一般来说，Bulk queue不会消耗很多的heap，但是见过一些用户为了提高bulk的速度，客户端设置了很大的并发量，并且将bulk Queue设置到不可思议的大，比如好几千。 Bulk Queue是做什么用的？当所有的bulk thread都在忙，无法响应新的bulk request的时候，将request在内存里排列起来，然后慢慢清掉。 这在应对短暂的请求爆发的时候有用，但是如果集群本身索引速度一直跟不上，设置的好几千的queue都满了会是什么状况呢？ 取决于一个bulk的数据量大小，乘上queue的大小，heap很有可能就不够用，内存溢出了。一般来说官方默认的thread pool设置已经能很好的工作了，建议不要随意去“调优”相关的设置，很多时候都是适得其反的效果。<br>　　<span style="color: #FF0000;">Indexing Buffer</span><br>　　Indexing Buffer是用来缓存新数据，当其满了或者refresh/flush interval到了，就会以segment file的形式写入到磁盘。 这个参数的默认值是10% heap size。根据经验，这个默认值也能够很好的工作，应对很大的索引吞吐量。 但有些用户认为这个buffer越大吞吐量越高，因此见过有用户将其设置为40%的。到了极端的情况，写入速度很高的时候，40%都被占用，导致OOM。<br>　　<span style="color: #FF0000;">Cluster State Buffer</span><br>　　ES被设计成每个node都可以响应用户的api请求，因此每个node的内存里都包含有一份集群状态的拷贝。这个cluster state包含诸如集群有多少个node，多少个index，每个index的mapping是什么？有少shard，每个shard的分配情况等等 (ES有各类stats api获取这类数据)。 在一个规模很大的集群，这个状态信息可能会非常大的，耗用的内存空间就不可忽视了。并且在ES2.0之前的版本，state的更新是由master node做完以后全量散播到其他结点的。 频繁的状态更新就可以给heap带来很大的压力。 在超大规模集群的情况下，可以考虑分集群并通过tribe node连接做到对用户api的透明，这样可以保证每个集群里的state信息不会膨胀得过大。<br>　　<span style="color: #FF0000;">超大搜索聚合结果集的fetch</span><br>　　ES是分布式搜索引擎，搜索和聚合计算除了在各个data node并行计算以外，还需要将结果返回给汇总节点进行汇总和排序后再返回。无论是搜索，还是聚合，如果返回结果的size设置过大，都会给heap造成很大的压力，特别是数据汇聚节点。超大的size多数情况下都是用户用例不对，比如本来是想计算cardinality，却用了terms aggregation + size:0这样的方式; 对大结果集做深度分页；一次性拉取全量数据等等。<br>　　<span style="color: #FF0000;">对高cardinality字段做terms aggregation</span><br>　　所谓高cardinality，就是该字段的唯一值比较多。 比如client ip，可能存在上千万甚至上亿的不同值。 对这种类型的字段做terms aggregation时，需要在内存里生成海量的分桶，内存需求会非常高。如果内部再嵌套有其他聚合，情况会更糟糕。  在做日志聚合分析时，一个典型的可以引起性能问题的场景，就是对带有参数的url字段做terms aggregation。 对于访问量大的网站，带有参数的url字段cardinality可能会到数亿，做一次terms aggregation内存开销巨大，然而对带有参数的url字段做聚合通常没有什么意义。 对于这类问题，可以额外索引一个url_stem字段，这个字段索引剥离掉参数部分的url。可以极大降低内存消耗，提高聚合速度。</p>
+<h3 id="5-小结"><a href="#5-小结" class="headerlink" title="5. 小结"></a><span style="font-size: 18px;">5. 小结</span></h3><ul>
+<li>倒排词典的索引需要常驻内存，无法GC，需要监控data node上segment memory增长趋势。</li>
+<li>各类缓存，field cache, filter cache, indexing cache, bulk queue等等，要设置合理的大小，并且要应该根据最坏的情况来看heap是否够用，也就是各类缓存全部占满的时候，还有heap空间可以分配给其他任务吗？避免采用clear cache等“自欺欺人”的方式来释放内存。</li>
+<li>避免返回大量结果集的搜索与聚合。确实需要大量拉取数据的场景，可以采用scan &amp; scroll api来实现。</li>
+<li>cluster stats驻留内存并无法水平扩展，超大规模集群可以考虑分拆成多个集群通过tribe node连接。</li>
+<li>想知道heap够不够，必须结合实际应用场景，并对集群的heap使用情况做持续的监控。</li>
+<li>根据监控数据理解内存需求，合理配置各类circuit breaker，将内存溢出风险降低到最低。</li>
+</ul>
+<h2 id="三、Elasticsearch节点的内存怎么分配"><a href="#三、Elasticsearch节点的内存怎么分配" class="headerlink" title="三、Elasticsearch节点的内存怎么分配"></a>三、Elasticsearch节点的内存怎么分配</h2><p>　　上面说过，32GB是ES一个内存设置限制，那如果你的机器有很大的内存怎么办呢？现在的机器内存普遍都大，一般都有300-500GB内存的机器。<br>　　当然，如果有这种机器，那是极好的。接下来有两个方案：</p>
+<ul>
+<li>如果主要做全文检索，可以考虑给Elasticsearch 32G内存，剩下的交给Lucene用作操作系统的文件系统缓存，所有的segment都缓存起来，会加快全文检索。</li>
+<li>如果需要更多的排序和聚合，那就需要更大的堆内存。可以考虑一台机器上创建两个或者更多的ES节点，而不要部署一个使用32+GB内存的节点。仍然要坚持50%原则，假设你有个机器有128G内存，你可以创建两个node，使用32G内存。也就是说64G内存给ES的堆内存，剩下的64G给Lucene。</li>
+</ul>
+<p>　　PS：如果选择第二种方案，需要配置cluster.routing.allocation.same_shard.host:true。这会防止同一个shard的主副本存在同一个物理机上（因为如果存在一个机器上，副本的高可用性就没有了）。</p>
+
+      </div>
+      <hr>
+
+      
+        <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 400px;
+        height: 400px;
+        background-color: #FFF;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+        font-weight: normal;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        font-size: 13px;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #3DA149 !important;
+    }
+
+    .reward-tabs .wechatpay-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 250px;
+        height: 250px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">戳</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">钱和朋友之间，更想多认识朋友</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s4 wechat-tab waves-effect waves-light"><a href="#wechat">微信</a></li>
+                        <li class="tab col s4 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s4 wechatpay-tab waves-effect waves-light"><a href="#wechatpay">微信投资</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="交个朋友吧">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechatpay">
+                        <img src="/medias/reward/wechatpay.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+      
+
+      <!--<link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>-->
+
+      <div class="reprint">
+        <p>
+          <span class="reprint-tip">
+            <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+          </span>
+          <a href="https://www.wenyuanblog.com" class="b-link-green">文渊博客</a>
+          <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+          <a href="/blogs/elasticsearch-memory-considerations.html" class="b-link-green">Elasticsearch内存那些事儿</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'IirbHl64M5MqyIVCnfJsdjvU-gzGzoHsz',
+        appKey: '9K4u0nf4Ret3ntR3Uh9FHqYs',
+        notify: 'false' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'false' === 'true',
+        avatar: '',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '记得留下您的昵称和邮箱...可以快速收到回复',
+        avatar_cdn: 'https://www.gravatar.com/avatar/'
+    });
+</script>
+  
+
+  
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/blogs/html5-compatibility.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/html5.jpg" class="responsive-img" alt="HTML5浏览器兼容性解决方案">
+                        
+                        <span class="card-title">HTML5浏览器兼容性解决方案</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            HTML5新增语义标签，以及如何兼容老版本浏览器。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-04-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/前端技术/" class="post-category" target="_blank">
+                                    前端技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web开发/" target="_blank">
+                        <span class="chip bg-color">Web开发</span>
+                    </a>
+                    
+                    <a href="/tags/HTML5-CSS3/" target="_blank">
+                        <span class="chip bg-color">HTML5/CSS3</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/blogs/forward-index-and-inverted-index.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="倒排索引原理">
+                        
+                        <span class="card-title">倒排索引原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            什么是倒排索引，正向索引和倒排索引的区别。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-03-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/后端技术/" class="post-category" target="_blank">
+                                    后端技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Elasticsearch/" target="_blank">
+                        <span class="chip bg-color">Elasticsearch</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+  <footer class="page-footer bg-color footer-cover">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            
+
+            
+            
+                <br>
+                <!-- 注释掉总访问量和访客数
+                
+                
+                    <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+                -->
+
+                
+                    <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    欢迎你, 第&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;位访问本站的朋友.
+                </span>
+                
+            
+
+            <br>
+            <a href="http://www.wenyuanblog.com" target="_blank">
+                Copyright © 2019 wenyuanblog.com All Rights Reserved.
+            </a>
+            <a href="http://www.wenyuanblog.com" target="_blank">
+                &nbsp;Powered by WenYuan
+            </a>
+            <br>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+                <span>备案号:苏ICP备19003118号-1</span>
+            </a>
+            <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+                <span>苏公网安备 32020602000865号</span>
+            </a>
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+  <a href="https://github.com/winyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-git"></i>
+  </a>
+
+
+
+  <a href="mailto:wenyuan.xu@vip.163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-envelope-open"></i>
+  </a>
+
+
+
+
+
+  <a href="javascript:void(0);" onclick="wechatShow()">
+    <i class="fa fa-wechat"></i>
+  </a>
+
+
+
+  <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+  </a>
+
+
+<script>
+function wechatShow() {
+  layer.open({
+    type: 2,
+    title: false,
+    closeBtn: 0,
+    area: ['200px', '200px'],
+    offset: 'rb',
+    skin: 'layui-layer-nobg', //没有背景色
+    shadeClose: true,
+    content: '/medias/socialimages/wechat.png'
+  });
+}
+</script>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+  <!-- Search Box -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+  <!-- Back to Top -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<!--<script src="/libs/aos/aos.js"></script>-->
+<!--<script src="/libs/scrollprogress/scrollProgress.min.js"></script>-->
+<!--<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<!-- Baidu Analytics -->
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ffafc579f91ca273792cb428f9ef63d5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+<!-- Baidu Push -->
+
+    <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+
+  <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="/libs/layer-v3.1.1/layer/layer.js"></script>
+<!--<script src="/js/jquery.ripples.min.js"></script>-->
+<script src="/js/clipboard.min.js"></script>
+
+
+<script src="/js/vue.js"></script>
+
+<div id="rightClickMenu">
+  <ul class="list-group" style="margin: 0">
+    <li class="list-group-item disabled" style="text-align: center; line-height: 50px; border-bottom: 1px #ddd solid;">
+      欢迎访问我的博客
+    </li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;IP：<span id="client-ip">127.0.0.1</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;地址：<span id="client-location">本地</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;系统：<span id="client-os">Windows10</span></li>
+    <li class="list-group-item">&#12288;&nbsp;浏览器：<span id="client-browser">Chrome47</span></li>
+  </ul>
+</div>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>

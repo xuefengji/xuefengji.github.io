@@ -1,0 +1,1557 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+  <meta name="generator" content="django">
+  <meta charset="utf-8">
+  <meta name="keywords" content="vue-cli3.x,vue-cli3.x搭建vue项目,vue-cli搭建vue项目,vue项目目录结构">
+  <meta name="description" content="使用vue-cli3.x脚手架搭建一个vue项目，以及目录结构分析_e安装　windows　1. Node.js （&amp;gt;=8.9, 推荐8.11">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="renderer" content="webkit|ie-stand|ie-comp">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Vue CLI 3.x搭建Vue项目 - 程序员的个人博客 | 一个90后程序员的技术人生</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">-->
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/element-ui.css">
+
+  <style type="text/css">
+  
+  </style>
+
+  <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-duotone-light.css" type="text/css"></head>
+
+
+<body>
+
+
+
+  <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent headbar-cover">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">文渊博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-home"></i>
+                    
+                    <span>首页</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/tags" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-tags"></i>
+                    
+                    <span>标签</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/categories" class="waves-effect waves-light">
+
+                    
+                        <i class="fa fa-bookmark"></i>
+                    
+                    <span>分类</span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-nav menus_item_child ">
+                    
+                        <li>
+                            <a href="/categories/基础知识/">
+                                
+                                <span>基础知识</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/前端技术/">
+                                
+                                <span>前端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/后端技术/">
+                                
+                                <span>后端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/日常运维/">
+                                
+                                <span>日常运维</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/机器学习/">
+                                
+                                <span>机器学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/开发环境/">
+                                
+                                <span>开发环境</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/诗和远方/">
+                                
+                                <span>诗和远方</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/about" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-user-circle-o"></i>
+                    
+                    <span>关于我</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/navpage.html" class="waves-effect waves-light">
+                    
+                        <i class="fa fa fa-rocket"></i>
+                    
+                    <span>导航页</span>
+                </a>
+            
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+            <span style="display: inline-block;width:40px;height: 40px;background-image: url('/medias/logo.png');background-size: cover;vertical-align: middle; margin: 15px auto"></span>
+        
+        <div class="logo-name">文渊博客</div>
+        <div class="logo-desc">
+            
+                一个90后程序员，终身学习者。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+            <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                        
+                            <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                    <ul>
+                        
+                            <li>
+                                <a href="/categories/基础知识/">
+                                    
+                                    <span>基础知识</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/前端技术/">
+                                    
+                                    <span>前端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/后端技术/">
+                                    
+                                    <span>后端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/日常运维/">
+                                    
+                                    <span>日常运维</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/机器学习/">
+                                    
+                                    <span>机器学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/开发环境/">
+                                    
+                                    <span>开发环境</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/诗和远方/">
+                                    
+                                    <span>诗和远方</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/navpage.html" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa fa-rocket"></i>
+                        
+                        导航页
+                    </a>
+                
+            </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+  
+
+
+
+<!--<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogimages/vue.jpg')">-->
+<div class="bg-cover pd-header post-cover">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <!--
+                    <div class="description center-align post-title">
+                        Vue CLI 3.x搭建Vue项目
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        /*color: #42b983;*/
+        color: #3498db;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        /*color: #42b983;*/
+        color: #3498db;
+    }
+
+    #toc-content .is-active-link::before {
+        /*background-color: #42b983;*/
+        background-color: #3498db;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+  <div class="card">
+    <div class="card-content article-info">
+      <div class="row tag-cate">
+        <div class="col s7">
+          
+            <div class="article-tag">
+              
+                <a href="/tags/Web开发/" target="_blank">
+                  <span class="chip bg-color">Web开发</span>
+                </a>
+              
+                <a href="/tags/Vue-js/" target="_blank">
+                  <span class="chip bg-color">Vue.js</span>
+                </a>
+              
+            </div>
+          
+        </div>
+        <div class="col s5 right-align">
+          
+            <div class="post-cate">
+              <i class="fa fa-bookmark fa-fw icon-category"></i>
+              
+                <a href="/categories/前端技术/" class="post-category" target="_blank">
+                  前端技术
+                </a>
+              
+            </div>
+          
+        </div>
+      </div>
+
+      <div class="post-info">
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+          2019-07-05
+        </div>
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>最近更新:&nbsp;&nbsp;
+          2019-07-05
+        </div>
+
+        
+
+        
+          <div id="busuanzi_container_page_pv" class="info-break-policy">
+            <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+            <span id="busuanzi_value_page_pv"></span>
+          </div>
+        
+      </div>
+    </div>
+    <hr class="clearfix">
+    <div class="card-content article-card-content">
+      <div id="articleContent">
+        <div style="text-align: center; font-size: 32px;">Vue CLI 3.x搭建Vue项目</div>
+
+<blockquote>
+<p>使用vue-cli3.x脚手架搭建一个vue项目，以及目录结构分析。</p>
+</blockquote>
+<h2 id="一、Node安装"><a href="#一、Node安装" class="headerlink" title="一、Node安装"></a>一、Node安装</h2><p>　<span style="font-size: 18px;"><strong>windows</strong></span><br>　1. Node.js （&gt;=8.9, 推荐8.11.0+）<br>　　<a href="https://nodejs.org/en/" title="Node官网" rel="external nofollow noopener noreferrer" target="_blank">Node官网</a>下载 .msi 文件，按步骤下载安装即可。<br>　　安装完之后在cmd中输入 <code>node -v</code>，若显示版本号，则说明安装成功。<br>　2. Git（命令行终端）<br>　　<a href="https://git-scm.com/" title="git官网" rel="external nofollow noopener noreferrer" target="_blank">Git官网</a>下载安装即可。</p>
+<p>　<span style="font-size: 18px;"><strong>linux</strong></span></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> nodejs
+node -v
+<span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">npm</span>
+<span class="token function">npm</span> -v
+</code></pre>
+<p>　<span style="font-size: 18px;"><strong>npm命令</strong></span><br>　1. 得到原本的镜像地址</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> get registry
+</code></pre>
+<p>　2. 设成淘宝的</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry http://registry.npm.taobao.org/
+</code></pre>
+<p>　3. 换成原来的</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry https://registry.npmjs.org/
+</code></pre>
+<h2 id="二、vue-cli安装、更新"><a href="#二、vue-cli安装、更新" class="headerlink" title="二、vue-cli安装、更新"></a>二、vue-cli安装、更新</h2><p>　　如果全局安装过旧版本的 vue-cli(1.x 或 2.x)要先卸载它，否则跳过此步。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> uninstall vue-cli -g
+</code></pre>
+<p>　　操作如下：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/uninstall_vue_cli2.x.png" alt="uninstall_vue_cli2.x.png"><br>　　可以看到我之前的版本是2.9.6，卸载成功后，vue命令便不存在了。<br>　　ps：如果有npm WARN警告，可能是coffee-script的某个依赖包改名了（coffee-script本身已经淘汰了）。</p>
+<p>　　下面开始全局安装 <span style="color: #FF6827;">@vue/cli</span>（Vue CLI 3的包名称由<span style="color: #FF6827;">vue-cli</span>改成了<span style="color: #FF6827;">@vue/cli</span>）：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g @vue/cli
+</code></pre>
+<p>　　更新：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> update @vue/cli
+</code></pre>
+<p>　　查看安装成功否（有版本号就是成功，V大写）</p>
+<pre class=" language-bash"><code class="language-bash">vue -V
+</code></pre>
+<h2 id="三、vue-cli搭建vue项目"><a href="#三、vue-cli搭建vue项目" class="headerlink" title="三、vue-cli搭建vue项目"></a>三、vue-cli搭建vue项目</h2><p>　　执行如下命令即可（注意该命令跟vue-cli2.x不同）。</p>
+<pre class=" language-bash"><code class="language-bash">vue create <span class="token operator">&lt;</span>Project Name<span class="token operator">></span>  // 文件名 不支持驼峰（含大写字母）
+</code></pre>
+<p>　　但<span style="color: #FF6827;">如果是在windows环境下直接使用 Git Bash</span>，交互提示符并不工作，必须通过如下命令来创建项目：</p>
+<pre class=" language-bash"><code class="language-bash">winpty vue.cmd create my-project
+</code></pre>
+<p>　　具体操作如下：<br>　　首先，会提示你选择一个preset（预设）：<br>　　如果之前配置保存过，那么有<span style="color: #FF6827;">preset-config</span>选项，可以直接用。<br>　　如果没有配置保存过，则只有两个选项：<br>　　<span style="color: #FF6827;">default（babel，eslint）</span>：默认设置（直接enter）非常适合快速创建一个新项目的原型，没有带任何辅助功能的npm包。<br>　　<span style="color: #FF6827;">Manually select features</span>：手动配置（按方向键 ↓）是我们所需要的面向生产的项目，提供可选功能的npm包。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli3x_create_preset.png" alt="vue_cli3x_create_preset.png"><br>　　我们选择手动配置，根据你需要用方向键选择（按“空格键”选择/取消选择，A键全选/取消全选）对应功能。<br>　　为了方便稍后跟用vue-cli2.x创建的项目结构作对比，我们这边仅添加Router而不添加Vuex。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli3x_create_features.png" alt="vue_cli3x_create_features.png"><br>　　简介：</p>
+<pre class=" language-bash"><code class="language-bash">? Check the features needed <span class="token keyword">for</span> your project:
+<span class="token operator">></span><span class="token punctuation">(</span> <span class="token punctuation">)</span> Babel                              // 转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。                      
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> TypeScript  // TypeScript是一个JavaScript（后缀.js）的超集（后缀.ts）包含并扩展了 JavaScript 的语法，需要被编译输出为JavaScript在浏览器运行，目前较少人在用
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> Progressive Web App <span class="token punctuation">(</span>PWA<span class="token punctuation">)</span> Support  // 渐进式Web应用程序
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> Router                             // vue-router（vue路由）
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> Vuex                               // vuex（vue的状态管理模式）
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> CSS Pre-processors                 // CSS 预处理器（如：less、sass）
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> Linter / Formatter                 // 代码风格检查和格式化（如：ESlint）
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> Unit Testing                       // 单元测试（unit tests）
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> E2E Testing                        // e2e（end to end） 测试
+</code></pre>
+<p>　　选择完后直接enter，然后会提示你选择对应功能的具体工具包，选择自己擅长或者使用广泛的（方便遇到问题时百度），简介如下：</p>
+<p>　　① 是否使用history router：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli3x_create_router.png" alt="vue_cli3x_create_router.png"><br>　　Vue-Router利用了浏览器自身的<span style="color: #FF6827;">hash模式</span>和<span style="color: #FF6827;">history模式</span>的特性来实现前端路由（通过调用浏览器提供的接口）。<br>　　详情见<a href="https://router.vuejs.org/zh/guide/essentials/history-mode.html" title="Vue Router - HTML5 History 模式" rel="external nofollow noopener noreferrer" target="_blank">Vue Router - HTML5 History 模式</a>。</p>
+<p>　　② css预处理器<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli3x_create_css.png" alt="vue_cli3x_create_css.png"><br>　　主要为css解决浏览器兼容、简化css代码等问题（Sass诞生于2007年，最早也是最成熟的一款css预处理器语言）。</p>
+<pre class=" language-bash"><code class="language-bash">? Please pick a preset: Manually <span class="token keyword">select</span> features
+? Check the features needed <span class="token keyword">for</span> your project: Router, Vuex, CSS Pre-processors, Linter, Unit
+? Pick a CSS pre-processor <span class="token punctuation">(</span>PostCSS, Autoprefixer and CSS Modules are supported by default<span class="token punctuation">)</span>:
+<span class="token operator">></span> SCSS/SASS  // Sass安装需要Ruby环境，是在服务端处理的，SCSS 是 Sass3新语法（完全兼容 CSS3且继承Sass功能）
+  LESS       // Less最终会通过编译处理输出css到浏览器，Less 既可以在客户端上运行，也可在服务端运行 <span class="token punctuation">(</span>借助 Node.js<span class="token punctuation">)</span>
+  Stylus     // Stylus主要用来给Node项目进行CSS预处理支持，Stylus功能上更为强壮，和js联系更加紧密，可创建健壮的、动态的的CSS。
+</code></pre>
+<p>　　③ ESLint<br>　　提供一个插件化的javascript代码检测工具。</p>
+<pre class=" language-bash"><code class="language-bash">? Pick a linter / formatter config: <span class="token punctuation">(</span>Use arrow keys<span class="token punctuation">)</span>
+<span class="token operator">></span> ESLint with error prevention only
+  ESLint + Airbnb config
+  ESLint + Standard config
+  ESLint + Prettier         // 使用较多
+</code></pre>
+<p>　　④ 何时检测</p>
+<pre class=" language-bash"><code class="language-bash">? Pick additional lint features: <span class="token punctuation">(</span>Press <span class="token operator">&lt;</span>space<span class="token operator">></span> to select, <span class="token operator">&lt;</span>a<span class="token operator">></span> to toggle all, <span class="token operator">&lt;</span>i<span class="token operator">></span> to invert selection<span class="token punctuation">)</span>
+<span class="token operator">></span><span class="token punctuation">(</span> <span class="token punctuation">)</span> Lint on save                    // 保存就检测
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> Lint and fix on commit          // fix和commit时候检查
+</code></pre>
+<p>　　⑤ 单元测试</p>
+<pre class=" language-bash"><code class="language-bash">? Pick a unit testing solution: <span class="token punctuation">(</span>Use arrow keys<span class="token punctuation">)</span>
+<span class="token operator">></span> Mocha + Chai  // mocha灵活,只提供简单的测试结构，如果需要其他功能需要添加其他库/插件完成。必须在全局环境中安装
+  Jest          // 安装配置简单，容易上手。内置Istanbul，可以查看到测试覆盖率，相较于Mocha:配置简洁、测试代码简洁、易于和babel集成、内置丰富的expect
+</code></pre>
+<p>　　⑥ 如何存放配置<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli3x_create_config.png" alt="vue_cli3x_create_config.png"></p>
+<pre class=" language-bash"><code class="language-bash">? Where <span class="token keyword">do</span> you prefer placing config <span class="token keyword">for</span> Babel, PostCSS, ESLint, etc.? <span class="token punctuation">(</span>Use arrow keys<span class="token punctuation">)</span>
+<span class="token operator">></span> In dedicated config files  // 独立文件放置
+  In package.json            // 放package.json里
+</code></pre>
+<p>　　⑦ 是否保存本次配置（之后可以直接使用）</p>
+<pre class=" language-bash"><code class="language-bash">? Save this as a preset <span class="token keyword">for</span> future projects? <span class="token punctuation">(</span>Y/n<span class="token punctuation">)</span>  // y:记录本次配置，然后需要你起个名<span class="token punctuation">;</span> n：不记录本次配置
+</code></pre>
+<p>　　搭建完成后，依次执行 <code>cd my-project</code> 和 <code>npm run serve</code> 即可访问vue默认的demo页面。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli3x_helloworld_page.png" alt="vue_cli3x_helloworld_page.png"></p>
+<h2 id="四、与vue-cli2-x区别"><a href="#四、与vue-cli2-x区别" class="headerlink" title="四、与vue-cli2.x区别"></a>四、与vue-cli2.x区别</h2><p>　　使用 <span style="color: #FF6827;">vue-cli3.x</span> 脚手架工具创建vue项目后，项目结构与2.x的对比如下：（不同的预设包含不同的文件，大致结构一致）<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli3x_vs_vue_cli2x.png" alt="vue_cli3x_vs_vue_cli2x.png"><br>　　不难看出，vue-cli3.x十分精简，主要的大的区别如下：</p>
+<h3 id="1-vuex（状态管理）"><a href="#1-vuex（状态管理）" class="headerlink" title="1. vuex（状态管理）"></a><span style="font-size: 18px; color: #159957;">1. vuex（状态管理）</span></h3><p>　　<strong>vue cli 2 中</strong> ：vuex是搭建完成后自己npm install的，并不包括在搭建过程中。可以看到vue cli 2的vuex默认文件夹（store）又包含了三个js文件：action（存放一些调用外部API接口的异步执行的的方法，然后commit mutations改变mutations 数据）、index（初始化mutations 数据，是store的出口）、mutations（处理数据逻辑的同步执行的方法的集合，Vuex中store数据改变的唯一方法commit mutations）</p>
+<p>　　<strong>vue cli 3 中</strong>：vuex是包含在搭建过程供选择的预设。vue cli 3 中默认只用一个store.js代替了原来的store文件夹中的三个js文件。action、mutations、state以及store 的 getters 的用法有很多，举常用的例子：<br>　　eg：<span style="color: #FF6827;">store.js</span></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 引入 vuex</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'./store'</span>  <span class="token comment" spellcheck="true">// 注册store</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 使用 vuex</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    state<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 初始化状态</span>
+        count<span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    mutations<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 处理状态</span>
+        <span class="token function">increment</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> payload<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            state<span class="token punctuation">.</span>count <span class="token operator">+</span><span class="token operator">=</span> payload<span class="token punctuation">.</span>step <span class="token operator">||</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    actions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 提交改变后的状态</span>
+        <span class="token function">increment</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> param<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            context<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count <span class="token operator">+</span><span class="token operator">=</span> param<span class="token punctuation">.</span>step<span class="token punctuation">;</span>
+            context<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'increment'</span><span class="token punctuation">,</span> context<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 提交改变后的state.count值</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">incrementStep</span><span class="token punctuation">(</span><span class="token punctuation">{</span>state<span class="token punctuation">,</span> commit<span class="token punctuation">,</span> rootState<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>rootState<span class="token punctuation">.</span>count <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'increment'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">// 调用increment()方法</span>
+                    step<span class="token punctuation">:</span> <span class="token number">10</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>　　使用时，<br>　　eg：<span style="color: #FF6827;">main.js</span></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App.vue'</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'./router'</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'./store'</span>  <span class="token comment" spellcheck="true">// 引入状态管理 store</span>
+
+Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  router<span class="token punctuation">,</span>
+  store<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">// 注册store(这可以把 store 的实例注入所有的子组件)</span>
+  render<span class="token punctuation">:</span> h <span class="token operator">=</span><span class="token operator">></span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>　　<span style="color: #FF6827;">views/home.vue</span></p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>home<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!--在前端HTML页面中使用 count--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>HelloWorld</span> <span class="token attr-name">:msg</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>count<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">import</span> HelloWorld <span class="token keyword">from</span> <span class="token string">'@/components/HelloWorld.vue'</span>
+    <span class="token keyword">import</span> <span class="token punctuation">{</span>mapActions<span class="token punctuation">,</span> mapState<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span>  <span class="token comment" spellcheck="true">// 注册 action 和 state</span>
+
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> <span class="token string">'home'</span><span class="token punctuation">,</span>
+        computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 在这里映射 store.state.count，使用方法和 computed 里的其他属性一样</span>
+            <span class="token operator">...</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+                <span class="token string">'count'</span> 
+            <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">incrementStep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 在这里引入 action 里的方法，使用方法和 methods 里的其他方法一样</span>
+            <span class="token operator">...</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+                <span class="token string">'incrementStep'</span>
+            <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            HelloWorld
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
+<h3 id="2-router（路由）"><a href="#2-router（路由）" class="headerlink" title="2. router（路由）"></a><span style="font-size: 18px; color: #159957;">2. router（路由）</span></h3><p>　　<strong>vue cli 2</strong>：“ router/index.js ”<br>　　<strong>vue cli 3</strong>：“router.js”（用法和做的事都一样）</p>
+<h3 id="3-去掉static、新增public文件夹"><a href="#3-去掉static、新增public文件夹" class="headerlink" title="3. 去掉static、新增public文件夹"></a><span style="font-size: 18px; color: #159957;">3. 去掉static、新增public文件夹</span></h3><p>　　<strong>vue cli 2</strong>：static 是 webpack 默认存放静态资源的文件夹，打包时会直接复制一份到dist文件夹不会经过 webpack 编译。<br>　　<strong>vue cli 3</strong>：摒弃 static 新增了 public。vue cli 3 中“静态资源”两种处理方式：<br>　　●　经webpack 处理：在 JavaScript 被导入或在 template/CSS 中通过“相对路径”被引用的资源会被编译并压缩；<br>　　●　不经webpack 处理：放置在 public 目录下或通过绝对路径被引用的资源将会“直接被拷贝”一份，不做任何编译压缩处理。</p>
+<h3 id="4-index-html"><a href="#4-index-html" class="headerlink" title="4. index.html"></a><span style="font-size: 18px; color: #159957;">4. index.html</span></h3><p>　　<strong>vue cli 2</strong>：“index.html”<br>　　<strong>vue cli 3</strong>：“public/index.html”此模板会被 <a href="https://github.com/jantimon/html-webpack-plugin" title="html-webpack-plugin" rel="external nofollow noopener noreferrer" target="_blank">html-webpack-plugin</a> 处理的</p>
+<h3 id="5-src-views"><a href="#5-src-views" class="headerlink" title="5. src/views"></a><span style="font-size: 18px; color: #159957;">5. src/views</span></h3><p>　　<strong>vue cli 3</strong> 的src文件夹新增views文件夹用来存放“页面”，区分components（组件）。</p>
+<h3 id="6-去掉build和config两个文件夹"><a href="#6-去掉build和config两个文件夹" class="headerlink" title="6. 去掉build和config两个文件夹"></a><span style="font-size: 18px; color: #159957;">6. 去掉build和config两个文件夹</span></h3><p>　　<strong>vue cli 3</strong> 中，去掉了 build（根据config中的配置来定义规则）、config（配置不同环境的参数）文件夹。<br>　　这些配置你可以通过命令行参数、或 <code>vue.config.js</code> （在根目录<span style="color: #FF6827;">新建一个</span> vue.config.js 同名文件）里的 <a href="https://cli.vuejs.org/zh/config/#devserver" title="devServer" rel="external nofollow noopener noreferrer" target="_blank">devServer</a> 字段配置开发服务器。</p>
+<h3 id="7-babel-config-js"><a href="#7-babel-config-js" class="headerlink" title="7. babel.config.js"></a><span style="font-size: 18px; color: #159957;">7. babel.config.js</span></h3><p>　　配置Babel 。Vue CLI 使用了 Babel 7 中的新配置格式 <code>babel.config.js</code>。和 <code>.babelrc</code> 或 <code>package.json</code> 中的 <code>babel</code> 字段不同，这个配置文件不会使用基于文件位置的方案，而是会一致地运用到项目根目录以下的所有文件，包括 <code>node_modules</code> 内部的依赖。官方推荐在 Vue CLI 项目中始终使用 <code>babel.config.js</code> 取代其它格式。</p>
+<h3 id="8-根目录的一些其他文件的改变"><a href="#8-根目录的一些其他文件的改变" class="headerlink" title="8. 根目录的一些其他文件的改变"></a><span style="font-size: 18px; color: #159957;">8. 根目录的一些其他文件的改变</span></h3><p>　　之前所有的配置文件都在 vue create 搭建时preset预设，或者后期可以通过命令参数、<code>vue.config.js</code>中配置。<br>　　根据需要在根目录下新建 vue.config.js 自行配置，下面只列一部分，具体配置参考<a href="https://cli.vuejs.org/zh/config/" title="vue.config.js配置参考" rel="external nofollow noopener noreferrer" target="_blank">官方文档</a>。</p>
+<pre class=" language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 部署生产环境和开发环境下的URL。</span>
+  <span class="token comment" spellcheck="true">// 默认情况下，Vue CLI 会假设你的应用是被部署在一个域名的根路径上</span>
+  <span class="token comment" spellcheck="true">// 例如 https://www.my-app.com/。如果应用被部署在一个子路径上，你就需要用这个选项指定这个子路径。例如，如果你的应用被部署在 https://www.my-app.com/my-app/，则设置 baseUrl 为 /my-app/。</span>
+  baseUrl<span class="token punctuation">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>NODE_ENV <span class="token operator">===</span> <span class="token string">"production"</span> <span class="token operator">?</span> <span class="token string">"./"</span> <span class="token punctuation">:</span> <span class="token string">"/"</span><span class="token punctuation">,</span>
+
+  <span class="token comment" spellcheck="true">// outputDir: 在npm run build 或 yarn build 时 ，生成文件的目录名称（要和baseUrl的生产环境路径一致）</span>
+  outputDir<span class="token punctuation">:</span> <span class="token string">"dist"</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 用于放置生成的静态资源 (js、css、img、fonts) 的；（项目打包之后，静态资源会放在这个文件夹下）</span>
+  assetsDir<span class="token punctuation">:</span> <span class="token string">"assets"</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 指定生成的 index.html 的输出路径  (打包之后，改变系统默认的index.html的文件名)</span>
+  <span class="token comment" spellcheck="true">// indexPath: "myIndex.html",</span>
+  <span class="token comment" spellcheck="true">// 默认情况下，生成的静态资源在它们的文件名中包含了 hash 以便更好的控制缓存。你可以通过将这个选项设为 false 来关闭文件名哈希。(false的时候就是让原来的文件名不改变)</span>
+  filenameHashing<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+  <span class="token comment" spellcheck="true">// lintOnSave：{ type:Boolean default:true } 问你是否使用eslint</span>
+  lintOnSave<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// 如果你想要在生产构建时禁用 eslint-loader，你可以用如下配置</span>
+  <span class="token comment" spellcheck="true">// lintOnSave: process.env.NODE_ENV !== 'production',</span>
+
+  <span class="token comment" spellcheck="true">// 是否使用包含运行时编译器的 Vue 构建版本。设置为 true 后你就可以在 Vue 组件中使用 template 选项了，但是这会让你的应用额外增加 10kb 左右。(默认false)</span>
+  <span class="token comment" spellcheck="true">// runtimeCompiler: false,</span>
+
+  <span class="token comment" spellcheck="true">/**
+   * 如果你不需要生产环境的 source map，可以将其设置为 false 以加速生产环境构建。
+   *  打包之后发现map文件过大，项目文件体积很大，设置为false就可以不输出map文件
+   *  map文件的作用在于：项目打包后，代码都是经过压缩加密的，如果运行时报错，输出的错误信息无法准确得知是哪里的代码报错。
+   *  有了map就可以像未加密的代码一样，准确的输出是哪一行哪一列有错。
+   * */</span>
+  productionSourceMap<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+  <span class="token comment" spellcheck="true">// 它支持webPack-dev-server的所有选项</span>
+  devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    host<span class="token punctuation">:</span> <span class="token string">"localhost"</span><span class="token punctuation">,</span>
+    port<span class="token punctuation">:</span> <span class="token number">1111</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">// 端口号</span>
+    https<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">// https:{type:Boolean}</span>
+    open<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">// 配置自动启动浏览器</span>
+    <span class="token comment" spellcheck="true">// proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理</span>
+
+    <span class="token comment" spellcheck="true">// 配置多个代理</span>
+    proxy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">"/api"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        target<span class="token punctuation">:</span> <span class="token string">"&lt;url>"</span><span class="token punctuation">,</span>
+        ws<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        changeOrigin<span class="token punctuation">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token string">"/foo"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        target<span class="token punctuation">:</span> <span class="token string">"&lt;other_url>"</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="五、图形化界面创建项目"><a href="#五、图形化界面创建项目" class="headerlink" title="五、图形化界面创建项目"></a>五、图形化界面创建项目</h2><p>　　vue-cli 3x 新增了<span style="color: #FF6827;">通过图形化界面创建项目</span>的功能，<br>　　在命令行输入命令：</p>
+<pre class=" language-bash"><code class="language-bash">vue ui
+</code></pre>
+<p>　　然后会自动打浏览器页面，选择创建，后面基本上都是“下一步、下一步”的无脑操作。</p>
+<h2 id="六、vue-cli-2x（旧版本）"><a href="#六、vue-cli-2x（旧版本）" class="headerlink" title="六、vue-cli 2x（旧版本）"></a>六、vue-cli 2x（旧版本）</h2><p>　　了解 vue-cli 2x（旧版本）：参见本人另一篇博客<span class="series"><a href="/blogs/vue-cli2x-to-create-vue-project.html" title="Vue CLI 2.x搭建Vue项目">《Vue CLI 2.x搭建Vue项目》</a></span>。</p>
+<p class="reference"><br>参考<br><a href="https://cli.vuejs.org/zh/guide/" rel="external nofollow noopener noreferrer" target="_blank">https://cli.vuejs.org/zh/guide/</a><br></p>
+
+
+<style type="text/css">
+    .series a {
+        text-decoration:none !important;
+    }
+</style>
+
+      </div>
+      <hr>
+
+      
+        <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 400px;
+        height: 400px;
+        background-color: #FFF;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+        font-weight: normal;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        font-size: 13px;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #3DA149 !important;
+    }
+
+    .reward-tabs .wechatpay-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 250px;
+        height: 250px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">戳</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">钱和朋友之间，更想多认识朋友</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s4 wechat-tab waves-effect waves-light"><a href="#wechat">微信</a></li>
+                        <li class="tab col s4 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s4 wechatpay-tab waves-effect waves-light"><a href="#wechatpay">微信投资</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="交个朋友吧">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechatpay">
+                        <img src="/medias/reward/wechatpay.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+      
+
+      <!--<link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>-->
+
+      <div class="reprint">
+        <p>
+          <span class="reprint-tip">
+            <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+          </span>
+          <a href="https://www.wenyuanblog.com" class="b-link-green">文渊博客</a>
+          <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+          <a href="/blogs/vue-cli3x-to-create-vue-project.html" class="b-link-green">Vue CLI 3.x搭建Vue项目</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'IirbHl64M5MqyIVCnfJsdjvU-gzGzoHsz',
+        appKey: '9K4u0nf4Ret3ntR3Uh9FHqYs',
+        notify: 'false' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'false' === 'true',
+        avatar: '',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '记得留下您的昵称和邮箱...可以快速收到回复',
+        avatar_cdn: 'https://www.gravatar.com/avatar/'
+    });
+</script>
+  
+
+  
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/blogs/vue-plugins-simple-demo.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/vue.jpg" class="responsive-img" alt="Vue插件Plugins的简单例子">
+                        
+                        <span class="card-title">Vue插件Plugins的简单例子</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            通过vue插件，我们能够给vue原型挂载属性、注册全局组件或过滤器。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/前端技术/" class="post-category" target="_blank">
+                                    前端技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web开发/" target="_blank">
+                        <span class="chip bg-color">Web开发</span>
+                    </a>
+                    
+                    <a href="/tags/Vue-js/" target="_blank">
+                        <span class="chip bg-color">Vue.js</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/blogs/vue-cli2x-to-create-vue-project.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/vue.jpg" class="responsive-img" alt="Vue CLI 2.x搭建Vue项目">
+                        
+                        <span class="card-title">Vue CLI 2.x搭建Vue项目</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            使用vue-cli2.x脚手架搭建一个vue项目，以及目录结构分析。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/前端技术/" class="post-category" target="_blank">
+                                    前端技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web开发/" target="_blank">
+                        <span class="chip bg-color">Web开发</span>
+                    </a>
+                    
+                    <a href="/tags/Vue-js/" target="_blank">
+                        <span class="chip bg-color">Vue.js</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+  <footer class="page-footer bg-color footer-cover">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            
+
+            
+            
+                <br>
+                <!-- 注释掉总访问量和访客数
+                
+                
+                    <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+                -->
+
+                
+                    <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    欢迎你, 第&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;位访问本站的朋友.
+                </span>
+                
+            
+
+            <br>
+            <a href="http://www.wenyuanblog.com" target="_blank">
+                Copyright © 2019 wenyuanblog.com All Rights Reserved.
+            </a>
+            <a href="http://www.wenyuanblog.com" target="_blank">
+                &nbsp;Powered by WenYuan
+            </a>
+            <br>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+                <span>备案号:苏ICP备19003118号-1</span>
+            </a>
+            <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+                <span>苏公网安备 32020602000865号</span>
+            </a>
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+  <a href="https://github.com/winyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-git"></i>
+  </a>
+
+
+
+  <a href="mailto:wenyuan.xu@vip.163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-envelope-open"></i>
+  </a>
+
+
+
+
+
+  <a href="javascript:void(0);" onclick="wechatShow()">
+    <i class="fa fa-wechat"></i>
+  </a>
+
+
+
+  <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+  </a>
+
+
+<script>
+function wechatShow() {
+  layer.open({
+    type: 2,
+    title: false,
+    closeBtn: 0,
+    area: ['200px', '200px'],
+    offset: 'rb',
+    skin: 'layui-layer-nobg', //没有背景色
+    shadeClose: true,
+    content: '/medias/socialimages/wechat.png'
+  });
+}
+</script>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+  <!-- Search Box -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+  <!-- Back to Top -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<!--<script src="/libs/aos/aos.js"></script>-->
+<!--<script src="/libs/scrollprogress/scrollProgress.min.js"></script>-->
+<!--<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<!-- Baidu Analytics -->
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ffafc579f91ca273792cb428f9ef63d5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+<!-- Baidu Push -->
+
+    <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+
+  <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="/libs/layer-v3.1.1/layer/layer.js"></script>
+<!--<script src="/js/jquery.ripples.min.js"></script>-->
+<script src="/js/clipboard.min.js"></script>
+
+
+<script src="/js/vue.js"></script>
+
+<div id="rightClickMenu">
+  <ul class="list-group" style="margin: 0">
+    <li class="list-group-item disabled" style="text-align: center; line-height: 50px; border-bottom: 1px #ddd solid;">
+      欢迎访问我的博客
+    </li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;IP：<span id="client-ip">127.0.0.1</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;地址：<span id="client-location">本地</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;系统：<span id="client-os">Windows10</span></li>
+    <li class="list-group-item">&#12288;&nbsp;浏览器：<span id="client-browser">Chrome47</span></li>
+  </ul>
+</div>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>
