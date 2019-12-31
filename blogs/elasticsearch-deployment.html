@@ -90,13 +90,6 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
-                            <a href="/categories/基础知识/">
-                                
-                                <span>基础知识</span>
-                            </a>
-                        </li>
-                    
-                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -111,9 +104,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/日常运维/">
+                            <a href="/categories/运维知识/">
                                 
-                                <span>日常运维</span>
+                                <span>运维知识</span>
                             </a>
                         </li>
                     
@@ -125,9 +118,16 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/开发环境/">
+                            <a href="/categories/技术周边/">
                                 
-                                <span>开发环境</span>
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
                             </a>
                         </li>
                     
@@ -223,13 +223,6 @@
                     <ul>
                         
                             <li>
-                                <a href="/categories/基础知识/">
-                                    
-                                    <span>基础知识</span>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -244,9 +237,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/日常运维/">
+                                <a href="/categories/运维知识/">
                                     
-                                    <span>日常运维</span>
+                                    <span>运维知识</span>
                                 </a>
                             </li>
                         
@@ -258,9 +251,16 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/开发环境/">
+                                <a href="/categories/技术周边/">
                                     
-                                    <span>开发环境</span>
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
                                 </a>
                             </li>
                         
@@ -336,93 +336,98 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 
-    #articleContent :focus {
-        outline: none;
-    }
+#articleContent :focus {
+    outline: none;
+}
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
 
-    .toc-widget {
-        padding-left: 20px;
-    }
+.toc-widget {
+    padding-left: 20px;
+}
 
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
 
-    #toc-content ol {
-        padding-left: 10px;
-    }
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
 
-    #toc-content ol li {
-        padding-left: 10px;
-    }
+#toc-content ol {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link:hover {
-        /*color: #42b983;*/
-        color: #3498db;
-        font-weight: 700;
-        text-decoration: underline;
-    }
+#toc-content ol li {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-    #toc-content .is-active-link {
-        /*color: #42b983;*/
-        color: #3498db;
-    }
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
 
-    #toc-content .is-active-link::before {
-        /*background-color: #42b983;*/
-        background-color: #3498db;
-    }
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
 
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
 
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
 
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -447,8 +452,8 @@
             <div class="post-cate">
               <i class="fa fa-bookmark fa-fw icon-category"></i>
               
-                <a href="/categories/开发环境/" class="post-category" target="_blank">
-                  开发环境
+                <a href="/categories/运维知识/" class="post-category" target="_blank">
+                  运维知识
                 </a>
               
             </div>
@@ -489,20 +494,31 @@
 <li>JDK1.8</li>
 <li>Elasticsearch 5.6</li>
 </ul>
-<h2 id="二、安装JDK"><a href="#二、安装JDK" class="headerlink" title="二、安装JDK"></a>二、安装JDK</h2><h3 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1. 下载安装"></a><span style="font-size: 18px;">1. 下载安装</span></h3><p>　　<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a><br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/jdk_download.png" alt="jdk_download.png"><br>　　将刚刚下载的文件拷贝到 /opt 目录下，<br>　　解压jdk到当前目录，使用命令 <code>tar -zxvf jdk-8u161-linux-x64.tar.gz</code><br>　　修改文件名 <code>mv jdk1.8.0_161 jdk1.8</code><br>　　至此，jdk1.8已经全部安装完成了</p>
-<h3 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2. 配置环境变量"></a><span style="font-size: 18px;">2. 配置环境变量</span></h3><p>　　修改 <code>vim /etc/profile</code> ，最底部添加:</p>
+<h2 id="二、安装JDK"><a href="#二、安装JDK" class="headerlink" title="二、安装JDK"></a>二、安装JDK</h2><h3 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1. 下载安装"></a><span style="font-size: 18px;">1. 下载安装</span></h3><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a><br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/jdk_download.png" alt="jdk_download.png"><br>将刚刚下载的文件拷贝到 <span style="color: #FF0000;">/opt</span> 目录下，<br>解压 jdk 到当前目录，使用命令 <code>tar -zxvf jdk-8u161-linux-x64.tar.gz</code></p>
+<p>修改文件名 <code>mv jdk1.8.0_161 jdk1.8</code><br>至此，jdk1.8 已经全部安装完成了。</p>
+<h3 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2. 配置环境变量"></a><span style="font-size: 18px;">2. 配置环境变量</span></h3><p>修改 <code>vim /etc/profile</code> ，最底部添加:</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Sun JDK profile</span>
 <span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/opt/jdk1.8
 <span class="token function">export</span> JRE_HOME<span class="token operator">=</span><span class="token variable">${JAVA_HOME}</span>/jre  
 <span class="token function">export</span> CLASSPATH<span class="token operator">=</span>.:<span class="token variable">${JAVA_HOME}</span>/lib:<span class="token variable">${JRE_HOME}</span>/lib  
 <span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">${JAVA_HOME}</span>/bin:<span class="token variable">$PATH</span>
 </code></pre>
-<p>　　运行 <code>source /etc/profile</code>，使/etc/profile文件生效<br>　　使用 <code>java -version</code> 和 <code>javac -version</code> 命令查看jdk版本及其相关信息，不会出现command not found错误，且显示的版本信息与前面安装的一致<br>　　<code>echo $JAVA_HOME</code>, <code>echo $CLASSPATH</code>, <code>echo $PATH</code>，看看自己的配置是否都正确。</p>
-<h3 id="3-开机设置"><a href="#3-开机设置" class="headerlink" title="3. 开机设置"></a><span style="font-size: 18px;">3. 开机设置</span></h3><p>　　每次重启的时候，会发现jdk版本不正确，或者使用 <code>java -version</code> 显示不是所需版本，使用　<code>javac -version</code> 会出现command not found错误，解决方法是再次运行 <code>source /etc/profile</code>，使/etc/profile文件生效。显然每次这么操作很麻烦。<br>　　因此我们编辑 <code>vim ~/.bashrc</code>，最后加一句 </p>
+<p>运行 <code>source /etc/profile</code>，使 <span style="color: #FF0000;">/etc/profile</span> 文件生效。</p>
+<p>使用 <code>java -version</code> 和 <code>javac -version</code> 命令查看 jdk 版本及其相关信息，不会出现 command not found 错误，且显示的版本信息与前面安装的一致。</p>
+<p><code>echo $JAVA_HOME</code>, <code>echo $CLASSPATH</code>, <code>echo $PATH</code>，看看自己的配置是否都正确。</p>
+<h3 id="3-开机设置"><a href="#3-开机设置" class="headerlink" title="3. 开机设置"></a><span style="font-size: 18px;">3. 开机设置</span></h3><p>每次重启服务器的时候，会发现 jdk 版本不正确，或者使用 <code>java -version</code> 显示不是所需版本，使用　<code>javac -version</code> 会出现 command not found 错误。</p>
+<p>解决方法是再次运行 <code>source /etc/profile</code>，使 <span style="color: #FF0000;">/etc/profile</span> 文件生效。显然每次这么操作很麻烦。</p>
+<p>因此我们编辑 <code>vim ~/.bashrc</code>，最后加一句 </p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile
 </code></pre>
-<h2 id="三、安装Elasticsearch"><a href="#三、安装Elasticsearch" class="headerlink" title="三、安装Elasticsearch"></a>三、安装Elasticsearch</h2><h3 id="1-下载安装-1"><a href="#1-下载安装-1" class="headerlink" title="1. 下载安装"></a><span style="font-size: 18px;">1. 下载安装</span></h3><p>　　登录官网 <a href="https://www.elastic.co/cn/downloads" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/cn/downloads</a><br>　　选择下载elasticsearch，根据需要选择对应的安装包，这里选择5.6版本，下载完后得到 elasticsearch-5.6.0.tar.gz<br>　　操作系统中创建一个新用户专门用来管理es：<code>adduser elasticsearch</code><br>　　用 elasticsearch 用户将 elasticsearch-5.6.0.tar.gz 拷贝到 /opt 目录下。<br>　　解压到当前目录，使用命令 <code>tar -zxvf elasticsearch-5.6.0.tar.gz</code><br>　　删除压缩文件，使用命令 <code>rm -f elasticsearch-5.6.0.tar.gz</code><br>　　至此，elasticsearch安装完成</p>
-<h3 id="2-ES集群需要改的系统配置"><a href="#2-ES集群需要改的系统配置" class="headerlink" title="2. ES集群需要改的系统配置"></a><span style="font-size: 18px;">2. ES集群需要改的系统配置</span></h3><p>　　<code>vim /etc/security/limits.conf</code></p>
+<h2 id="三、安装Elasticsearch"><a href="#三、安装Elasticsearch" class="headerlink" title="三、安装Elasticsearch"></a>三、安装Elasticsearch</h2><h3 id="1-下载安装-1"><a href="#1-下载安装-1" class="headerlink" title="1. 下载安装"></a><span style="font-size: 18px;">1. 下载安装</span></h3><p>登录官网 <a href="https://www.elastic.co/cn/downloads。" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/cn/downloads。</a></p>
+<p>选择下载 elasticsearch，根据需要选择对应的安装包，这里选择 5.6 版本，下载完后得到 elasticsearch-5.6.0.tar.gz</p>
+<p>操作系统中创建一个新用户专门用来管理 es：<code>adduser elasticsearch</code></p>
+<p>用 elasticsearch 用户将 elasticsearch-5.6.0.tar.gz 拷贝到 <span style="color: #FF0000;">/opt</span> 目录下。</p>
+<p>解压到当前目录，使用命令 <code>tar -zxvf elasticsearch-5.6.0.tar.gz</code>。</p>
+<p>删除压缩文件，使用命令 <code>rm -f elasticsearch-5.6.0.tar.gz</code>。</p>
+<p>至此，elasticsearch 安装完成</p>
+<h3 id="2-ES集群需要改的系统配置"><a href="#2-ES集群需要改的系统配置" class="headerlink" title="2. ES集群需要改的系统配置"></a><span style="font-size: 18px;">2. ES集群需要改的系统配置</span></h3><p><code>vim /etc/security/limits.conf</code></p>
 <pre class=" language-bash"><code class="language-bash">* soft nofile 65536
 * hard nofile 131072
 * soft nproc 2048
@@ -519,12 +535,12 @@ root soft memlock unlimited
 root hard memlock unlimited
 root - nofile 65536
 </code></pre>
-<p>　　<code>vim /etc/sysctl.conf</code></p>
+<p><code>vim /etc/sysctl.conf</code></p>
 <pre class=" language-bash"><code class="language-bash">vm.max_map_count<span class="token operator">=</span>655360
 vm.swappiness <span class="token operator">=</span> 0
 </code></pre>
-<p>　　并执行 <code>sysctl -p</code></p>
-<p>　　如果是supervisor托管的，修改/etc/supervisord.conf 中的<br>　　minfd = 65536<br>　　并重启supervisor</p>
+<p>并执行 <code>sysctl -p</code></p>
+<p>如果是 supervisor 托管的，修改 <span style="color: #FF0000;">/etc/supervisord.conf</span> 中的：<br>minfd = 65536<br>并重启 supervisor。</p>
 <h3 id="3-修改ES配置文件elasticsearch-yml"><a href="#3-修改ES配置文件elasticsearch-yml" class="headerlink" title="3. 修改ES配置文件elasticsearch.yml"></a><span style="font-size: 18px;">3. 修改ES配置文件elasticsearch.yml</span></h3><pre class=" language-bash"><code class="language-bash">bootstrap.memory_lock: <span class="token boolean">false</span>
 bootstrap.system_call_filter: <span class="token boolean">false</span>
 
@@ -548,7 +564,7 @@ path.data: /data/es
 action.auto_create_index: cc-*,sc-*,.nina*,.security,.monitoring*,.watches,.triggered_watches,.watcher-history*
 
 </code></pre>
-<p>　　同时也要指定一下jvm.options里的jvm虚拟机内存</p>
+<p>同时也要指定一下 <span style="color: #FF0000;">jvm.options</span>（同级目录下的一个配置文件） 里的 jvm 虚拟机内存。</p>
 <h3 id="4-ES交给supervisor托管"><a href="#4-ES交给supervisor托管" class="headerlink" title="4. ES交给supervisor托管"></a><span style="font-size: 18px;">4. ES交给supervisor托管</span></h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>program:elasticsearch<span class="token punctuation">]</span>
 user <span class="token operator">=</span> elasticsearch
 startsecs <span class="token operator">=</span> 3
@@ -560,7 +576,7 @@ stderr_logfile<span class="token operator">=</span>NONE
 environment <span class="token operator">=</span> JAVA_HOME<span class="token operator">=</span><span class="token string">"/opt/jdk/"</span>, ES_JAVA_OPTS <span class="token operator">=</span> <span class="token string">"-Xms8g -Xmx8g"</span>
 <span class="token function">command</span> <span class="token operator">=</span> /opt/elasticsearch/bin/elasticsearch
 </code></pre>
-<h2 id="四、安装Kibana"><a href="#四、安装Kibana" class="headerlink" title="四、安装Kibana"></a>四、安装Kibana</h2><h3 id="1-从官网下载和es一样版本的Kibana"><a href="#1-从官网下载和es一样版本的Kibana" class="headerlink" title="1. 从官网下载和es一样版本的Kibana"></a><span style="font-size: 18px;">1. 从官网下载和es一样版本的Kibana</span></h3><p>　　拷贝到/opt目录，解压，修改配置文件kibana.yml</p>
+<h2 id="四、安装Kibana"><a href="#四、安装Kibana" class="headerlink" title="四、安装Kibana"></a>四、安装Kibana</h2><h3 id="1-从官网下载和es一样版本的Kibana"><a href="#1-从官网下载和es一样版本的Kibana" class="headerlink" title="1. 从官网下载和es一样版本的Kibana"></a><span style="font-size: 18px;">1. 从官网下载和es一样版本的Kibana</span></h3><p>拷贝到 <span style="color: #FF0000;">/opt</span> 目录，解压，修改配置文件 <span style="color: #FF0000;">kibana.yml</span>。</p>
 <pre class=" language-bash"><code class="language-bash">server.host: <span class="token string">"192.168.10.201"</span>
 elasticsearch.url: <span class="token string">"http://192.168.10.198:9200"</span>
 </code></pre>
@@ -1029,7 +1045,7 @@ stdout_logfile <span class="token operator">=</span> /var/log/kibana.log
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            总结Elasticsearch各种备份与迁移方案，亲测。
+                            总结 Elasticsearch 各种备份与迁移方案，亲测。
                         
                     </div>
                     <div class="publish-info">
@@ -1040,8 +1056,8 @@ stdout_logfile <span class="token operator">=</span> /var/log/kibana.log
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/日常运维/" class="post-category" target="_blank">
-                                    日常运维
+                            <a href="/categories/运维知识/" class="post-category" target="_blank">
+                                    运维知识
                                 </a>
                             
                             
@@ -1061,7 +1077,7 @@ stdout_logfile <span class="token operator">=</span> /var/log/kibana.log
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1088,8 +1104,8 @@ stdout_logfile <span class="token operator">=</span> /var/log/kibana.log
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/日常运维/" class="post-category" target="_blank">
-                                    日常运维
+                            <a href="/categories/运维知识/" class="post-category" target="_blank">
+                                    运维知识
                                 </a>
                             
                             
@@ -1128,87 +1144,87 @@ stdout_logfile <span class="token operator">=</span> /var/log/kibana.log
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
 </script>
     
 

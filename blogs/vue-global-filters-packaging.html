@@ -90,13 +90,6 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
-                            <a href="/categories/基础知识/">
-                                
-                                <span>基础知识</span>
-                            </a>
-                        </li>
-                    
-                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -111,9 +104,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/日常运维/">
+                            <a href="/categories/运维知识/">
                                 
-                                <span>日常运维</span>
+                                <span>运维知识</span>
                             </a>
                         </li>
                     
@@ -125,9 +118,16 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/开发环境/">
+                            <a href="/categories/技术周边/">
                                 
-                                <span>开发环境</span>
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
                             </a>
                         </li>
                     
@@ -223,13 +223,6 @@
                     <ul>
                         
                             <li>
-                                <a href="/categories/基础知识/">
-                                    
-                                    <span>基础知识</span>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -244,9 +237,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/日常运维/">
+                                <a href="/categories/运维知识/">
                                     
-                                    <span>日常运维</span>
+                                    <span>运维知识</span>
                                 </a>
                             </li>
                         
@@ -258,9 +251,16 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/开发环境/">
+                                <a href="/categories/技术周边/">
                                     
-                                    <span>开发环境</span>
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
                                 </a>
                             </li>
                         
@@ -336,93 +336,98 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 
-    #articleContent :focus {
-        outline: none;
-    }
+#articleContent :focus {
+    outline: none;
+}
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
 
-    .toc-widget {
-        padding-left: 20px;
-    }
+.toc-widget {
+    padding-left: 20px;
+}
 
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
 
-    #toc-content ol {
-        padding-left: 10px;
-    }
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
 
-    #toc-content ol li {
-        padding-left: 10px;
-    }
+#toc-content ol {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link:hover {
-        /*color: #42b983;*/
-        color: #3498db;
-        font-weight: 700;
-        text-decoration: underline;
-    }
+#toc-content ol li {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-    #toc-content .is-active-link {
-        /*color: #42b983;*/
-        color: #3498db;
-    }
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
 
-    #toc-content .is-active-link::before {
-        /*background-color: #42b983;*/
-        background-color: #3498db;
-    }
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
 
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
 
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
 
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -490,8 +495,8 @@
 </blockquote>
 <p>　　在前后端分离的项目中，经常会有后台返回的数据需要经过处理才能显示到页面上的场景。</p>
 <p>　　使用最多的场景就是日期/时间、数字、字符串的格式化处理，实际业务中可能还有更复杂的数据处理逻辑。</p>
-<p>　　下面就拿封装全局的处理数字和字符串的 <span style="color: #FF6827;">filter</span> 来展示 <span style="color: #FF6827;">vue</span> 如何 <span style="color: #FF6827;">封装全局filter</span> 并统一处理。</p>
-<h2 id="一、定义-封装过滤器"><a href="#一、定义-封装过滤器" class="headerlink" title="一、定义/封装过滤器"></a>一、定义/封装过滤器</h2><p>　　在 <span style="color: #FF6827;">src目录</span> 下新建 <span style="color: #FF6827;">filters目录</span> 用来专门存放全局过滤器，如果项目的过滤器过多，那么就要按类型分类。<br>　　如果项目需要前台处理的数据不是太多，那么就在 <span style="color: #FF6827;">filters目录</span> 下新建一个 <span style="color: #FF6827;">index.js</span> 来存放所有的过滤器就足够了。<br><span style="color: #FF6827;">index.js</span>代码如下：</p>
+<p>　　下面就拿封装全局的处理数字和字符串的 <span style="color: #FF0000;">filter</span> 来展示 <span style="color: #FF0000;">vue</span> 如何 <span style="color: #FF0000;">封装全局filter</span> 并统一处理。</p>
+<h2 id="一、定义-封装过滤器"><a href="#一、定义-封装过滤器" class="headerlink" title="一、定义/封装过滤器"></a>一、定义/封装过滤器</h2><p>　　在 <span style="color: #FF0000;">src目录</span> 下新建 <span style="color: #FF0000;">filters目录</span> 用来专门存放全局过滤器，如果项目的过滤器过多，那么就要按类型分类。<br>　　如果项目需要前台处理的数据不是太多，那么就在 <span style="color: #FF0000;">filters目录</span> 下新建一个 <span style="color: #FF0000;">index.js</span> 来存放所有的过滤器就足够了。<br><span style="color: #FF0000;">index.js</span>代码如下：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 封装过滤器</span>
 <span class="token comment" spellcheck="true">// 过滤器的声明可以有下列多种写法</span>
 
@@ -545,7 +550,7 @@
   uppercaseFirst
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<h2 id="二、注册过滤器"><a href="#二、注册过滤器" class="headerlink" title="二、注册过滤器"></a>二、注册过滤器</h2><p>　　然后在 <span style="color: #FF6827;">main.js</span> 中引入注册即可使用：</p>
+<h2 id="二、注册过滤器"><a href="#二、注册过滤器" class="headerlink" title="二、注册过滤器"></a>二、注册过滤器</h2><p>　　然后在 <span style="color: #FF0000;">main.js</span> 中引入注册即可使用：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> filters <span class="token keyword">from</span> <span class="token string">"./filters"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// global filters</span>
 
 <span class="token comment" spellcheck="true">// register global utility filters</span>
@@ -578,7 +583,7 @@ Object<span class="token punctuation">.</span><span class="token function">keys<
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 </code></pre>
 <h2 id="四、效果"><a href="#四、效果" class="headerlink" title="四、效果"></a>四、效果</h2><p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_use_global_filters_result.png" alt="vue_use_global_filters_result.png"></p>
-<h2 id="五、可能的报错与注意点"><a href="#五、可能的报错与注意点" class="headerlink" title="五、可能的报错与注意点"></a>五、可能的报错与注意点</h2><p>　　在 <span style="color: #FF6827;">main.js</span> 中，要<span style="color: #FF6827;">先定义过滤器, 再新建 vue 实例</span>，否则会报<span style="color: #FF6827;">Failed to resolve filter: xxx</span>的错误。</p>
+<h2 id="五、可能的报错与注意点"><a href="#五、可能的报错与注意点" class="headerlink" title="五、可能的报错与注意点"></a>五、可能的报错与注意点</h2><p>　　在 <span style="color: #FF0000;">main.js</span> 中，要<span style="color: #FF0000;">先定义过滤器, 再新建 vue 实例</span>，否则会报<span style="color: #FF0000;">Failed to resolve filter: xxx</span>的错误。</p>
 <p class="reference"><br>参考<br><a href="https://cn.vuejs.org/v2/guide/filters.html" rel="external nofollow noopener noreferrer" target="_blank">https://cn.vuejs.org/v2/guide/filters.html</a><br></p>
 
 
@@ -1080,7 +1085,7 @@ Object<span class="token punctuation">.</span><span class="token function">keys<
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1147,87 +1152,87 @@ Object<span class="token punctuation">.</span><span class="token function">keys<
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
 </script>
     
 

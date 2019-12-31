@@ -90,13 +90,6 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
-                            <a href="/categories/基础知识/">
-                                
-                                <span>基础知识</span>
-                            </a>
-                        </li>
-                    
-                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -111,9 +104,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/日常运维/">
+                            <a href="/categories/运维知识/">
                                 
-                                <span>日常运维</span>
+                                <span>运维知识</span>
                             </a>
                         </li>
                     
@@ -125,9 +118,16 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/开发环境/">
+                            <a href="/categories/技术周边/">
                                 
-                                <span>开发环境</span>
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
                             </a>
                         </li>
                     
@@ -223,13 +223,6 @@
                     <ul>
                         
                             <li>
-                                <a href="/categories/基础知识/">
-                                    
-                                    <span>基础知识</span>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -244,9 +237,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/日常运维/">
+                                <a href="/categories/运维知识/">
                                     
-                                    <span>日常运维</span>
+                                    <span>运维知识</span>
                                 </a>
                             </li>
                         
@@ -258,9 +251,16 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/开发环境/">
+                                <a href="/categories/技术周边/">
                                     
-                                    <span>开发环境</span>
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
                                 </a>
                             </li>
                         
@@ -336,93 +336,98 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 
-    #articleContent :focus {
-        outline: none;
-    }
+#articleContent :focus {
+    outline: none;
+}
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
 
-    .toc-widget {
-        padding-left: 20px;
-    }
+.toc-widget {
+    padding-left: 20px;
+}
 
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
 
-    #toc-content ol {
-        padding-left: 10px;
-    }
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
 
-    #toc-content ol li {
-        padding-left: 10px;
-    }
+#toc-content ol {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link:hover {
-        /*color: #42b983;*/
-        color: #3498db;
-        font-weight: 700;
-        text-decoration: underline;
-    }
+#toc-content ol li {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-    #toc-content .is-active-link {
-        /*color: #42b983;*/
-        color: #3498db;
-    }
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
 
-    #toc-content .is-active-link::before {
-        /*background-color: #42b983;*/
-        background-color: #3498db;
-    }
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
 
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
 
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
 
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -447,8 +452,8 @@
             <div class="post-cate">
               <i class="fa fa-bookmark fa-fw icon-category"></i>
               
-                <a href="/categories/基础知识/" class="post-category" target="_blank">
-                  基础知识
+                <a href="/categories/技术周边/" class="post-category" target="_blank">
+                  技术周边
                 </a>
               
             </div>
@@ -485,17 +490,18 @@
 <p>之前有朋友问我：什么是前后端分离。他说北度搜到的都是大篇幅文章，看完还是很懵。<br>这里我简单总结下，如果有疏漏和不对的地方还请路过的网友指出。</p>
 </blockquote>
 <h2 id="一、先用一张图来解释"><a href="#一、先用一张图来解释" class="headerlink" title="一、先用一张图来解释"></a><span style="font-size: 27px; color:#e74c3c;">一、先用一张图来解释</span></h2><p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/what_is_frontend_and backend.jpg" alt="what_is_frontend_and backend.jpg"></p>
-<h2 id="二、为什么要前后端分离（优点）"><a href="#二、为什么要前后端分离（优点）" class="headerlink" title="二、为什么要前后端分离（优点）"></a><span style="font-size: 27px; color:#e74c3c;">二、为什么要前后端分离（优点）</span></h2><h3 id="1-全端适应"><a href="#1-全端适应" class="headerlink" title="1. 全端适应"></a><span style="font-size: 18px; color: #3498db;">1. 全端适应</span></h3><p>　　PC、APP、PAD等。</p>
-<h3 id="2-SPA开发模式开始流行"><a href="#2-SPA开发模式开始流行" class="headerlink" title="2. SPA开发模式开始流行"></a><span style="font-size: 18px; color: #3498db;">2. SPA开发模式开始流行</span></h3><p>　　SPA即Single Page Web Application，俗称单页应用。</p>
-<h3 id="3-前后端开发职责不清"><a href="#3-前后端开发职责不清" class="headerlink" title="3. 前后端开发职责不清"></a><span style="font-size: 18px; color: #3498db;">3. 前后端开发职责不清</span></h3><p>　　比如JSP、PHP页面，到底是由前端写还是后端写 (所有的模板语言会遇到这样的问题)。</p>
-<h3 id="4-开发效率问题，前后端互相等待"><a href="#4-开发效率问题，前后端互相等待" class="headerlink" title="4. 开发效率问题，前后端互相等待"></a><span style="font-size: 18px; color: #3498db;">4. 开发效率问题，前后端互相等待</span></h3><p>　　要把html转成template等，效率比较低。</p>
-<h3 id="5-前端一直配合着后端，能力受限"><a href="#5-前端一直配合着后端，能力受限" class="headerlink" title="5. 前端一直配合着后端，能力受限"></a><span style="font-size: 18px; color: #3498db;">5. 前端一直配合着后端，能力受限</span></h3><p>　　很多交互逻辑要在template里面由后端实现，前端只负责提供静态html，对前端工程师的能力提高不利。</p>
-<h3 id="6-后台开发语言和模板高度耦合，导致开发语言依赖严重"><a href="#6-后台开发语言和模板高度耦合，导致开发语言依赖严重" class="headerlink" title="6. 后台开发语言和模板高度耦合，导致开发语言依赖严重"></a><span style="font-size: 18px; color: #3498db;">6. 后台开发语言和模板高度耦合，导致开发语言依赖严重</span></h3><p>　　比如后端是Java写的，后期要换成Python，可是模板中嵌入了很多Java语法，等于要重写整个template。</p>
-<h2 id="三、前后端分离缺点"><a href="#三、前后端分离缺点" class="headerlink" title="三、前后端分离缺点"></a><span style="font-size: 27px; color:#e74c3c;">三、前后端分离缺点</span></h2><h3 id="1-前端学习门槛增加、前端工作量加大"><a href="#1-前端学习门槛增加、前端工作量加大" class="headerlink" title="1. 前端学习门槛增加、前端工作量加大"></a><span style="font-size: 18px; color: #3498db;">1. 前端学习门槛增加、前端工作量加大</span></h3><p>　　前端需要实现一部分的交互逻辑。</p>
-<h3 id="2-数据依赖导致文档重要性增加"><a href="#2-数据依赖导致文档重要性增加" class="headerlink" title="2. 数据依赖导致文档重要性增加"></a><span style="font-size: 18px; color: #3498db;">2. 数据依赖导致文档重要性增加</span></h3><p>　　接口文档需要很详细，且要及时更新。（一个段子，程序员最痛恨两件事：1.别人的代码没写文档，2.写文档）</p>
-<h3 id="3-SEO难度加大"><a href="#3-SEO难度加大" class="headerlink" title="3. SEO难度加大"></a><span style="font-size: 18px; color: #3498db;">3. SEO难度加大</span></h3><p>　　前端渲染的页面不利于搜索引擎爬虫爬取，但有办法解决的，即SSR策略。(以vue为例可以参考这个链接：<a href="https://segmentfault.com/a/1190000007933349" rel="external nofollow noopener noreferrer" target="_blank">https://segmentfault.com/a/1190000007933349</a>)</p>
-<h2 id="四、综上"><a href="#四、综上" class="headerlink" title="四、综上"></a><span style="font-size: 27px; color:#e74c3c;">四、综上</span></h2><h3 id="1-一种趋势"><a href="#1-一种趋势" class="headerlink" title="1. 一种趋势"></a><span style="font-size: 18px; color: #3498db;">1. 一种趋势</span></h3><p>　　前后端分离有一些缺点，但都是可以想办法解决的，总的来说优点大于缺点，而且也是一种趋势。</p>
-<h3 id="2-不过在一些场合其实也没有必要前后端分离"><a href="#2-不过在一些场合其实也没有必要前后端分离" class="headerlink" title="2. 不过在一些场合其实也没有必要前后端分离"></a><span style="font-size: 18px; color: #3498db;">2. 不过在一些场合其实也没有必要前后端分离</span></h3><p>　　比如写个人网站、内部小运维系统等。这些一般情况下都是一个人完成的，如果前后端分离写，就有frontend和backend两套代码要写，打开两个IDE，颇有左右手互搏的感觉。<br>　　当然如果为了练习和学习，写个这样的博客系统也是不错的。</p>
+<h2 id="二、为什么要前后端分离（优点）"><a href="#二、为什么要前后端分离（优点）" class="headerlink" title="二、为什么要前后端分离（优点）"></a><span style="font-size: 27px; color:#e74c3c;">二、为什么要前后端分离（优点）</span></h2><h3 id="1-全端适应"><a href="#1-全端适应" class="headerlink" title="1. 全端适应"></a><span style="font-size: 18px; color: #3498db;">1. 全端适应</span></h3><p>PC、APP、PAD等。</p>
+<h3 id="2-SPA开发模式开始流行"><a href="#2-SPA开发模式开始流行" class="headerlink" title="2. SPA开发模式开始流行"></a><span style="font-size: 18px; color: #3498db;">2. SPA开发模式开始流行</span></h3><p>SPA即Single Page Web Application，俗称单页应用。</p>
+<h3 id="3-前后端开发职责不清"><a href="#3-前后端开发职责不清" class="headerlink" title="3. 前后端开发职责不清"></a><span style="font-size: 18px; color: #3498db;">3. 前后端开发职责不清</span></h3><p>比如JSP、PHP页面，到底是由前端写还是后端写 (所有的模板语言会遇到这样的问题)。</p>
+<h3 id="4-开发效率问题，前后端互相等待"><a href="#4-开发效率问题，前后端互相等待" class="headerlink" title="4. 开发效率问题，前后端互相等待"></a><span style="font-size: 18px; color: #3498db;">4. 开发效率问题，前后端互相等待</span></h3><p>要把html转成template等，效率比较低。</p>
+<h3 id="5-前端一直配合着后端，能力受限"><a href="#5-前端一直配合着后端，能力受限" class="headerlink" title="5. 前端一直配合着后端，能力受限"></a><span style="font-size: 18px; color: #3498db;">5. 前端一直配合着后端，能力受限</span></h3><p>很多交互逻辑要在template里面由后端实现，前端只负责提供静态html，对前端工程师的能力提高不利。</p>
+<h3 id="6-后台开发语言和模板高度耦合，导致开发语言依赖严重"><a href="#6-后台开发语言和模板高度耦合，导致开发语言依赖严重" class="headerlink" title="6. 后台开发语言和模板高度耦合，导致开发语言依赖严重"></a><span style="font-size: 18px; color: #3498db;">6. 后台开发语言和模板高度耦合，导致开发语言依赖严重</span></h3><p>比如后端是Java写的，后期要换成Python，可是模板中嵌入了很多Java语法，等于要重写整个template。</p>
+<h2 id="三、前后端分离缺点"><a href="#三、前后端分离缺点" class="headerlink" title="三、前后端分离缺点"></a><span style="font-size: 27px; color:#e74c3c;">三、前后端分离缺点</span></h2><h3 id="1-前端学习门槛增加、前端工作量加大"><a href="#1-前端学习门槛增加、前端工作量加大" class="headerlink" title="1. 前端学习门槛增加、前端工作量加大"></a><span style="font-size: 18px; color: #3498db;">1. 前端学习门槛增加、前端工作量加大</span></h3><p>前端需要实现一部分的交互逻辑。</p>
+<h3 id="2-数据依赖导致文档重要性增加"><a href="#2-数据依赖导致文档重要性增加" class="headerlink" title="2. 数据依赖导致文档重要性增加"></a><span style="font-size: 18px; color: #3498db;">2. 数据依赖导致文档重要性增加</span></h3><p>接口文档需要很详细，且要及时更新。（一个段子，程序员最痛恨两件事：1.别人的代码没写文档，2.写文档）</p>
+<h3 id="3-SEO难度加大"><a href="#3-SEO难度加大" class="headerlink" title="3. SEO难度加大"></a><span style="font-size: 18px; color: #3498db;">3. SEO难度加大</span></h3><p>前端渲染的页面不利于搜索引擎爬虫爬取，但有办法解决的，即SSR策略。(以vue为例可以参考这个链接：<a href="https://segmentfault.com/a/1190000007933349" rel="external nofollow noopener noreferrer" target="_blank">https://segmentfault.com/a/1190000007933349</a>)</p>
+<h2 id="四、综上"><a href="#四、综上" class="headerlink" title="四、综上"></a><span style="font-size: 27px; color:#e74c3c;">四、综上</span></h2><h3 id="1-一种趋势"><a href="#1-一种趋势" class="headerlink" title="1. 一种趋势"></a><span style="font-size: 18px; color: #3498db;">1. 一种趋势</span></h3><p>前后端分离有一些缺点，但都是可以想办法解决的，总的来说优点大于缺点，而且也是一种趋势。</p>
+<h3 id="2-不过在一些场合其实也没有必要前后端分离"><a href="#2-不过在一些场合其实也没有必要前后端分离" class="headerlink" title="2. 不过在一些场合其实也没有必要前后端分离"></a><span style="font-size: 18px; color: #3498db;">2. 不过在一些场合其实也没有必要前后端分离</span></h3><p>比如写个人网站、内部小运维系统等。这些一般情况下都是一个人完成的，如果前后端分离写，就有frontend和backend两套代码要写，打开两个IDE，颇有左右手互搏的感觉。</p>
+<p>当然如果为了练习和学习，写个这样的博客系统也是不错的。</p>
 <h2 id="五、补充知识点-restful-api"><a href="#五、补充知识点-restful-api" class="headerlink" title="五、补充知识点 - restful api"></a><span style="font-size: 27px; color:#e74c3c;">五、补充知识点 - restful api</span></h2><h3 id="restful-api目前是前后端分离最佳实现"><a href="#restful-api目前是前后端分离最佳实现" class="headerlink" title="restful api目前是前后端分离最佳实现"></a><span style="font-size: 18px; color: #3498db;">restful api目前是前后端分离最佳实现</span></h3><ol>
 <li>restful api是一种规范，作为开发时的标准</li>
 <li>轻量，直接通过http。不需要额外的协议，post/get/put/delete操作</li>
@@ -970,8 +976,8 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/开发环境/" class="post-category" target="_blank">
-                                    开发环境
+                            <a href="/categories/运维知识/" class="post-category" target="_blank">
+                                    运维知识
                                 </a>
                             
                             
@@ -991,7 +997,7 @@
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1054,87 +1060,87 @@
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
 </script>
     
 

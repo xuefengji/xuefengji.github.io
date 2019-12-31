@@ -90,13 +90,6 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
-                            <a href="/categories/基础知识/">
-                                
-                                <span>基础知识</span>
-                            </a>
-                        </li>
-                    
-                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -111,9 +104,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/日常运维/">
+                            <a href="/categories/运维知识/">
                                 
-                                <span>日常运维</span>
+                                <span>运维知识</span>
                             </a>
                         </li>
                     
@@ -125,9 +118,16 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/开发环境/">
+                            <a href="/categories/技术周边/">
                                 
-                                <span>开发环境</span>
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
                             </a>
                         </li>
                     
@@ -223,13 +223,6 @@
                     <ul>
                         
                             <li>
-                                <a href="/categories/基础知识/">
-                                    
-                                    <span>基础知识</span>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -244,9 +237,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/日常运维/">
+                                <a href="/categories/运维知识/">
                                     
-                                    <span>日常运维</span>
+                                    <span>运维知识</span>
                                 </a>
                             </li>
                         
@@ -258,9 +251,16 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/开发环境/">
+                                <a href="/categories/技术周边/">
                                     
-                                    <span>开发环境</span>
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
                                 </a>
                             </li>
                         
@@ -336,93 +336,98 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 
-    #articleContent :focus {
-        outline: none;
-    }
+#articleContent :focus {
+    outline: none;
+}
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
 
-    .toc-widget {
-        padding-left: 20px;
-    }
+.toc-widget {
+    padding-left: 20px;
+}
 
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
 
-    #toc-content ol {
-        padding-left: 10px;
-    }
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
 
-    #toc-content ol li {
-        padding-left: 10px;
-    }
+#toc-content ol {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link:hover {
-        /*color: #42b983;*/
-        color: #3498db;
-        font-weight: 700;
-        text-decoration: underline;
-    }
+#toc-content ol li {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-    #toc-content .is-active-link {
-        /*color: #42b983;*/
-        color: #3498db;
-    }
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
 
-    #toc-content .is-active-link::before {
-        /*background-color: #42b983;*/
-        background-color: #3498db;
-    }
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
 
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
 
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
 
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -491,8 +496,8 @@
 <p>　　在日常前后端分离的开发模式中，前端开发者时常需要等待后台接口的确定和完成，这样会处于一个被动的状态，工作效率也不高。</p>
 <p>　　因此，我们一般采用模拟数据（mock）的方式去开发项目，这样会使我们的前后端同时进行，提高团队开发效率。同时，如果有了自主mock的能力，我们甚至可以拿着自己推测的数据结构，找后台同学对接，最起码，这个时候，我们有主动推进的资本，而不是完全被动等待。</p>
 <p>　　下面我整理几种自己在vue中常用的mock方式，根据自己情况选择其中的一种即可。<br>　　当然在最之前，我们需要安装axios，使用命令 <code>npm install axios --save</code> 即可。</p>
-<p>　　PS：这篇博客我使用的是 <span style="color: #FF6827;">vue-cli3</span> 构建的vue项目，使用 vue-cli2 的网上有很多人整理了，需要的话Google一下即可。</p>
-<h2 id="一、请求本地静态mock数据"><a href="#一、请求本地静态mock数据" class="headerlink" title="一、请求本地静态mock数据"></a>一、请求本地静态mock数据</h2><h3 id="1-构造数据"><a href="#1-构造数据" class="headerlink" title="1. 构造数据"></a><span style="font-size: 18px; color: #159957;">1. 构造数据</span></h3><p>　　在 3.x 版本中，因为static目录被移除，新增了public目录，且这个目录下的静态资源不会经过webpack的处理，会被直接拷贝，所以我们能够直接访问到该目录下的资源。<br>　　因此，我们在 <span style="color: #FF6827;">public目录</span> 下创建一个 <span style="color: #FF6827;">mock目录</span>，然后在其中放置 <span style="color: #FF6827;">.json格式的模拟数据文件</span>。<br>　　一般建议<span style="color: #FF6827;">本地mock数据的文件夹层级，与接口url相对应</span>。这样可以通过文件夹名称，快速定位到指定接口返回的mock数据。<br>　　这里简单处理，在 <span style="color: #FF6827;">public/mock/users.js</span> 中写入以下内容：</p>
+<p>　　PS：这篇博客我使用的是 <span style="color: #FF0000;">vue-cli3</span> 构建的vue项目，使用 vue-cli2 的网上有很多人整理了，需要的话Google一下即可。</p>
+<h2 id="一、请求本地静态mock数据"><a href="#一、请求本地静态mock数据" class="headerlink" title="一、请求本地静态mock数据"></a>一、请求本地静态mock数据</h2><h3 id="1-构造数据"><a href="#1-构造数据" class="headerlink" title="1. 构造数据"></a><span style="font-size: 18px; color: #159957;">1. 构造数据</span></h3><p>　　在 3.x 版本中，因为static目录被移除，新增了public目录，且这个目录下的静态资源不会经过webpack的处理，会被直接拷贝，所以我们能够直接访问到该目录下的资源。<br>　　因此，我们在 <span style="color: #FF0000;">public目录</span> 下创建一个 <span style="color: #FF0000;">mock目录</span>，然后在其中放置 <span style="color: #FF0000;">.json格式的模拟数据文件</span>。<br>　　一般建议<span style="color: #FF0000;">本地mock数据的文件夹层级，与接口url相对应</span>。这样可以通过文件夹名称，快速定位到指定接口返回的mock数据。<br>　　这里简单处理，在 <span style="color: #FF0000;">public/mock/users.js</span> 中写入以下内容：</p>
 <pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"users"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span>
@@ -516,7 +521,7 @@
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2. 配置文件"></a><span style="font-size: 18px; color: #159957;">2. 配置文件</span></h3><p>　　另外由于 3.x 版本移除了 config、build 等配置目录，如果需要进行相关配置我们需要在根目录下创建 vue.config.js 进行配置。<br>　　因此，我们在根目录下新建一个 <span style="color: #FF6827;">vue.config.js</span> 文件，该文件是调整 webpack 配置最简单的方式，将会被 webpack-merge 合并入最终的 webpack 配置中。<br>　　在 <span style="color: #FF6827;">vue.config.js</span> 中编写以下内容：</p>
+<h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2. 配置文件"></a><span style="font-size: 18px; color: #159957;">2. 配置文件</span></h3><p>　　另外由于 3.x 版本移除了 config、build 等配置目录，如果需要进行相关配置我们需要在根目录下创建 vue.config.js 进行配置。<br>　　因此，我们在根目录下新建一个 <span style="color: #FF0000;">vue.config.js</span> 文件，该文件是调整 webpack 配置最简单的方式，将会被 webpack-merge 合并入最终的 webpack 配置中。<br>　　在 <span style="color: #FF0000;">vue.config.js</span> 中编写以下内容：</p>
 <pre class=" language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     proxy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
@@ -531,7 +536,7 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="3-组件引用"><a href="#3-组件引用" class="headerlink" title="3. 组件引用"></a><span style="font-size: 18px; color: #159957;">3. 组件引用</span></h3><p>　　最后在组件 <span style="color: #FF6827;">Home.vue</span> 中调用这个API，JavaScript代码如下：</p>
+<h3 id="3-组件引用"><a href="#3-组件引用" class="headerlink" title="3. 组件引用"></a><span style="font-size: 18px; color: #159957;">3. 组件引用</span></h3><p>　　最后在组件 <span style="color: #FF0000;">Home.vue</span> 中调用这个API，JavaScript代码如下：</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
 <span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span>
 
@@ -553,7 +558,7 @@
 <h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a><span style="font-size: 18px; color: #159957;">1. 安装</span></h3><p>　　首先安装 json-server，由于只用于开发环境使用，所以执行如下命令安装：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> json-server --save-dev
 </code></pre>
-<h3 id="2-构造数据"><a href="#2-构造数据" class="headerlink" title="2. 构造数据"></a><span style="font-size: 18px; color: #159957;">2. 构造数据</span></h3><p>　　在 <span style="color: #FF6827;">public/mock/</span> 目录下创建一个 <span style="color: #FF6827;">db.json</span> 文件，然后写入数据（每一个key对应一个api）：</p>
+<h3 id="2-构造数据"><a href="#2-构造数据" class="headerlink" title="2. 构造数据"></a><span style="font-size: 18px; color: #159957;">2. 构造数据</span></h3><p>　　在 <span style="color: #FF0000;">public/mock/</span> 目录下创建一个 <span style="color: #FF0000;">db.json</span> 文件，然后写入数据（每一个key对应一个api）：</p>
 <pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"users"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token punctuation">{</span>
@@ -597,7 +602,7 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3. 配置文件"></a><span style="font-size: 18px; color: #159957;">3. 配置文件</span></h3><p>　　同样在 <span style="color: #FF6827;">public/mock/</span> 目录下创建一个 <span style="color: #FF6827;">server.js</span> 文件，然后编辑如下：</p>
+<h3 id="3-配置文件"><a href="#3-配置文件" class="headerlink" title="3. 配置文件"></a><span style="font-size: 18px; color: #159957;">3. 配置文件</span></h3><p>　　同样在 <span style="color: #FF0000;">public/mock/</span> 目录下创建一个 <span style="color: #FF0000;">server.js</span> 文件，然后编辑如下：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> jsonServer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"json-server"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> server <span class="token operator">=</span> jsonServer<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> router <span class="token operator">=</span> jsonServer<span class="token punctuation">.</span><span class="token function">router</span><span class="token punctuation">(</span><span class="token string">"./db.json"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -628,7 +633,7 @@ server<span class="token punctuation">.</span><span class="token function">liste
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"JSON Server is running at http://localhost:3000/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>　　设置请求接口代理，在根目录下新建一个 <span style="color: #FF6827;">vue.config.js</span> 文件，并编写以下内容（注意和上面请求本地静态mock数据时的配置略有不同）：</p>
+<p>　　设置请求接口代理，在根目录下新建一个 <span style="color: #FF0000;">vue.config.js</span> 文件，并编写以下内容（注意和上面请求本地静态mock数据时的配置略有不同）：</p>
 <pre class=" language-javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     proxy<span class="token punctuation">:</span> <span class="token punctuation">{</span>
@@ -643,7 +648,7 @@ server<span class="token punctuation">.</span><span class="token function">liste
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="4-组件引用"><a href="#4-组件引用" class="headerlink" title="4. 组件引用"></a><span style="font-size: 18px; color: #159957;">4. 组件引用</span></h3><p>　　最后在组件 <span style="color: #FF6827;">Home.vue</span> 中调用这些API，JavaScript代码如下：</p>
+<h3 id="4-组件引用"><a href="#4-组件引用" class="headerlink" title="4. 组件引用"></a><span style="font-size: 18px; color: #159957;">4. 组件引用</span></h3><p>　　最后在组件 <span style="color: #FF0000;">Home.vue</span> 中调用这些API，JavaScript代码如下：</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
 <span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">"axios"</span><span class="token punctuation">;</span>
 
@@ -666,14 +671,14 @@ server<span class="token punctuation">.</span><span class="token function">liste
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 </code></pre>
-<h3 id="5-启动项目和服务器"><a href="#5-启动项目和服务器" class="headerlink" title="5. 启动项目和服务器"></a><span style="font-size: 18px; color: #159957;">5. 启动项目和服务器</span></h3><p>　　执行命令 <code>npm run serve</code> 启动项目，同时在 <span style="color: #FF6827;">public/mock/</span> 目录下执行命令 <code>node server.js</code> 启动 api 服务器。<br>　　此时访问3000端口可以查看api服务器页面，点击api名称可以直接查看返回数据；<br>　　访问8080端口可以进入项目页面，观察结果。</p>
-<h2 id="三、使用mock-js实现mock数据"><a href="#三、使用mock-js实现mock数据" class="headerlink" title="三、使用mock.js实现mock数据"></a>三、使用mock.js实现mock数据</h2><p>　　mock.js是一个模拟后台接口的JS库。它可以在接口没出来时非常方便的模拟数据，用法简单，方便扩展，支持<span style="color: #FF6827;">种类丰富的随机数据</span>，并且它易于扩展，可接受请求参数，根据参数定制数据，足以满足日常开发需求。</p>
-<p>　　该库对开发无侵入，不需要对系统代码进行修改，即可通过<span style="color: #FF6827;">拦截Ajax请求</span>，返回模拟数据以供开发测试使用，当项目上线之后只需取消引用它即可。</p>
+<h3 id="5-启动项目和服务器"><a href="#5-启动项目和服务器" class="headerlink" title="5. 启动项目和服务器"></a><span style="font-size: 18px; color: #159957;">5. 启动项目和服务器</span></h3><p>　　执行命令 <code>npm run serve</code> 启动项目，同时在 <span style="color: #FF0000;">public/mock/</span> 目录下执行命令 <code>node server.js</code> 启动 api 服务器。<br>　　此时访问3000端口可以查看api服务器页面，点击api名称可以直接查看返回数据；<br>　　访问8080端口可以进入项目页面，观察结果。</p>
+<h2 id="三、使用mock-js实现mock数据"><a href="#三、使用mock-js实现mock数据" class="headerlink" title="三、使用mock.js实现mock数据"></a>三、使用mock.js实现mock数据</h2><p>　　mock.js是一个模拟后台接口的JS库。它可以在接口没出来时非常方便的模拟数据，用法简单，方便扩展，支持<span style="color: #FF0000;">种类丰富的随机数据</span>，并且它易于扩展，可接受请求参数，根据参数定制数据，足以满足日常开发需求。</p>
+<p>　　该库对开发无侵入，不需要对系统代码进行修改，即可通过<span style="color: #FF0000;">拦截Ajax请求</span>，返回模拟数据以供开发测试使用，当项目上线之后只需取消引用它即可。</p>
 <p>　　接下来演示一下如何在Vue项目中组织和使用mock.js进行数据模拟。</p>
 <h3 id="1-安装-1"><a href="#1-安装-1" class="headerlink" title="1. 安装"></a><span style="font-size: 18px; color: #159957;">1. 安装</span></h3><p>　　首先安装 mock.js，由于只用于开发环境使用，所以执行如下命令安装：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> mockjs --save-dev
 </code></pre>
-<h3 id="2-编写模拟数据接口"><a href="#2-编写模拟数据接口" class="headerlink" title="2. 编写模拟数据接口"></a><span style="font-size: 18px; color: #159957;">2. 编写模拟数据接口</span></h3><p>　　在 <span style="color: #FF6827;">src目录</span> 下创建一个 <span style="color: #FF6827;">mock目录</span> ，然后在里面创建一个 <span style="color: #FF6827;">index.js</span> 文件，作为mock各个模块的导出点，供 <span style="color: #FF6827;">src/main.js</span> 使用。<br>　　在 <span style="color: #FF6827;">src/mock/modules</span> 目录下，创建 <span style="color: #FF6827;">xxx.js</span> 规则，模拟各个模块数据，供 <span style="color: #FF6827;">mock</span> 使用。<br>　　这样按模块划分后的目录结构大致如下所示：</p>
+<h3 id="2-编写模拟数据接口"><a href="#2-编写模拟数据接口" class="headerlink" title="2. 编写模拟数据接口"></a><span style="font-size: 18px; color: #159957;">2. 编写模拟数据接口</span></h3><p>　　在 <span style="color: #FF0000;">src目录</span> 下创建一个 <span style="color: #FF0000;">mock目录</span> ，然后在里面创建一个 <span style="color: #FF0000;">index.js</span> 文件，作为mock各个模块的导出点，供 <span style="color: #FF0000;">src/main.js</span> 使用。<br>　　在 <span style="color: #FF0000;">src/mock/modules</span> 目录下，创建 <span style="color: #FF0000;">xxx.js</span> 规则，模拟各个模块数据，供 <span style="color: #FF0000;">mock</span> 使用。<br>　　这样按模块划分后的目录结构大致如下所示：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token keyword">.</span>
 ├── src
 <span class="token operator">|</span>   ├── mock
@@ -684,7 +689,7 @@ server<span class="token punctuation">.</span><span class="token function">liste
 <span class="token operator">|</span>           └── category.js
 <span class="token operator">|</span>
 </code></pre>
-<p><span style="color: #FF6827;">index.js</span>代码如下：</p>
+<p><span style="color: #FF0000;">index.js</span>代码如下：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">/**
  * 定义本地测试接口，最好与正式接口一致，尽可能减少联调阶段修改的工作量
  */</span>
@@ -703,7 +708,7 @@ server<span class="token punctuation">.</span><span class="token function">liste
 <span class="token function">mock</span><span class="token punctuation">(</span><span class="token regex">/\/api\/users\/profile/</span><span class="token punctuation">,</span> <span class="token string">"get"</span><span class="token punctuation">,</span> user<span class="token punctuation">.</span>profile<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">mock</span><span class="token punctuation">(</span><span class="token regex">/\/api\/users\/logout/</span><span class="token punctuation">,</span> <span class="token string">"post"</span><span class="token punctuation">,</span> user<span class="token punctuation">.</span>logout<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><span style="color: #FF6827;">user.js</span>代码如下：</p>
+<p><span style="color: #FF0000;">user.js</span>代码如下：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Random <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"mockjs"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 导出随机函数</span>
 
 <span class="token keyword">function</span> <span class="token function">login</span><span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -745,8 +750,8 @@ server<span class="token punctuation">.</span><span class="token function">liste
   logout
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
-<p><span style="color: #FF6827;">article.js</span>和<span style="color: #FF6827;">category.js</span>代码省略。</p>
-<h3 id="3-导入模拟数据接口"><a href="#3-导入模拟数据接口" class="headerlink" title="3. 导入模拟数据接口"></a><span style="font-size: 18px; color: #159957;">3. 导入模拟数据接口</span></h3><p>　　模拟好假数据接口之后，我们还要在 <span style="color: #FF6827;">main.js</span> 中将接口导入，这样在项目中任意组件内都可以请求这些接口了。<br><span style="color: #FF6827;">main.js</span>编辑如下：</p>
+<p><span style="color: #FF0000;">article.js</span>和<span style="color: #FF0000;">category.js</span>代码省略。</p>
+<h3 id="3-导入模拟数据接口"><a href="#3-导入模拟数据接口" class="headerlink" title="3. 导入模拟数据接口"></a><span style="font-size: 18px; color: #159957;">3. 导入模拟数据接口</span></h3><p>　　模拟好假数据接口之后，我们还要在 <span style="color: #FF0000;">main.js</span> 中将接口导入，这样在项目中任意组件内都可以请求这些接口了。<br><span style="color: #FF0000;">main.js</span>编辑如下：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">"vue"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">"./App.vue"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">"./router"</span><span class="token punctuation">;</span>
@@ -763,7 +768,7 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
   render<span class="token punctuation">:</span> h <span class="token operator">=</span><span class="token operator">></span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">"#app"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="4-组件引用-1"><a href="#4-组件引用-1" class="headerlink" title="4. 组件引用"></a><span style="font-size: 18px; color: #159957;">4. 组件引用</span></h3><p>　　最后在组件 <span style="color: #FF6827;">Home.vue</span> 中调用这些API，以Home.vue这个组件为例，代码如下：</p>
+<h3 id="4-组件引用-1"><a href="#4-组件引用-1" class="headerlink" title="4. 组件引用"></a><span style="font-size: 18px; color: #159957;">4. 组件引用</span></h3><p>　　最后在组件 <span style="color: #FF0000;">Home.vue</span> 中调用这些API，以Home.vue这个组件为例，代码如下：</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>home<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>profile<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><span class="token entity" title="&#8195;">&amp;#8195;</span>
@@ -812,8 +817,8 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
 </code></pre>
 <h3 id="5-启动项目"><a href="#5-启动项目" class="headerlink" title="5. 启动项目"></a><span style="font-size: 18px; color: #159957;">5. 启动项目</span></h3><p>　　执行命令 <code>npm run serve</code> 启动项目，打开调试窗口，观察打印结果。</p>
 <h3 id="6-注意事项"><a href="#6-注意事项" class="headerlink" title="6. 注意事项"></a><span style="font-size: 18px; color: #159957;">6. 注意事项</span></h3><p>　　●　mock.js依赖中保存着大量用于伪造假数据的静态数据，引入的时候打包得到的文件体积会明显增大，这是正常的。</p>
-<p>　　●　mock.js模拟数据后，会将命中配置规则（正则表达式）的请求拦截，这时候在浏览器的network面板是<span style="color: #FF6827;">无法看到数据返回的</span>，可以通过打印数据的方式观察。</p>
-<p>　　●　当后端写好真实接口以后，<span style="color: #FF6827;">不要忘记</span>注释掉在 <span style="color: #FF6827;">main.js</span> 中引入mock文件的那行代码。你也可以选择删掉创建的 <span style="color: #FF6827;">mock目录</span> 和 <span style="color: #FF6827;">main.js</span> 中的那行代码。</p>
+<p>　　●　mock.js模拟数据后，会将命中配置规则（正则表达式）的请求拦截，这时候在浏览器的network面板是<span style="color: #FF0000;">无法看到数据返回的</span>，可以通过打印数据的方式观察。</p>
+<p>　　●　当后端写好真实接口以后，<span style="color: #FF0000;">不要忘记</span>注释掉在 <span style="color: #FF0000;">main.js</span> 中引入mock文件的那行代码。你也可以选择删掉创建的 <span style="color: #FF0000;">mock目录</span> 和 <span style="color: #FF0000;">main.js</span> 中的那行代码。</p>
 <h3 id="7-mock-js补充知识点"><a href="#7-mock-js补充知识点" class="headerlink" title="7. mock.js补充知识点"></a><span style="font-size: 18px; color: #159957;">7. mock.js补充知识点</span></h3><p>　　mock.js内含各种内置的API，以及使用方法示例。主要包括以下几类：</p>
 <p>　　●　基础数据类型 (Basic)<br>　　●　日期时间 (Date)<br>　　●　占位图片 (Image)<br>　　●　颜色 (Color)<br>　　●　文本 (Text)<br>　　●　姓名 (Name)<br>　　●　网络相关 (Web)<br>　　●　地址 (Address)<br>　　●　工具函数 (Helper)<br>　　●　等等</p>
 <p>　　具体可以查阅<a href="https://github.com/nuysoft/Mock/wiki/Basic" title="Mockjs API 文档" rel="external nofollow noopener noreferrer" target="_blank">Mockjs API 文档</a></p>
@@ -1310,7 +1315,7 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1377,87 +1382,87 @@ Vue<span class="token punctuation">.</span>config<span class="token punctuation"
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
 </script>
     
 

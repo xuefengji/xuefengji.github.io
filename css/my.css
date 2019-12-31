@@ -37,7 +37,7 @@ nav .brand-logo {
 .recommend .tag-card {
   position: relative;
   width: 98%;
-  height: 80px;
+  height: 50px;
   max-height: 300px;
   margin-bottom: 10px;
   margin-top: 10px;
@@ -47,18 +47,47 @@ nav .brand-logo {
   color: rgba(0, 0, 0, .87);
   background: #fff 50%;
   background-size: cover;
-  box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+  /*box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);*/
 }
+
+/* card hover --start */
+.recommend .tag-card::before,
+.recommend .tag-card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+.recommend .tag-card::before{
+  transform-origin: left top;
+}
+.recommend .tag-card::after{
+  transform-origin: right bottom;
+}
+.recommend .tag-card:hover::before,
+.recommend .tag-card:hover::after,
+.recommend .tag-card:focus::before,
+.recommend .tag-card:focus:after {
+  transform: scale3d(1, 1, 1);
+}
+/* card hover --end */
 
 .recommend .tag-card .tag-body {
   position: relative;
   margin: 0 auto;
-  padding: 1.4rem 1.25rem;
+  /*padding: 1.4rem 1.25rem;*/
+  line-height: 50px;
   z-index: 2;
 }
 
 .recommend .tag-card a {
-  font-size: 25px;
+  font-size: 18px;
   color: #fff;
 }
 
@@ -68,10 +97,10 @@ nav .brand-logo {
 }
 
 .recommend .tag-card:hover {
-  box-shadow: 0 10px 50px rgba(51, 51, 51, .25);
-  -webkit-transform: translateY(-10px);
-  -moz-transform: translateY(-10px);
-  transform: translateY(-10px)
+  /*box-shadow: 0 10px 50px rgba(51, 51, 51, .25);*/
+  /*-webkit-transform: translateY(-10px);*/
+  /*-moz-transform: translateY(-10px);*/
+  /*transform: translateY(-10px)*/
 }
 
 /* article cover */
@@ -95,6 +124,20 @@ blockquote {
 }
 
 /* article content reference */
+#artDetail h2 {
+  padding-bottom: 12px;
+  font-size: 24px;
+  border-bottom: 1px solid #ececec;
+}
+
+#artDetail h1, #artDetail h2, #artDetail h3, #artDetail h4, #artDetail h5, #artDetail h6 {
+  color: #333;
+  line-height: 1.5;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
 #artDetail .reference {
   text-align: right;
   font-size: 14px !important;

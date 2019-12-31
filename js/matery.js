@@ -7,7 +7,9 @@ $(function () {
     $('article .article').hover(function () {
       $(this).addClass(animateClass);
     }, function () {
-      $(this).removeClass(animateClass);
+      // $(this).removeClass(animateClass);
+      // fix: 下一篇位移到最右边
+      $(this).addClass(animateClass);
     });
   };
   articleCardHover();

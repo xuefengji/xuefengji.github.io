@@ -6,7 +6,7 @@
   <meta name="generator" content="django">
   <meta charset="utf-8">
   <meta name="keywords" content="nodejs安装,nodejs镜像源,nodejs全局模块">
-  <meta name="description" content="nodejs安装及npm镜像源、全局模块路径的设置_Windows　　到Node.js官网下载 .msi 文件，安装好以后在cmd">
+  <meta name="description" content="nodejs安装及npm镜像源、全局模块路径的设置_Windows到Node.js官网下载 .msi 文件，安装好以后在 cm">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -90,13 +90,6 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
-                            <a href="/categories/基础知识/">
-                                
-                                <span>基础知识</span>
-                            </a>
-                        </li>
-                    
-                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -111,9 +104,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/日常运维/">
+                            <a href="/categories/运维知识/">
                                 
-                                <span>日常运维</span>
+                                <span>运维知识</span>
                             </a>
                         </li>
                     
@@ -125,9 +118,16 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/开发环境/">
+                            <a href="/categories/技术周边/">
                                 
-                                <span>开发环境</span>
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
                             </a>
                         </li>
                     
@@ -223,13 +223,6 @@
                     <ul>
                         
                             <li>
-                                <a href="/categories/基础知识/">
-                                    
-                                    <span>基础知识</span>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -244,9 +237,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/日常运维/">
+                                <a href="/categories/运维知识/">
                                     
-                                    <span>日常运维</span>
+                                    <span>运维知识</span>
                                 </a>
                             </li>
                         
@@ -258,9 +251,16 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/开发环境/">
+                                <a href="/categories/技术周边/">
                                     
-                                    <span>开发环境</span>
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
                                 </a>
                             </li>
                         
@@ -336,93 +336,98 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 
-    #articleContent :focus {
-        outline: none;
-    }
+#articleContent :focus {
+    outline: none;
+}
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
 
-    .toc-widget {
-        padding-left: 20px;
-    }
+.toc-widget {
+    padding-left: 20px;
+}
 
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
 
-    #toc-content ol {
-        padding-left: 10px;
-    }
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
 
-    #toc-content ol li {
-        padding-left: 10px;
-    }
+#toc-content ol {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link:hover {
-        /*color: #42b983;*/
-        color: #3498db;
-        font-weight: 700;
-        text-decoration: underline;
-    }
+#toc-content ol li {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-    #toc-content .is-active-link {
-        /*color: #42b983;*/
-        color: #3498db;
-    }
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
 
-    #toc-content .is-active-link::before {
-        /*background-color: #42b983;*/
-        background-color: #3498db;
-    }
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
 
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
 
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
 
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -447,8 +452,8 @@
             <div class="post-cate">
               <i class="fa fa-bookmark fa-fw icon-category"></i>
               
-                <a href="/categories/开发环境/" class="post-category" target="_blank">
-                  开发环境
+                <a href="/categories/运维知识/" class="post-category" target="_blank">
+                  运维知识
                 </a>
               
             </div>
@@ -485,58 +490,63 @@
 <p>nodejs安装及npm镜像源、全局模块路径的设置。</p>
 </blockquote>
 <h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a><span style="font-size: 18px;">1. 安装</span></h3><ul>
-<li>Windows<br>　　到<a href="https://nodejs.org/en/" title="Node.js官网" rel="external nofollow noopener noreferrer" target="_blank">Node.js官网</a>下载 .msi 文件，安装好以后在cmd命令中可以使用node命令进入node环境，可使用js语法。<br>　　<code>npm -v</code> 查看npm版本。</li>
-<li>Ubuntu<pre class=" language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> nodejs
+<li>Windows</li>
+</ul>
+<p>到<a href="https://nodejs.org/en/" title="Node.js官网" rel="external nofollow noopener noreferrer" target="_blank">Node.js官网</a>下载 .msi 文件，安装好以后在 cmd 命令中可以使用 node 命令进入 node 环境，可使用 js 语法。</p>
+<p><code>npm -v</code> 查看 npm 版本。</p>
+<ul>
+<li>Ubuntu</li>
+</ul>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> nodejs
 node -v
 <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">npm</span>
 <span class="token function">npm</span> -v
 </code></pre>
-</li>
-</ul>
-<h3 id="2-设置镜像源"><a href="#2-设置镜像源" class="headerlink" title="2. 设置镜像源"></a><span style="font-size: 18px;">2. 设置镜像源</span></h3><p>　　得到原本的镜像地址：</p>
+<h3 id="2-设置镜像源"><a href="#2-设置镜像源" class="headerlink" title="2. 设置镜像源"></a><span style="font-size: 18px;">2. 设置镜像源</span></h3><p>得到原本的镜像地址：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> get registry
 </code></pre>
-<p>　　设成淘宝镜像源地址：</p>
+<p>设成淘宝镜像源地址：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry http://registry.npm.taobao.org/
 </code></pre>
-<p>　　换成原来的（官方地址）：</p>
+<p>换成原来的（官方地址）：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry https://registry.npmjs.org/
 </code></pre>
-<h3 id="3-设置npm全局模块路径"><a href="#3-设置npm全局模块路径" class="headerlink" title="3. 设置npm全局模块路径"></a><span style="font-size: 18px;">3. 设置npm全局模块路径</span></h3><p>　　正常情况下，npm全局模块安装的存放路径是在你电脑 <code>C:\Users\你的电脑名称\AppData\Roaming\npm</code> 下的，以及cache路径是在你电脑的 <code>C:\Users\你的电脑名称\AppData\Roaming\npm-cache</code> 下的。</p>
-<p>　　如果不喜欢放在C盘，我们可以调整一下，并把上面的全局模块存放路径和cache路径放到同一个大目录下。例如我希望将以上两个文件夹放在nodejs内。我们在 <code>D:\Program Files\nodejs\</code> 目录下新建两个文件夹：<code>node_global_modules</code> 和 <code>node_cache</code>。</p>
-<p>　　① 启动cmd，输入下面两行命令：</p>
+<h3 id="3-设置-npm-全局模块路径"><a href="#3-设置-npm-全局模块路径" class="headerlink" title="3. 设置 npm 全局模块路径"></a><span style="font-size: 18px;">3. 设置 npm 全局模块路径</span></h3><p>正常情况下，npm 全局模块安装的存放路径是在你电脑 <code>C:\Users\你的电脑名称\AppData\Roaming\npm</code> 下的，以及 cache 路径是在你电脑的 <code>C:\Users\你的电脑名称\AppData\Roaming\npm-cache</code> 下的。</p>
+<p>如果不喜欢放在 C 盘，我们可以调整一下，并把上面的全局模块存放路径和 cache 路径放到同一个大目录下。例如我希望将以上两个文件夹放在 nodejs 内。我们在 <code>D:\Program Files\nodejs\</code> 目录下新建两个文件夹：<code>node_global_modules</code> 和 <code>node_cache</code>。</p>
+<p>① 启动 cmd，输入下面两行命令：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> prefix <span class="token string">"D:\Program Files\nodejs\node_global_modules"</span>
 <span class="token function">npm</span> config <span class="token keyword">set</span> cache <span class="token string">"D:\Program Files\nodejs\node_cache"</span>
 </code></pre>
-<p>　　② 输入以下命令，查看是否配置成功：（cache和prefix项）</p>
+<p>② 输入以下命令，查看是否配置成功：（cache 和 prefix 项）</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token function">ls</span>
 </code></pre>
-<p>　　③ 接下来，我们需要修改环境变量，不然全局安装的模块会报错。<br>　　首先在环境变量中，新建一个系统变量, 变量名：<code>NODE_HOME</code>, 变量值：<code>D:\Program Files\nodejs</code><br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/node_global_config_system_variable.png" alt="node_global_config_system_variable.png"><br>　　在 <code>Path</code> 变量名中，新建变量值<br>　　<code>%NODE_HOME%</code><br>　　<code>%NOED_HOME%\node_modules</code><br>　　<code>%NODE_HOME%\node_global_modules\</code><br>　　保存<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/node_global_config_path.png" alt="node_global_config_path.png"></p>
-<p>　　④ 现在，安装一个全局模块试试：</p>
+<p>③ 接下来，我们需要修改环境变量，不然全局安装的模块会报错。</p>
+<p>首先在环境变量中，新建一个系统变量, 变量名：<code>NODE_HOME</code>, 变量值：<code>D:\Program Files\nodejs</code><br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/node_global_config_system_variable.png" alt="node_global_config_system_variable.png"><br>在 <code>Path</code> 变量名中，新建变量值<br><code>%NODE_HOME%</code><br><code>%NOED_HOME%\node_modules</code><br><code>%NODE_HOME%\node_global_modules\</code><br>保存<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/node_global_config_path.png" alt="node_global_config_path.png"></p>
+<p>④ 现在，安装一个全局模块试试：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g @vue/cli
 </code></pre>
-<h3 id="4-npm常用命令"><a href="#4-npm常用命令" class="headerlink" title="4. npm常用命令"></a><span style="font-size: 18px;">4. npm常用命令</span></h3><p>　　查看包信息</p>
+<h3 id="4-npm常用命令"><a href="#4-npm常用命令" class="headerlink" title="4. npm常用命令"></a><span style="font-size: 18px;">4. npm常用命令</span></h3><p>查看包信息</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> info 包名
 </code></pre>
-<p>　　查看包的信息中的某个字段（例如查看该包在npm上提供了哪些版本可以下载）（常用）</p>
+<p>查看包的信息中的某个字段（例如查看该包在 npm 上提供了哪些版本可以下载）（常用）</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> info 包名 versions
 </code></pre>
-<p>　　查看包的文档</p>
+<p>查看包的文档</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> docs 包名
 </code></pre>
-<p>　　查看全局包的下载路径</p>
+<p>查看全局包的下载路径</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> root -g
 </code></pre>
-<p>　　查看所有全局安装的模块，使用如下命令：</p>
+<p>查看所有全局安装的模块，使用如下命令：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">ls</span> –g
 </code></pre>
-<p>　　卸载全局安装模块：（卸载后可以使用 <code>npm ls -g</code> 查看之前安装过的全局模块是否还在）</p>
+<p>卸载全局安装模块：（卸载后可以使用 <code>npm ls -g</code> 查看之前安装过的全局模块是否还在）</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> uninstall -g
 </code></pre>
-<p>　　查看全部npm默认设置</p>
+<p>查看全部 npm 默认设置</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token function">ls</span> –l
 </code></pre>
-<p class="reference"><br>参考：npm官方文档<br></p>
+<p class="reference"><br>参考：npm 官方文档<br></p>
 
       </div>
       <hr>
@@ -1025,7 +1035,7 @@ node -v
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1088,87 +1098,87 @@ node -v
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
 </script>
     
 

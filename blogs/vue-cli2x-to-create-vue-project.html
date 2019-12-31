@@ -90,13 +90,6 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
-                            <a href="/categories/基础知识/">
-                                
-                                <span>基础知识</span>
-                            </a>
-                        </li>
-                    
-                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -111,9 +104,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/日常运维/">
+                            <a href="/categories/运维知识/">
                                 
-                                <span>日常运维</span>
+                                <span>运维知识</span>
                             </a>
                         </li>
                     
@@ -125,9 +118,16 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/开发环境/">
+                            <a href="/categories/技术周边/">
                                 
-                                <span>开发环境</span>
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
                             </a>
                         </li>
                     
@@ -223,13 +223,6 @@
                     <ul>
                         
                             <li>
-                                <a href="/categories/基础知识/">
-                                    
-                                    <span>基础知识</span>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -244,9 +237,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/日常运维/">
+                                <a href="/categories/运维知识/">
                                     
-                                    <span>日常运维</span>
+                                    <span>运维知识</span>
                                 </a>
                             </li>
                         
@@ -258,9 +251,16 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/开发环境/">
+                                <a href="/categories/技术周边/">
                                     
-                                    <span>开发环境</span>
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
                                 </a>
                             </li>
                         
@@ -336,93 +336,98 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 
-    #articleContent :focus {
-        outline: none;
-    }
+#articleContent :focus {
+    outline: none;
+}
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
 
-    .toc-widget {
-        padding-left: 20px;
-    }
+.toc-widget {
+    padding-left: 20px;
+}
 
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
 
-    #toc-content ol {
-        padding-left: 10px;
-    }
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
 
-    #toc-content ol li {
-        padding-left: 10px;
-    }
+#toc-content ol {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link:hover {
-        /*color: #42b983;*/
-        color: #3498db;
-        font-weight: 700;
-        text-decoration: underline;
-    }
+#toc-content ol li {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-    #toc-content .is-active-link {
-        /*color: #42b983;*/
-        color: #3498db;
-    }
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
 
-    #toc-content .is-active-link::before {
-        /*background-color: #42b983;*/
-        background-color: #3498db;
-    }
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
 
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
 
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
 
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -516,16 +521,16 @@ node -v
 <h2 id="三、vue-cli搭建vue项目"><a href="#三、vue-cli搭建vue项目" class="headerlink" title="三、vue-cli搭建vue项目"></a>三、vue-cli搭建vue项目</h2><p>　　执行如下命令即可。</p>
 <pre class=" language-bash"><code class="language-bash">vue init webpack my-project
 </code></pre>
-<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_init.png" alt="vue_cli2x_init.png"><br>　　PS：<span style="color: #FF6827;">ESLint</span>（一个javascript代码检测工具）、<span style="color: #FF6827;">unit tests</span>（单元测试）、<span style="color: #FF6827;">Nightwatch</span>（一个e2e用户界面测试工具）。这里暂时都选<code>N</code>，其它的直接回车即可。<br>　　然后依次执行 <code>cd my-project</code> 和 <code>npm run dev</code> 即可访问vue默认的demo页面。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_helloworld_page.png" alt="vue_cli2x_helloworld_page.png"></p>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_init.png" alt="vue_cli2x_init.png"><br>　　PS：<span style="color: #FF0000;">ESLint</span>（一个javascript代码检测工具）、<span style="color: #FF0000;">unit tests</span>（单元测试）、<span style="color: #FF0000;">Nightwatch</span>（一个e2e用户界面测试工具）。这里暂时都选<code>N</code>，其它的直接回车即可。<br>　　然后依次执行 <code>cd my-project</code> 和 <code>npm run dev</code> 即可访问vue默认的demo页面。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_helloworld_page.png" alt="vue_cli2x_helloworld_page.png"></p>
 <p>　　<strong>下面是一些特殊情况的处理：</strong></p>
 <p>　　如果当前安装的Vue CLI &gt;= 3，那么需要拉取2.x 模板（旧版本）。<br>　　Vue CLI &gt;= 3 和旧版使用了相同的 <code>vue</code> 命令，所以 Vue CLI 2 （<code>vue-cli</code>) 被覆盖了。如果你仍然需要使用旧版本的 <code>vue init</code> 功能，你可以全局安装一个桥接工具：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g @vue/cli-init
 <span class="token comment" spellcheck="true"># `vue init` 的运行效果将会跟 `vue-cli@2.x` 相同</span>
 vue init webpack my-project
 </code></pre>
-<p>　　<span style="color: #FF6827;">vue init &lt; template-name &gt;  &lt; project-name &gt;</span><br>　　用于初始化一个vue项目，该命令有两个参数，第一个是模板名，第二个是项目名。<br>　　目前可用的模块包括：<br>　　<a href="https://github.com/vuejs-templates/webpack" rel="external nofollow noopener noreferrer" target="_blank">webpack</a> - 一个功能齐全的Webpack + vue-loader设置，具有热重载，linting，测试和css提取功能。<br>　　<a href="https://github.com/vuejs-templates/webpack-simple" rel="external nofollow noopener noreferrer" target="_blank">webpack-simple</a> - 一个简单的Webpack + vue-loader设置，用于快速原型设计。<br>　　<a href="https://github.com/vuejs-templates/browserify" rel="external nofollow noopener noreferrer" target="_blank">browserify</a> -全功能Browserify + vueify设置用热重装载，linting＆单元测试。<br>　　browserify <a href="https://github.com/vuejs-templates/browserify-simple" rel="external nofollow noopener noreferrer" target="_blank">-simple</a> - 一个简单的Browserify + vueify设置，用于快速原型设计。<br>　　<a href="https://github.com/vuejs-templates/pwa" rel="external nofollow noopener noreferrer" target="_blank">pwa</a> - 基于webpack模板的vue-cli的PWA模板<br>　　<a href="https://github.com/vuejs-templates/simple" rel="external nofollow noopener noreferrer" target="_blank">simple</a> - 单个HTML文件中最简单的Vue设置</p>
-<h2 id="四、相关文件和文件夹的含义"><a href="#四、相关文件和文件夹的含义" class="headerlink" title="四、相关文件和文件夹的含义"></a>四、相关文件和文件夹的含义</h2><p>　　使用 <span style="color: #FF6827;">vue-cli2.x</span> 脚手架工具创建vue项目后，整个项目目录结构如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_dir_list.png" alt="vue_cli2x_dir_list.png"></p>
-<h3 id="1-build文件夹"><a href="#1-build文件夹" class="headerlink" title="1. build文件夹"></a><span style="font-size: 18px; color: #159957;">1. build文件夹</span></h3><p>　　build文件夹的结构：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_dir_build.png" alt="vue_cli2x_dir_build.png"><br>　　① <span style="color: #FF6827;">build.js</span></p>
+<p>　　<span style="color: #FF0000;">vue init &lt; template-name &gt;  &lt; project-name &gt;</span><br>　　用于初始化一个vue项目，该命令有两个参数，第一个是模板名，第二个是项目名。<br>　　目前可用的模块包括：<br>　　<a href="https://github.com/vuejs-templates/webpack" rel="external nofollow noopener noreferrer" target="_blank">webpack</a> - 一个功能齐全的Webpack + vue-loader设置，具有热重载，linting，测试和css提取功能。<br>　　<a href="https://github.com/vuejs-templates/webpack-simple" rel="external nofollow noopener noreferrer" target="_blank">webpack-simple</a> - 一个简单的Webpack + vue-loader设置，用于快速原型设计。<br>　　<a href="https://github.com/vuejs-templates/browserify" rel="external nofollow noopener noreferrer" target="_blank">browserify</a> -全功能Browserify + vueify设置用热重装载，linting＆单元测试。<br>　　browserify <a href="https://github.com/vuejs-templates/browserify-simple" rel="external nofollow noopener noreferrer" target="_blank">-simple</a> - 一个简单的Browserify + vueify设置，用于快速原型设计。<br>　　<a href="https://github.com/vuejs-templates/pwa" rel="external nofollow noopener noreferrer" target="_blank">pwa</a> - 基于webpack模板的vue-cli的PWA模板<br>　　<a href="https://github.com/vuejs-templates/simple" rel="external nofollow noopener noreferrer" target="_blank">simple</a> - 单个HTML文件中最简单的Vue设置</p>
+<h2 id="四、相关文件和文件夹的含义"><a href="#四、相关文件和文件夹的含义" class="headerlink" title="四、相关文件和文件夹的含义"></a>四、相关文件和文件夹的含义</h2><p>　　使用 <span style="color: #FF0000;">vue-cli2.x</span> 脚手架工具创建vue项目后，整个项目目录结构如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_dir_list.png" alt="vue_cli2x_dir_list.png"></p>
+<h3 id="1-build文件夹"><a href="#1-build文件夹" class="headerlink" title="1. build文件夹"></a><span style="font-size: 18px; color: #159957;">1. build文件夹</span></h3><p>　　build文件夹的结构：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_dir_build.png" alt="vue_cli2x_dir_build.png"><br>　　① <span style="color: #FF0000;">build.js</span></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span>
 <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./check-versions'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 调用版本检查</span>
 
@@ -571,7 +576,7 @@ spinner<span class="token punctuation">.</span><span class="token function">star
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <p>　　ps：require/export是一种nodeJs(commonJs规范)的依赖注入的方法，import/export是ES6语法，用于引入模块，在nodeJs中使用的ES6语法最终会使用babel工具（babel-loader）转化为ES5。</p>
-<p>　　② <span style="color: #FF6827;">check-version.js</span><br>　　检测node和npm的版本，实现版本依赖。</p>
+<p>　　② <span style="color: #FF0000;">check-version.js</span><br>　　检测node和npm的版本，实现版本依赖。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span>
 <span class="token keyword">const</span> chalk <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'chalk'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> semver <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'semver'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 检查版本</span>
@@ -628,7 +633,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>　　③ <span style="color: #FF6827;">utils.js</span><br>　　utils是工具的意思，是一个用来处理css的文件，这个文件包含了三个工具函数：<br>　　●　生成静态资源的路径<br>　　●　生成 ExtractTextPlugin对象或loader字符串<br>　　●　生成 style-loader的配置</p>
+<p>　　③ <span style="color: #FF0000;">utils.js</span><br>　　utils是工具的意思，是一个用来处理css的文件，这个文件包含了三个工具函数：<br>　　●　生成静态资源的路径<br>　　●　生成 ExtractTextPlugin对象或loader字符串<br>　　●　生成 style-loader的配置</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span>
 <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// node自带的文件路径工具</span>
 <span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../config'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 配置文件</span>
@@ -746,7 +751,7 @@ exports<span class="token punctuation">.</span>createNotifierCallback <span clas
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>　　④ <span style="color: #FF6827;">vue-loader.conf.js</span><br>　　处理.vue文件，解析这个文件中的每个语言块（template、script、style)，转换成js可用的js模块。</p>
+<p>　　④ <span style="color: #FF0000;">vue-loader.conf.js</span><br>　　处理.vue文件，解析这个文件中的每个语言块（template、script、style)，转换成js可用的js模块。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span>
 <span class="token keyword">const</span> utils <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./utils'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../config'</span><span class="token punctuation">)</span>
@@ -772,7 +777,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>　　⑤ <span style="color: #FF6827;">webpack.base.conf.js</span><br>　　开发、测试、生产环境的公共基础配置文件，配置输出环境，配置模块resolve和插件等。</p>
+<p>　　⑤ <span style="color: #FF0000;">webpack.base.conf.js</span><br>　　开发、测试、生产环境的公共基础配置文件，配置输出环境，配置模块resolve和插件等。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span>
 <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// node自带的文件路径工具</span>
 <span class="token keyword">const</span> utils <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./utils'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 工具函数集合</span>
@@ -863,7 +868,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>　　⑥ <span style="color: #FF6827;">webpack.dev.conf.js</span><br>　　webpack配置开发环境中的入口，这里面的配置一般不建议去动，否则遇到什么问题需要上网去查相关配置怎么写。</p>
+<p>　　⑥ <span style="color: #FF0000;">webpack.dev.conf.js</span><br>　　webpack配置开发环境中的入口，这里面的配置一般不建议去动，否则遇到什么问题需要上网去查相关配置怎么写。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span>
 <span class="token keyword">const</span> utils <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./utils'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
@@ -956,7 +961,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-<p>　　⑦ <span style="color: #FF6827;">webpack.dev.prod.js</span><br>　　webpack配置生产环境中的入口。</p>
+<p>　　⑦ <span style="color: #FF0000;">webpack.dev.prod.js</span><br>　　webpack配置生产环境中的入口。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span>
 <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> utils <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./utils'</span><span class="token punctuation">)</span>
@@ -1079,7 +1084,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> webpackConfig
 </code></pre>
-<h3 id="2-config文件夹"><a href="#2-config文件夹" class="headerlink" title="2. config文件夹"></a><span style="font-size: 18px; color: #159957;">2. config文件夹</span></h3><p>　　config文件夹的结构：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_dir_config.png" alt="vue_cli2x_dir_config.png"><br>　　① <span style="color: #FF6827;">dev.env.js和prod.env.js</span><br>　　分别配置：开发环境和生产环境。这个可以根据公司业务结合后端需求配置需要区分开发环境和测试环境的属性。<br>　　dev.env.js</p>
+<h3 id="2-config文件夹"><a href="#2-config文件夹" class="headerlink" title="2. config文件夹"></a><span style="font-size: 18px; color: #159957;">2. config文件夹</span></h3><p>　　config文件夹的结构：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_dir_config.png" alt="vue_cli2x_dir_config.png"><br>　　① <span style="color: #FF0000;">dev.env.js和prod.env.js</span><br>　　分别配置：开发环境和生产环境。这个可以根据公司业务结合后端需求配置需要区分开发环境和测试环境的属性。<br>　　dev.env.js</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span>
 <span class="token keyword">const</span> merge <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-merge'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> prodEnv <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./prod.env'</span><span class="token punctuation">)</span>
@@ -1096,7 +1101,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token punctuation">}</span>
 </code></pre>
 <p>　　（*注意属性值要用<code>&#39;&quot;&quot;&#39;</code>双层引住），访问（获取值）时直接用：<code>process.env.属性名</code><br>　　ps：process（进程）是nodejs的一个全局变量，process.env 属性返回一个用户环境信息的对象。</p>
-<p>　　② <span style="color: #FF6827;">index.js</span></p>
+<p>　　② <span style="color: #FF0000;">index.js</span></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token string">'use strict'</span>
 
 <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
@@ -1133,7 +1138,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token punctuation">}</span>
 </code></pre>
 <h3 id="3-node-modules文件夹"><a href="#3-node-modules文件夹" class="headerlink" title="3. node_modules文件夹"></a><span style="font-size: 18px; color: #159957;">3. node_modules文件夹</span></h3><p>　　存放npm install时根据package.json配置生成的npm安装包的文件夹</p>
-<h3 id="4-src文件夹"><a href="#4-src文件夹" class="headerlink" title="4. src文件夹"></a><span style="font-size: 18px; color: #159957;">4. src文件夹</span></h3><p>　　src目录中的文件如下图所示。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_dir_src.png" alt="vue_cli2x_dir_src.png"><br>　　我们需要在src文件夹中开发代码，打包时webpack会根据build中的规则（build规则依赖于config中的配置）将src打包压缩到dist文件夹在浏览器中运行。<br>　　① <span style="color: #FF6827;">assets文件夹</span><br>　　用于存放静态资源（css、image），assets打包时路径会经过webpack中的file-loader编译（因此，assets需要使用绝对路径）成js。<br>　　② <span style="color: #FF6827;">components文件夹</span><br>　　用来存放 .vue 组件(实现复用等功能，如：过滤器，列表项等)。<br>　　③ <span style="color: #FF6827;">router文件夹</span><br>　　在router/index.js文件中配置页面路由。</p>
+<h3 id="4-src文件夹"><a href="#4-src文件夹" class="headerlink" title="4. src文件夹"></a><span style="font-size: 18px; color: #159957;">4. src文件夹</span></h3><p>　　src目录中的文件如下图所示。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_cli2x_dir_src.png" alt="vue_cli2x_dir_src.png"><br>　　我们需要在src文件夹中开发代码，打包时webpack会根据build中的规则（build规则依赖于config中的配置）将src打包压缩到dist文件夹在浏览器中运行。<br>　　① <span style="color: #FF0000;">assets文件夹</span><br>　　用于存放静态资源（css、image），assets打包时路径会经过webpack中的file-loader编译（因此，assets需要使用绝对路径）成js。<br>　　② <span style="color: #FF0000;">components文件夹</span><br>　　用来存放 .vue 组件(实现复用等功能，如：过滤器，列表项等)。<br>　　③ <span style="color: #FF0000;">router文件夹</span><br>　　在router/index.js文件中配置页面路由。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
 <span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
 <span class="token keyword">import</span> HelloWorld <span class="token keyword">from</span> <span class="token string">'@/components/HelloWorld'</span>  <span class="token comment" spellcheck="true">// 这里@符号是在build/webpack.base.conf.js中的resolve配置的别名，相当于获取当前项目目录</span>
@@ -1150,9 +1155,9 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-<p>　　④ <span style="color: #FF6827;">App.vue</span><br>　　是整个项目的主组件，所有页面都是通过使用<router-view>开放入口在App.vue下进行切换的（所有的路由都是App.vue的子组件）。<br>　　⑤ <span style="color: #FF6827;">main.js</span><br>　　入口js文件（全局js，你可以在这里：初始化vue实例、require/import需要的插件、注入router路由、引入store状态管理）。</router-view></p>
-<h3 id="5-static文件夹"><a href="#5-static文件夹" class="headerlink" title="5. static文件夹"></a><span style="font-size: 18px; color: #159957;">5. static文件夹</span></h3><p>　　webpack默认存放静态资源（css、image）的文件夹，与assets不同的是：static在打包时会直接复制一个同名文件夹到dist文件夹里（不会经过编译，可使用相对路径）。<br>　　一般情况下，<span style="color: #FF6827;">assets放当前项目的静态资源</span>（每个组件内部的静态资源），<span style="color: #FF6827;">static放公共静态资源</span>。</p>
-<h3 id="6-其他文件"><a href="#6-其他文件" class="headerlink" title="6. 其他文件"></a><span style="font-size: 18px; color: #159957;">6. 其他文件</span></h3><p>　　① <span style="color: #FF6827;">.babelrc</span><br>　　浏览器解析的兼容配置，该文件主要是对预设（presets）和插件（plugins）进行配置，因此不同的转译器作用不同的配置项，大致可分为：语法转义器、补丁转义器、sx和flow插件。<br>　　② <span style="color: #FF6827;">.editorconfig</span><br>　　用于配置代码格式（配合代码检查工具使用，如：ESLint，团队开发时可统一代码风格），这里配置的代码规范规则优先级高于编辑器默认的代码格式化规则。<br>　　③ <span style="color: #FF6827;">.gitignore</span><br>　　配置git提交时需要忽略的文件。<br>　　④ <span style="color: #FF6827;">postcssrc.js</span><br>　　autoprefixer（自动补全css样式的浏览器前缀）；postcss-import（@import引入语法）、CSS Modules（规定样式作用域）。<br>　　⑤ <span style="color: #FF6827;">index.html</span><br>　　项目入口页面，编译之后所有代码将插入到这来。<br>　　⑥ <span style="color: #FF6827;">package.json</span><br>　　npm的配置文件（npm install根据package.json下载对应版本的安装包）。<br>　　⑦ <span style="color: #FF6827;">package.lock.json</span><br>　　npm install（安装）时锁定各包的版本号。<br>　　⑧ <span style="color: #FF6827;">README.md</span><br>　　项目使用说明。</p>
+<p>　　④ <span style="color: #FF0000;">App.vue</span><br>　　是整个项目的主组件，所有页面都是通过使用<router-view>开放入口在App.vue下进行切换的（所有的路由都是App.vue的子组件）。<br>　　⑤ <span style="color: #FF0000;">main.js</span><br>　　入口js文件（全局js，你可以在这里：初始化vue实例、require/import需要的插件、注入router路由、引入store状态管理）。</router-view></p>
+<h3 id="5-static文件夹"><a href="#5-static文件夹" class="headerlink" title="5. static文件夹"></a><span style="font-size: 18px; color: #159957;">5. static文件夹</span></h3><p>　　webpack默认存放静态资源（css、image）的文件夹，与assets不同的是：static在打包时会直接复制一个同名文件夹到dist文件夹里（不会经过编译，可使用相对路径）。<br>　　一般情况下，<span style="color: #FF0000;">assets放当前项目的静态资源</span>（每个组件内部的静态资源），<span style="color: #FF0000;">static放公共静态资源</span>。</p>
+<h3 id="6-其他文件"><a href="#6-其他文件" class="headerlink" title="6. 其他文件"></a><span style="font-size: 18px; color: #159957;">6. 其他文件</span></h3><p>　　① <span style="color: #FF0000;">.babelrc</span><br>　　浏览器解析的兼容配置，该文件主要是对预设（presets）和插件（plugins）进行配置，因此不同的转译器作用不同的配置项，大致可分为：语法转义器、补丁转义器、sx和flow插件。<br>　　② <span style="color: #FF0000;">.editorconfig</span><br>　　用于配置代码格式（配合代码检查工具使用，如：ESLint，团队开发时可统一代码风格），这里配置的代码规范规则优先级高于编辑器默认的代码格式化规则。<br>　　③ <span style="color: #FF0000;">.gitignore</span><br>　　配置git提交时需要忽略的文件。<br>　　④ <span style="color: #FF0000;">postcssrc.js</span><br>　　autoprefixer（自动补全css样式的浏览器前缀）；postcss-import（@import引入语法）、CSS Modules（规定样式作用域）。<br>　　⑤ <span style="color: #FF0000;">index.html</span><br>　　项目入口页面，编译之后所有代码将插入到这来。<br>　　⑥ <span style="color: #FF0000;">package.json</span><br>　　npm的配置文件（npm install根据package.json下载对应版本的安装包）。<br>　　⑦ <span style="color: #FF0000;">package.lock.json</span><br>　　npm install（安装）时锁定各包的版本号。<br>　　⑧ <span style="color: #FF0000;">README.md</span><br>　　项目使用说明。</p>
 <h2 id="五、vue-cli-3x"><a href="#五、vue-cli-3x" class="headerlink" title="五、vue-cli 3x"></a>五、vue-cli 3x</h2><p>　　了解 vue-cli 3x 参见本人另一篇博客<span class="series"><a href="/blogs/vue-cli3x-to-create-vue-project.html" title="Vue CLI 3.x搭建Vue项目">《Vue CLI 3.x搭建Vue项目》</a></span>。</p>
 <p class="reference"><br>参考<br><a href="https://github.com/vuejs/vue-cli/tree/v2" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/vuejs/vue-cli/tree/v2</a><br><a href="https://cli.vuejs.org/zh/guide/creating-a-project.html#拉取-2-x-模板-旧版本" rel="external nofollow noopener noreferrer" target="_blank">https://cli.vuejs.org/zh/guide/creating-a-project.html#拉取-2-x-模板-旧版本</a><br></p>
 
@@ -1654,7 +1659,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1681,8 +1686,8 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/开发环境/" class="post-category" target="_blank">
-                                    开发环境
+                            <a href="/categories/技术周边/" class="post-category" target="_blank">
+                                    技术周边
                                 </a>
                             
                             
@@ -1721,87 +1726,87 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
 </script>
     
 

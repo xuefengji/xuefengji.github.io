@@ -90,13 +90,6 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
-                            <a href="/categories/基础知识/">
-                                
-                                <span>基础知识</span>
-                            </a>
-                        </li>
-                    
-                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -111,9 +104,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/日常运维/">
+                            <a href="/categories/运维知识/">
                                 
-                                <span>日常运维</span>
+                                <span>运维知识</span>
                             </a>
                         </li>
                     
@@ -125,9 +118,16 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/开发环境/">
+                            <a href="/categories/技术周边/">
                                 
-                                <span>开发环境</span>
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
                             </a>
                         </li>
                     
@@ -223,13 +223,6 @@
                     <ul>
                         
                             <li>
-                                <a href="/categories/基础知识/">
-                                    
-                                    <span>基础知识</span>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -244,9 +237,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/日常运维/">
+                                <a href="/categories/运维知识/">
                                     
-                                    <span>日常运维</span>
+                                    <span>运维知识</span>
                                 </a>
                             </li>
                         
@@ -258,9 +251,16 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/开发环境/">
+                                <a href="/categories/技术周边/">
                                     
-                                    <span>开发环境</span>
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
                                 </a>
                             </li>
                         
@@ -336,93 +336,98 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 
-    #articleContent :focus {
-        outline: none;
-    }
+#articleContent :focus {
+    outline: none;
+}
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
 
-    .toc-widget {
-        padding-left: 20px;
-    }
+.toc-widget {
+    padding-left: 20px;
+}
 
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
 
-    #toc-content ol {
-        padding-left: 10px;
-    }
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
 
-    #toc-content ol li {
-        padding-left: 10px;
-    }
+#toc-content ol {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link:hover {
-        /*color: #42b983;*/
-        color: #3498db;
-        font-weight: 700;
-        text-decoration: underline;
-    }
+#toc-content ol li {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-    #toc-content .is-active-link {
-        /*color: #42b983;*/
-        color: #3498db;
-    }
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
 
-    #toc-content .is-active-link::before {
-        /*background-color: #42b983;*/
-        background-color: #3498db;
-    }
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
 
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
 
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
 
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -488,9 +493,12 @@
 <li>Lucene</li>
 <li>Elasticsearch</li>
 </ul>
-<h2 id="二、术语"><a href="#二、术语" class="headerlink" title="二、术语"></a>二、术语</h2><p>　　索引（index）是一种数据结构，广泛应用在数据检索领域。<br>　　索引就像一本书的目录一样，可以帮助我们快速检索想要的信息。<br>　　<br>　　分词器将文本进行切割，得到一系列最小搜索单元，即词项（Term）；<br>　　词项的值称为词汇单元（token），简称词元；<br>　　词项中还携带了各种额外的信息，例如词元在原始文本中的位置、词元的长度等。</p>
-<h2 id="三、正向索引（forward-index）"><a href="#三、正向索引（forward-index）" class="headerlink" title="三、正向索引（forward index）"></a>三、正向索引（forward index）</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a><span style="font-size: 18px;">1. 概念</span></h3><p>　　正排表是以文档的ID为关键字，表中记录文档中每个Term的位置信息，查找时扫描表中每个文档中Term的信息直到找出所有包含查询关键字的文档。<br>　　因为索引是基于文档建立的，若是有新的文档加入，直接为该文档建立一个新的索引块，挂接在原来索引文件的后面。若是有文档删除，则直接找到该文档号文档对应的索引信息，将其直接删除。但是在查询的时候需对所有的文档进行扫描以确保没有遗漏，这样就使得检索时间大大延长，检索效率低下。</p>
-<h3 id="2-正排表举例"><a href="#2-正排表举例" class="headerlink" title="2. 正排表举例"></a><span style="font-size: 18px;">2. 正排表举例</span></h3><p>　　正排索引（一个doc对应许多关键词）：<br>　　Doc1: [Term1, Pos1], [Term2, Pos2], …<br>　　Doc2: [Term1, Pos1], [Term2, Pos2], …<br>　　原文档</p>
+<h2 id="二、术语"><a href="#二、术语" class="headerlink" title="二、术语"></a>二、术语</h2><p>索引（index）是一种数据结构，广泛应用在数据检索领域。<br>索引就像一本书的目录一样，可以帮助我们快速检索想要的信息。</p>
+<p>分词器将文本进行切割，得到一系列最小搜索单元，即<span style="color: #FF0000;">词项</span>（Term）；<br>词项的值称为词汇单元（token），简称<span style="color: #FF0000;">词元</span>；<br>词项中还携带了各种额外的信息，例如词元在原始文本中的<span style="color: #FF0000;">位置</span>、词元的<span style="color: #FF0000;">长度</span>等。</p>
+<h2 id="三、正向索引（forward-index）"><a href="#三、正向索引（forward-index）" class="headerlink" title="三、正向索引（forward index）"></a>三、正向索引（forward index）</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a><span style="font-size: 18px;">1. 概念</span></h3><p>正排表是以文档的 ID 为关键字，表中记录文档中每个 Term 的位置信息，查找时扫描表中每个文档中 Term 的信息直到找出所有包含查询关键字的文档。</p>
+<p>因为索引是基于文档建立的，若是有新的文档加入，直接为该文档建立一个新的索引块，挂接在原来索引文件的后面。若是有文档删除，则直接找到该文档号文档对应的索引信息，将其直接删除。但是在查询的时候需对所有的文档进行扫描以确保没有遗漏，这样就使得检索时间大大延长，检索效率低下。</p>
+<h3 id="2-正排表举例"><a href="#2-正排表举例" class="headerlink" title="2. 正排表举例"></a><span style="font-size: 18px;">2. 正排表举例</span></h3><p>正排索引（一个 doc 对应许多关键词）：<br>Doc1: [Term1, Pos1], [Term2, Pos2], …<br>Doc2: [Term1, Pos1], [Term2, Pos2], …</p>
+<p>原文档</p>
 <table>
 <thead>
 <tr>
@@ -517,7 +525,7 @@
 </tr>
 </tbody>
 </table>
-<p>　　分词之后的正排索引Map&lt;id, list<term>&gt;，Term中包含出现位置、出现次数</term></p>
+<p>分词之后的正排索引 Map&lt;id, list<term>&gt;，Term 中包含出现位置、出现次数</term></p>
 <table>
 <thead>
 <tr>
@@ -544,9 +552,13 @@
 </tr>
 </tbody>
 </table>
-<h3 id="3-检索过程"><a href="#3-检索过程" class="headerlink" title="3. 检索过程"></a><span style="font-size: 18px;">3. 检索过程</span></h3><p>　　由id查询Term的过程，是正排索引。<br>　　在搜索引擎中每个文件都对应一个文件ID，文件内容被表示为一系列关键词的集合（实际上在搜索引擎索引库中，关键词也已经转换为关键词ID。简单的，正排索引可以理解为(文件内容会对应一个分词后的集合list&lt;&lt; Term&gt;&gt;) Map&lt; id,list&lt; Term&gt;&gt;，能够由id快速（时间复杂度O(1)）找到内容的一个数据结构。<br>　　假设使用正向索引，那么当你搜索一个Term的时候，搜索引擎必须检索网页中的每一个关键词，假设一个doc中包含成千上百个关键词，可想而知，会造成大量的资源浪费。于是倒排索引应运而生。</p>
-<h2 id="四、倒排索引（inverted-index）"><a href="#四、倒排索引（inverted-index）" class="headerlink" title="四、倒排索引（inverted index）"></a>四、倒排索引（inverted index）</h2><h3 id="1-概念-1"><a href="#1-概念-1" class="headerlink" title="1. 概念"></a><span style="font-size: 18px;">1. 概念</span></h3><p>　　纠正一个概念：倒排索引这个名字是典型的“渣翻译”，容易造成理解误区。我觉得叫<span style="color: #FF0000;">反向索引</span>更合适。不过网上大都叫倒排索引叫习惯了，所以下面我们也这么引用这个名称。<br>　　一个倒排索引由文档中所有不重复词的列表构成，对于其中每个词，有一个包含它的Term列表。</p>
-<h3 id="2-倒排表举例"><a href="#2-倒排表举例" class="headerlink" title="2. 倒排表举例"></a><span style="font-size: 18px;">2. 倒排表举例</span></h3><p>　　倒排索引（一个关键词对应许多doc）：<br>　　Term1: [Doc1, Pos1], [Doc2, Pos2], …<br>　　Term2: [Doc1, Pos1], [Doc2, Pos2], …<br>　　原文档（和上面正向索引的原文档一样）</p>
+<h3 id="3-检索过程"><a href="#3-检索过程" class="headerlink" title="3. 检索过程"></a><span style="font-size: 18px;">3. 检索过程</span></h3><p><span style="color: #FF0000;">由 id 查询 Term 的过程，是正排索引</span>。</p>
+<p>在搜索引擎中每个文件都对应一个文件 ID，文件内容被表示为一系列关键词的集合（实际上在搜索引擎索引库中，关键词也已经转换为关键词 ID。简单的，正排索引可以理解为(文件内容会对应一个分词后的集合list&lt;&lt; Term&gt;&gt;) Map&lt; id,list&lt; Term&gt;&gt;，能够由 id 快速（时间复杂度 O(1)）找到内容的一个数据结构。</p>
+<p>假设使用正向索引，那么当你搜索一个 Term 的时候，搜索引擎必须检索网页中的每一个关键词，假设一个 doc 中包含成千上百个关键词，可想而知，会造成大量的资源浪费。于是倒排索引应运而生。</p>
+<h2 id="四、倒排索引（inverted-index）"><a href="#四、倒排索引（inverted-index）" class="headerlink" title="四、倒排索引（inverted index）"></a>四、倒排索引（inverted index）</h2><h3 id="1-概念-1"><a href="#1-概念-1" class="headerlink" title="1. 概念"></a><span style="font-size: 18px;">1. 概念</span></h3><p>纠正一个概念：倒排索引这个名字是典型的「渣翻译」，容易造成理解误区。我觉得叫<span style="color: #FF0000;">反向索引</span>更合适。不过网上大都叫倒排索引叫习惯了，所以下面我们也这么引用这个名称。</p>
+<p>一个倒排索引由文档中所有不重复词的列表构成，对于其中每个词，有一个包含它的 Term 列表。</p>
+<h3 id="2-倒排表举例"><a href="#2-倒排表举例" class="headerlink" title="2. 倒排表举例"></a><span style="font-size: 18px;">2. 倒排表举例</span></h3><p>倒排索引（一个关键词对应许多doc）：<br>Term1: [Doc1, Pos1], [Doc2, Pos2], …<br>Term2: [Doc1, Pos1], [Doc2, Pos2], …</p>
+<p>原文档（和上面正向索引的原文档一样）</p>
 <table>
 <thead>
 <tr>
@@ -573,7 +585,7 @@
 </tr>
 </tbody>
 </table>
-<p>　　a) 分词之后的<span style="color: #FF0000;">简单的倒排索引</span>Map&lt;token,list&lt; id&gt;&gt;</p>
+<p>a) 分词之后的<span style="color: #FF0000;">简单的倒排索引</span> Map&lt;token,list&lt; id&gt;&gt;</p>
 <table>
 <thead>
 <tr>
@@ -625,7 +637,8 @@
 </tr>
 </tbody>
 </table>
-<p>　　b) 有单词频率信息（TF）的倒排索引Map&lt;item,list&lt; (id;TF)&gt;&gt;<br>　　在单词对应的倒排列表中不仅记录了文档编号，还记载了词元频率信息，即这个词元在某个文档中的出现次数。之所以要记录这个信息，是因为词频信息在搜索结果排序时，计算查询和文档相似度是很重要的一个计算因子，将其记录在倒排列表中，以方便后续排序时进行分值计算。</p>
+<p>b) 有单词频率信息（TF）的倒排索引 Map&lt;item,list&lt; (id;TF)&gt;&gt;</p>
+<p>在单词对应的倒排列表中不仅记录了文档编号，还记载了词元频率信息，即这个词元在某个文档中的出现次数。之所以要记录这个信息，是因为词频信息在搜索结果排序时，计算查询和文档相似度是很重要的一个计算因子，将其记录在倒排列表中，以方便后续排序时进行分值计算。</p>
 <table>
 <thead>
 <tr>
@@ -677,7 +690,7 @@
 </tr>
 </tbody>
 </table>
-<p>　　c) 有词元频率和出现位置(pos)信息的倒排索引Map&lt;Term,list&lt;(id;TF;&lt; pos&gt;)&gt;&gt;</p>
+<p>c) 有词元频率和出现位置（pos）信息的倒排索引 Map&lt;Term,list&lt;(id;TF;&lt; pos&gt;)&gt;&gt;</p>
 <table>
 <thead>
 <tr>
@@ -729,7 +742,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="3-检索过程-1"><a href="#3-检索过程-1" class="headerlink" title="3. 检索过程"></a><span style="font-size: 18px;">3. 检索过程</span></h3><p>　　由Term查询id的过程，是倒排索引。<br>　　倒排索引可以理解为Map&lt;Term, list&lt; id&gt;&gt;，能够由查询词快速（时间复杂度O(1)）找到包含这个查询词的文件的数据结构。<br>　　简单来讲：先分词，再找到每个Term对应的list&lt; id&gt;，最后进行集合求交集的过程。<br>　　分词和倒排查询时间复杂度都是O(1)，整个搜索的时间复杂度取决于“求list&lt; id&gt;的交集”，因此实际上问题也变成了求两个集合的交集。<br>　　比如你搜索“喜欢”，搜索引擎可以快速检索出包含“喜欢”搜索词的位置，为后续的相关度和权重计算奠定基础，从而大大加快了返回搜索结果的速度。</p>
+<h3 id="3-检索过程-1"><a href="#3-检索过程-1" class="headerlink" title="3. 检索过程"></a><span style="font-size: 18px;">3. 检索过程</span></h3><p><span style="color: #FF0000;">由 Term 查询 id 的过程，是倒排索引</span>。</p>
+<p>倒排索引可以理解为 Map&lt;Term, list&lt; id&gt;&gt;，能够由查询词快速（时间复杂度 O(1)）找到包含这个查询词的文件的数据结构。</p>
+<p>简单来讲：先分词，再找到每个 Term 对应的list&lt; id&gt;，最后进行集合求交集的过程。</p>
+<p>分词和倒排查询时间复杂度都是 O(1)，整个搜索的时间复杂度取决于「求list&lt; id&gt;的交集」，因此实际上问题也变成了求两个集合的交集。</p>
+<p>比如你搜索「喜欢」，搜索引擎可以快速检索出包含「喜欢」搜索词的位置，为后续的相关度和权重计算奠定基础，从而大大加快了返回搜索结果的速度。</p>
 
       </div>
       <hr>
@@ -1218,7 +1235,7 @@
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1226,15 +1243,15 @@
                 <a href="/blogs/elasticsearch-chinese-analyzer.html">
                     <div class="card-image">
                         
-                        <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="Elasticsearch中文分词器">
+                        <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="Elasticsearch中文分词器怎么用">
                         
-                        <span class="card-title">Elasticsearch中文分词器</span>
+                        <span class="card-title">Elasticsearch中文分词器怎么用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Elasticsearch中文分词器的介绍、对比和用法。
+                            Elasticsearch中文分词器的介绍、选型对比和用法。
                         
                     </div>
                     <div class="publish-info">
@@ -1281,87 +1298,87 @@
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
 </script>
     
 

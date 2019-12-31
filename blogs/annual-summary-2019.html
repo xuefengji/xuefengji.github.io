@@ -1,0 +1,1361 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+  <meta name="generator" content="django">
+  <meta charset="utf-8">
+  <meta name="keywords" content="2019年度总结,一个程序员的年度总结">
+  <meta name="description" content="一个90后程序员的2019年度总结_ 年了。记得上一次做年终总结还是在 17 年底公司内部的新员工分享会。一眨眼，2">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="renderer" content="webkit|ie-stand|ie-comp">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>2019年度总结-不忘初心 - 程序员的个人博客 | 一个90后程序员的技术人生</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">-->
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/element-ui.css">
+
+  <style type="text/css">
+  
+  </style>
+
+  <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-duotone-light.css" type="text/css"></head>
+
+
+<body>
+
+
+
+  <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent headbar-cover">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">文渊博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-home"></i>
+                    
+                    <span>首页</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/tags" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-tags"></i>
+                    
+                    <span>标签</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/categories" class="waves-effect waves-light">
+
+                    
+                        <i class="fa fa-bookmark"></i>
+                    
+                    <span>分类</span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-nav menus_item_child ">
+                    
+                        <li>
+                            <a href="/categories/前端技术/">
+                                
+                                <span>前端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/后端技术/">
+                                
+                                <span>后端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/运维知识/">
+                                
+                                <span>运维知识</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/机器学习/">
+                                
+                                <span>机器学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/技术周边/">
+                                
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/诗和远方/">
+                                
+                                <span>诗和远方</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/about" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-user-circle-o"></i>
+                    
+                    <span>关于我</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/navpage.html" class="waves-effect waves-light">
+                    
+                        <i class="fa fa fa-rocket"></i>
+                    
+                    <span>导航页</span>
+                </a>
+            
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+            <span style="display: inline-block;width:40px;height: 40px;background-image: url('/medias/logo.png');background-size: cover;vertical-align: middle; margin: 15px auto"></span>
+        
+        <div class="logo-name">文渊博客</div>
+        <div class="logo-desc">
+            
+                一个90后程序员，终身学习者。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+            <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                        
+                            <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                    <ul>
+                        
+                            <li>
+                                <a href="/categories/前端技术/">
+                                    
+                                    <span>前端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/后端技术/">
+                                    
+                                    <span>后端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/运维知识/">
+                                    
+                                    <span>运维知识</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/机器学习/">
+                                    
+                                    <span>机器学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/技术周边/">
+                                    
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/诗和远方/">
+                                    
+                                    <span>诗和远方</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/navpage.html" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa fa-rocket"></i>
+                        
+                        导航页
+                    </a>
+                
+            </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+  
+
+
+
+<!--<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogimages/annual-summary-2019.jpg')">-->
+<div class="bg-cover pd-header post-cover">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <!--
+                    <div class="description center-align post-title">
+                        2019年度总结-不忘初心
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
+
+#articleContent :focus {
+    outline: none;
+}
+
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
+
+.toc-widget {
+    padding-left: 20px;
+}
+
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
+
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
+
+#toc-content ol {
+    padding-left: 10px;
+}
+
+#toc-content ol li {
+    padding-left: 10px;
+}
+
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
+
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
+
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
+
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
+
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+  <div class="card">
+    <div class="card-content article-info">
+      <div class="row tag-cate">
+        <div class="col s7">
+          
+            <div class="article-tag">
+              
+                <a href="/tags/日记/" target="_blank">
+                  <span class="chip bg-color">日记</span>
+                </a>
+              
+            </div>
+          
+        </div>
+        <div class="col s5 right-align">
+          
+            <div class="post-cate">
+              <i class="fa fa-bookmark fa-fw icon-category"></i>
+              
+                <a href="/categories/诗和远方/" class="post-category" target="_blank">
+                  诗和远方
+                </a>
+              
+            </div>
+          
+        </div>
+      </div>
+
+      <div class="post-info">
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+          2019-12-31
+        </div>
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>最近更新:&nbsp;&nbsp;
+          2019-12-31
+        </div>
+
+        
+
+        
+          <div id="busuanzi_container_page_pv" class="info-break-policy">
+            <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+            <span id="busuanzi_value_page_pv"></span>
+          </div>
+        
+      </div>
+    </div>
+    <hr class="clearfix">
+    <div class="card-content article-card-content">
+      <div id="articleContent">
+        <div style="text-align: center; font-size: 32px;">2019年度总结-不忘初心</div>
+
+<blockquote>
+<p>时间过得总是那么快，从 16 年毕业到现在已经 3 年了。记得上一次做年终总结还是在 17 年底公司内部的新员工分享会。一眨眼，2019 年就快结束了。<br>和前两年比起来，这一年的节奏很快，无论是外界环境，还是工作、生活，给我的感觉就是「赶」。加上今年一边学习，一边思考，各方面都有不少感悟，列完一张导图后，按计划也该写年度总结了。</p>
+</blockquote>
+<p>前阵子看到一个叫「滴答目标九宫格」的小程序，里面把年度计划分成了 8 个方面，我觉得挺好的，于是就根据这 8 个方面列了一张导图，下面也就按其中的几个方面开始总结。</p>
+<h2 id="工作·事业"><a href="#工作·事业" class="headerlink" title="工作·事业"></a>工作·事业</h2><p>我是 16 年二本毕业的，非科班，因为爱好自学前端、后端，然后入了计算机行业，算起来也有三年左右的工作经验。刚毕业的时候喊了个口号说「我要做全栈」，于是从最初的自学 Java，到入职后从事 Python 后端和前端开发，持续了 2 年，也算一个入门级全栈了。</p>
+<p>今年，我意识到技术面广固然是一件好事，但同时也要有一个「专而精」的方向。再次考虑了包括爱好在内的各方面因素，我选择了前端。于是在工作中将重心转移到了前端开发，业余时间将精力集中于夯实前端基础。平时面向业务编程居多，所以需要在空余时间按照学习路线「重学前端」，双管齐下，争取不断提高前端技术。</p>
+<h2 id="学习·成长"><a href="#学习·成长" class="headerlink" title="学习·成长"></a>学习·成长</h2><p>前面提到了现阶段在技术上以前端为主，计划先「修炼内功」，以后再「深挖各路功夫」。落实下来，就是研读一些书籍，辅之以各种付费课程（慕课、极客时间、掘金手册等等）。为了防止「买了就是看了」这种自欺欺人的现象，现在较少在活动的时候屯书，而是看完两本再买两本，表面上看起来多花了钱，其实这样对我来说效果不错。扯个其外话，其实一般比较经典的书很少参加活动，所以什么时间买都一样，比如红宝书全年的价格变动不超过 5 元。</p>
+<p>除了技术类书籍，我还阅读了一些非技术类书籍，前者在于提高硬技能，目的性较强，主要占用完整的时间。后者一般跟软技能挂钩，这类书籍主要是在坐地铁的时候阅读，算是课外书。</p>
+<p>今年在课外阅读上我最大的感触就是：不要勉强自己读不喜欢的书。我从小到大都读不进文学书，而小时候语文老师布置的阅读基本都是这种，所以一度认为自己讨厌阅读，后来发现是读错了书。或许未来等我到达了一定的段位，反过来读文学书陶冶情操的时候也能产生极大的兴趣。所以不要盲目的看大佬们的书单，找到合适的才最重要。</p>
+<p>同样是今年，有个比较火的词叫「跨界」，言下之意就是做一个多面手、培养多领域的能力。我一般是从课外书、公众号、付费知识星球中汲取所谓的跨界知识，目标也是朝「跨界人才」方向发展。但就跟「全栈」的概念一样，一个人的精力有限，每个阶段有各自的「工作重心」，至少这几年我还是以提高技术为主，学习跨界技能为辅。</p>
+<p>最后就是个人成长相关的，李尚龙老师在《你没有退路，才有出路》一书中有句话这么写到：「强者是逆着基因生长的」。我身上有很多坏习惯，也有一些性格缺陷。所以我有一个小目标：每年改善一个性格。2019 年做的还可以，不说彻底改变，也完成了 80%，明年继续加油，做一个更好的自己！</p>
+<h2 id="人际·社群"><a href="#人际·社群" class="headerlink" title="人际·社群"></a>人际·社群</h2><p>今年第二季度的时候，本着打造个人 IP 的念头上线了个人博客，主要记录一些学习笔记、经验分享。没想做大，更不敢奢求盈利，只想着稍微贴点服务器和域名开销，一个人自嗨。但在 9、10、11 三个月，一个热门关键词竟然上了百度首页 top3，让我高兴了好一阵子。后来可能是百度年度调整了权重算法，以及我更新了几篇「偏题」的博文，又跌了下去。不过这些都不重要了。其中特别感谢青姐免费将我的友链加到她网站的前列，真的很感谢。<br>自从有了博客，陆续认识了不少业内业外的朋友，所以打造一个个人 IP 真的太重要了。</p>
+<p>平时我也会加一些技术交流群，除去一些水群以外，今年结实了很多志同道合的伙伴，浪浪、昱昱、小夕姐、若川，还有愿意带我的前辈北妈等等，太多了就不一一列举了。我尤其喜欢若川的一句话：「一个人走得快，一群人走得远」。所以经常跟这些小伙伴交流，无论是在技术还是知识面上的收获都很大。</p>
+<h2 id="财务·理财"><a href="#财务·理财" class="headerlink" title="财务·理财"></a>财务·理财</h2><p>一直以来我的理财观都比较糟糕，虽然没有挥霍、透支的习惯，但对资产的分配没有任何概念。2019 年没有投入太多的精力去学习理财方面的知识，不过目前来说纠正了一个意识：<br>从前认为：收入 - 支出（日常花销 + 负债 + 其他）= 理财<br>现在改观：<strong>收入 - 理财 = 支出</strong></p>
+<p>2020 年开始，准备稍微学习下理财，然后参考标准普尔家庭配置象限图，合理的配置自己的收入。</p>
+<h2 id="健康·身体"><a href="#健康·身体" class="headerlink" title="健康·身体"></a>健康·身体</h2><p>2019 年看了很多新闻，也改变了一些观念，系统学习了保险知识，所以给自己和全家都配备了保险。</p>
+<p>虽然工作不是996制，但因为经常熬夜学习，我平时也开始注重锻炼，比如跑步。可惜由于种种视为借口的原因，没坚持多久，遗憾。</p>
+<p>最后意识到奋斗的过程因为要论持久战，所以晚上不再熬很晚，基本上 0 点前要准备睡觉了。周末的话，宁可早点睡，第二天早点起。</p>
+<h2 id="家庭·生活"><a href="#家庭·生活" class="headerlink" title="家庭·生活"></a>家庭·生活</h2><p>毕业三年，很多同届同学都在家里的帮助下买房定居了，平时群里也会有类似的话题，只好感叹一句：现如今的 90 后靠自己买房，真是挺难。<br>今年关注了一下房价，我现在这个二线最偏最便宜的地方都 13 ~ 14k 了，加上首付 30% 的相对比较少，因为精装房的缘故都要求 60%，假如一年攒 10W，也要 5 年以上。有的人说程序员工资高，但房价涨的更快，而且付完首付还有很多年的贷款，还有网传的 「中年危机」。有时候越想越绝望。</p>
+<p>但是机会还有有的。有个思维导图挺有意思：这个问题能解决吗？不能 → 那烦恼有什么用。能 → 那还烦恼什么。<br>既然房价如此，反正现在也买不起，何必徒增焦虑呢？正如大学舍友说的那样：「焦虑 = 期望 - 现实」。于是我转移了注意力，把精力放到提高能力，努力赚钱上。有时候外界再焦虑，我埋头学习的时候，反而越来越有信心，颇有点阿Q思想的意思。</p>
+<p>家庭方面，我今年做的很不好，让父母、关心我的人感知到了我的压力，无形间传递了焦虑和不愉快。生活还是多点欢笑的好。</p>
+<p>婚姻与未来呢，一句话：革命尚未成功，要更加努力才行。</p>
+<h2 id="2020年度计划"><a href="#2020年度计划" class="headerlink" title="2020年度计划"></a>2020年度计划</h2><p>2019 年比较乱，原因是大部分时间都在「赶」。所以要适时作出调整，虽然很多人说年度计划都是 flag，但做计划是一回事，落实执行是一回事，坚持不移又是一回事。</p>
+<p>2020年度计划</p>
+<ul>
+<li>工作与事业<ul>
+<li>重构我负责的代码，很早就想做了，但水平不够，相信经过不断学习，能实现。</li>
+<li>多多学习管理，参与产品的研讨，希望能在产品决策上提出一到两个有价值的建议。</li>
+</ul>
+</li>
+<li>学习与成长<ul>
+<li>技术：围绕 JavaScript，CSS，设计模式，阅读完成至少 4 本书籍，最好还能研究下 vue 源码，学习 node，扩充前端水平面技能。</li>
+<li>非技术：阅读至少 8 本书，扩充其他领域的知识。</li>
+</ul>
+</li>
+<li>消费与理财<ul>
+<li>合理分配每月收入，在决定购买一件东西之前，先询问下自己，这是不是非要不可的。</li>
+<li>节流，开源，适度理财，年末要攒下 ** 元。</li>
+</ul>
+</li>
+<li>健康与身体<ul>
+<li>坚持锻炼，每周两次跑步。</li>
+<li>工作期间，多喝开水。</li>
+<li>周末，晚上 23 点以前躺床上，早上 9 点以前完成起床。</li>
+</ul>
+</li>
+<li>家庭与生活<ul>
+<li>请年假带父母旅游一次。</li>
+<li>把欢笑带给爱我和我爱的人。</li>
+</ul>
+</li>
+</ul>
+<p>最后，我期望的 2020 年状态是：<strong>多一些见识，少一些焦虑；持续学习，稳重踏实；砥砺前行，不忘初心。</strong></p>
+
+      </div>
+      <hr>
+
+      
+        <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 400px;
+        height: 400px;
+        background-color: #FFF;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+        font-weight: normal;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        font-size: 13px;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #3DA149 !important;
+    }
+
+    .reward-tabs .wechatpay-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 250px;
+        height: 250px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">戳</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">钱和朋友之间，更想多认识朋友</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s4 wechat-tab waves-effect waves-light"><a href="#wechat">微信</a></li>
+                        <li class="tab col s4 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s4 wechatpay-tab waves-effect waves-light"><a href="#wechatpay">微信投资</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="交个朋友吧">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechatpay">
+                        <img src="/medias/reward/wechatpay.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+      
+
+      <!--<link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>-->
+
+      <div class="reprint">
+        <p>
+          <span class="reprint-tip">
+            <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+          </span>
+          <a href="https://www.wenyuanblog.com" class="b-link-green">文渊博客</a>
+          <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+          <a href="/blogs/annual-summary-2019.html" class="b-link-green">2019年度总结-不忘初心</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'IirbHl64M5MqyIVCnfJsdjvU-gzGzoHsz',
+        appKey: '9K4u0nf4Ret3ntR3Uh9FHqYs',
+        notify: 'false' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'false' === 'true',
+        avatar: '',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '记得留下您的昵称和邮箱...可以快速收到回复',
+        avatar_cdn: 'https://www.gravatar.com/avatar/'
+    });
+</script>
+  
+
+  
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/blogs/annual-summary-2019.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/annual-summary-2019.jpg" class="responsive-img" alt="2019年度总结-不忘初心">
+                        
+                        <span class="card-title">2019年度总结-不忘初心</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一个90后程序员的2019年度总结。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/诗和远方/" class="post-category" target="_blank">
+                                    诗和远方
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/日记/" target="_blank">
+                        <span class="chip bg-color">日记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/blogs/git-change-user-name-and-email-in-history-commits.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/git.png" class="responsive-img" alt="Git修改历史commits中的用户名和邮箱">
+                        
+                        <span class="card-title">Git修改历史commits中的用户名和邮箱</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            如何批量修改git历史提交记录中的username和email。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/技术周边/" class="post-category" target="_blank">
+                                    技术周边
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/" target="_blank">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
+
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
+
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
+
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
+
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
+
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
+
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
+</script>
+    
+
+</main>
+
+
+  <footer class="page-footer bg-color footer-cover">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            
+
+            
+            
+                <br>
+                <!-- 注释掉总访问量和访客数
+                
+                
+                    <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+                -->
+
+                
+                    <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    欢迎你, 第&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;位访问本站的朋友.
+                </span>
+                
+            
+
+            <br>
+            <a href="http://www.wenyuanblog.com" target="_blank">
+                Copyright © 2019 wenyuanblog.com All Rights Reserved.
+            </a>
+            <a href="http://www.wenyuanblog.com" target="_blank">
+                &nbsp;Powered by WenYuan
+            </a>
+            <br>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+                <span>备案号:苏ICP备19003118号-1</span>
+            </a>
+            <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+                <span>苏公网安备 32020602000865号</span>
+            </a>
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+  <a href="https://github.com/winyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-git"></i>
+  </a>
+
+
+
+  <a href="mailto:wenyuan.xu@vip.163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-envelope-open"></i>
+  </a>
+
+
+
+
+
+  <a href="javascript:void(0);" onclick="wechatShow()">
+    <i class="fa fa-wechat"></i>
+  </a>
+
+
+
+  <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+  </a>
+
+
+<script>
+function wechatShow() {
+  layer.open({
+    type: 2,
+    title: false,
+    closeBtn: 0,
+    area: ['200px', '200px'],
+    offset: 'rb',
+    skin: 'layui-layer-nobg', //没有背景色
+    shadeClose: true,
+    content: '/medias/socialimages/wechat.png'
+  });
+}
+</script>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+  <!-- Search Box -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+  <!-- Back to Top -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<!--<script src="/libs/aos/aos.js"></script>-->
+<!--<script src="/libs/scrollprogress/scrollProgress.min.js"></script>-->
+<!--<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<!-- Baidu Analytics -->
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ffafc579f91ca273792cb428f9ef63d5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+<!-- Baidu Push -->
+
+    <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+
+  <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="/libs/layer-v3.1.1/layer/layer.js"></script>
+<!--<script src="/js/jquery.ripples.min.js"></script>-->
+<script src="/js/clipboard.min.js"></script>
+
+
+<script src="/js/vue.js"></script>
+
+<div id="rightClickMenu">
+  <ul class="list-group" style="margin: 0">
+    <li class="list-group-item disabled" style="text-align: center; line-height: 50px; border-bottom: 1px #ddd solid;">
+      欢迎访问我的博客
+    </li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;IP：<span id="client-ip">127.0.0.1</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;地址：<span id="client-location">本地</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;系统：<span id="client-os">Windows10</span></li>
+    <li class="list-group-item">&#12288;&nbsp;浏览器：<span id="client-browser">Chrome47</span></li>
+  </ul>
+</div>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>

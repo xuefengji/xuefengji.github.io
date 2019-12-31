@@ -1,0 +1,775 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+  <meta name="generator" content="django">
+  <meta charset="utf-8">
+  <meta name="keywords" content="程序员个人博客,程序员博客,90后程序员,技术笔记,程序员日常,个人博客">
+  <meta name="description" content="分类: 跨界学习 - 程序员的个人博客 | 一个90后程序员的技术人生">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="renderer" content="webkit|ie-stand|ie-comp">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>分类: 跨界学习 - 程序员的个人博客 | 一个90后程序员的技术人生</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">-->
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/element-ui.css">
+
+  <style type="text/css">
+  
+  </style>
+
+  <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-duotone-light.css" type="text/css"></head>
+
+
+<body>
+
+
+
+  <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent headbar-cover">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">文渊博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-home"></i>
+                    
+                    <span>首页</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/tags" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-tags"></i>
+                    
+                    <span>标签</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/categories" class="waves-effect waves-light">
+
+                    
+                        <i class="fa fa-bookmark"></i>
+                    
+                    <span>分类</span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-nav menus_item_child ">
+                    
+                        <li>
+                            <a href="/categories/前端技术/">
+                                
+                                <span>前端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/后端技术/">
+                                
+                                <span>后端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/运维知识/">
+                                
+                                <span>运维知识</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/机器学习/">
+                                
+                                <span>机器学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/技术周边/">
+                                
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/诗和远方/">
+                                
+                                <span>诗和远方</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/about" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-user-circle-o"></i>
+                    
+                    <span>关于我</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/navpage.html" class="waves-effect waves-light">
+                    
+                        <i class="fa fa fa-rocket"></i>
+                    
+                    <span>导航页</span>
+                </a>
+            
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+            <span style="display: inline-block;width:40px;height: 40px;background-image: url('/medias/logo.png');background-size: cover;vertical-align: middle; margin: 15px auto"></span>
+        
+        <div class="logo-name">文渊博客</div>
+        <div class="logo-desc">
+            
+                一个90后程序员，终身学习者。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+            <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                        
+                            <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                    <ul>
+                        
+                            <li>
+                                <a href="/categories/前端技术/">
+                                    
+                                    <span>前端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/后端技术/">
+                                    
+                                    <span>后端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/运维知识/">
+                                    
+                                    <span>运维知识</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/机器学习/">
+                                    
+                                    <span>机器学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/技术周边/">
+                                    
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/诗和远方/">
+                                    
+                                    <span>诗和远方</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/navpage.html" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa fa-rocket"></i>
+                        
+                        导航页
+                    </a>
+                
+            </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+  <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    致力于前后端开发技术
+                
+            </div>
+
+            <div class="description center-align">
+                
+                    一个90后程序员，终身学习者。
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+// 每天切换 banner 图.  Switch banner image every day.
+// $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+// 使用图床
+/*
+    let weekday = new Date().getDay()
+    let imgUrl = ''
+    switch (weekday) {
+        case 0:
+            imgUrl = 'http://wx4.sinaimg.cn/large/006Gm0PEgy1g13svi7pilj30zk0m8tbz.jpg'
+            break;
+        case 1:
+            imgUrl = 'http://wx1.sinaimg.cn/large/006Gm0PEgy1g13sva4c03j30zk0nq0um.jpg'
+            break;
+        case 2:
+            imgUrl = 'http://wx1.sinaimg.cn/large/006Gm0PEgy1g13sqic0n6j30zk0m80y6.jpg'
+            break;
+        case 3:
+            imgUrl = 'http://wx4.sinaimg.cn/large/006Gm0PEgy1g13sqe7enpj30zk0k0gn5.jpg'
+            break;
+        case 4:
+            imgUrl = 'http://wx1.sinaimg.cn/large/006Gm0PEgy1g13sqap1lfj30zk0k00uj.jpg'
+            break;
+        case 5:
+            imgUrl = 'http://wx1.sinaimg.cn/large/006Gm0PEgy1g13sq7h4vmj30zk0k076c.jpg'
+            break;
+        case 6:
+            imgUrl = 'http://wx4.sinaimg.cn/large/006Gm0PEgy1g13sq2eeklj30zk0k0jtg.jpg'
+            break;
+        default:
+            imgUrl = 'http://wx1.sinaimg.cn/mw690/006Gm0PEgy1g13sva4c03j30zk0nq0um.jpg'
+    }
+    $('.bg-cover').css('background-image', `url(${imgUrl})`);
+*/
+</script>
+    </div>
+</div>
+
+<main class="content">
+
+    
+
+<div id="category-cloud" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;文章分类
+            </div>
+            <div class="tag-chips">
+                
+                
+                
+                <a href="/categories/技术周边/" title="技术周边: 9">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " style="background-color: #F9EBEA;">技术周边
+                        <span class="tag-length">9</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/后端技术/" title="后端技术: 15">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " style="background-color: #F5EEF8;">后端技术
+                        <span class="tag-length">15</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/运维知识/" title="运维知识: 10">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " style="background-color: #D5F5E3;">运维知识
+                        <span class="tag-length">10</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/诗和远方/" title="诗和远方: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " style="background-color: #E8F8F5;">诗和远方
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/前端技术/" title="前端技术: 36">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " style="background-color: #FEF9E7;">前端技术
+                        <span class="tag-length">36</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/跨界学习/" title="跨界学习: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active " style="background-color: #F8F9F9;">跨界学习
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/机器学习/" title="机器学习: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " style="background-color: #82E0AA;">机器学习
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/资源整理/" title="资源整理: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " style="background-color: #D7BDE2;">资源整理
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/blogs/introduction-guide-to-insurance.html">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/medias/blogimages/introduction-guide-to-insurance.jpg" class="responsive-img" alt="程序员如何买保险">
+                            
+                            <span class="card-title">程序员如何买保险</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                本文普及保险基本知识，讲解不同资产的家庭应该如何配置保险，不涉及具体购买建议。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-09
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/跨界学习/" class="post-category" target="_blank">
+                                    跨界学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/保险/" target="_blank">
+                            <span class="chip bg-color">保险</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/blogs/content-operation-activity-operation-product-operation-user-operation.html">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/medias/blogimages/yunying.png" class="responsive-img" alt="什么是用户运营、产品运营、活动运营和内容运营">
+                            
+                            <span class="card-title">什么是用户运营、产品运营、活动运营和内容运营</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                新媒体运营一般包括用户运营、产品运营、活动运营和内容运营四大模块。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-03
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/跨界学习/" class="post-category" target="_blank">
+                                    跨界学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/运营/" target="_blank">
+                            <span class="chip bg-color">运营</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/blogs/18-technical-terms-for-an-operations-position.html">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/medias/blogimages/yunying.jpg" class="responsive-img" alt="运营岗位的18个入门专业术语">
+                            
+                            <span class="card-title">运营岗位的18个入门专业术语</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                最近看了运营相关的课外书，在此整理运营入门必备的专业术语，并对这些名词进行解释。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/跨界学习/" class="post-category" target="_blank">
+                                    跨界学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/运营/" target="_blank">
+                            <span class="chip bg-color">运营</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+</main>
+
+
+  <footer class="page-footer bg-color footer-cover">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            
+
+            
+            
+                <br>
+                <!-- 注释掉总访问量和访客数
+                
+                
+                    <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+                -->
+
+                
+                    <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    欢迎你, 第&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;位访问本站的朋友.
+                </span>
+                
+            
+
+            <br>
+            <a href="http://www.wenyuanblog.com" target="_blank">
+                Copyright © 2019 wenyuanblog.com All Rights Reserved.
+            </a>
+            <a href="http://www.wenyuanblog.com" target="_blank">
+                &nbsp;Powered by WenYuan
+            </a>
+            <br>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+                <span>备案号:苏ICP备19003118号-1</span>
+            </a>
+            <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+                <span>苏公网安备 32020602000865号</span>
+            </a>
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+  <a href="https://github.com/winyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-git"></i>
+  </a>
+
+
+
+  <a href="mailto:wenyuan.xu@vip.163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-envelope-open"></i>
+  </a>
+
+
+
+
+
+  <a href="javascript:void(0);" onclick="wechatShow()">
+    <i class="fa fa-wechat"></i>
+  </a>
+
+
+
+  <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+  </a>
+
+
+<script>
+function wechatShow() {
+  layer.open({
+    type: 2,
+    title: false,
+    closeBtn: 0,
+    area: ['200px', '200px'],
+    offset: 'rb',
+    skin: 'layui-layer-nobg', //没有背景色
+    shadeClose: true,
+    content: '/medias/socialimages/wechat.png'
+  });
+}
+</script>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+  <!-- Search Box -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+  <!-- Back to Top -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<!--<script src="/libs/aos/aos.js"></script>-->
+<!--<script src="/libs/scrollprogress/scrollProgress.min.js"></script>-->
+<!--<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<!-- Baidu Analytics -->
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ffafc579f91ca273792cb428f9ef63d5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+<!-- Baidu Push -->
+
+    <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+
+  <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="/libs/layer-v3.1.1/layer/layer.js"></script>
+<!--<script src="/js/jquery.ripples.min.js"></script>-->
+<script src="/js/clipboard.min.js"></script>
+
+
+<script src="/js/vue.js"></script>
+
+<div id="rightClickMenu">
+  <ul class="list-group" style="margin: 0">
+    <li class="list-group-item disabled" style="text-align: center; line-height: 50px; border-bottom: 1px #ddd solid;">
+      欢迎访问我的博客
+    </li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;IP：<span id="client-ip">127.0.0.1</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;地址：<span id="client-location">本地</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;系统：<span id="client-os">Windows10</span></li>
+    <li class="list-group-item">&#12288;&nbsp;浏览器：<span id="client-browser">Chrome47</span></li>
+  </ul>
+</div>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>

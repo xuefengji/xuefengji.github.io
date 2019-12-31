@@ -1,0 +1,1452 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+  <meta name="generator" content="django">
+  <meta charset="utf-8">
+  <meta name="keywords" content="JavaScript精度丢失,JavaScript隐式类型转换,JavaScript语法特性,JavaScript搞笑图">
+  <meta name="description" content="从一张搞笑图看JavaScript的语法和特性，分析JavaScript的精度丢失和隐式类型转换等问题_，值得细细品味。一张搞笑图　　首先贴出这张所谓的JavaScript搞笑图，">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="renderer" content="webkit|ie-stand|ie-comp">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>有趣的JavaScript - 程序员的个人博客 | 一个90后程序员的技术人生</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">-->
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/element-ui.css">
+
+  <style type="text/css">
+  
+  </style>
+
+  <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-duotone-light.css" type="text/css"></head>
+
+
+<body>
+
+
+
+  <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent headbar-cover">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">文渊博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-home"></i>
+                    
+                    <span>首页</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/tags" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-tags"></i>
+                    
+                    <span>标签</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/categories" class="waves-effect waves-light">
+
+                    
+                        <i class="fa fa-bookmark"></i>
+                    
+                    <span>分类</span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-nav menus_item_child ">
+                    
+                        <li>
+                            <a href="/categories/前端技术/">
+                                
+                                <span>前端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/后端技术/">
+                                
+                                <span>后端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/运维知识/">
+                                
+                                <span>运维知识</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/机器学习/">
+                                
+                                <span>机器学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/技术周边/">
+                                
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/诗和远方/">
+                                
+                                <span>诗和远方</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/about" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-user-circle-o"></i>
+                    
+                    <span>关于我</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/navpage.html" class="waves-effect waves-light">
+                    
+                        <i class="fa fa fa-rocket"></i>
+                    
+                    <span>导航页</span>
+                </a>
+            
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+            <span style="display: inline-block;width:40px;height: 40px;background-image: url('/medias/logo.png');background-size: cover;vertical-align: middle; margin: 15px auto"></span>
+        
+        <div class="logo-name">文渊博客</div>
+        <div class="logo-desc">
+            
+                一个90后程序员，终身学习者。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+            <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                        
+                            <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                    <ul>
+                        
+                            <li>
+                                <a href="/categories/前端技术/">
+                                    
+                                    <span>前端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/后端技术/">
+                                    
+                                    <span>后端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/运维知识/">
+                                    
+                                    <span>运维知识</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/机器学习/">
+                                    
+                                    <span>机器学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/技术周边/">
+                                    
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/诗和远方/">
+                                    
+                                    <span>诗和远方</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/navpage.html" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa fa-rocket"></i>
+                        
+                        导航页
+                    </a>
+                
+            </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+  
+
+
+
+<!--<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogimages/javascript.jpg')">-->
+<div class="bg-cover pd-header post-cover">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <!--
+                    <div class="description center-align post-title">
+                        有趣的JavaScript
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
+
+#articleContent :focus {
+    outline: none;
+}
+
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
+
+.toc-widget {
+    padding-left: 20px;
+}
+
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
+
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
+
+#toc-content ol {
+    padding-left: 10px;
+}
+
+#toc-content ol li {
+    padding-left: 10px;
+}
+
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
+
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
+
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
+
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
+
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+  <div class="card">
+    <div class="card-content article-info">
+      <div class="row tag-cate">
+        <div class="col s7">
+          
+            <div class="article-tag">
+              
+                <a href="/tags/JavaScript/" target="_blank">
+                  <span class="chip bg-color">JavaScript</span>
+                </a>
+              
+            </div>
+          
+        </div>
+        <div class="col s5 right-align">
+          
+            <div class="post-cate">
+              <i class="fa fa-bookmark fa-fw icon-category"></i>
+              
+                <a href="/categories/前端技术/" class="post-category" target="_blank">
+                  前端技术
+                </a>
+              
+            </div>
+          
+        </div>
+      </div>
+
+      <div class="post-info">
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+          2019-11-12
+        </div>
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>最近更新:&nbsp;&nbsp;
+          2019-11-12
+        </div>
+
+        
+
+        
+          <div id="busuanzi_container_page_pv" class="info-break-policy">
+            <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+            <span id="busuanzi_value_page_pv"></span>
+          </div>
+        
+      </div>
+    </div>
+    <hr class="clearfix">
+    <div class="card-content article-card-content">
+      <div id="articleContent">
+        <div style="text-align: center; font-size: 32px;">有趣的JavaScript - 精度丢失和隐式类型转换</div>
+
+<blockquote>
+<p>前端时间在社区看到有人发了一张JavaScript搞笑图，于是我找到了出处，觉得这张图很好，值得细细品味。</p>
+</blockquote>
+<h3 id="一张搞笑图"><a href="#一张搞笑图" class="headerlink" title="一张搞笑图"></a><span style="font-size: 18px;">一张搞笑图</span></h3><p>　　首先贴出这张所谓的JavaScript搞笑图，感受下JavaScript这门弱类型语言“魔性”的地方。</p>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/thanks-for-inventing-javascript.jpg" alt="JavaScript搞笑图"></p>
+<p>　　这张图片出自<a href="https://elbruno.com/2018/07/01/humor-thanks-for-inventing-javascript/" title="humor thanks for inventing javascript" rel="external nofollow noopener noreferrer" target="_blank">El Bruno的博客</a>。<br>　　相信面对这张图片，很多人会跟我一样是奔溃的。但是JavaScript就是这样，既然想学好它，就要弄清楚它的一切。<br>　　下面就泡杯咖啡，跟我一起来逐一剖析图中的每一行代码与它神奇的运行结果。<br>　　<strong>可能有理解不对的地方，希望阅读本文的小伙伴能在下方留言指出。</strong></p>
+<h3 id="1-typeof-NaN-–-gt-“number”"><a href="#1-typeof-NaN-–-gt-“number”" class="headerlink" title="1. typeof NaN –&gt; “number”"></a><span style="font-size: 18px; color: #159957;">1. typeof NaN –&gt; “number”</span></h3><p>　　在JavaScript中，所有数字的类型都为 <code>Number</code>，<code>typeof</code> 的运算结果即为 <code>number</code>。<br>　　但是JavaScript为了表达几个额外的语言场景，规定了几个例外情况：<br>　　●　<code>NaN</code>，即“NOT a Number”，虽然名字叫“不是数”，但<span style="color: #FF0000;">NaN依旧是数字类型</span>。<br>　　●　<code>Infinity</code>，无穷大。<br>　　●　<code>-Infinity</code>，负无穷大。</p>
+<h3 id="2-9999999999999999-–-gt-10000000000000000"><a href="#2-9999999999999999-–-gt-10000000000000000" class="headerlink" title="2. 9999999999999999 –&gt; 10000000000000000"></a><span style="font-size: 18px; color: #159957;">2. 9999999999999999 –&gt; 10000000000000000</span></h3><p>　　JavaScript中的Number类型有 <code>18437736874454810627</code>(即<code>2^64-2^53+3</code>) 个值，符合 IEEE 754-2008 规定的双精度浮点数规则。<br>　　根据双精度浮点数的定义，Number类型中有效的整数范围是<code>-0x1fffffffffffff</code>⾄<code>0x1fffffffffffff</code>，所以Number⽆法精确表示此范围外的整数。</p>
+<p>　　<strong>说人话</strong>：JavaScript有效位数只有53位，所以JS能精确表示的最大整数就是 <code>Math.pow(2, 53)</code>，十进制就是 <code>9007199254740992</code>。<br>　　在JavaScript中也设置了 <code>Number.MAX_SAFE_INTEGER</code>（最大安全整数）和 <code>Number.MIN_SAFE_INTEGER</code>（最小安全整数）。当JavaScript在存储超过 <code>9007199254740992</code> 的数值时，可能会存在精度丢失的情况（超过52位的会被自动去掉）。<br>　　例如：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/javascript_number_precision_loss.png" alt="JavaScript数值精度丢失"></p>
+<p>　　如果想进一步了解是怎么计算出来的，可以观察下表并结合<a href="http://javascript.ruanyifeng.com/grammar/number.html#toc2" title="数值精度" rel="external nofollow noopener noreferrer" target="_blank">阮一峰的这篇文章</a>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">s</th>
+<th style="text-align:center">eeeeeee eeee</th>
+<th style="text-align:center">ffff ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">52</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-0-1-0-2-0-3-–-gt-false"><a href="#3-0-1-0-2-0-3-–-gt-false" class="headerlink" title="3. 0.1+0.2 == 0.3 –&gt; false"></a><span style="font-size: 18px; color: #159957;">3. 0.1+0.2 == 0.3 –&gt; false</span></h3><p>　　同样根据浮点数的定义，⾮整数的Number类型⽆法⽤ ==（===也不⾏）来⽐较，⼀段著名的代码：</p>
+<pre class=" language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">+</span> <span class="token number">0.2</span> <span class="token operator">==</span> <span class="token number">0.3</span><span class="token punctuation">)</span>
+</code></pre>
+<p>　　这⾥输出的结果是 <code>false</code>，说明两边不相等的，这是浮点运算的特点，浮点数运算的精度问题导致等式左右的结果并不是严格相等，⽽是<span style="color: #FF0000;">相差了个微⼩的值</span>。</p>
+<p>　　所以实际上，这⾥错误的不是结论，⽽是⽐较的⽅法，正确的⽐较⽅法是使⽤JavaScript提供的最⼩精度值：</p>
+<pre class=" language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token number">0.1</span> <span class="token operator">+</span> <span class="token number">0.2</span> <span class="token operator">-</span> <span class="token number">0.3</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> Number<span class="token punctuation">.</span>EPSILON<span class="token punctuation">)</span>
+</code></pre>
+<p>　　检查等式左右两边差的绝对值是否⼩于最⼩精度，才是正确的⽐较浮点数的⽅法。这段代码结果就是 <code>true</code> 了。</p>
+<h3 id="4-Math-min-和-Math-max"><a href="#4-Math-min-和-Math-max" class="headerlink" title="4. Math.min() 和 Math.max()"></a><span style="font-size: 18px; color: #159957;">4. Math.min() 和 Math.max()</span></h3><p>　　查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/min" title="JavaScript | MDN" rel="external nofollow noopener noreferrer" target="_blank">JavaScript | MDN</a>可知：<br>　　当 <code>Math.min()</code> 方法无参数时返回 <code>Infinity</code>，<br>　　而 <code>Math.max()</code> 无参数时返回 <code>-Infinity</code>。</p>
+<p>　　JS能够表示的最大数值和最小数值分别为 <code>Number.MAX_VALUE</code> 和 <code>Number.MIN_VALUE</code>，<br>　　在大多数浏览器中，它们分别是 <code>1.7976931348623157e+308</code> 和 <code>5e-324</code>。<br>　　可以看到，它们都是正数，是绝对值中的最大和最小数值。</p>
+<p>　　还有比他们更大或者更小的值，当计算结果得到一个超过数值范围的值，那么就会转成 <code>Ifinity</code>（正无穷）和 <code>-Infinity</code>（负无穷）。</p>
+<p>　　JS也提供了2个属性保存这两个无穷值，分别是 <code>Number.NEGATIVE_INFINITY</code>（负无穷）和 <code>Number.POSITIVE_INFINITY</code>（正无穷）。</p>
+<h3 id="5-和"><a href="#5-和" class="headerlink" title="5. []+[] 和 []+{}"></a><span style="font-size: 18px; color: #159957;">5. []+[] 和 []+{}</span></h3><p>　　在使用一元操作符（如<code>+</code>、<code>-</code>、<code>++</code>、<code>--</code>）时，JavaScript存在隐式类型转换。<br>　　●　在应用于一个包含有效数字字符的字符串时，先将其转换为数字值。<br>　　●　在应用于一个不包含有效数字字符的字符串时，将变量的值设置为 <code>NaN</code>。<br>　　●　在应用于布尔值 <code>false</code> 和 <code>true</code> 时，分别转换为 <code>0</code> 和 <code>1</code>。<br>　　●　在应用于对象时，先调用对象的 <code>valueOf()</code> 方法，取的一个可供操作的值。如果结果为 <code>NaN</code>，就在调用 <code>toString()</code> 方式转成字符串，在执行前面的操作。</p>
+<p>　　未被重定义的情况下 <code>valueOf()</code> 方法返回指定对象的基础类型值；<code>toString()</code> 方法返回一个表示该对象的字符串。</p>
+<p>　　在这里 <code>[]</code> 和 <code>{}</code> 都是引用类型，是对象，所以先调用 <code>valueOf</code> 方法，后面调用 <code>toString</code> 方法。</p>
+<p>　　第一个 <code>[]+[]</code>，Array对象重写了Object的valueOf方法和toString方法，valueOf返回数组本身，toString返回与没有参数（默认为逗号拼接）的 join() 方法返回的字符串相同。所以这里先返回了数组本身，无法进行“<code>+</code>”操作，在调用toString方法，变成了空字符串，两个空字符串相加，所以最后输出空字符串。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">// ""</span>
+</code></pre>
+<p>　　第二个 <code>[]+{}</code>，<code>[]</code> 最终转成空字符串，<code>+</code>运算实际上变成了字符串拼接方法，于是 <code>{}</code> 调用Object的原生toString方法，转成了 <code>&quot;[object Object]&quot;</code>，最终拼接为了 <code>&quot;[object Object]&quot;</code>。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// "[object Object]"</span>
+</code></pre>
+<h3 id="6"><a href="#6" class="headerlink" title="6. {}+[]"></a><span style="font-size: 18px; color: #159957;">6. {}+[]</span></h3><p>　　这个和上一项有点相似，如果按照第五项中的解释去理解，是得不到结果的。为什么呢？这要说到JavaScript引擎本身解释代码的问题了。<br>　　在JavaScript解释 <code>{}</code> 时，有两种情况，一种是语句块，一种是对象定义。</p>
+<p>　　当直接在控制台输入 <code>{} + []</code> 时，此时解释器将 <code>{}</code> 解释为语句块，即 <code>{} + []</code>，所以输出就变成了 <code>+[]</code> 的结果，这里<code>+</code>符号会强制转换，执行<code>toNumber()</code>操作，空数组返回数字<code>0</code>。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">// 0</span>
+</code></pre>
+<p>　　如果在外面加上括号，即 <code>({} + [])</code>，那么 <code>{}</code> 就会被解释为对象，最后返回 <code>&quot;[object Object]&quot;</code>。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// "[object Object]"</span>
+</code></pre>
+<h3 id="7-true-true-true-3"><a href="#7-true-true-true-3" class="headerlink" title="7. true+true+true === 3"></a><span style="font-size: 18px; color: #159957;">7. true+true+true === 3</span></h3><p>　　有运算操作符时，Boolean类型 <code>false</code> 转为 <code>0</code>，<code>true</code> 转为 <code>1</code>，所以左侧结果为 <code>3</code>，值相等，类型也相等，故返回 <code>true</code>。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token boolean">true</span> <span class="token operator">+</span> <span class="token boolean">true</span> <span class="token operator">+</span> <span class="token boolean">true</span> <span class="token operator">===</span> <span class="token number">3</span>
+<span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<h3 id="8-true-true"><a href="#8-true-true" class="headerlink" title="8. true - true"></a><span style="font-size: 18px; color: #159957;">8. true - true</span></h3><p>　　和上面同样的理由，转变成数值运算 <code>1-1</code>，所以返回 <code>0</code>。</p>
+<h3 id="9-true-1"><a href="#9-true-1" class="headerlink" title="9. true == 1"></a><span style="font-size: 18px; color: #159957;">9. true == 1</span></h3><p>　　相等操作符，两侧会进行 toNumber 操作，进行值判断，不进行类型判断。所以 <code>1 == 1</code>，返回 <code>true</code>。</p>
+<h3 id="10-true-1"><a href="#10-true-1" class="headerlink" title="10. true === 1"></a><span style="font-size: 18px; color: #159957;">10. true === 1</span></h3><p>　　全等操作符，既判断值，也判断类型，即不做类型转换，这里值虽然相同，一个为Boolean类型，一个为Number类型，所以返回 <code>false</code>。</p>
+<h3 id="11-length"><a href="#11-length" class="headerlink" title="11. (! + [] + [] + ![]).length"></a><span style="font-size: 18px; color: #159957;">11. (! + [] + [] + ![]).length</span></h3><p>　　运算符具有优先级，如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">. [] ()</td>
+<td style="text-align:center">字段访问、数组下标、函数调用以及表达式分组</td>
+</tr>
+<tr>
+<td style="text-align:center">++ – - ~ ! delete new typeof void</td>
+<td style="text-align:center">一元运算符、返回数据类型、对象创建、未定义值</td>
+</tr>
+<tr>
+<td style="text-align:center">* / %</td>
+<td style="text-align:center">乘法、除法、取模</td>
+</tr>
+<tr>
+<td style="text-align:center">+ - +</td>
+<td style="text-align:center">加法、减法、字符串拼接</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&lt; &gt;&gt; &gt;&gt;&gt;</td>
+<td style="text-align:center">移位</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt; &lt;= &gt; &gt;= instanceof</td>
+<td style="text-align:center">小于、小于等于、大于、大于等于、instanceof</td>
+</tr>
+<tr>
+<td style="text-align:center">== != === !==</td>
+<td style="text-align:center">等于、不等于、严格相等、非严格相等</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:center">按位与</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">按位异或</td>
+</tr>
+<tr>
+<td style="text-align:center">丨</td>
+<td style="text-align:center">按位或</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">逻辑与</td>
+</tr>
+<tr>
+<td style="text-align:center">丨丨</td>
+<td style="text-align:center">逻辑或</td>
+</tr>
+<tr>
+<td style="text-align:center">?:</td>
+<td style="text-align:center">条件</td>
+</tr>
+<tr>
+<td style="text-align:center">= oP=</td>
+<td style="text-align:center">赋值、运算赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">,</td>
+<td style="text-align:center">多重求值</td>
+</tr>
+</tbody>
+</table>
+<p>　　这里可以看到逻辑非!操作符优先级比+高，所以第一个逻辑非!先执行，相当于!(+[])，+[]进行toNumber操作返回0，然后逻辑非进行toBoolean操作返回true，然后![]执行，于是[]先进行toBoolean的操作，返回true，然后逻辑非操作变成false，然后执行从左至右+运算，即true+[]+false，变成了字符串拼接，于是返回“truefalse”，这个字符串的长度也就是9了。</p>
+<h3 id="12-9-“1”"><a href="#12-9-“1”" class="headerlink" title="12. 9 + “1”"></a><span style="font-size: 18px; color: #159957;">12. 9 + “1”</span></h3><p>　　无论是 <code>9+&quot;1&quot;</code>，还是 <code>&quot;9&quot;+1</code>，结果都是 <code>&quot;91&quot;</code>。<code>+</code>运算符可以是数字相加运算，也可以是字符拼接运算。但是ES规范规定了，<span style="color: #FF0000;">如果<code>+</code>运算符两侧存在字符串时，就调用<code>toString()</code>方法，进行字符串拼接操作</span>，所以这里结果都是 <code>&quot;91&quot;</code>。</p>
+<h3 id="13-9-“1”"><a href="#13-9-“1”" class="headerlink" title="13. 9 - “1”"></a><span style="font-size: 18px; color: #159957;">13. 9 - “1”</span></h3><p>　　<code>-</code>运算符和<code>+</code>运算符不同，因为<span style="color: #FF0000;"><code>-</code>运算符就是数字运算减的操作</span>，所以先转成Number类型，所以无论是 <code>&quot;9&quot; -1</code> 还是 <code>9 -&quot;1&quot;</code>，结果都是 <code>8</code>。</p>
+<h3 id="14-0"><a href="#14-0" class="headerlink" title="14. [] == 0"></a><span style="font-size: 18px; color: #159957;">14. [] == 0</span></h3><p>　　隐式转换，空数组在相等操作符是会转成数字<code>0</code>，所以返回 <code>true</code>。</p>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a><span style="font-size: 18px;">写在最后</span></h3><p>　　当然了，写这篇文章的目的只是兴趣使然地逐行解释下开头那张图，希望趁此机会引出几个JavaScript重（冷）要（门）知识点。<br>　　这张图里的很多知识并不是实际编程所需要的，但是如果想对JavaScript有更深的理解，还是要去好好学习的，详情可见下面的参考文档。</p>
+<p class="reference"><br>参考<br>《重学前端（winter）》<br>《JavaScript标准参考教程（阮一峰）》<br>《JavaScript高级程序设计（第3版）》<br></p>
+
+      </div>
+      <hr>
+
+      
+        <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 400px;
+        height: 400px;
+        background-color: #FFF;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+        font-weight: normal;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        font-size: 13px;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #3DA149 !important;
+    }
+
+    .reward-tabs .wechatpay-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 250px;
+        height: 250px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">戳</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">钱和朋友之间，更想多认识朋友</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s4 wechat-tab waves-effect waves-light"><a href="#wechat">微信</a></li>
+                        <li class="tab col s4 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s4 wechatpay-tab waves-effect waves-light"><a href="#wechatpay">微信投资</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="交个朋友吧">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechatpay">
+                        <img src="/medias/reward/wechatpay.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+      
+
+      <!--<link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>-->
+
+      <div class="reprint">
+        <p>
+          <span class="reprint-tip">
+            <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+          </span>
+          <a href="https://www.wenyuanblog.com" class="b-link-green">文渊博客</a>
+          <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+          <a href="/blogs/humor-thanks-for-inventing-javascript.html" class="b-link-green">有趣的JavaScript</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'IirbHl64M5MqyIVCnfJsdjvU-gzGzoHsz',
+        appKey: '9K4u0nf4Ret3ntR3Uh9FHqYs',
+        notify: 'false' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'false' === 'true',
+        avatar: '',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '记得留下您的昵称和邮箱...可以快速收到回复',
+        avatar_cdn: 'https://www.gravatar.com/avatar/'
+    });
+</script>
+  
+
+  
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/blogs/javascript-how-to-return-value-in-promise.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="如何将Promise.then中的值直接return出来">
+                        
+                        <span class="card-title">如何将Promise.then中的值直接return出来</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Promise如何返回值，而不是返回Promise对象。为什么Promise返回值一直都是undefined。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/前端技术/" class="post-category" target="_blank">
+                                    前端技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web开发/" target="_blank">
+                        <span class="chip bg-color">Web开发</span>
+                    </a>
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/blogs/add-text-editors-to-rignt-menu-by-regedit-in-windows.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/notepad3_to_right_menu.png" class="responsive-img" alt="Notepad3关联鼠标右键菜单">
+                        
+                        <span class="card-title">Notepad3关联鼠标右键菜单</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            以Notepad3为例，通过注册表将各类文本编辑器添加到右键菜单，从而可以通过鼠标右键...
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/技术周边/" class="post-category" target="_blank">
+                                    技术周边
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Windows/" target="_blank">
+                        <span class="chip bg-color">Windows</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
+
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
+
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
+
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
+
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
+
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
+
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
+</script>
+    
+
+</main>
+
+
+  <footer class="page-footer bg-color footer-cover">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            
+
+            
+            
+                <br>
+                <!-- 注释掉总访问量和访客数
+                
+                
+                    <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+                -->
+
+                
+                    <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    欢迎你, 第&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;位访问本站的朋友.
+                </span>
+                
+            
+
+            <br>
+            <a href="http://www.wenyuanblog.com" target="_blank">
+                Copyright © 2019 wenyuanblog.com All Rights Reserved.
+            </a>
+            <a href="http://www.wenyuanblog.com" target="_blank">
+                &nbsp;Powered by WenYuan
+            </a>
+            <br>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+                <span>备案号:苏ICP备19003118号-1</span>
+            </a>
+            <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+                <span>苏公网安备 32020602000865号</span>
+            </a>
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+  <a href="https://github.com/winyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-git"></i>
+  </a>
+
+
+
+  <a href="mailto:wenyuan.xu@vip.163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-envelope-open"></i>
+  </a>
+
+
+
+
+
+  <a href="javascript:void(0);" onclick="wechatShow()">
+    <i class="fa fa-wechat"></i>
+  </a>
+
+
+
+  <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+  </a>
+
+
+<script>
+function wechatShow() {
+  layer.open({
+    type: 2,
+    title: false,
+    closeBtn: 0,
+    area: ['200px', '200px'],
+    offset: 'rb',
+    skin: 'layui-layer-nobg', //没有背景色
+    shadeClose: true,
+    content: '/medias/socialimages/wechat.png'
+  });
+}
+</script>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+  <!-- Search Box -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+  <!-- Back to Top -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<!--<script src="/libs/aos/aos.js"></script>-->
+<!--<script src="/libs/scrollprogress/scrollProgress.min.js"></script>-->
+<!--<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<!-- Baidu Analytics -->
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ffafc579f91ca273792cb428f9ef63d5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+<!-- Baidu Push -->
+
+    <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+
+  <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="/libs/layer-v3.1.1/layer/layer.js"></script>
+<!--<script src="/js/jquery.ripples.min.js"></script>-->
+<script src="/js/clipboard.min.js"></script>
+
+
+<script src="/js/vue.js"></script>
+
+<div id="rightClickMenu">
+  <ul class="list-group" style="margin: 0">
+    <li class="list-group-item disabled" style="text-align: center; line-height: 50px; border-bottom: 1px #ddd solid;">
+      欢迎访问我的博客
+    </li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;IP：<span id="client-ip">127.0.0.1</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;地址：<span id="client-location">本地</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;系统：<span id="client-os">Windows10</span></li>
+    <li class="list-group-item">&#12288;&nbsp;浏览器：<span id="client-browser">Chrome47</span></li>
+  </ul>
+</div>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>

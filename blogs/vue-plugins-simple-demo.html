@@ -90,13 +90,6 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
-                            <a href="/categories/基础知识/">
-                                
-                                <span>基础知识</span>
-                            </a>
-                        </li>
-                    
-                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -111,9 +104,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/日常运维/">
+                            <a href="/categories/运维知识/">
                                 
-                                <span>日常运维</span>
+                                <span>运维知识</span>
                             </a>
                         </li>
                     
@@ -125,9 +118,16 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/开发环境/">
+                            <a href="/categories/技术周边/">
                                 
-                                <span>开发环境</span>
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
                             </a>
                         </li>
                     
@@ -223,13 +223,6 @@
                     <ul>
                         
                             <li>
-                                <a href="/categories/基础知识/">
-                                    
-                                    <span>基础知识</span>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -244,9 +237,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/日常运维/">
+                                <a href="/categories/运维知识/">
                                     
-                                    <span>日常运维</span>
+                                    <span>运维知识</span>
                                 </a>
                             </li>
                         
@@ -258,9 +251,16 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/开发环境/">
+                                <a href="/categories/技术周边/">
                                     
-                                    <span>开发环境</span>
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
                                 </a>
                             </li>
                         
@@ -336,93 +336,98 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 
-    #articleContent :focus {
-        outline: none;
-    }
+#articleContent :focus {
+    outline: none;
+}
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
 
-    .toc-widget {
-        padding-left: 20px;
-    }
+.toc-widget {
+    padding-left: 20px;
+}
 
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
 
-    #toc-content ol {
-        padding-left: 10px;
-    }
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
 
-    #toc-content ol li {
-        padding-left: 10px;
-    }
+#toc-content ol {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link:hover {
-        /*color: #42b983;*/
-        color: #3498db;
-        font-weight: 700;
-        text-decoration: underline;
-    }
+#toc-content ol li {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-    #toc-content .is-active-link {
-        /*color: #42b983;*/
-        color: #3498db;
-    }
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
 
-    #toc-content .is-active-link::before {
-        /*background-color: #42b983;*/
-        background-color: #3498db;
-    }
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
 
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
 
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
 
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -496,10 +501,10 @@
 <pre class=" language-bash"><code class="language-bash">vue create my-project
 </code></pre>
 <p>　　编写插件的总体流程：声明插件 - 写插件 - 注册插件 - 使用插件<br>　　下面开始编写一个安装器插件，通过这个过程来学习。</p>
-<h3 id="1-声明插件"><a href="#1-声明插件" class="headerlink" title="1. 声明插件"></a><span style="font-size: 18px; color: #159957;">1. 声明插件</span></h3><p>　　首先在 <span style="color: #FF6827;">src目录</span> 下创建一个 <span style="color: #FF6827;">plugins目录</span>，然后在该目录下创建一个<span style="color: #FF6827;">installer.js</span>，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_plugins_create.png" alt="vue_plugins_create.png"><br>　　它要实现的功能其实只用包含一个叫作install的函数（无论导出的是对象还是其它，必须具备install函数）。这里我们定义一个构造函数Installer（安装器）。</p>
-<h3 id="2-注册插件"><a href="#2-注册插件" class="headerlink" title="2. 注册插件"></a><span style="font-size: 18px; color: #159957;">2. 注册插件</span></h3><p>　　在<span style="color: #FF6827;">main.js</span>中引入插件，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_plugins_register.png" alt="vue_plugins_register.png"><br>　　因为Installer本身包含一个install函数，所以可以给它直接用<code>Vue.use(Installer)</code>。</p>
-<p>　　这个时候执行<code>npm run serve</code>然后访问页面，可以看到执行了在<span style="color: #FF6827;">installer.js</span>里的<code>console.log(Vue)</code>内容，即在插件中可以拿到Vue。</p>
-<h3 id="3-写插件"><a href="#3-写插件" class="headerlink" title="3. 写插件"></a><span style="font-size: 18px; color: #159957;">3. 写插件</span></h3><p>　　下面开始编写插件，我们实现两个功能：<br>　　●　注册全局组件<br>　　　　৹　注册一个test组件<br>　　●　挂载属性<br>　　　　৹　挂载一个<code>$log</code>属性，这里是一个函数<br><span style="color: #FF6827;">installer.js</span>代码如下：</p>
+<h3 id="1-声明插件"><a href="#1-声明插件" class="headerlink" title="1. 声明插件"></a><span style="font-size: 18px; color: #159957;">1. 声明插件</span></h3><p>　　首先在 <span style="color: #FF0000;">src目录</span> 下创建一个 <span style="color: #FF0000;">plugins目录</span>，然后在该目录下创建一个<span style="color: #FF0000;">installer.js</span>，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_plugins_create.png" alt="vue_plugins_create.png"><br>　　它要实现的功能其实只用包含一个叫作install的函数（无论导出的是对象还是其它，必须具备install函数）。这里我们定义一个构造函数Installer（安装器）。</p>
+<h3 id="2-注册插件"><a href="#2-注册插件" class="headerlink" title="2. 注册插件"></a><span style="font-size: 18px; color: #159957;">2. 注册插件</span></h3><p>　　在<span style="color: #FF0000;">main.js</span>中引入插件，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_plugins_register.png" alt="vue_plugins_register.png"><br>　　因为Installer本身包含一个install函数，所以可以给它直接用<code>Vue.use(Installer)</code>。</p>
+<p>　　这个时候执行<code>npm run serve</code>然后访问页面，可以看到执行了在<span style="color: #FF0000;">installer.js</span>里的<code>console.log(Vue)</code>内容，即在插件中可以拿到Vue。</p>
+<h3 id="3-写插件"><a href="#3-写插件" class="headerlink" title="3. 写插件"></a><span style="font-size: 18px; color: #159957;">3. 写插件</span></h3><p>　　下面开始编写插件，我们实现两个功能：<br>　　●　注册全局组件<br>　　　　৹　注册一个test组件<br>　　●　挂载属性<br>　　　　৹　挂载一个<code>$log</code>属性，这里是一个函数<br><span style="color: #FF0000;">installer.js</span>代码如下：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// vue插件必须具备Install函数</span>
 <span class="token keyword">function</span> <span class="token function">Installer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// 自身初始化行为</span>
@@ -541,8 +546,8 @@ Installer<span class="token punctuation">.</span>install <span class="token oper
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> Installer<span class="token punctuation">;</span>
 </code></pre>
-<h3 id="4-使用插件"><a href="#4-使用插件" class="headerlink" title="4. 使用插件"></a><span style="font-size: 18px; color: #159957;">4. 使用插件</span></h3><p>　　回到<span style="color: #FF6827;">Home.vue</span>，使用插件，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_plugins_use.png" alt="vue_plugins_use.png"><br>　　执行<code>npm run serve</code>然后访问页面，打开console，查看结果，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_plugins_result.png" alt="vue_plugins_result.png"></p>
-<h2 id="三、可能的报错"><a href="#三、可能的报错" class="headerlink" title="三、可能的报错"></a>三、可能的报错</h2><p>　　如果执行<code>npm run serve</code>后访问页面出现报错，<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_runtime-only_build_error.png" alt="vue_runtime-only_build_error.png"><br>　　<strong>报错原因：</strong><br>　　这里引用的是vue.runtime.esm.js，造成的不能正常运行。<br>　　<strong>解决方法：</strong><br>　　这里我们使用的是vue-cli3x搭建的vue项目，在项目的根目录下添加配置文件<span style="color: #FF6827;">vue.config.js</span>，目的是修改在引入vue时，不要采用runtime形式的文件,而采用 dist/vue.esm.js形式文件，然后将下面这段代码复制粘贴到<span style="color: #FF6827;">vue.config.js</span>中：</p>
+<h3 id="4-使用插件"><a href="#4-使用插件" class="headerlink" title="4. 使用插件"></a><span style="font-size: 18px; color: #159957;">4. 使用插件</span></h3><p>　　回到<span style="color: #FF0000;">Home.vue</span>，使用插件，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_plugins_use.png" alt="vue_plugins_use.png"><br>　　执行<code>npm run serve</code>然后访问页面，打开console，查看结果，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_plugins_result.png" alt="vue_plugins_result.png"></p>
+<h2 id="三、可能的报错"><a href="#三、可能的报错" class="headerlink" title="三、可能的报错"></a>三、可能的报错</h2><p>　　如果执行<code>npm run serve</code>后访问页面出现报错，<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/vue_runtime-only_build_error.png" alt="vue_runtime-only_build_error.png"><br>　　<strong>报错原因：</strong><br>　　这里引用的是vue.runtime.esm.js，造成的不能正常运行。<br>　　<strong>解决方法：</strong><br>　　这里我们使用的是vue-cli3x搭建的vue项目，在项目的根目录下添加配置文件<span style="color: #FF0000;">vue.config.js</span>，目的是修改在引入vue时，不要采用runtime形式的文件,而采用 dist/vue.esm.js形式文件，然后将下面这段代码复制粘贴到<span style="color: #FF0000;">vue.config.js</span>中：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">function</span> <span class="token function">resolve</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1062,7 +1067,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1129,87 +1134,87 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
 </script>
     
 

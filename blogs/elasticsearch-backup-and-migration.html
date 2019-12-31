@@ -6,7 +6,7 @@
   <meta name="generator" content="django">
   <meta charset="utf-8">
   <meta name="keywords" content="elasticsearch,索引备份,索引迁移,迁移与备份">
-  <meta name="description" content="总结Elasticsearch各种备份与迁移方案，亲测_步骤。一、环境Ubuntu 14.04/16、04JDK1.8Elas">
+  <meta name="description" content="总结 Elasticsearch 各种备份与迁移方案，亲测_。一、环境Ubuntu 14.04/16、04JDK1.8Elasti">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -90,13 +90,6 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
-                            <a href="/categories/基础知识/">
-                                
-                                <span>基础知识</span>
-                            </a>
-                        </li>
-                    
-                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -111,9 +104,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/日常运维/">
+                            <a href="/categories/运维知识/">
                                 
-                                <span>日常运维</span>
+                                <span>运维知识</span>
                             </a>
                         </li>
                     
@@ -125,9 +118,16 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/开发环境/">
+                            <a href="/categories/技术周边/">
                                 
-                                <span>开发环境</span>
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
                             </a>
                         </li>
                     
@@ -223,13 +223,6 @@
                     <ul>
                         
                             <li>
-                                <a href="/categories/基础知识/">
-                                    
-                                    <span>基础知识</span>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -244,9 +237,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/日常运维/">
+                                <a href="/categories/运维知识/">
                                     
-                                    <span>日常运维</span>
+                                    <span>运维知识</span>
                                 </a>
                             </li>
                         
@@ -258,9 +251,16 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/开发环境/">
+                                <a href="/categories/技术周边/">
                                     
-                                    <span>开发环境</span>
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
                                 </a>
                             </li>
                         
@@ -336,93 +336,98 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 
-    #articleContent :focus {
-        outline: none;
-    }
+#articleContent :focus {
+    outline: none;
+}
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
 
-    .toc-widget {
-        padding-left: 20px;
-    }
+.toc-widget {
+    padding-left: 20px;
+}
 
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
 
-    #toc-content ol {
-        padding-left: 10px;
-    }
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
 
-    #toc-content ol li {
-        padding-left: 10px;
-    }
+#toc-content ol {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link:hover {
-        /*color: #42b983;*/
-        color: #3498db;
-        font-weight: 700;
-        text-decoration: underline;
-    }
+#toc-content ol li {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-    #toc-content .is-active-link {
-        /*color: #42b983;*/
-        color: #3498db;
-    }
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
 
-    #toc-content .is-active-link::before {
-        /*background-color: #42b983;*/
-        background-color: #3498db;
-    }
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
 
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
 
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
 
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -447,8 +452,8 @@
             <div class="post-cate">
               <i class="fa fa-bookmark fa-fw icon-category"></i>
               
-                <a href="/categories/日常运维/" class="post-category" target="_blank">
-                  日常运维
+                <a href="/categories/运维知识/" class="post-category" target="_blank">
+                  运维知识
                 </a>
               
             </div>
@@ -494,12 +499,12 @@
 <span class="token comment" spellcheck="true"># 该目录要是elasticsearch可访问的，我们的环境一般是elasticsearch用户</span>
 <span class="token function">chown</span> -R elasticsearch:elasticsearch /media/es/es_backup/
 </code></pre>
-<h3 id="2-修改elasticsearch-yml文件"><a href="#2-修改elasticsearch-yml文件" class="headerlink" title="2. 修改elasticsearch.yml文件"></a><span style="font-size: 18px;">2. 修改elasticsearch.yml文件</span></h3><p>　　修改elasticsearch.yml文件，添加path.repo配置。</p>
+<h3 id="2-修改elasticsearch-yml文件"><a href="#2-修改elasticsearch-yml文件" class="headerlink" title="2. 修改elasticsearch.yml文件"></a><span style="font-size: 18px;">2. 修改elasticsearch.yml文件</span></h3><p>修改 <span style="color: #FF0000;">elasticsearch.yml</span> 文件，添加 <span style="color: #FF0000;">path.repo</span> 配置。</p>
 <pre class=" language-bash"><code class="language-bash">vim elasticsearch.yml
 <span class="token comment" spellcheck="true"># 增加一行如下：</span>
 path.repo: <span class="token punctuation">[</span><span class="token string">"/media/es/es_backup"</span><span class="token punctuation">]</span>
 </code></pre>
-<h3 id="3-重启Elasticsearch"><a href="#3-重启Elasticsearch" class="headerlink" title="3. 重启Elasticsearch"></a><span style="font-size: 18px;">3. 重启Elasticsearch</span></h3><h3 id="4-创建仓库"><a href="#4-创建仓库" class="headerlink" title="4. 创建仓库"></a><span style="font-size: 18px;">4. 创建仓库</span></h3><p>　　借助Kibana操作。</p>
+<h3 id="3-重启Elasticsearch"><a href="#3-重启Elasticsearch" class="headerlink" title="3. 重启Elasticsearch"></a><span style="font-size: 18px;">3. 重启Elasticsearch</span></h3><h3 id="4-创建仓库"><a href="#4-创建仓库" class="headerlink" title="4. 创建仓库"></a><span style="font-size: 18px;">4. 创建仓库</span></h3><p>借助 Kibana 操作。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 创建仓库，创建一个名为my_backup的仓库</span>
 PUT _snapshot/my_backup
 <span class="token punctuation">{</span>
@@ -541,7 +546,7 @@ GET _snapshot/my_backup/snapshot_name/_status
 <span class="token comment" spellcheck="true"># 也能用于取消一个正在进行的快照创建过程，会删除备份了一半的快照</span>
 DELETE _snapshot/my_backup/snapshot_name
 </code></pre>
-<p>　　这里我取一个仓库名为my_backup，快照名为alert_snap，要备份的index为.nina_view和cc-zabbix-2018.01.05</p>
+<p>这里我取一个仓库名为 <span style="color: #FF0000;">my_backup</span>，快照名为 <span style="color: #FF0000;">alert_snap</span>，要备份的 index 为 <span style="color: #FF0000;">.nina_view</span> 和 <span style="color: #FF0000;">cc-zabbix-2018.01.05</span>。</p>
 <h3 id="6-将数据迁移到另一个环境"><a href="#6-将数据迁移到另一个环境" class="headerlink" title="6. 将数据迁移到另一个环境"></a><span style="font-size: 18px;">6. 将数据迁移到另一个环境</span></h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 备份创建好之后，在仓库目录/media/es/es_backup里是这样的：</span>
 -rw-r--r-- 1 elasticsearch elasticsearch  317 Jan 22 17:44 index-0
 -rw-r--r-- 1 elasticsearch elasticsearch    8 Jan 22 17:44 index.latest
@@ -549,7 +554,7 @@ drwxr-xr-x 4 elasticsearch elasticsearch 4096 Jan 22 17:44 indices/
 -rw-r--r-- 1 elasticsearch elasticsearch  103 Jan 22 17:44 meta-9KWgeCYtSBqqVrfD42bsNw.dat
 -rw-r--r-- 1 elasticsearch elasticsearch  237 Jan 22 17:44 snap-9KWgeCYtSBqqVrfD42bsNw.dat
 </code></pre>
-<h3 id="7-在目标环境下，重复上面1-4步，建立仓库"><a href="#7-在目标环境下，重复上面1-4步，建立仓库" class="headerlink" title="7. 在目标环境下，重复上面1~4步，建立仓库"></a><span style="font-size: 18px;">7. 在目标环境下，重复上面1~4步，建立仓库</span></h3><p>　　将源集群的备份内容（/media/es/es_backup里的所有文件），复制到迁移目标的仓库目录里，接下来就是类似批量导入了。</p>
+<h3 id="7-在目标环境下，重复上面1-4步，建立仓库"><a href="#7-在目标环境下，重复上面1-4步，建立仓库" class="headerlink" title="7. 在目标环境下，重复上面1~4步，建立仓库"></a><span style="font-size: 18px;">7. 在目标环境下，重复上面1~4步，建立仓库</span></h3><p>将源集群的备份内容（<span style="color: #FF0000;">/media/es/es_backup</span> 里的所有文件），复制到迁移目标的仓库目录里，接下来就是类似批量导入了。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 如果索引已经存在目标的集群，需要先关闭索引，恢复数据后再开启</span>
 POST /index_name/_close
 POST _snapshot/my_backup/snapshot_name/_restore
@@ -570,7 +575,9 @@ POST /_snapshot/my_backup/snapshot_1/_restore
 <span class="token comment" spellcheck="true"># 查看恢复的状态</span>
 GET _snapshot/my_backup/snapshot_name/_status 
 </code></pre>
-<h2 id="三、集群-多节点环境"><a href="#三、集群-多节点环境" class="headerlink" title="三、集群-多节点环境"></a>三、集群-多节点环境</h2><h3 id="1-创建共享目录"><a href="#1-创建共享目录" class="headerlink" title="1. 创建共享目录"></a><span style="font-size: 18px;">1. 创建共享目录</span></h3><p>　　(todo…我没实施过，感觉挺麻烦的，不太推荐)<br>　　使用sshfs在ES集群中每个节点的相同位置挂载一个共享目录，<br>　　假设ES集群有三个节点：192.168.1.10，192.168.1.11，192.168.1.12，<br>　　我这里共享目录用了/data/es_backup，ES备份仓库目录(也是共享目录的挂在点)用了/mnt/es_backup，可以根据实际情况调整</p>
+<h2 id="三、集群-多节点环境"><a href="#三、集群-多节点环境" class="headerlink" title="三、集群-多节点环境"></a>三、集群-多节点环境</h2><h3 id="1-创建共享目录"><a href="#1-创建共享目录" class="headerlink" title="1. 创建共享目录"></a><span style="font-size: 18px;">1. 创建共享目录</span></h3><p>(todo…我没实施过，感觉挺麻烦的，不太推荐)<br>使用 sshfs 在 ES 集群中每个节点的相同位置挂载一个共享目录。</p>
+<p>假设 ES 集群有三个节点：192.168.1.10，192.168.1.11，192.168.1.12，</p>
+<p>我这里共享目录用了 <span style="color: #FF0000;">/data/es_backup</span>，ES 备份仓库目录(也是共享目录的挂在点)用了 <span style="color: #FF0000;">/mnt/es_backup</span>，可以根据实际情况调整。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在每个节点上安装sshfs</span>
 <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> sshfs
 
@@ -596,7 +603,7 @@ sshfs <span class="token variable">$user@192</span>.168.1.10:/data/es_backup /mn
 <span class="token comment" spellcheck="true"># 修改每个节点的elasticsearch.yml文件，添加path.repo配置</span>
 path.repo: <span class="token punctuation">[</span><span class="token string">"/mnt/es_backup"</span><span class="token punctuation">]</span>
 </code></pre>
-<p>　　接下来的操作和上面单节点一样，重启es，建立仓库，创建快照等等。</p>
+<p>接下来的操作和上面单节点一样，重启 es，建立仓库，创建快照等等。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 在共享目录下为集群创建共享仓库</span>
 PUT _snapshot/my_backup
 <span class="token punctuation">{</span>
@@ -608,14 +615,27 @@ PUT _snapshot/my_backup
 <span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true"># 后面步骤省略...</span>
 </code></pre>
-<p>　　最后补充一下：取消挂载共享目录，不要直接删除挂载目录，在每个节点下执行下面命令</p>
+<p>最后补充一下：取消挂载共享目录，不要直接删除挂载目录，在每个节点下执行下面命令：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 这个命令会断开远程连接同时清空 /mnt/es_backup 目录。</span>
 fusermount -u /mnt/es_backup
 </code></pre>
-<p>　　类似的实现文件共享的方法还有 nfs 和 samba（支持window和linux互相访问）</p>
-<h3 id="2-借助第三方工具"><a href="#2-借助第三方工具" class="headerlink" title="2. 借助第三方工具"></a><span style="font-size: 18px;">2. 借助第三方工具</span></h3><p>　　第三方迁移工具，网上看了下，主要有三个：<br>　　●　elasticsearch-dump<br>　　●　elasticsearch-exporter<br>　　●　<a href="https://elasticsearch.cn/article/78" rel="external nofollow noopener noreferrer" target="_blank">elasticsearch-migration</a></p>
-<p>　　<span style="color: #FF0000;">优点</span>：方便，快速。支持的功能很多(数据迁移、mapping迁移等等)。<br>　　<span style="color: #FF0000;">缺点</span>：原理是用了scroll+bulk，百万、千万级别条数的数据可以使用，数据量过大还是老老实实用我上面整理的快照方法吧；<br>　　备注：对ES操作时候，一些报错没有捕获到并写入log。比如我们只允许自动创建cc-开头的索引，迁移生成的新索引需要改名为别的名字，你会发现迁移完，数据没有进去，这也算是第三方工具的不足之处，不过它应该会不断完善。</p>
-<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>　　不管是运维也好，开发也好，对数据的备份和迁移是经常要做的事。针对环境的不同特别是数据量的差异，需要适时选择合适的方式。<br>　　有时候也要根据自己的具体需求而定，比如为了辅助自己开发，需要回放数据，那完全可以编写一些简单的脚本来实现。<br>　　我写过几个简单的脚本，放在GitHub上：<br>　　●　<a href="https://github.com/winyuan/es_replay" rel="external nofollow noopener noreferrer" target="_blank">es_replay</a><br>　　开发测试用途（数据导出、去重、构造和导入）<br>　　●　<a href="https://github.com/winyuan/es_assistant" rel="external nofollow noopener noreferrer" target="_blank">es_assistant</a><br>　　一些用于协助开发和测试的es交互脚本<br>　　●　<a href="https://github.com/winyuan/es_monitor" rel="external nofollow noopener noreferrer" target="_blank">es_monitor</a><br>　　Elaticsearch部署机的信息采集脚本（这个是很久很久以前写的，那时候刚学ES，能直接用，功能上没问题，但代码完全可以更优化一下，最近忙着学其他东西，所以一直没去动它。）</p>
+<p>类似的实现文件共享的方法还有 nfs 和 samba（支持 window 和 linux 互相访问）。</p>
+<h3 id="2-借助第三方工具"><a href="#2-借助第三方工具" class="headerlink" title="2. 借助第三方工具"></a><span style="font-size: 18px;">2. 借助第三方工具</span></h3><p>第三方迁移工具，网上看了下，主要有三个：</p>
+<ul>
+<li>elasticsearch-dump</li>
+<li>elasticsearch-exporter</li>
+<li><a href="https://elasticsearch.cn/article/78" rel="external nofollow noopener noreferrer" target="_blank">elasticsearch-migration</a></li>
+</ul>
+<p><span style="color: #FF0000;">优点</span>：方便，快速。支持的功能很多(数据迁移、mapping迁移等等)。</p>
+<p><span style="color: #FF0000;">缺点</span>：原理是用了 scroll+bulk，百万、千万级别条数的数据可以使用，数据量过大还是老老实实用我上面整理的快照方法吧。<br>备注：对 ES 操作时候，一些报错没有捕获到并写入 log。比如我们只允许自动创建 <code>cc-</code> 开头的索引，迁移生成的新索引需要改名为别的名字，你会发现迁移完，数据没有进去，这也算是第三方工具的不足之处，不过它应该会不断完善。</p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>不管是运维也好，开发也好，对数据的备份和迁移是经常要做的事。针对环境的不同特别是数据量的差异，需要适时选择合适的方式。</p>
+<p>有时候也要根据自己的具体需求而定，比如为了辅助自己开发，需要回放数据，那完全可以编写一些简单的脚本来实现。</p>
+<p>我写过几个简单的脚本，放在 <a href="https://github.com/winyuan" title="GitHub" rel="external nofollow noopener noreferrer" target="_blank">GitHub</a> 上：</p>
+<ul>
+<li><a href="https://github.com/winyuan/es_replay" rel="external nofollow noopener noreferrer" target="_blank">es_replay</a><br>开发测试用途（<span style="color: #FF0000;">数据导出、去重、构造和导入</span>）</li>
+<li><a href="https://github.com/winyuan/es_assistant" rel="external nofollow noopener noreferrer" target="_blank">es_assistant</a><br>一些用于协助开发和测试的 es 交互脚本</li>
+<li><a href="https://github.com/winyuan/es_monitor" rel="external nofollow noopener noreferrer" target="_blank">es_monitor</a><br>Elaticsearch 部署机的<span style="color: #FF0000;">信息采集</span>脚本（这个是很久很久以前写的，那时候刚学 ES，能直接用，功能上没问题，但代码完全可以更优化一下，最近忙着学其他东西，所以一直没去动它。）</li>
+</ul>
 
       </div>
       <hr>
@@ -1104,7 +1124,7 @@ fusermount -u /mnt/es_backup
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1131,8 +1151,8 @@ fusermount -u /mnt/es_backup
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/开发环境/" class="post-category" target="_blank">
-                                    开发环境
+                            <a href="/categories/运维知识/" class="post-category" target="_blank">
+                                    运维知识
                                 </a>
                             
                             
@@ -1167,87 +1187,87 @@ fusermount -u /mnt/es_backup
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
 </script>
     
 

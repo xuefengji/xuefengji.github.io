@@ -90,13 +90,6 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
-                            <a href="/categories/基础知识/">
-                                
-                                <span>基础知识</span>
-                            </a>
-                        </li>
-                    
-                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -111,9 +104,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/日常运维/">
+                            <a href="/categories/运维知识/">
                                 
-                                <span>日常运维</span>
+                                <span>运维知识</span>
                             </a>
                         </li>
                     
@@ -125,9 +118,16 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/开发环境/">
+                            <a href="/categories/技术周边/">
                                 
-                                <span>开发环境</span>
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
                             </a>
                         </li>
                     
@@ -223,13 +223,6 @@
                     <ul>
                         
                             <li>
-                                <a href="/categories/基础知识/">
-                                    
-                                    <span>基础知识</span>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -244,9 +237,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/日常运维/">
+                                <a href="/categories/运维知识/">
                                     
-                                    <span>日常运维</span>
+                                    <span>运维知识</span>
                                 </a>
                             </li>
                         
@@ -258,9 +251,16 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/开发环境/">
+                                <a href="/categories/技术周边/">
                                     
-                                    <span>开发环境</span>
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
                                 </a>
                             </li>
                         
@@ -336,93 +336,98 @@
     
     <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 
-    #articleContent :focus {
-        outline: none;
-    }
+#articleContent :focus {
+    outline: none;
+}
 
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
 
-    .toc-widget {
-        padding-left: 20px;
-    }
+.toc-widget {
+    padding-left: 20px;
+}
 
-    .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
 
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
 
-    #toc-content ol {
-        padding-left: 10px;
-    }
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
 
-    #toc-content ol li {
-        padding-left: 10px;
-    }
+#toc-content ol {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link:hover {
-        /*color: #42b983;*/
-        color: #3498db;
-        font-weight: 700;
-        text-decoration: underline;
-    }
+#toc-content ol li {
+    padding-left: 10px;
+}
 
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-    }
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
 
-    #toc-content .is-active-link {
-        /*color: #42b983;*/
-        color: #3498db;
-    }
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
 
-    #toc-content .is-active-link::before {
-        /*background-color: #42b983;*/
-        background-color: #3498db;
-    }
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
 
-    #floating-toc-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
 
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
 
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
@@ -502,7 +507,7 @@
 
 <h3 id="3-如何与父母进行有效沟通"><a href="#3-如何与父母进行有效沟通" class="headerlink" title="3. 如何与父母进行有效沟通"></a><span style="font-size: 18px; color:#1da7da;">3. 如何与父母进行有效沟通</span></h3><div class="excerpt"><br>　　要多把你看到的、听到的，分享给父母。<br>　　要多问父母一些问题，哪怕你已经有了答案。<br>　　千万不要不耐烦。<br>　　沟通才能减少误会。<br></div>
 
-<h3 id="4-在职场如何跟领导和同事沟通"><a href="#4-在职场如何跟领导和同事沟通" class="headerlink" title="4. 在职场如何跟领导和同事沟通"></a><span style="font-size: 18px; color:#1da7da;">4. 在职场如何跟领导和同事沟通</span></h3><div class="excerpt"><br>　　沟通的第一法则：让别人舒服。<br></div><br><div class="excerpt"><br>　　大多数的同事，都是最熟悉的陌生人。<br></div><br><div class="excerpt"><br>　　和同事交流的原则：<br>　　第一，有限暴露。不要什么都说，你可以交换的是你的人生观、价值观、世界观。除此之外，不要交换其他的个人信息。<br>　　第二，聊些无关紧要的话题。不要八卦别人的感情，不要谈论谁和谁的关系，更不要背后说别人坏话。要相信，用火烧别人的人，注定会烧到自己。<br></div><br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/topic_of_conversation_with_colleagues.jpg" alt="推荐和同事交谈的话题" width="500" hegiht="300" align="center"><br><div class="excerpt"><br>　　分享两招接话的万能语：<br>　　“瞧您说的。”<br>　　“可不是嘛！”<br></div><br><div class="excerpt"><br>　　群居学闭嘴，独处学坚强。<br></div><br><div class="excerpt"><br>　　群居学闭嘴，独处学坚强。<br></div>
+<h3 id="4-在职场如何跟领导和同事沟通"><a href="#4-在职场如何跟领导和同事沟通" class="headerlink" title="4. 在职场如何跟领导和同事沟通"></a><span style="font-size: 18px; color:#1da7da;">4. 在职场如何跟领导和同事沟通</span></h3><div class="excerpt"><br>　　沟通的第一法则：让别人舒服。<br></div><br><div class="excerpt"><br>　　大多数的同事，都是最熟悉的陌生人。<br></div><br><div class="excerpt"><br>　　和同事交流的原则：<br>　　第一，有限暴露。不要什么都说，你可以交换的是你的人生观、价值观、世界观。除此之外，不要交换其他的个人信息。<br>　　第二，聊些无关紧要的话题。不要八卦别人的感情，不要谈论谁和谁的关系，更不要背后说别人坏话。要相信，用火烧别人的人，注定会烧到自己。<br></div><br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/topic_of_conversation_with_colleagues.jpg" alt="推荐和同事交谈的话题" width="500" hegiht="300" align="center"><br><div class="excerpt"><br>　　分享两招接话的万能语：<br>　　“瞧您说的。”<br>　　“可不是嘛！”<br></div><br><div class="excerpt"><br>　　群居学闭嘴，独处学坚强。<br></div>
 
 <h3 id="5-朋友之间相处要懂得分寸感"><a href="#5-朋友之间相处要懂得分寸感" class="headerlink" title="5. 朋友之间相处要懂得分寸感"></a><span style="font-size: 18px; color:#1da7da;">5. 朋友之间相处要懂得分寸感</span></h3><div class="excerpt"><br>　　在你失落的时候，陪在你身边；在你得意的时候，提醒你保有平常心。就算许久不联系，见面也不会觉得尴尬，这就是朋友。<br></div><br><div class="excerpt"><br>　　直白不等于低情商。再好的朋友，也经不起你过分直白。伤害了别人的直白，就是自私。<br></div><br><div class="excerpt"><br>　　可以先说优点，然后说有一个不足的地方是什么，最后再加一句：但总体特别好。<br></div><br><div class="excerpt"><br>　　朋友之间不仅要讲道理，还要讲情，如果不是原则性问题，不要总是一副教育别人的样子。<br></div><br><div class="excerpt"><br>　　一位同学被老师批评了，很生气，跟你吐槽，你这个时候应该怎么说？<br>　　A.跟同学分析老师为什么批评他，并告诉他，他这样不对。<br>　　B.跟朋友一起吐槽老师，顺便聊聊以后该怎么办。<br>　　正确答案是B。两种沟通方式最后的效果是一样的，但B叫沟通的艺术，A叫过于直白。<br></div><br><div class="excerpt"><br>　　不要绕开朋友去求朋友的朋友。<br></div><br><div class="excerpt"><br>　　长久的友情一定是要有界限的：朋友让你知道的东西，你可以知道；不让你知道的东西，你不能知道。<br></div>
 
@@ -1014,8 +1019,8 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/开发环境/" class="post-category" target="_blank">
-                                    开发环境
+                            <a href="/categories/运维知识/" class="post-category" target="_blank">
+                                    运维知识
                                 </a>
                             
                             
@@ -1035,7 +1040,7 @@
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1102,87 +1107,87 @@
 
 <!-- TOC 悬浮按钮. -->
 
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fa fa-list"></i>
-    </a>
-</div>
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
-        });
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
 
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
 
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
 
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
 
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
 
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
 
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).slideUp(500);
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).slideDown(500);
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
 </script>
     
 
