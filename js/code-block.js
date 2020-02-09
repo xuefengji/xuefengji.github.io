@@ -41,6 +41,10 @@ $(function() {
         codeLang = 'json';
       } else if (codeClass.indexOf("language-yaml") !== -1) {
         codeLang = 'yaml';
+      } else if (codeClass.indexOf("language-markdown") !== -1) {
+        codeLang = 'markdown';
+      } else if (codeClass.indexOf("language-text") !== -1) {
+        codeLang = '';
       }
       codeLangHtml = '<span class="code-lang">' + codeLang + '</span>';
 

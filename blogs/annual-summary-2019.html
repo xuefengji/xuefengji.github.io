@@ -6,7 +6,7 @@
   <meta name="generator" content="django">
   <meta charset="utf-8">
   <meta name="keywords" content="2019年度总结,一个程序员的年度总结">
-  <meta name="description" content="一个90后程序员的2019年度总结_ 年了。记得上一次做年终总结还是在 17 年底公司内部的新员工分享会。一眨眼，2">
+  <meta name="description" content="一个90后程序员的2019年度总结_年了。记得上一次做年终总结还是在17年底公司内部的新员工分享会。一眨眼，2">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>2019年度总结-不忘初心 - 程序员的个人博客 | 一个90后程序员的技术人生</title>
+  <title>2019年度总结 - 不忘初心 - 程序员的个人博客 | 一个90后程序员的技术人生</title>
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -37,9 +37,7 @@
 
 <body>
 
-
-
-  <header class="navbar-fixed">
+<header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent headbar-cover">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -155,11 +153,22 @@
     
         <li class="hide-on-med-and-down nav-item">
             
+                <a href="/books" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-book"></i>
+                    
+                    <span>我的书单</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
                 <a href="/navpage.html" class="waves-effect waves-light">
                     
                         <i class="fa fa fa-rocket"></i>
                     
-                    <span>导航页</span>
+                    <span>友情链接</span>
                 </a>
             
         </li>
@@ -288,11 +297,22 @@
         
             <li class="m-nav-item">
                 
+                    <a href="/books" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-book"></i>
+                        
+                        我的书单
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
                     <a href="/navpage.html" class="waves-effect waves-light">
                         
                             <i class="fa fa-fw fa fa-rocket"></i>
                         
-                        导航页
+                        友情链接
                     </a>
                 
             </li>
@@ -308,7 +328,20 @@
 
 </header>
 
-  
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -320,7 +353,7 @@
                 <div class="brand">
                     <!--
                     <div class="description center-align post-title">
-                        2019年度总结-不忘初心
+                        2019年度总结 - 不忘初心
                     </div>
                     -->
                 </div>
@@ -484,31 +517,33 @@
     <hr class="clearfix">
     <div class="card-content article-card-content">
       <div id="articleContent">
-        <div style="text-align: center; font-size: 32px;">2019年度总结-不忘初心</div>
+        <div style="text-align: center; font-size: 32px;">2019年度总结 - 不忘初心</div>
 
 <blockquote>
 <p>时间过得总是那么快，从 16 年毕业到现在已经 3 年了。记得上一次做年终总结还是在 17 年底公司内部的新员工分享会。一眨眼，2019 年就快结束了。<br>和前两年比起来，这一年的节奏很快，无论是外界环境，还是工作、生活，给我的感觉就是「赶」。加上今年一边学习，一边思考，各方面都有不少感悟，列完一张导图后，按计划也该写年度总结了。</p>
 </blockquote>
 <p>前阵子看到一个叫「滴答目标九宫格」的小程序，里面把年度计划分成了 8 个方面，我觉得挺好的，于是就根据这 8 个方面列了一张导图，下面也就按其中的几个方面开始总结。</p>
-<h2 id="工作·事业"><a href="#工作·事业" class="headerlink" title="工作·事业"></a>工作·事业</h2><p>我是 16 年二本毕业的，非科班，因为爱好自学前端、后端，然后入了计算机行业，算起来也有三年左右的工作经验。刚毕业的时候喊了个口号说「我要做全栈」，于是从最初的自学 Java，到入职后从事 Python 后端和前端开发，持续了 2 年，也算一个入门级全栈了。</p>
+<h2 id="工作·事业"><a href="#工作·事业" class="headerlink" title="工作·事业"></a>工作·事业</h2><p>我是 16 年自动化专业毕业的，和大多数转行的朋友相似：二本非科班，无大厂经验。因为爱好才入了计算机行业，一路自学前端、后端，算起来已有三年左右的工作经验。刚毕业的时候喊了个口号说「我要做全栈」，于是从最初的自学 Java，到入职后从事 Python 后端和前端开发，持续了 2 年，也算一个入门级全栈了。</p>
 <p>今年，我意识到技术面广固然是一件好事，但同时也要有一个「专而精」的方向。再次考虑了包括爱好在内的各方面因素，我选择了前端。于是在工作中将重心转移到了前端开发，业余时间将精力集中于夯实前端基础。平时面向业务编程居多，所以需要在空余时间按照学习路线「重学前端」，双管齐下，争取不断提高前端技术。</p>
-<h2 id="学习·成长"><a href="#学习·成长" class="headerlink" title="学习·成长"></a>学习·成长</h2><p>前面提到了现阶段在技术上以前端为主，计划先「修炼内功」，以后再「深挖各路功夫」。落实下来，就是研读一些书籍，辅之以各种付费课程（慕课、极客时间、掘金手册等等）。为了防止「买了就是看了」这种自欺欺人的现象，现在较少在活动的时候屯书，而是看完两本再买两本，表面上看起来多花了钱，其实这样对我来说效果不错。扯个其外话，其实一般比较经典的书很少参加活动，所以什么时间买都一样，比如红宝书全年的价格变动不超过 5 元。</p>
+<h2 id="学习·成长"><a href="#学习·成长" class="headerlink" title="学习·成长"></a>学习·成长</h2><p>前面提到了现阶段在技术上以前端为主，计划先「修炼内功」，以后再「研究各派功夫」。落实下来，就是研读一些书籍，辅之以各种付费课程（慕课、极客时间、掘金手册等等）。为了防止「买了就是看了」这种自欺欺人的现象，现在较少在活动的时候屯书，而是看完两本再买两本，表面上看起来多花了钱，其实这样对我来说效果不错。扯个其外话，其实一般比较经典的书很少参加活动，所以什么时间买都一样，比如红宝书全年的价格变动不超过 5 元。</p>
 <p>除了技术类书籍，我还阅读了一些非技术类书籍，前者在于提高硬技能，目的性较强，主要占用完整的时间。后者一般跟软技能挂钩，这类书籍主要是在坐地铁的时候阅读，算是课外书。</p>
-<p>今年在课外阅读上我最大的感触就是：不要勉强自己读不喜欢的书。我从小到大都读不进文学书，而小时候语文老师布置的阅读基本都是这种，所以一度认为自己讨厌阅读，后来发现是读错了书。或许未来等我到达了一定的段位，反过来读文学书陶冶情操的时候也能产生极大的兴趣。所以不要盲目的看大佬们的书单，找到合适的才最重要。</p>
-<p>同样是今年，有个比较火的词叫「跨界」，言下之意就是做一个多面手、培养多领域的能力。我一般是从课外书、公众号、付费知识星球中汲取所谓的跨界知识，目标也是朝「跨界人才」方向发展。但就跟「全栈」的概念一样，一个人的精力有限，每个阶段有各自的「工作重心」，至少这几年我还是以提高技术为主，学习跨界技能为辅。</p>
-<p>最后就是个人成长相关的，李尚龙老师在《你没有退路，才有出路》一书中有句话这么写到：「强者是逆着基因生长的」。我身上有很多坏习惯，也有一些性格缺陷。所以我有一个小目标：每年改善一个性格。2019 年做的还可以，不说彻底改变，也完成了 80%，明年继续加油，做一个更好的自己！</p>
-<h2 id="人际·社群"><a href="#人际·社群" class="headerlink" title="人际·社群"></a>人际·社群</h2><p>今年第二季度的时候，本着打造个人 IP 的念头上线了个人博客，主要记录一些学习笔记、经验分享。没想做大，更不敢奢求盈利，只想着稍微贴点服务器和域名开销，一个人自嗨。但在 9、10、11 三个月，一个热门关键词竟然上了百度首页 top3，让我高兴了好一阵子。后来可能是百度年度调整了权重算法，以及我更新了几篇「偏题」的博文，又跌了下去。不过这些都不重要了。其中特别感谢青姐免费将我的友链加到她网站的前列，真的很感谢。<br>自从有了博客，陆续认识了不少业内业外的朋友，所以打造一个个人 IP 真的太重要了。</p>
-<p>平时我也会加一些技术交流群，除去一些水群以外，今年结实了很多志同道合的伙伴，浪浪、昱昱、小夕姐、若川，还有愿意带我的前辈北妈等等，太多了就不一一列举了。我尤其喜欢若川的一句话：「一个人走得快，一群人走得远」。所以经常跟这些小伙伴交流，无论是在技术还是知识面上的收获都很大。</p>
+<p>今年在课外阅读上我最大的感触就是：<strong>不要勉强自己读不喜欢的书</strong>。我从小到大都读不进文学书，而小时候语文老师布置的阅读基本都是这种，所以一度认为自己讨厌阅读，后来发现是读错了书。或许未来等我到达了一定的段位，反过来读文学书陶冶情操的时候也能产生极大的兴趣。所以不要盲目的看大佬们的书单，找到合适的才最重要。</p>
+<p>同样是今年，有个比较火的词叫「跨界」，言下之意就是做一个多面手、培养多领域的能力。我一般是从课外书、公众号、付费知识星球中汲取所谓的跨界知识，目标也是朝「跨界人才」方向发展。但就跟「全栈」的概念一样，一个人的精力有限，每个阶段有各自的「工作重心」，至少这几年我还是<strong>以提高专业技术为主，拓展跨界能力为辅</strong>。</p>
+<p>最后就是个人成长相关的，李尚龙老师在《你没有退路，才有出路》一书中有句话这么写到：「<strong>强者是逆着基因生长的</strong>」。我身上有很多坏习惯，也有一些性格缺陷。所以我有一个小目标：每年改善一个性格。2019 年做的还可以，不说彻底改变，也完成了 80%，明年继续加油，做一个更好的自己！</p>
+<h2 id="人际·社群"><a href="#人际·社群" class="headerlink" title="人际·社群"></a>人际·社群</h2><p>今年第二季度的时候，本着打造个人 IP 的念头上线了个人博客，主要记录一些学习笔记、经验分享。</p>
+<p>对于个人博客，我暂时没想推广做大和盈利，只是觉得即使经济不宽裕，但稍微贴点服务器和域名开销，一个人自嗨也是挺好的。在 9、10、11 三个月，「程序员博客」这个关键词竟然上了百度首页 Top3，让我高兴了好一阵子。后来可能是百度年末调整了权重算法，以及我更新了几篇「偏题」的博文，又跌了下去。不过这些都不重要了。其中特别感谢青姐把我的博客放到了青于蓝的前列，被认可的感觉真好。</p>
+<p>自从有了博客，陆续认识了不少各领域的朋友。平时我也会加一些技术交流群，除去一些水群以外，今年结识了很多志同道合的伙伴。因为我不在一线大厂，有时候对前沿的消息会相对闭塞。但定期跟全国各地的好朋友聊天、交流心得，也能够学习到不少东西，极大地拓宽视野。我尤其喜欢若川的一句话：「<strong>一个人走得快，一群人走得远</strong>」。扩展自己的朋友圈，无论是在技术还是知识面上的收获都很大。</p>
 <h2 id="财务·理财"><a href="#财务·理财" class="headerlink" title="财务·理财"></a>财务·理财</h2><p>一直以来我的理财观都比较糟糕，虽然没有挥霍、透支的习惯，但对资产的分配没有任何概念。2019 年没有投入太多的精力去学习理财方面的知识，不过目前来说纠正了一个意识：<br>从前认为：收入 - 支出（日常花销 + 负债 + 其他）= 理财<br>现在改观：<strong>收入 - 理财 = 支出</strong></p>
 <p>2020 年开始，准备稍微学习下理财，然后参考标准普尔家庭配置象限图，合理的配置自己的收入。</p>
 <h2 id="健康·身体"><a href="#健康·身体" class="headerlink" title="健康·身体"></a>健康·身体</h2><p>2019 年看了很多新闻，也改变了一些观念，系统学习了保险知识，所以给自己和全家都配备了保险。</p>
-<p>虽然工作不是996制，但因为经常熬夜学习，我平时也开始注重锻炼，比如跑步。可惜由于种种视为借口的原因，没坚持多久，遗憾。</p>
-<p>最后意识到奋斗的过程因为要论持久战，所以晚上不再熬很晚，基本上 0 点前要准备睡觉了。周末的话，宁可早点睡，第二天早点起。</p>
-<h2 id="家庭·生活"><a href="#家庭·生活" class="headerlink" title="家庭·生活"></a>家庭·生活</h2><p>毕业三年，很多同届同学都在家里的帮助下买房定居了，平时群里也会有类似的话题，只好感叹一句：现如今的 90 后靠自己买房，真是挺难。<br>今年关注了一下房价，我现在这个二线最偏最便宜的地方都 13 ~ 14k 了，加上首付 30% 的相对比较少，因为精装房的缘故都要求 60%，假如一年攒 10W，也要 5 年以上。有的人说程序员工资高，但房价涨的更快，而且付完首付还有很多年的贷款，还有网传的 「中年危机」。有时候越想越绝望。</p>
-<p>但是机会还有有的。有个思维导图挺有意思：这个问题能解决吗？不能 → 那烦恼有什么用。能 → 那还烦恼什么。<br>既然房价如此，反正现在也买不起，何必徒增焦虑呢？正如大学舍友说的那样：「焦虑 = 期望 - 现实」。于是我转移了注意力，把精力放到提高能力，努力赚钱上。有时候外界再焦虑，我埋头学习的时候，反而越来越有信心，颇有点阿Q思想的意思。</p>
-<p>家庭方面，我今年做的很不好，让父母、关心我的人感知到了我的压力，无形间传递了焦虑和不愉快。生活还是多点欢笑的好。</p>
+<p>虽然工作不是 996 制，但因为经常熬夜学习，我平时也开始注重锻炼，比如跑步。可惜由于种种视为借口的原因，没坚持多久，遗憾。</p>
+<p>最后意识到奋斗的过程要<strong>论持久战</strong>，所以晚上不再熬很晚，基本上 0 点前要准备睡觉了。周末的话，宁可早点睡，第二天早点起。</p>
+<h2 id="家庭·生活"><a href="#家庭·生活" class="headerlink" title="家庭·生活"></a>家庭·生活</h2><p>毕业三年，很多同届同学都在家里的帮助下买房定居了，平时群里也会有类似的话题，只好感叹一句：现如今的 90 后靠自己买房，真是挺难。<br>今年关注了一下房价，我现在这个二线最偏最便宜的地方都 13k ~ 14k 了，加上首付 30% 的相对比较少，因为精装房的缘故都要求 60%，假如一年攒 10W，也要 5 年以上。有的人说程序员工资高，但房价涨的更快，而且付完首付还有很多年的贷款，还有网传的 「中年危机」。有时候越想越绝望。</p>
+<p>但是机会还是有的。有个思维导图挺有意思：这个问题能解决吗？不能 → 那烦恼有什么用。能 → 那还烦恼什么。</p>
+<p>既然房价如此，反正现在也买不起，何必徒增焦虑呢？要知道「<strong>焦虑 = 期望 - 现实</strong>」。学会平衡好期望和现实，尽可能缩小两者的差值是当下比较重要的事情。于是我转移了注意力，把精力放到提高能力、努力赚钱上。有时候外界再焦虑，我埋头学习的时候，反而越来越有信心，颇有点阿Q思想的意思。</p>
+<p>家庭方面，我今年做的不怎么好，让父母、关心我的人感知到了我的压力，无形间传递了焦虑和不愉快。生活还是多点欢笑的好。</p>
 <p>婚姻与未来呢，一句话：革命尚未成功，要更加努力才行。</p>
-<h2 id="2020年度计划"><a href="#2020年度计划" class="headerlink" title="2020年度计划"></a>2020年度计划</h2><p>2019 年比较乱，原因是大部分时间都在「赶」。所以要适时作出调整，虽然很多人说年度计划都是 flag，但做计划是一回事，落实执行是一回事，坚持不移又是一回事。</p>
+<h2 id="2020年度计划"><a href="#2020年度计划" class="headerlink" title="2020年度计划"></a>2020年度计划</h2><p>2019 年比较乱，原因是大部分时间都在「赶」。所以要适时作出调整，虽然很多人说年度计划都是 Flag，但<strong>做计划是一回事，落实执行是一回事，坚持不移又是一回事</strong>。</p>
 <p>2020年度计划</p>
 <ul>
 <li>工作与事业<ul>
@@ -698,7 +733,7 @@
           </span>
           <a href="https://www.wenyuanblog.com" class="b-link-green">文渊博客</a>
           <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-          <a href="/blogs/annual-summary-2019.html" class="b-link-green">2019年度总结-不忘初心</a>
+          <a href="/blogs/annual-summary-2019.html" class="b-link-green">2019年度总结 - 不忘初心</a>
         </p>
       </div>
     </div>
@@ -982,45 +1017,47 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/blogs/annual-summary-2019.html">
+                <a href="/blogs/css-mouse-hover-card-float-effects.html">
                     <div class="card-image">
                         
-                        <img src="/medias/blogimages/annual-summary-2019.jpg" class="responsive-img" alt="2019年度总结-不忘初心">
+                        <img src="/medias/blogimages/css3.jpg" class="responsive-img" alt="CSS实现鼠标滑过卡片上浮效果">
                         
-                        <span class="card-title">2019年度总结-不忘初心</span>
+                        <span class="card-title">CSS实现鼠标滑过卡片上浮效果</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一个90后程序员的2019年度总结。
+                            几行简单的CSS代码，实现页面元素在鼠标悬停时的浮起特效，类似于纸张折起的效果。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-31
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/诗和远方/" class="post-category" target="_blank">
-                                    诗和远方
+                            <a href="/categories/前端技术/" class="post-category" target="_blank">
+                                    前端技术
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/日记/" target="_blank">
-                        <span class="chip bg-color">日记</span>
+                    <a href="/tags/Web开发/" target="_blank">
+                        <span class="chip bg-color">Web开发</span>
+                    </a>
+                    
+                    <a href="/tags/HTML5-CSS3/" target="_blank">
+                        <span class="chip bg-color">HTML5/CSS3</span>
                     </a>
                     
                 </div>
@@ -1179,7 +1216,7 @@ $(function() {
 </main>
 
 
-  <footer class="page-footer bg-color footer-cover">
+<footer class="page-footer bg-color footer-cover">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             
@@ -1213,7 +1250,7 @@ $(function() {
                 &nbsp;Powered by WenYuan
             </a>
             <br>
-            <a href="http://www.miitbeian.gov.cn/" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+            <a href="http://www.beian.miit.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
                 <span>备案号:苏ICP备19003118号-1</span>
             </a>
             <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
@@ -1267,7 +1304,7 @@ function wechatShow() {
 <div class="progress-bar"></div>
 
 
-  <!-- Search Box -->
+<!-- Search Box -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -1284,13 +1321,12 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-  <!-- Back to Top -->
+<!-- Back to Top -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fa fa-angle-up"></i>
     </a>
 </div>
-
 
 
 <script src="/libs/materialize/materialize.min.js"></script>

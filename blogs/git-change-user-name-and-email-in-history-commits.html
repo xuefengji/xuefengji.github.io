@@ -5,8 +5,8 @@
 <head>
   <meta name="generator" content="django">
   <meta charset="utf-8">
-  <meta name="keywords" content="git,git commits,git username,git email">
-  <meta name="description" content="如何批量修改git历史提交记录中的username和email_、作用修改某个仓库历史 commit 的用户 name 和 email 信息。">
+  <meta name="keywords" content="git,gitcommits,gitusername,gitemail">
+  <meta name="description" content="如何批量修改git历史提交记录中的username和email_、作用修改某个仓库历史commit的用户name和email信息。">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -37,9 +37,7 @@
 
 <body>
 
-
-
-  <header class="navbar-fixed">
+<header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent headbar-cover">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -155,11 +153,22 @@
     
         <li class="hide-on-med-and-down nav-item">
             
+                <a href="/books" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-book"></i>
+                    
+                    <span>我的书单</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
                 <a href="/navpage.html" class="waves-effect waves-light">
                     
                         <i class="fa fa fa-rocket"></i>
                     
-                    <span>导航页</span>
+                    <span>友情链接</span>
                 </a>
             
         </li>
@@ -288,11 +297,22 @@
         
             <li class="m-nav-item">
                 
+                    <a href="/books" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-book"></i>
+                        
+                        我的书单
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
                     <a href="/navpage.html" class="waves-effect waves-light">
                         
                             <i class="fa fa-fw fa fa-rocket"></i>
                         
-                        导航页
+                        友情链接
                     </a>
                 
             </li>
@@ -308,7 +328,20 @@
 
 </header>
 
-  
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -1011,9 +1044,9 @@ fi
                 <a href="/blogs/annual-summary-2019.html">
                     <div class="card-image">
                         
-                        <img src="/medias/blogimages/annual-summary-2019.jpg" class="responsive-img" alt="2019年度总结-不忘初心">
+                        <img src="/medias/blogimages/annual-summary-2019.jpg" class="responsive-img" alt="2019年度总结 - 不忘初心">
                         
-                        <span class="card-title">2019年度总结-不忘初心</span>
+                        <span class="card-title">2019年度总结 - 不忘初心</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1205,7 +1238,7 @@ $(function() {
 </main>
 
 
-  <footer class="page-footer bg-color footer-cover">
+<footer class="page-footer bg-color footer-cover">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             
@@ -1239,7 +1272,7 @@ $(function() {
                 &nbsp;Powered by WenYuan
             </a>
             <br>
-            <a href="http://www.miitbeian.gov.cn/" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+            <a href="http://www.beian.miit.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
                 <span>备案号:苏ICP备19003118号-1</span>
             </a>
             <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
@@ -1293,7 +1326,7 @@ function wechatShow() {
 <div class="progress-bar"></div>
 
 
-  <!-- Search Box -->
+<!-- Search Box -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -1310,13 +1343,12 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-  <!-- Back to Top -->
+<!-- Back to Top -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fa fa-angle-up"></i>
     </a>
 </div>
-
 
 
 <script src="/libs/materialize/materialize.min.js"></script>

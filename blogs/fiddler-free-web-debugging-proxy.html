@@ -6,7 +6,7 @@
   <meta name="generator" content="django">
   <meta charset="utf-8">
   <meta name="keywords" content="抓包工具,http抓包工具,fiddler抓包,fiddler网页采集,fiddler抓取https包,手机app抓包">
-  <meta name="description" content="一款免费且功能强大的http抓包工具，简单易上手，非常适合开发和测试人员_iddler1. Fiddler的简介　　Fiddler是位于客户端和服务器端之">
+  <meta name="description" content="一款免费且功能强大的http抓包工具，简单易上手，非常适合开发和测试人员_iddler1.Fiddler的简介Fiddler是位于客户端和服务器端之间的">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -37,9 +37,7 @@
 
 <body>
 
-
-
-  <header class="navbar-fixed">
+<header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent headbar-cover">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -155,11 +153,22 @@
     
         <li class="hide-on-med-and-down nav-item">
             
+                <a href="/books" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-book"></i>
+                    
+                    <span>我的书单</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
                 <a href="/navpage.html" class="waves-effect waves-light">
                     
                         <i class="fa fa fa-rocket"></i>
                     
-                    <span>导航页</span>
+                    <span>友情链接</span>
                 </a>
             
         </li>
@@ -288,11 +297,22 @@
         
             <li class="m-nav-item">
                 
+                    <a href="/books" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-book"></i>
+                        
+                        我的书单
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
                     <a href="/navpage.html" class="waves-effect waves-light">
                         
                             <i class="fa fa-fw fa fa-rocket"></i>
                         
-                        导航页
+                        友情链接
                     </a>
                 
             </li>
@@ -308,7 +328,20 @@
 
 </header>
 
-  
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -489,30 +522,99 @@
 <blockquote>
 <p>一款免费且功能强大的http抓包工具，简单易上手，非常适合开发和测试人员。</p>
 </blockquote>
-<h2 id="一、关于Fiddler"><a href="#一、关于Fiddler" class="headerlink" title="一、关于Fiddler"></a>一、关于Fiddler</h2><h3 id="1-Fiddler的简介"><a href="#1-Fiddler的简介" class="headerlink" title="1. Fiddler的简介"></a><span style="font-size: 18px;">1. Fiddler的简介</span></h3><p>　　Fiddler是位于客户端和服务器端之间的代理，也是目前最常用的抓包工具之一。它能够记录客户端和服务器之间的所有请求，可以针对特定的请求，分析请求数据、设置断点、调试web应用、修改请求的数据，甚至可以修改服务器返回的数据，功能非常强大，是web调试的利器。</p>
-<p>　　简而言之，<span style="color: #FF0000;">Fiddler是一款http抓包工具。</span></p>
-<h3 id="2-Fiddler的下载"><a href="#2-Fiddler的下载" class="headerlink" title="2. Fiddler的下载"></a><span style="font-size: 18px;">2. Fiddler的下载</span></h3><p>　　方式一：<a href="https://www.telerik.com/fiddler" title="Telerik Fiddler" rel="external nofollow noopener noreferrer" target="_blank">官网安装包</a>下载（<span style="color: #FF0000;">推荐</span>），进入官网下载安装包，然后安装即可。</p>
-<p>　　方式二：绿色汉化版下载，直接百度搜关键字“fiddle绿色汉化版”，有很多下载链接。好处是绿色免安装，中文界面；但有朋友用了几次后，发现每次打开都会自动建立2、3百个端口自动访问m.10010等网站。</p>
-<p>　　上述两种下载方式看个人需要选择。</p>
-<h3 id="2-Fiddler的原理"><a href="#2-Fiddler的原理" class="headerlink" title="2. Fiddler的原理"></a><span style="font-size: 18px;">2. Fiddler的原理</span></h3><p>　　Fiddler是以代理web服务器的形式工作的，它默认使用代理地址：127.0.0.1，端口：8888，都是可设置的。<br>　　如下图所示，本地应用与服务器之间所有的 Request 和 Response 都将经过Fiddler，由Fiddler进行转发，此时Fiddler以代理服务器的方式存在。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_theory.jpg" alt="fiddler_theory.jpg"><br>　　由于所有的网络数据都会经过Fiddler，因此Fiddler能够截获这些数据，实现网络数据的抓包。<br>　　另外，Fiddler会自动设置代理，退出的时候它会自动注销代理，这样就不会影响别的程序。不过如果Fiddler非正常退出，这时候因为Fiddler没有自动注销，会造成网页无法访问。解决的办法是重新启动下Fiddler。</p>
-<h3 id="4-Fiddler和Wireshark对比"><a href="#4-Fiddler和Wireshark对比" class="headerlink" title="4. Fiddler和Wireshark对比"></a><span style="font-size: 18px;">4. Fiddler和Wireshark对比</span></h3><p>　　Fiddler 和 Wireshark 是使用最广的两款抓包工具，这两款侧重点不同，但同样都是十分有效的抓包工具。<br>　　下面看下它们的对比：</p>
-<p>　　<span style="font-size: 18px; color: #FF0000;">Fiddler</span><br>　　<span style="color: #159957;">优势：</span><br>　　　৹ 本地化的工具，是一个使用本地 127.0.0.1:8888 的 http代理（任何能够设置http代理为127.0.0.1:8888的浏览器和应用程序都可以使用Fiddler。<br>　　　৹ 在windows上运行的程序，专门用来捕获http、https的，本身对http协议支持较好，且操作简单容易上手。<br>　　　৹ 具有抓包和分析功能，省去了安装其他工具的必要。<br>　　　৹ 工具本身功能强大，如劫包、篡改数据、限速等。<br>　　<span style="color: #159957;">不足：</span><br>　　　৹ Fiddler只是用于分析http、https数据包的，Wireshark是所有网络数据包。</p>
-<p>　　<span style="font-size: 18px; color: #FF0000;">Wireshark</span><br>　　<span style="color: #159957;">优势：</span><br>　　　৹ 强大的协议解析能力，一到七层全解码，一览无遗，对于协议细节的研究特别有帮助。<br>　　　৹ 对于https加密流量，只要将浏览器的session key 自动导入wireshark，Wireshark可以自动解密https流量。<br>　　<span style="color: #159957;">不足：</span><br>　　　৹ 更专业，有一定上手难度。<br>　　　৹ 尽管可以自定义过滤列表，但为了抓取一个特定TCP Flow /Session 流量需要写一个长长的过滤列表，这对于初学者很不友好。</p>
-<p>　　总结，如果是处理http、https还是用Fiddler；其他协议比如tcp、udp就用Wireshark。</p>
-<h2 id="二、使用Fiddler抓取浏览器包"><a href="#二、使用Fiddler抓取浏览器包" class="headerlink" title="二、使用Fiddler抓取浏览器包"></a>二、使用Fiddler抓取浏览器包</h2><p>　　Fiddler启动的时候，默认IE的代理设为了（127.0.0.1:8888），而其他浏览器是需要手动设置。<br>　　在我的电脑上，Firefox已经不需要手动设置了。<br>　　如果你需要对Firefox或者Chrome浏览器进行设置，可以按如下步骤：</p>
-<p>　　<span style="font-size: 18px; color: #FF0000;">Firefox</span><br>　　右上角“打开菜单”-&gt;选项-&gt;网络设置-&gt;设置-&gt;。并配置相应的代理如下：<br>　　代理模式：<span style="color: #159957;">手动配置代理</span>，<br>　　HTTP代理：<span style="color: #159957;">127.0.0.1</span>，端口：<span style="color: #159957;">8888</span>。<br>　　或者直接安装Firefox的代理管理工具：<span style="color: #FF0000;">FoxyProxy</span>，我没用过，据说它完全替代了Firefox有限的代理功能，而且提供了比SwitchProxy、ProxyButton、QuickProxy、xyzproxy、ProxyTex、TorButton等等更多的功能。</p>
-<p>　　<span style="font-size: 18px; color: #FF0000;">Chrome</span><br>　　安装插件：<span style="color: #FF0000;">SwitchyOmega</span>，这是Chrome的代理管理浏览器插件，在Chrome应用商城能找到。<br>　　添加好插件后，打开 SwitchyOmega 点击新建情景模式，设置代理服务器为 <span style="color: #159957;">127.0.0.1:8888</span>，设置好后，点击应用选项保存即可。<br>　　通过浏览器插件切换为设置好的代理，请注意（这里如果不需要，你设置的代理，请切换成 auto switch）不然会影响浏览器正常使用，无法访问网页。</p>
-<p>　　下面就可以使用Fiddler抓取浏览器的HTTP请求了，打开Firefox浏览器，访问百度。可以看到Fiddler一下子显示了很多的记录，看的眼花缭乱，需要这时候需要使用过滤条件来帮助你，一般常用的有<span style="color: #FF0000;">三种过滤条件</span>：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_filters.png" alt="fiddler_filters.png"><br>　　●　<strong>域名过滤</strong>，只显示特定域名的记录：<br>　　　　৹　<code>*.baidu.com</code> 表示所有的百度二级域名会话；<br>　　　　৹　<code>*baidu.com</code> 表示一级域名+二级域名的会话；<br>　　　　৹　<code>*baidu.com</code> 表示一级域名+二级域名的会话。<br>　　●　<strong>类型过滤</strong>，一般对各种图片、CSS、JS这类的静态素材也不需要看的情况下，直接全部过滤掉：<br>　　　　৹　<code>.*\.(bmp|css|js|gif|ico|jp?g|png|swf|woff)</code><br>　　●　<strong>返回码过滤</strong>，比如只想显示200状态返回码的数据，其他的不显示。</p>
-<p>　　<span style="color: #FF0000;">设置好了后一定要点击当前tab页右上角的Actions生效。</span></p>
-<h2 id="三、使用Fiddler抓取https请求"><a href="#三、使用Fiddler抓取https请求" class="headerlink" title="三、使用Fiddler抓取https请求"></a>三、使用Fiddler抓取https请求</h2><p>　　Fiddler默认是抓http请求的，对于pc上的https请求，会提示网页不安全，如下图：<br>　　点击某一个请求，你会发现请求的内容是一堆明显不对的文字，然后该请求的左边是一个锁的样式，表示https加密。右边的返回内容中，第一句告诉我们“<span style="color: #FF0000;">这是一个连接隧道，通过该隧道的是加密的HTTPS流量。</span>”<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_https_decryption_is_disabled.png" alt="fiddler_https_decryption_is_disabled.png"><br>　　这时候需要在浏览器上安装证书。</p>
-<p>　　<span style="font-size: 18px; color: #FF0000;">第一步：检查Fiddler设置</span><br>　　依次选择 Tools &gt; Options &gt; HTTPS，勾选 Decrypt HTTPS traffic。</p>
-<p>　　<span style="font-size: 18px; color: #FF0000;">第二步：安装证书</span><br>　　安装证书两种方法，选其一即可：<br>　　●　勾选后点击右边的Actions按钮选择“<span style="color: #FF0000;">Trust Root Certificate</span>”选项，然后全部选择是就行了。<br>　　　　৹　如果弹出如下报错，参考<a href="https://blog.csdn.net/hyhui13/article/details/82846824" title="Fiddler死活抓不了HTTPS包解决办法" rel="external nofollow noopener noreferrer" target="_blank">Fiddler死活抓不了HTTPS包解决办法</a>。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_root_certificate.png" alt="fiddler_root_certificate.png"></p>
-<p>　　●　勾选后点击右边的Actions按钮选择第二个选项将证书导出到桌面，然后再在对应的浏览器里面添加即可。<br>　　　　৹　导出到桌面，此时桌面上会多一个文件：FiddlerRoot.cer；<br>　　　　৹　打开浏览器，工具&gt;选项&gt;高级&gt;证书&gt;查看证书&gt;证书机构&gt;导入；<br>　　　　৹　下载证书弹出框，勾选三个选项，确定。</p>
-<h2 id="四、使用Fiddler抓取手机app包"><a href="#四、使用Fiddler抓取手机app包" class="headerlink" title="四、使用Fiddler抓取手机app包"></a>四、使用Fiddler抓取手机app包</h2><p>　　但是如果你想要对手机上的app进行抓包怎么办呢，那么你还需要进行以下操作。</p>
-<p>　　●　首先你的Fiddler所在的电脑和手机必须处在同一个局域网内（即连着同一个路由器）；</p>
-<p>　　●　查看你的本机IP地址，在Fiddler的右上角有一个Online按钮，鼠标悬浮会显示你的IP信息；</p>
-<p>　　●　配置连接信息：Tools &gt; Options &gt;Connections。<br>　　　　৹　端口默认是8888，你可以进行修改；<br>　　　　৹　勾选<span style="color: #FF0000;">Allow remote computers to connect</span>选项，然后重启Fiddler，再次打开时会弹出一个信息，选择ok即可。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_connections.png" alt="fiddler_connections.png"><br>　　●　打开你的手机，找到你所连接的WIFI，长按选择修改网络，输入密码后往下拖动，然后勾选显示高级选项，然后在代理一栏选择手动，再将你先前查看的IP地址和端口号输入进去，然后保存；<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_mobile_settings.png" alt="fiddler_mobile_settings.png"><br>　　●　最后安装手机证书。<br>　　　　৹　在手机浏览器一栏输入电脑的IP地址和端口号，这里我是192.168.1.157:8888；<br>　　　　৹　进入一个网页，点击最下面那个<span style="color: #FF0000;">FiddlerRoot certificate</span>下载证书，下载成功后在设置里面安装；<br>　　　　৹　安装步骤：打开高级设置-&gt;安全-&gt;从SD卡安装证书-&gt;找到证书文件-&gt;点击后为证书命名点击确定即可安装成功（具体过程请根据实际机型百度查找，关键词是<span style="color: #FF0000;">从SD卡安装证书</span>）；</p>
-<p>　　●　到这里我们就设置好所有的值，下面就来测试一下，打开手机中的某个app，Fiddler抓包看看。</p>
+<h2 id="一、关于Fiddler"><a href="#一、关于Fiddler" class="headerlink" title="一、关于Fiddler"></a>一、关于Fiddler</h2><h3 id="1-Fiddler的简介"><a href="#1-Fiddler的简介" class="headerlink" title="1. Fiddler的简介"></a><span style="font-size: 18px;">1. Fiddler的简介</span></h3><p>Fiddler是位于客户端和服务器端之间的代理，也是目前最常用的抓包工具之一。它能够记录客户端和服务器之间的所有请求，可以针对特定的请求，分析请求数据、设置断点、调试web应用、修改请求的数据，甚至可以修改服务器返回的数据，功能非常强大，是web调试的利器。</p>
+<p>简而言之，<span style="color: #FF0000;">Fiddler是一款http抓包工具。</span></p>
+<h3 id="2-Fiddler的下载"><a href="#2-Fiddler的下载" class="headerlink" title="2. Fiddler的下载"></a><span style="font-size: 18px;">2. Fiddler的下载</span></h3><p>方式一：<a href="https://www.telerik.com/fiddler" title="Telerik Fiddler" rel="external nofollow noopener noreferrer" target="_blank">官网安装包</a>下载（<span style="color: #FF0000;">推荐</span>），进入官网下载安装包，然后安装即可。</p>
+<p>方式二：绿色汉化版下载，直接百度搜关键字“fiddle绿色汉化版”，有很多下载链接。好处是绿色免安装，中文界面；但有朋友用了几次后，发现每次打开都会自动建立2、3百个端口自动访问m.10010等网站。</p>
+<p>上述两种下载方式看个人需要选择。</p>
+<h3 id="2-Fiddler的原理"><a href="#2-Fiddler的原理" class="headerlink" title="2. Fiddler的原理"></a><span style="font-size: 18px;">2. Fiddler的原理</span></h3><p>Fiddler是以代理web服务器的形式工作的，它默认使用代理地址：127.0.0.1，端口：8888，都是可设置的。</p>
+<p>如下图所示，本地应用与服务器之间所有的 Request 和 Response 都将经过Fiddler，由Fiddler进行转发，此时Fiddler以代理服务器的方式存在。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_theory.jpg" alt="fiddler_theory.jpg"><br>由于所有的网络数据都会经过Fiddler，因此Fiddler能够截获这些数据，实现网络数据的抓包。</p>
+<p>另外，Fiddler会自动设置代理，退出的时候它会自动注销代理，这样就不会影响别的程序。不过如果Fiddler非正常退出，这时候因为Fiddler没有自动注销，会造成网页无法访问。解决的办法是重新启动下Fiddler。</p>
+<h3 id="4-Fiddler和Wireshark对比"><a href="#4-Fiddler和Wireshark对比" class="headerlink" title="4. Fiddler和Wireshark对比"></a><span style="font-size: 18px;">4. Fiddler和Wireshark对比</span></h3><p>Fiddler 和 Wireshark 是使用最广的两款抓包工具，这两款侧重点不同，但同样都是十分有效的抓包工具。</p>
+<p>下面看下它们的对比：</p>
+<p><span style="font-size: 18px; color: #FF0000;">Fiddler</span><br><span style="color: #159957;">优势：</span></p>
+<ul>
+<li>本地化的工具，是一个使用本地 127.0.0.1:8888 的 http代理（任何能够设置http代理为127.0.0.1:8888的浏览器和应用程序都可以使用Fiddler。</li>
+<li>在windows上运行的程序，专门用来捕获http、https的，本身对http协议支持较好，且操作简单容易上手。</li>
+<li>具有抓包和分析功能，省去了安装其他工具的必要。</li>
+<li>工具本身功能强大，如劫包、篡改数据、限速等。</li>
+</ul>
+<p><span style="color: #159957;">不足：</span></p>
+<ul>
+<li>Fiddler只是用于分析http、https数据包的，Wireshark是所有网络数据包。</li>
+</ul>
+<p><span style="font-size: 18px; color: #FF0000;">Wireshark</span><br><span style="color: #159957;">优势：</span></p>
+<ul>
+<li>强大的协议解析能力，一到七层全解码，一览无遗，对于协议细节的研究特别有帮助。</li>
+<li>对于https加密流量，只要将浏览器的session key 自动导入wireshark，Wireshark可以自动解密https流量。</li>
+</ul>
+<p><span style="color: #159957;">不足：</span></p>
+<ul>
+<li>更专业，有一定上手难度。</li>
+<li>尽管可以自定义过滤列表，但为了抓取一个特定TCP Flow /Session 流量需要写一个长长的过滤列表，这对于初学者很不友好。</li>
+</ul>
+<p>总结，如果是处理http、https还是用Fiddler；其他协议比如tcp、udp就用Wireshark。</p>
+<h2 id="二、使用Fiddler抓取浏览器包"><a href="#二、使用Fiddler抓取浏览器包" class="headerlink" title="二、使用Fiddler抓取浏览器包"></a>二、使用Fiddler抓取浏览器包</h2><p>Fiddler启动的时候，默认IE的代理设为了（127.0.0.1:8888），而其他浏览器是需要手动设置。<br>在我的电脑上，Firefox已经不需要手动设置了。</p>
+<p>如果你需要对Firefox或者Chrome浏览器进行设置，可以按如下步骤：</p>
+<p><span style="font-size: 18px; color: #FF0000;">Firefox</span><br>右上角“打开菜单”-&gt;选项-&gt;网络设置-&gt;设置-&gt;。并配置相应的代理如下：<br>代理模式：<span style="color: #159957;">手动配置代理</span>，<br>HTTP代理：<span style="color: #159957;">127.0.0.1</span>，端口：<span style="color: #159957;">8888</span>。<br>或者直接安装Firefox的代理管理工具：<span style="color: #FF0000;">FoxyProxy</span>，我没用过，据说它完全替代了Firefox有限的代理功能，而且提供了比SwitchProxy、ProxyButton、QuickProxy、xyzproxy、ProxyTex、TorButton等等更多的功能。</p>
+<p><span style="font-size: 18px; color: #FF0000;">Chrome</span><br>安装插件：<span style="color: #FF0000;">SwitchyOmega</span>，这是Chrome的代理管理浏览器插件，在Chrome应用商城能找到。<br>添加好插件后，打开 SwitchyOmega 点击新建情景模式，设置代理服务器为 <span style="color: #159957;">127.0.0.1:8888</span>，设置好后，点击应用选项保存即可。<br>通过浏览器插件切换为设置好的代理，请注意（这里如果不需要，你设置的代理，请切换成 auto switch）不然会影响浏览器正常使用，无法访问网页。</p>
+<p>下面就可以使用Fiddler抓取浏览器的HTTP请求了，打开Firefox浏览器，访问百度。可以看到Fiddler一下子显示了很多的记录，看的眼花缭乱，需要这时候需要使用过滤条件来帮助你，一般常用的有<span style="color: #FF0000;">三种过滤条件</span>：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_filters.png" alt="fiddler_filters.png"></p>
+<ul>
+<li><strong>域名过滤</strong>，只显示特定域名的记录：<ul>
+<li><code>*.baidu.com</code> 表示所有的百度二级域名会话；</li>
+<li><code>*baidu.com</code> 表示一级域名+二级域名的会话；</li>
+<li><code>*baidu.com</code> 表示一级域名+二级域名的会话。</li>
+</ul>
+</li>
+<li><strong>类型过滤</strong>，一般对各种图片、CSS、JS这类的静态素材也不需要看的情况下，直接全部过滤掉：<ul>
+<li><code>.*\.(bmp|css|js|gif|ico|jp?g|png|swf|woff)</code></li>
+</ul>
+</li>
+<li><strong>返回码过滤</strong>，比如只想显示200状态返回码的数据，其他的不显示。</li>
+</ul>
+<p><span style="color: #FF0000;">设置好了后一定要点击当前tab页右上角的Actions生效。</span></p>
+<h2 id="三、使用Fiddler抓取https请求"><a href="#三、使用Fiddler抓取https请求" class="headerlink" title="三、使用Fiddler抓取https请求"></a>三、使用Fiddler抓取https请求</h2><p>Fiddler默认是抓http请求的，对于pc上的https请求，会提示网页不安全，如下图：<br>点击某一个请求，你会发现请求的内容是一堆明显不对的文字，然后该请求的左边是一个锁的样式，表示https加密。右边的返回内容中，第一句告诉我们“<span style="color: #FF0000;">这是一个连接隧道，通过该隧道的是加密的HTTPS流量。</span>”<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_https_decryption_is_disabled.png" alt="fiddler_https_decryption_is_disabled.png"><br>这时候需要在浏览器上安装证书。</p>
+<p><span style="font-size: 18px; color: #FF0000;">第一步：检查Fiddler设置</span><br>依次选择 Tools &gt; Options &gt; HTTPS，勾选 Decrypt HTTPS traffic。</p>
+<p><span style="font-size: 18px; color: #FF0000;">第二步：安装证书</span><br>安装证书两种方法，选其一即可：</p>
+<ul>
+<li>勾选后点击右边的Actions按钮选择“<span style="color: #FF0000;">Trust Root Certificate</span>”选项，然后全部选择是就行了。<ul>
+<li>如果弹出如下报错，参考<a href="https://blog.csdn.net/hyhui13/article/details/82846824" title="Fiddler死活抓不了HTTPS包解决办法" rel="external nofollow noopener noreferrer" target="_blank">Fiddler死活抓不了HTTPS包解决办法</a>。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_root_certificate.png" alt="fiddler_root_certificate.png"></p>
+<ul>
+<li>勾选后点击右边的Actions按钮选择第二个选项将证书导出到桌面，然后再在对应的浏览器里面添加即可。<ul>
+<li>导出到桌面，此时桌面上会多一个文件：FiddlerRoot.cer；</li>
+<li>打开浏览器，工具&gt;选项&gt;高级&gt;证书&gt;查看证书&gt;证书机构&gt;导入；</li>
+<li>下载证书弹出框，勾选三个选项，确定。</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、使用Fiddler抓取手机app包"><a href="#四、使用Fiddler抓取手机app包" class="headerlink" title="四、使用Fiddler抓取手机app包"></a>四、使用Fiddler抓取手机app包</h2><p>但是如果你想要对手机上的app进行抓包怎么办呢，那么你还需要进行以下操作。</p>
+<ul>
+<li>首先你的Fiddler所在的电脑和手机必须处在同一个局域网内（即连着同一个路由器）；</li>
+<li>查看你的本机IP地址，在Fiddler的右上角有一个Online按钮，鼠标悬浮会显示你的IP信息；</li>
+<li>配置连接信息：Tools &gt; Options &gt;Connections。<ul>
+<li>端口默认是8888，你可以进行修改；</li>
+<li>勾选<span style="color: #FF0000;">Allow remote computers to connect</span>选项，然后重启Fiddler，再次打开时会弹出一个信息，选择ok即可。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_connections.png" alt="fiddler_connections.png"></p>
+<ul>
+<li>打开你的手机，找到你所连接的WIFI，长按选择修改网络，输入密码后往下拖动，然后勾选显示高级选项，然后在代理一栏选择手动，再将你先前查看的IP地址和端口号输入进去，然后保存；</li>
+</ul>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/fiddler_mobile_settings.png" alt="fiddler_mobile_settings.png"></p>
+<ul>
+<li>最后安装手机证书。<ul>
+<li>在手机浏览器一栏输入电脑的IP地址和端口号，这里我是192.168.1.157:8888；</li>
+<li>进入一个网页，点击最下面那个<span style="color: #FF0000;">FiddlerRoot certificate</span>下载证书，下载成功后在设置里面安装；</li>
+<li>安装步骤：打开高级设置-&gt;安全-&gt;从SD卡安装证书-&gt;找到证书文件-&gt;点击后为证书命名点击确定即可安装成功（具体过程请根据实际机型百度查找，关键词是<span style="color: #FF0000;">从SD卡安装证书</span>）；</li>
+</ul>
+</li>
+<li>到这里我们就设置好所有的值，下面就来测试一下，打开手机中的某个app，Fiddler抓包看看。</li>
+</ul>
 
       </div>
       <hr>
@@ -1151,7 +1253,7 @@ $(function() {
 </main>
 
 
-  <footer class="page-footer bg-color footer-cover">
+<footer class="page-footer bg-color footer-cover">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             
@@ -1185,7 +1287,7 @@ $(function() {
                 &nbsp;Powered by WenYuan
             </a>
             <br>
-            <a href="http://www.miitbeian.gov.cn/" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+            <a href="http://www.beian.miit.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
                 <span>备案号:苏ICP备19003118号-1</span>
             </a>
             <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
@@ -1239,7 +1341,7 @@ function wechatShow() {
 <div class="progress-bar"></div>
 
 
-  <!-- Search Box -->
+<!-- Search Box -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -1256,13 +1358,12 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-  <!-- Back to Top -->
+<!-- Back to Top -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fa fa-angle-up"></i>
     </a>
 </div>
-
 
 
 <script src="/libs/materialize/materialize.min.js"></script>

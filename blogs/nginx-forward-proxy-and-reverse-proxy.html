@@ -6,7 +6,7 @@
   <meta name="generator" content="django">
   <meta charset="utf-8">
   <meta name="keywords" content="nginx代理,正向代理,反向代理,nginx配置代理,nginx反向代理">
-  <meta name="description" content="正/反向代理的区别，Nginx配置实现代理服务_一、正向代理与反向代理1. 正向代理　　正向代理其实相当于请求的中继，比如说，">
+  <meta name="description" content="正/反向代理的区别，Nginx配置实现代理服务_一、正向代理与反向代理1.正向代理正向代理其实相当于请求的中继，比如说，如果">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -37,9 +37,7 @@
 
 <body>
 
-
-
-  <header class="navbar-fixed">
+<header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent headbar-cover">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -155,11 +153,22 @@
     
         <li class="hide-on-med-and-down nav-item">
             
+                <a href="/books" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-book"></i>
+                    
+                    <span>我的书单</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
                 <a href="/navpage.html" class="waves-effect waves-light">
                     
                         <i class="fa fa fa-rocket"></i>
                     
-                    <span>导航页</span>
+                    <span>友情链接</span>
                 </a>
             
         </li>
@@ -288,11 +297,22 @@
         
             <li class="m-nav-item">
                 
+                    <a href="/books" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-book"></i>
+                        
+                        我的书单
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
                     <a href="/navpage.html" class="waves-effect waves-light">
                         
                             <i class="fa fa-fw fa fa-rocket"></i>
                         
-                        导航页
+                        友情链接
                     </a>
                 
             </li>
@@ -308,7 +328,20 @@
 
 </header>
 
-  
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -493,22 +526,39 @@
 <blockquote>
 <p>正向代理与反向代理的区别，以及用Nginx配置实现代理服务。</p>
 </blockquote>
-<h2 id="一、正向代理与反向代理"><a href="#一、正向代理与反向代理" class="headerlink" title="一、正向代理与反向代理"></a>一、正向代理与反向代理</h2><h3 id="1-正向代理"><a href="#1-正向代理" class="headerlink" title="1. 正向代理"></a><span style="font-size: 18px;">1. 正向代理</span></h3><p>　　正向代理其实相当于请求的中继，比如说，如果某个网站国内无法访问，也就是被墙了，我可以选择两种方式，一个是配置代理服务器，第二种就是VPN，其实两种技术原理差不太多，如果说我自己访问不到这个网站，而这时可以通过一台可以访问到这个网站的服务器，也就是代理服务器，来进行访问，这台代理服务器，分析我们请求的信息，然后去对应的要去的网站上将内容取回来发给我，这样我就能读到想要访问的网站上的内容了，通过一下图片，可以很清晰的看出其原理：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/forward_proxy.png" alt="forward_proxy.png" width="500" hegiht="300" align="center"></p>
-<h3 id="2-反向代理"><a href="#2-反向代理" class="headerlink" title="2. 反向代理"></a><span style="font-size: 18px;">2. 反向代理</span></h3><p>　　反向代理比正向代理更加透明，客户端并不知道访问的是代理服务器，当客户端请求一个网址的时候，会经过反向代理服务器，而这台反向代理服务器，会根据客户端的请求，将请求转发到内网服务器中，内网服务器处理请求并返回结果到反向代理服务器上，通过反向代理服务器，将结果最终返回到客户端，详情如图：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/reverse_proxy.png" alt="reverse_proxy.png" width="500" hegiht="300" align="center"></p>
-<p>　　<strong>简单来说：</strong><br>　　正向代理代理的是客户端（如通过代理访问谷歌），而反向代理代理的是服务器（如Nginx代理PHP服务器）。</p>
-<h2 id="二、通过SSH反向代理实现内网穿透"><a href="#二、通过SSH反向代理实现内网穿透" class="headerlink" title="二、通过SSH反向代理实现内网穿透"></a>二、通过SSH反向代理实现内网穿透</h2><h3 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a><span style="font-size: 18px;">1. 背景</span></h3><p>　　我用学校实验室的一台服务器在跑数据，但是这台服务器没有公网ip，只有学校内网ip，故我只能到实验室登录。但有时候，需要在宿舍或者家里远程连接这台服务器。<br>　　于是，我就用到了<strong>反向代理</strong>。前提是我有一台公网ip的服务器（例如，阿里的学生机，或者vultr的VPS都可以）。<br>　　首先，准备好这两台服务器：</p>
+<h2 id="一、正向代理与反向代理"><a href="#一、正向代理与反向代理" class="headerlink" title="一、正向代理与反向代理"></a>一、正向代理与反向代理</h2><h3 id="1-正向代理"><a href="#1-正向代理" class="headerlink" title="1. 正向代理"></a><span style="font-size: 18px;">1. 正向代理</span></h3><p>正向代理其实相当于请求的中继，比如说，如果某个网站国内无法访问，也就是被墙了，我可以选择两种方式：<br>一个是配置代理服务器，第二种就是 VPN。</p>
+<p>其实两种技术原理差不太多，如果说我自己访问不到这个网站，而这时可以通过一台可以访问到这个网站的服务器，也就是代理服务器，来进行访问，这台代理服务器，分析我们请求的信息，然后去对应的要去的网站上将内容取回来发给我，这样我就能读到想要访问的网站上的内容了，通过一下图片，可以很清晰的看出其原理：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/forward_proxy.png" alt="forward_proxy.png" width="500" hegiht="300" align="center"></p>
+<h3 id="2-反向代理"><a href="#2-反向代理" class="headerlink" title="2. 反向代理"></a><span style="font-size: 18px;">2. 反向代理</span></h3><p>反向代理比正向代理更加透明，客户端并不知道访问的是代理服务器，当客户端请求一个网址的时候，会经过反向代理服务器，而这台反向代理服务器，会根据客户端的请求，将请求转发到内网服务器中，内网服务器处理请求并返回结果到反向代理服务器上，通过反向代理服务器，将结果最终返回到客户端，详情如图：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/reverse_proxy.png" alt="reverse_proxy.png" width="500" hegiht="300" align="center"></p>
+<p><strong>简单来说：</strong><br>正向代理代理的是客户端（如通过代理访问谷歌），而反向代理代理的是服务器（如 Nginx 代理 PHP 服务器）。</p>
+<h2 id="二、通过SSH反向代理实现内网穿透"><a href="#二、通过SSH反向代理实现内网穿透" class="headerlink" title="二、通过SSH反向代理实现内网穿透"></a>二、通过SSH反向代理实现内网穿透</h2><h3 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a><span style="font-size: 18px;">1. 背景</span></h3><p>我用学校实验室的一台服务器在跑数据，但是这台服务器没有公网 ip，只有学校内网 ip，故我只能到实验室登录。但有时候，需要在宿舍或者家里远程连接这台服务器。</p>
+<p>于是，我就用到了<strong>反向代理</strong>。前提是我有一台公网 ip 的服务器（例如，阿里的学生机，或者 vultr 的 VPS 都可以）。</p>
+<p>首先，准备好这两台服务器：</p>
 <ul>
-<li>学校实验室服务器（SchoolServer）<br>　　IP：192.168.10.50<br>　　ssh端口：22<br>　　用户：student<br>　　密码：helloworld</li>
-<li>我的外网服务器（MyServer）<br>　　IP：111.13.100.91<br>　　ssh端口：22<br>　　用户：wenyuanblog<br>　　密码：<a href="http://www.wenyuanblog.com">www.wenyuanblog.com</a></li>
+<li>学校实验室服务器（SchoolServer）<ul>
+<li>IP：192.168.10.50</li>
+<li>ssh端口：22</li>
+<li>用户：student</li>
+<li>密码：helloworld</li>
 </ul>
-<h3 id="2-实现原理"><a href="#2-实现原理" class="headerlink" title="2. 实现原理"></a><span style="font-size: 18px;">2. 实现原理</span></h3><p>　　在学校内网服务器（以下简称SchoolServer）中，通过SSH设置反向代理，指向我的公网服务器（以下简称MyServer，该服务器作为反向代理服务器），之后用客户端连接MyServer时，MyServer会把请求转交给SchoolServer，从而间接登录学校的内网服务器。<br>　　<strong>整个过程，我们作为客户端是感知不到代理服务器的存在的。客户端是否能感知代理服务器的存在，是区别正向代理和反向代理的关键。</strong><br>　　SSH参数介绍</p>
+</li>
+<li>我的外网服务器（MyServer）<ul>
+<li>IP：111.13.100.91</li>
+<li>ssh端口：22</li>
+<li>用户：wenyuanblog</li>
+<li>密码：<a href="http://www.wenyuanblog.com">www.wenyuanblog.com</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-实现原理"><a href="#2-实现原理" class="headerlink" title="2. 实现原理"></a><span style="font-size: 18px;">2. 实现原理</span></h3><p>在学校内网服务器（以下简称 SchoolServer）中，通过 SSH 设置反向代理，指向我的公网服务器（以下简称 MyServer，该服务器作为反向代理服务器），之后用客户端连接 MyServer 时，MyServer 会把请求转交给 SchoolServer，从而间接登录学校的内网服务器。</p>
+<p><strong>整个过程，我们作为客户端是感知不到代理服务器的存在的。客户端是否能感知代理服务器的存在，是区别正向代理和反向代理的关键。</strong></p>
+<p>SSH 参数介绍</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 反向代理命令</span>
 <span class="token function">ssh</span> -fCNR
 
 <span class="token comment" spellcheck="true"># 正向代理命令</span>
 <span class="token function">ssh</span> -fCNL
 </code></pre>
-<p>　　参数说明</p>
+<p>参数说明</p>
 <table>
 <thead>
 <tr>
@@ -519,7 +569,7 @@
 <tbody>
 <tr>
 <td style="text-align:center">-f</td>
-<td style="text-align:center">后台执行ssh指令</td>
+<td style="text-align:center">后台执行 ssh 指令</td>
 </tr>
 <tr>
 <td style="text-align:center">-C</td>
@@ -543,28 +593,43 @@
 </tr>
 </tbody>
 </table>
-<h3 id="3-内网服务器操作"><a href="#3-内网服务器操作" class="headerlink" title="3. 内网服务器操作"></a><span style="font-size: 18px;">3. 内网服务器操作</span></h3><p>　　登录SchoolServer，进行如下操作：</p>
+<h3 id="3-内网服务器操作"><a href="#3-内网服务器操作" class="headerlink" title="3. 内网服务器操作"></a><span style="font-size: 18px;">3. 内网服务器操作</span></h3><p>登录 SchoolServer，进行如下操作：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ssh -N -f -R MyServer端口:127.0.0.1:本地端口 MyServer用户@MyServerIP</span>
 <span class="token function">ssh</span> -N -f -R 20022:127.0.0.1:22 wenyuanblog@111.13.100.91
 </code></pre>
-<p>　　这句命令的意思是，将MyServer的 20022 端口转发至SchoolServer 22 端口，最后是MyServer用户名和IP。<br>　　使用 <code>ps aux | grep ssh</code> 来查看是否运行。</p>
-<h3 id="4-公网服务器操作"><a href="#4-公网服务器操作" class="headerlink" title="4. 公网服务器操作"></a><span style="font-size: 18px;">4. 公网服务器操作</span></h3><p>　　登录MyServer，进行如下操作：</p>
+<p>这句命令的意思是，将 MyServer 的 20022 端口转发至 SchoolServer 22 端口，最后是 MyServer 用户名和 IP。<br>使用 <code>ps aux | grep ssh</code> 来查看是否运行。</p>
+<h3 id="4-公网服务器操作"><a href="#4-公网服务器操作" class="headerlink" title="4. 公网服务器操作"></a><span style="font-size: 18px;">4. 公网服务器操作</span></h3><p>登录 MyServer，进行如下操作：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ssh SchoolServer用户名@127.0.0.1 -p 代理端口 -L MyServerIP:代理端口:127.0.0.1:22</span>
 <span class="token function">ssh</span> student@127.0.0.1 -p 20022 -L 111.13.100.91:20022:127.0.0.1:22
 </code></pre>
-<p>　　执行这条命名，输入student用户的密码，现在就已经跳转登录到内网服务器了。<br>　　保持当前窗口的登录状态，这时候使用xshell、beyondcompare，就只要在登录的配置项里IP填MyServer的IP，端口填20022就好了。</p>
-<h2 id="三、Nginx配置实现代理服务"><a href="#三、Nginx配置实现代理服务" class="headerlink" title="三、Nginx配置实现代理服务"></a>三、Nginx配置实现代理服务</h2><h3 id="1-背景-1"><a href="#1-背景-1" class="headerlink" title="1. 背景"></a><span style="font-size: 18px;">1. 背景</span></h3><p>　　到目前为止，我们都还没有用到Nginx的代理服务。那什么时候会需要呢，现在有了如下需求：<br>　　在学校内网服务器上跑了一个网页（实验室代码库GitLab），我们需要在宿舍或者家里访问这个内部网页。<br>　　该项目是部署在内网的，所以在内网直接访问不会有问题，而从外网访问当然也就访问不到。</p>
+<p>执行这条命名，输入 student 用户的密码，现在就已经跳转登录到内网服务器了。</p>
+<p>保持当前窗口的登录状态，这时候使用 xshell、beyondcompare，就只要在登录的配置项里 IP 填 MyServer 的 IP，端口填 20022 就好了。</p>
+<h2 id="三、Nginx配置实现代理服务"><a href="#三、Nginx配置实现代理服务" class="headerlink" title="三、Nginx配置实现代理服务"></a>三、Nginx配置实现代理服务</h2><h3 id="1-背景-1"><a href="#1-背景-1" class="headerlink" title="1. 背景"></a><span style="font-size: 18px;">1. 背景</span></h3><p>到目前为止，我们都还没有用到 Nginx 的代理服务。那什么时候会需要呢，现在有了如下需求：</p>
+<p>在学校内网服务器上跑了一个网页（实验室代码库 GitLab），我们需要在宿舍或者家里访问这个内部网页。</p>
+<p>该项目是部署在内网的，所以在内网直接访问不会有问题，而从外网访问当然也就访问不到。</p>
 <ul>
-<li>学校实验室服务器（SchoolServer）<br>　　IP：192.168.10.50<br>　　页面url：192.168.10.50:8000</li>
-<li>我的外网服务器（MyServer）<br>　　IP：111.13.100.91<br>　　站点域名：<a href="http://www.wenyuanblog.com">www.wenyuanblog.com</a></li>
+<li>学校实验室服务器（SchoolServer）<ul>
+<li>IP：192.168.10.50</li>
+<li>页面 url：192.168.10.50:8000</li>
 </ul>
-<h3 id="2-实现原理-1"><a href="#2-实现原理-1" class="headerlink" title="2. 实现原理"></a><span style="font-size: 18px;">2. 实现原理</span></h3><p>　　还是通过反向代理来实现。<br>　　通过Nginx实现端口转发，最后可以通过公网服务器的域名+端口号访问学校内网服务器的页面。<br>　　即访问<a href="http://www.wenyuanblog.com:28000时，将得到192.168.10.50:8000（实验室代码库）的页面。">www.wenyuanblog.com:28000时，将得到192.168.10.50:8000（实验室代码库）的页面。</a><br>　　当然了，这样配置的话，我不得不记住 28000 这个端口号，显然不方便。<br>　　所以下面的配置，我将配置成二级域名的形势，即 gitlab.wenyuanblog.com -&gt; 192.168.10.50:8000</p>
-<h3 id="3-内网服务器操作-1"><a href="#3-内网服务器操作-1" class="headerlink" title="3. 内网服务器操作"></a><span style="font-size: 18px;">3. 内网服务器操作</span></h3><p>　　登录SchoolServer，进行如下操作（和“二”中一样）：</p>
+</li>
+<li>我的外网服务器（MyServer）<ul>
+<li>IP：111.13.100.91</li>
+<li>站点域名：<a href="http://www.wenyuanblog.com">www.wenyuanblog.com</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-实现原理-1"><a href="#2-实现原理-1" class="headerlink" title="2. 实现原理"></a><span style="font-size: 18px;">2. 实现原理</span></h3><p>还是通过反向代理来实现。</p>
+<p>通过 Nginx 实现端口转发，最后可以通过公网服务器的域名+端口号访问学校内网服务器的页面。<br>即访问 <a href="http://www.wenyuanblog.com:28000">www.wenyuanblog.com:28000</a> 时，将得到 192.168.10.50:8000（实验室代码库）的页面。<br>当然了，这样配置的话，我不得不记住 28000 这个端口号，显然不方便。</p>
+<p>所以下面的配置，我将配置成二级域名的形式，即 gitlab.wenyuanblog.com -&gt; 192.168.10.50:8000</p>
+<h3 id="3-内网服务器操作-1"><a href="#3-内网服务器操作-1" class="headerlink" title="3. 内网服务器操作"></a><span style="font-size: 18px;">3. 内网服务器操作</span></h3><p>登录 SchoolServer，进行如下操作（和<span style="color: #FF0000;">二</span>&gt;中一样）：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ssh -N -f -R MyServer端口:127.0.0.1:本地端口 MyServer用户@MyServerIP</span>
 <span class="token function">ssh</span> -N -f -R 28000:127.0.0.1:8000 wenyuanblog@111.13.100.91
 </code></pre>
-<p>　　这句命令的意思是，将MyServer的 28000 端口转发至SchoolServer 8000 端口，最后是MyServer用户名和IP。<br>　　使用 <code>ps aux | grep ssh</code> 来查看是否运行。</p>
-<h3 id="4-公网服务器操作-1"><a href="#4-公网服务器操作-1" class="headerlink" title="4. 公网服务器操作"></a><span style="font-size: 18px;">4. 公网服务器操作</span></h3><p>　　登录MyServer，增加一份Nginx的配置文件，我习惯放于 /usr/local/nginx/conf/vhosts 目录下，考虑到是代理的配置文件，我取名为 school.proxy<br>　　<code>vim school.proxy</code>，配置如下：</p>
+<p>这句命令的意思是，将 MyServer 的 28000 端口转发至 SchoolServer 8000 端口，最后是 MyServer 用户名和 IP。</p>
+<p>使用 <code>ps aux | grep ssh</code> 来查看是否运行。</p>
+<h3 id="4-公网服务器操作-1"><a href="#4-公网服务器操作-1" class="headerlink" title="4. 公网服务器操作"></a><span style="font-size: 18px;">4. 公网服务器操作</span></h3><p>登录 MyServer，增加一份 Nginx 的配置文件，我习惯放于 <code>/usr/local/nginx/conf/vhosts</code> 目录下，考虑到是代理的配置文件，我取名为 <code>school.proxy</code>。</p>
+<p><code>vim school.proxy</code>，配置如下：</p>
 <pre class=" language-bash"><code class="language-bash">upstream school_gitlab <span class="token punctuation">{</span>
         server 127.0.0.1:28000<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -578,16 +643,43 @@ server <span class="token punctuation">{</span>
         access_log  /var/log/nginx/access/school_gitlab.log<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>　　现在，我就可以通过二级域名访问学校实验室的GitLab了。<br>　　整个过程中，在MyServer的数据流向如下：<br>　　二级域名访问 -&gt; MyServer:80 -&gt; nginx分发 -&gt; MyServer:28000 -&gt; SchoolServer:8080</p>
-<h2 id="四、补充：用autossh代替ssh"><a href="#四、补充：用autossh代替ssh" class="headerlink" title="四、补充：用autossh代替ssh"></a>四、补充：用autossh代替ssh</h2><h3 id="1-背景-2"><a href="#1-背景-2" class="headerlink" title="1. 背景"></a><span style="font-size: 18px;">1. 背景</span></h3><p>　　其实整个过程到上面为止已经结束了，目前已经通过反向代理实现内网穿透，平时肯定够用了。<br>　　如果想追求更进一步的配置，可以继续往下看。<br>　　什么是更进一步的配置呢？<br>　　在前面<span style="color: #FF0000;">二、三</span>两部分内容的“内网服务器操作”时，我们使用ssh建立的反向连接其实很不稳定，长时间不使用连接就会自动释放，这个时候就需要使用autossh。<br>　　autossh的参数与ssh的参数是一致的，但是不同的是，在隧道断开的时候，autossh会自动重新连接而ssh不会。</p>
-<h3 id="2-步骤修改"><a href="#2-步骤修改" class="headerlink" title="2. 步骤修改"></a><span style="font-size: 18px;">2. 步骤修改</span></h3><p>　　只需改动一个地方，那就是上面<span style="color: #FF0000;">二</span>和<span style="color: #FF0000;">三</span>里面的“<span style="color: #FF0000;">3. 内网服务器操作</span>”，其他操作不变。<br>　　<strong>现在如下操作：</strong><br>　　Step1. 配置公钥和私钥，实现免密码登录(为后面的脚本做准备)<br>　　　　（1）登录内网服务器（SchoolServer）<br>　　　　　　切换到普通用户student，不建议用root<br>　　　　　　执行命令：<br>　　　　　　<code>ssh-keygen -t rsa -P &#39;&#39;</code><br>　　　　　　直接ssh-keygen然后三次回车就可以了。<br>　　　　　　-P表示密码，-P ‘’ 就表示空密码，也可以不用-P参数，这样就要三车回车，用-P就一次回车。<br>　　　　　　它在/home/student下生成.ssh目录，.ssh下有id_rsa和id_rsa.pub。（这样就生成了公钥/私钥对）<br>　　　　（2）把内网服务器（SchoolServer）下的id_rsa.pub复制到公网服务器（MyServer）下<br>　　　　　　执行命令：<br>　　　　　　<code>scp .ssh/id_rsa.pub wenyuanblog@111.13.100.91:/home/wenyuanblog/id_rsa.pub</code><br>　　　　　　由于还没有免密码登录的，所以要输入密码。<br>　　　　（3）公网服务器（MyServer）加入内网服务器（SchoolServer）的公钥<br>　　　　　　登录公网服务器（MyServer），切换到wenyuanblog账户（下面的步骤不要用root）。<br>　　　　　　如果公网服务器的wenyuanblog目录下没有.ssh和authorized_keys文件则创建这个文件夹和文件。<br>　　　　　　把从内网服务器复制的id_rsa.pub添加到.ssh/authorzied_keys文件里，即执行命令：<br>　　　　　　<code>cat id_rsa.pub &gt;&gt; .ssh/authorized_keys</code><br>　　　　　　<code>cat .ssh/authorized_keys</code><br>　　　　　　<code>chmod 644 .ssh/authorized_keys</code><br>　　　　　　authorized_keys的权限要是644。<br>　　　　（4）内网服务器（SchoolServer）登录公网服务器（MyServer）试试<br>　　　　　　回到内网服务器（SchoolServer），用之前的普通用户student，执行<br>　　　　　　<code>ssh wenyuanblog@111.13.100.91</code><br>　　　　　　第一次登录要yes，现在内网机器就可以免密码登录公网机器了。</p>
-<p>　　Step2. 登录内网服务器，启动autossh，维持ssh连接<br>　　　　上面提过，使用ssh建立的反向连接很不稳定，长时间不使用连接就会自动释放，这个时候就需要使用autossh。<br>　　　　一般新机器需要安装autossh：<br>　　　　<code>yum install autossh</code>（CentOS）<br>　　　　<code>apt-get install autossh</code>（Ubuntu）<br>　　　　切换到wenyuanblog用户（非root用户），在其home目录下创建一个autossh.sh脚本，开辟连接到公网服务器的隧道。<br>　　　　autossh.sh脚本内写入要开辟的端口：</p>
+<p>现在，我就可以通过二级域名访问学校实验室的 GitLab 了。</p>
+<p>整个过程中，在 MyServer 的数据流向如下：<br><strong>二级域名访问</strong> -&gt; <strong>MyServer:80</strong> -&gt; <strong>nginx 分发</strong> -&gt; <strong>MyServer:28000</strong> -&gt; <strong>SchoolServer:8080</strong></p>
+<h2 id="四、补充：用autossh代替ssh"><a href="#四、补充：用autossh代替ssh" class="headerlink" title="四、补充：用autossh代替ssh"></a>四、补充：用autossh代替ssh</h2><h3 id="1-背景-2"><a href="#1-背景-2" class="headerlink" title="1. 背景"></a><span style="font-size: 18px;">1. 背景</span></h3><p>其实整个过程到上面为止已经结束了，目前已经通过反向代理实现内网穿透，平时肯定够用了。<br>如果想追求更进一步的配置，可以继续往下看。</p>
+<p>什么是更进一步的配置呢？</p>
+<p>在前面<span style="color: #FF0000;">二、三</span>两部分内容的「内网服务器操作」时，我们使用 ssh 建立的反向连接其实很不稳定，长时间不使用连接就会自动释放，这个时候就需要使用 autossh。<br>autossh 的参数与 ssh 的参数是一致的，但是不同的是，在隧道断开的时候，autossh 会自动重新连接而 ssh 不会。</p>
+<h3 id="2-步骤修改"><a href="#2-步骤修改" class="headerlink" title="2. 步骤修改"></a><span style="font-size: 18px;">2. 步骤修改</span></h3><p>只需改动一个地方，那就是上面<span style="color: #FF0000;">二</span>和<span style="color: #FF0000;">三</span>里面的「<span style="color: #FF0000;">3. 内网服务器操作</span>」，其他操作不变。</p>
+<p><strong>现在如下操作：</strong></p>
+<p><strong>Step1. 配置公钥和私钥，实现免密码登录</strong>（为后面的脚本做准备）</p>
+<ul>
+<li><p>登录内网服务器（SchoolServer）<br>切换到普通用户 student，不建议用 root。<br>执行命令：<code>ssh-keygen -t rsa -P &#39;&#39;</code>，直接 ssh-keygen 然后三次回车就可以了。</p>
+<ul>
+<li><code>-P</code> 表示密码，<code>-P &#39;&#39;</code> 就表示空密码，也可以不用 <code>-P</code> 参数，这样就要三车回车，用 <code>-P</code> 就一次回车。</li>
+<li>它在 <code>/home/student</code> 下生成 <code>.ssh</code> 目录，<code>.ssh</code> 下有 <code>id_rsa</code> 和 <code>id_rsa.pub</code>。（这样就生成了公钥/私钥对）</li>
+</ul>
+</li>
+<li><p>把内网服务器（SchoolServer）下的 <code>id_rsa.pub</code> 复制到公网服务器（MyServer）下<br>执行命令：<code>scp .ssh/id_rsa.pub wenyuanblog@111.13.100.91:/home/wenyuanblog/id_rsa.pub</code><br>由于还没有免密码登录的，所以要输入密码。</p>
+</li>
+<li><p>公网服务器（MyServer）加入内网服务器（SchoolServer）的公钥<br>登录公网服务器（MyServer），切换到 wenyuanblog 账户（下面的步骤不要用 root）。<br>如果公网服务器的 wenyuanblog 目录下没有 <code>.ssh</code> 和 <code>authorized_keys</code> 文件则创建这个文件夹和文件。<br>把从内网服务器复制的 <code>id_rsa.pub</code> 添加到 <code>.ssh/authorzied_keys</code> 文件里，即执行命令：<br><code>cat id_rsa.pub &gt;&gt; .ssh/authorized_keys</code><br><code>cat .ssh/authorized_keys</code><br><code>chmod 644 .ssh/authorized_keys</code></p>
+<ul>
+<li>authorized_keys 的权限要是 644 。</li>
+</ul>
+</li>
+<li><p>内网服务器（SchoolServer）登录公网服务器（MyServer）试试<br>回到内网服务器（SchoolServer），用之前的普通用户 student，执行：<code>ssh wenyuanblog@111.13.100.91</code><br>第一次登录要 yes，现在内网机器就可以免密码登录公网机器了。</p>
+</li>
+</ul>
+<p><strong>Step2. 登录内网服务器，启动 autossh，维持 ssh 连接</strong></p>
+<p>上面提过，使用 ssh 建立的反向连接很不稳定，长时间不使用连接就会自动释放，这个时候就需要使用 autossh。</p>
+<p>一般新机器需要安装 autossh：<br><code>yum install autossh</code>（CentOS）<br><code>apt-get install autossh</code>（Ubuntu）</p>
+<p>切换到 wenyuanblog 用户（非 root 用户），在其 <code>home</code> 目录下创建一个 <code>autossh.sh</code> 脚本，开辟连接到公网服务器的隧道。<br><code>autossh.sh</code> 脚本内写入要开辟的端口：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
 /usr/bin/autossh -NR 0.0.0.0:20022:127.0.0.1:22  -i ~/.ssh/id_rsa wenyuanblog@公网IP -p 22 <span class="token operator">>></span> ~/log/ssh_nat.log 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
 /usr/bin/autossh -NR 0.0.0.0:28000:127.0.0.1:8000 -i ~/.ssh/id_rsa wenyuanblog@公网IP -p 22 <span class="token operator">>></span> ~/log/ssh_nat.log 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
 </code></pre>
-<p>　　　　这两行就分别代替了上面<span style="color: #FF0000;">二</span>和<span style="color: #FF0000;">三</span>中“<span style="color: #FF0000;">3. 内网服务器操作</span>”里的内容。<br>　　　　运行脚本：<br>　　　　<code>chmod +x autossh.sh</code><br>　　　　<code>sh autossh.sh</code><br>　　　　使用 <code>ps -ef|grep autossh</code> 和 <code>ps -ef|grep ssh</code> 查看当前运行中的autossh任务进程。</p>
-<p>　　其余步骤不变，完成。</p>
+<p>这两行就分别代替了上面<span style="color: #FF0000;">二</span>和<span style="color: #FF0000;">三</span>中「<span style="color: #FF0000;">3. 内网服务器操作</span>」里的内容。</p>
+<p>运行脚本：<br><code>chmod +x autossh.sh</code><br><code>sh autossh.sh</code></p>
+<p>使用 <code>ps -ef|grep autossh</code> 和 <code>ps -ef|grep ssh</code> 查看当前运行中的 autossh 任务进程。</p>
+<p>其余步骤不变，完成。</p>
 
       </div>
       <hr>
@@ -1230,7 +1322,7 @@ $(function() {
 </main>
 
 
-  <footer class="page-footer bg-color footer-cover">
+<footer class="page-footer bg-color footer-cover">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
             
@@ -1264,7 +1356,7 @@ $(function() {
                 &nbsp;Powered by WenYuan
             </a>
             <br>
-            <a href="http://www.miitbeian.gov.cn/" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+            <a href="http://www.beian.miit.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
                 <span>备案号:苏ICP备19003118号-1</span>
             </a>
             <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
@@ -1318,7 +1410,7 @@ function wechatShow() {
 <div class="progress-bar"></div>
 
 
-  <!-- Search Box -->
+<!-- Search Box -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -1335,13 +1427,12 @@ $(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-  <!-- Back to Top -->
+<!-- Back to Top -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fa fa-angle-up"></i>
     </a>
 </div>
-
 
 
 <script src="/libs/materialize/materialize.min.js"></script>
