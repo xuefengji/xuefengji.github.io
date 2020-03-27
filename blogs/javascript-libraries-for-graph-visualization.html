@@ -1,0 +1,1557 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+  <meta name="generator" content="django">
+  <meta charset="utf-8">
+  <meta name="keywords" content="基于HTML5的网络拓扑图插件,JS拓扑图插件,JavaScript生成关系图,HTML5图形组件,前端拓扑图插件汇总">
+  <meta name="description" content="前端生成拓扑图、关系图、流程图的JavaScript插件有很多，本文对比其优缺点，帮助选型_一些参考。一、免费插件1.jTopo简介：jTopo（Javascript">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="renderer" content="webkit|ie-stand|ie-comp">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>前端拓扑图插件选型对比 - JS拓扑图插件 | JavaScript生成关系图 | HTML5图形组件</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">-->
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/element-ui.css">
+
+  <style type="text/css">
+  
+  </style>
+
+  <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-duotone-light.css" type="text/css"></head>
+
+
+<body>
+
+<!-- Start of website body -->
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent headbar-cover">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">文渊博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-home"></i>
+                    
+                    <span>首页</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/tags" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-tags"></i>
+                    
+                    <span>标签</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/categories" class="waves-effect waves-light">
+
+                    
+                        <i class="fa fa-bookmark"></i>
+                    
+                    <span>分类</span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-nav menus_item_child ">
+                    
+                        <li>
+                            <a href="/categories/前端技术/">
+                                
+                                <span>前端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/后端技术/">
+                                
+                                <span>后端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/运维知识/">
+                                
+                                <span>运维知识</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/机器学习/">
+                                
+                                <span>机器学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/技术周边/">
+                                
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/生活脚步/">
+                                
+                                <span>生活脚步</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/about.html" class="waves-effect waves-light">
+
+                    
+                        <i class="fa fa-user-circle-o"></i>
+                    
+                    <span>关于</span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-nav menus_item_child ">
+                    
+                        <li>
+                            <a href="/about.html">
+                                
+                                <span>关于博客</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/winyuan.html">
+                                
+                                <span>关于文渊</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/guestbook.html">
+                                
+                                <span>留言小本</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/books" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-book"></i>
+                    
+                    <span>我的书单</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/navpage.html" class="waves-effect waves-light">
+                    
+                        <i class="fa fa fa-rocket"></i>
+                    
+                    <span>友情链接</span>
+                </a>
+            
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+            <span style="display: inline-block;width:40px;height: 40px;background-image: url('/medias/logo.png');background-size: cover;vertical-align: middle; margin: 15px auto"></span>
+        
+        <div class="logo-name">文渊博客</div>
+        <div class="logo-desc">
+            
+                一个90后程序员，终身学习者。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+            <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                        
+                            <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                    <ul>
+                        
+                            <li>
+                                <a href="/categories/前端技术/">
+                                    
+                                    <span>前端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/后端技术/">
+                                    
+                                    <span>后端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/运维知识/">
+                                    
+                                    <span>运维知识</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/机器学习/">
+                                    
+                                    <span>机器学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/技术周边/">
+                                    
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/生活脚步/">
+                                    
+                                    <span>生活脚步</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                        
+                            <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                    <ul>
+                        
+                            <li>
+                                <a href="/about.html">
+                                    
+                                    <span>关于博客</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/winyuan.html">
+                                    
+                                    <span>关于文渊</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/guestbook.html">
+                                    
+                                    <span>留言小本</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/books" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-book"></i>
+                        
+                        我的书单
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/navpage.html" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa fa-rocket"></i>
+                        
+                        友情链接
+                    </a>
+                
+            </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<!--<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogimages/graph-visualization.png')">-->
+<div class="bg-cover pd-header post-cover">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <!--
+                    <div class="description center-align post-title">
+                        前端拓扑图插件选型对比【持续更新】
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
+
+#articleContent :focus {
+    outline: none;
+}
+
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
+
+.toc-widget {
+    padding-left: 20px;
+}
+
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
+
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
+
+#toc-content ol {
+    padding-left: 10px;
+}
+
+#toc-content ol li {
+    padding-left: 10px;
+}
+
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
+
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
+
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
+
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
+
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+  <div class="card">
+    <div class="card-content article-info">
+      <div class="row tag-cate">
+        <div class="col s7">
+          
+            <div class="article-tag">
+              
+                <a href="/tags/Web开发/" target="_blank">
+                  <span class="chip bg-color">Web开发</span>
+                </a>
+              
+                <a href="/tags/HTML5-CSS3/" target="_blank">
+                  <span class="chip bg-color">HTML5/CSS3</span>
+                </a>
+              
+                <a href="/tags/JavaScript/" target="_blank">
+                  <span class="chip bg-color">JavaScript</span>
+                </a>
+              
+            </div>
+          
+        </div>
+        <div class="col s5 right-align">
+          
+            <div class="post-cate">
+              <i class="fa fa-bookmark fa-fw icon-category"></i>
+              
+                <a href="/categories/前端技术/" class="post-category" target="_blank">
+                  前端技术
+                </a>
+              
+            </div>
+          
+        </div>
+      </div>
+
+      <div class="post-info">
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+          2020-03-27
+        </div>
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>最近更新:&nbsp;&nbsp;
+          2020-03-27
+        </div>
+
+        
+
+        
+      </div>
+    </div>
+    <hr class="clearfix">
+    <div class="card-content article-card-content">
+      <div id="articleContent">
+        <div style="text-align: center; font-size: 32px;">前端拓扑图插件选型对比</div>
+
+<blockquote>
+<p>前端生成拓扑图、关系图、流程图的JavaScript插件有很多，各种编辑器五法八门。<br>本文对比各插件的优缺点，为选型提供一些参考。</p>
+</blockquote>
+<h2 id="一、免费插件"><a href="#一、免费插件" class="headerlink" title="一、免费插件"></a>一、免费插件</h2><h3 id="1-jTopo"><a href="#1-jTopo" class="headerlink" title="1. jTopo"></a><span style="font-size: 18px;">1. jTopo</span></h3><p>简介：jTopo（Javascript Topology library）是一款完全基于 HTML5 Canvas 的关系、拓扑图形化界面开发工具包。<br>背景：个人、国产<br>官网：<a href="http://www.jtopo.com/" rel="external nofollow noopener noreferrer" target="_blank">http://www.jtopo.com/</a><br>示例：<a href="https://github.com/winyuan/jtopo_topology" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/winyuan/jtopo_topology</a></p>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/jtopo.png" alt="jtopo"></p>
+<ul>
+<li>优点<ul>
+<li>免费</li>
+<li>轻量</li>
+<li>无明显性能问题</li>
+<li>功能丰富，支持各种自定义操作</li>
+<li>国产，文档简单，上手容易</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>未开放源代码，如需做功能增强，对着混淆后的 js 代码做修改比较费时间</li>
+<li>2015 年就停更了，作者在 2019 年表示正在准备新版本，当前进度未知</li>
+<li>有一些 bug（比如自动布局）</li>
+<li>不是采用模块化编程的，在现代化框架（比如 vuejs）中使用比较麻烦（但可以实现）</li>
+</ul>
+</li>
+<li>建议<ul>
+<li>小项目中可以使用，大型项目不建议</li>
+<li>新手使用，可以提高自己的 js 功底</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-Vis-js"><a href="#2-Vis-js" class="headerlink" title="2. Vis.js"></a><span style="font-size: 18px;">2. Vis.js</span></h3><p>简介：vis.js 基于 HTML5 Canvas 开发的动态可视化库。该库被设计为易于使用，处理大量的动态数据，并支持对数据的操作和交互。<br>背景：Almende B.V、国外<br>官网：<a href="https://visjs.org/" rel="external nofollow noopener noreferrer" target="_blank">https://visjs.org/</a><br>示例：<a href="https://visjs.github.io/vis-network/examples/" rel="external nofollow noopener noreferrer" target="_blank">https://visjs.github.io/vis-network/examples/</a></p>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/visjs.png" alt="visjs"></p>
+<ul>
+<li>优点<ul>
+<li>开源免费</li>
+<li>无明显性能问题</li>
+<li>功能丰富，支持各种自定义操作</li>
+<li>支持自动布局（防碰撞算法）</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>需要投入一些时间通读文档，英文不好的人会比较费力</li>
+<li>自带的连线样式中没有折线的样式</li>
+</ul>
+</li>
+<li>建议<ul>
+<li>先搞清楚 vis 中的数据结构 DataSet，再入手使用</li>
+<li>耐心看文档，其实文档写的挺好的</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-AntV-G6"><a href="#3-AntV-G6" class="headerlink" title="3. AntV G6"></a><span style="font-size: 18px;">3. AntV G6</span></h3><p>简介：G6 是一个图可视化引擎。它提供了图的绘制、布局、分析、交互、动画等图可视化的基础能力。<br>背景：蚂蚁金服-AntV、国产<br>官网：<a href="https://antv.vision/zh" rel="external nofollow noopener noreferrer" target="_blank">https://antv.vision/zh</a><br>示例：<a href="https://github.com/winyuan/cceditor" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/winyuan/cceditor</a></p>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/g6.png" alt="AntV G6"></p>
+<ul>
+<li>优点<ul>
+<li>开源免费</li>
+<li>上手简单，可扩展性强</li>
+<li>功能丰富，支持各种自定义操作</li>
+<li>由蚂蚁金服-AntV团队开发，从维护性和生态圈角度考虑相对有保障</li>
+<li>支持自动布局（早期借助 d3-force 实现，后期已经被内部支持）</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>有性能问题（&gt; 200 个网元单位）</li>
+<li>文档易用性一般（缺少全文搜索功能）</li>
+<li>有时候文档和版本会脱节（可以理解，问题不大）</li>
+</ul>
+</li>
+<li>建议<ul>
+<li>大厂团队开发维护，后期有保障，大小项目都可以使用</li>
+<li>可以学习里面的一些编程思想和技巧</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-jsPlumb"><a href="#4-jsPlumb" class="headerlink" title="4. jsPlumb"></a><span style="font-size: 18px;">4. jsPlumb</span></h3><p>简介：jsPlumb 是一个比较强大的绘图组件，它提供了一种方法，主要用于连接网页上的元素。<br>背景：个人、国外<br>官网：<a href="https://jsplumbtoolkit.com/" rel="external nofollow noopener noreferrer" target="_blank">https://jsplumbtoolkit.com/</a><br>中文：<a href="https://wdd.js.org/jsplumb-chinese-tutorial" rel="external nofollow noopener noreferrer" target="_blank">https://wdd.js.org/jsplumb-chinese-tutorial</a></p>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/jsplumb.png" alt="jsplumb"></p>
+<ul>
+<li>优点<ul>
+<li>开源免费</li>
+<li>功能丰富，支持各种自定义操作</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>demo 过于简单</li>
+<li>多条线时可能会叠在一起</li>
+<li>从demo来看感受不到可以从哪开始连线</li>
+</ul>
+</li>
+<li>建议<ul>
+<li>感兴趣的可以尝试下</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-JointJs"><a href="#5-JointJs" class="headerlink" title="5. JointJs"></a><span style="font-size: 18px;">5. JointJs</span></h3><p>简介：JointJS 是一个开源前端框架，支持绘制各种各样的流程图、工作流图等。Rappid 是 Joint 的商业版，提供了一些更强的插件。<br>背景：公司、国外<br>官网：<a href="https://www.jointjs.com/" rel="external nofollow noopener noreferrer" target="_blank">https://www.jointjs.com/</a></p>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/jointjs.png" alt="JointJs"></p>
+<ul>
+<li>优点<ul>
+<li>连线可设置项较为全面</li>
+<li>原生支持拖拽和缩放</li>
+<li>线可以手动添加转折点</li>
+<li>有根据已添加点和线自动布局功能</li>
+<li>扩展相对容易</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>对于线的交互方式有点反直觉</li>
+<li>demo 上有 bug，修改了信息不刷新</li>
+<li>demo 的流程图不是以像素为基本单位，拖拽会感觉卡顿</li>
+<li>纯英文文档，有的人会觉得读起来费力</li>
+</ul>
+</li>
+<li>建议<ul>
+<li>感兴趣的可以尝试下</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-D3"><a href="#6-D3" class="headerlink" title="6. D3"></a><span style="font-size: 18px;">6. D3</span></h3><p>特点：大都靠自己实现</p>
+<h3 id="7-ECharts"><a href="#7-ECharts" class="headerlink" title="7. ECharts"></a><span style="font-size: 18px;">7. ECharts</span></h3><p>简介：ECharts 关系图。<br>背景：百度、国产<br>官网：<a href="https://www.echartsjs.com/zh/index.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.echartsjs.com/zh/index.html</a></p>
+<ul>
+<li>优点<ul>
+<li>上手非常简单</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>扩展性弱（毕竟不是专做图编辑器的，关系图只是 ECharts 中的一项）</li>
+</ul>
+</li>
+<li>建议<ul>
+<li>可以用在定制化的需求中，不需要拖拉拽等功能</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-Le5le-topology"><a href="#8-Le5le-topology" class="headerlink" title="8. Le5le-topology"></a><span style="font-size: 18px;">8. Le5le-topology</span></h3><p>简介：Le5le-topology 是一个可视化在线绘图工具，使用 Canvas + Typescript。支持 topology, UML、微服务架构、动态流量、SCADA 场景等。<br>背景：个人、国产<br>官网：<a href="http://topology.le5le.com/" rel="external nofollow noopener noreferrer" target="_blank">http://topology.le5le.com/</a><br>仓库：<a href="https://github.com/le5le-com/topology" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/le5le-com/topology</a></p>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/jsplumb.png" alt="jsplumb"></p>
+<ul>
+<li>优点<ul>
+<li>开源免费</li>
+<li>支持的图很多</li>
+<li>技术比较新（Typescript）</li>
+<li>开箱即用，几乎不用额外开发成本</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>个人开发的，2019 年起作者在各大网站推广，持续维护性和生态圈尚不成熟</li>
+</ul>
+</li>
+<li>建议<ul>
+<li>再观察两年，看作者是否在持续稳定发展，或者是否会形成开发团队</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、付费插件"><a href="#二、付费插件" class="headerlink" title="二、付费插件"></a>二、付费插件</h2><h3 id="1-hightopo"><a href="#1-hightopo" class="headerlink" title="1. hightopo"></a><span style="font-size: 18px;">1. hightopo</span></h3><ul>
+<li>优点<ul>
+<li>省事</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>贵</li>
+</ul>
+</li>
+<li>建议<ul>
+<li>有预算的团队可以考虑</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-Qunee"><a href="#2-Qunee" class="headerlink" title="2. Qunee"></a><span style="font-size: 18px;">2. Qunee</span></h3><ul>
+<li>优点<ul>
+<li>省事</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>贵</li>
+</ul>
+</li>
+<li>建议<ul>
+<li>有预算的团队可以考虑</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      <hr>
+
+      
+        <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 400px;
+        height: 400px;
+        background-color: #FFF;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+        font-weight: normal;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        font-size: 13px;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #3DA149 !important;
+    }
+
+    .reward-tabs .wechatpay-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 250px;
+        height: 250px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">戳</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">钱和朋友之间，更想多认识朋友</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s4 wechat-tab waves-effect waves-light"><a href="#wechat">微信</a></li>
+                        <li class="tab col s4 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s4 wechatpay-tab waves-effect waves-light"><a href="#wechatpay">微信投资</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="交个朋友吧">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechatpay">
+                        <img src="/medias/reward/wechatpay.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+      
+
+      <!--<link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>-->
+
+      <div class="reprint">
+        <p>
+          <span class="reprint-tip">
+            <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+          </span>
+          <a href="https://www.wenyuanblog.com" class="b-link-green">文渊博客</a>
+          <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+          <a href="/blogs/javascript-libraries-for-graph-visualization.html" class="b-link-green">前端拓扑图插件选型对比【持续更新】</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'IirbHl64M5MqyIVCnfJsdjvU-gzGzoHsz',
+        appKey: '9K4u0nf4Ret3ntR3Uh9FHqYs',
+        notify: 'false' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'false' === 'true',
+        avatar: '',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '记得留下您的昵称和邮箱...可以快速收到回复',
+        avatar_cdn: 'https://www.gravatar.com/avatar/'
+    });
+</script>
+  
+
+  
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/blogs/javascript-libraries-for-graph-visualization.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/graph-visualization.png" class="responsive-img" alt="前端拓扑图插件选型对比【持续更新】">
+                        
+                        <span class="card-title">前端拓扑图插件选型对比【持续更新】</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前端生成拓扑图、关系图、流程图的JavaScript插件有很多，本文对比其优缺点，帮助选型。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/前端技术/" class="post-category" target="_blank">
+                                    前端技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web开发/" target="_blank">
+                        <span class="chip bg-color">Web开发</span>
+                    </a>
+                    
+                    <a href="/tags/HTML5-CSS3/" target="_blank">
+                        <span class="chip bg-color">HTML5/CSS3</span>
+                    </a>
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/blogs/how-do-i-choose-books.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/how-do-i-choose-books.jpg" class="responsive-img" alt="关于阅读：我是如何选书的">
+                        
+                        <span class="card-title">关于阅读：我是如何选书的</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            在平时阅读中，我把书分成五类：工具书，专业书，致用书，视野书和潮流书。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/生活脚步/" class="post-category" target="_blank">
+                                    生活脚步
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/杂谈/" target="_blank">
+                        <span class="chip bg-color">杂谈</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
+
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
+
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
+
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
+
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
+
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
+
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color footer-cover">
+  <div class="container row center-align">
+    <div class="col s12 m8 l8 copy-right">
+      
+
+      
+      
+        <i class="fa fa-users">&nbsp;</i>欢迎访问：文渊的个人网站 - WenYuan's Personal Website.
+
+      <br>
+      <a href="http://www.wenyuanblog.com" target="_blank">
+        Copyright © 2018 - 2020 wenyuanblog.com All Rights Reserved.
+      </a>
+      <!--
+      <a href="http://www.wenyuanblog.com" target="_blank">
+        &nbsp;Powered by WenYuan
+      </a>
+      -->
+      <br>
+      <a href="http://www.beian.miit.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+        <span>备案号：苏ICP备19003118号-1</span>
+      </a>
+      <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+        <span>苏公网安备 32020602000865号</span>
+      </a>
+    </div>
+    <div class="col s12 m4 l4 social-link ">
+  <a href="https://github.com/winyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-git"></i>
+  </a>
+
+
+
+  <a href="mailto:wenyuan.xu@vip.163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-envelope-open"></i>
+  </a>
+
+
+
+
+
+  <a href="javascript:void(0);" onclick="wechatShow()">
+    <i class="fa fa-wechat"></i>
+  </a>
+
+
+
+  <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+  </a>
+
+
+<script>
+function wechatShow() {
+  layer.open({
+    type: 2,
+    title: false,
+    closeBtn: 0,
+    area: ['200px', '200px'],
+    offset: 'rb',
+    skin: 'layui-layer-nobg', //没有背景色
+    shadeClose: true,
+    content: '/medias/socialimages/wechat.png'
+  });
+}
+</script>
+</div>
+  </div>
+</footer>
+
+<!-- End of website body -->
+
+<!-- Components: Search Box -->
+<div id="searchModal" class="modal">
+  <div class="modal-content">
+    <div class="search-header">
+      <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+      <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+    </div>
+    <div id="searchResult"></div>
+  </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function() {
+  searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- Components: Back to Top -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<!-- Baidu Analytics -->
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ffafc579f91ca273792cb428f9ef63d5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+<!-- Baidu Push -->
+
+    <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+
+
+
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="/libs/layer-v3.1.1/layer/layer.js"></script>
+<!--<script src="/js/jquery.ripples.min.js"></script>-->
+<script src="/js/clipboard.min.js"></script>
+
+
+<script src="/js/vue.js"></script>
+
+<div id="rightClickMenu">
+  <ul class="list-group" style="margin: 0">
+    <li class="list-group-item disabled" style="text-align: center; line-height: 50px; border-bottom: 1px #ddd solid;">
+      欢迎访问我的博客
+    </li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;IP：<span id="client-ip">127.0.0.1</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;地址：<span id="client-location">本地</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;系统：<span id="client-os">Windows10</span></li>
+    <li class="list-group-item">&#12288;&nbsp;浏览器：<span id="client-browser">Chrome47</span></li>
+  </ul>
+</div>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>

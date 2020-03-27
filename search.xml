@@ -1,0 +1,2196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>前端拓扑图插件选型对比【持续更新】</title>
+      <link href="/blogs/javascript-libraries-for-graph-visualization.html"/>
+      <url>/blogs/javascript-libraries-for-graph-visualization.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> HTML5/CSS3 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于阅读：我是如何选书的</title>
+      <link href="/blogs/how-do-i-choose-books.html"/>
+      <url>/blogs/how-do-i-choose-books.html</url>
+      
+      
+      <categories>
+          
+          <category> 生活脚步 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《洋葱阅读法》读书笔记</title>
+      <link href="/blogs/reading-notes-yang-cong-yue-du-fa.html"/>
+      <url>/blogs/reading-notes-yang-cong-yue-du-fa.html</url>
+      
+      
+      <categories>
+          
+          <category> 生活脚步 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网页UI设计原则与规范</title>
+      <link href="/blogs/ui-design-spec-for-pc-web.html"/>
+      <url>/blogs/ui-design-spec-for-pc-web.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 规范 </tag>
+            
+            <tag> UI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CSS实现鼠标滑过卡片上浮效果</title>
+      <link href="/blogs/css-mouse-hover-card-float-effects.html"/>
+      <url>/blogs/css-mouse-hover-card-float-effects.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> HTML5/CSS3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2019年度总结：不忘初心</title>
+      <link href="/blogs/annual-summary-2019.html"/>
+      <url>/blogs/annual-summary-2019.html</url>
+      
+      
+      <categories>
+          
+          <category> 生活脚步 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git修改历史commits中的用户名和邮箱</title>
+      <link href="/blogs/git-change-user-name-and-email-in-history-commits.html"/>
+      <url>/blogs/git-change-user-name-and-email-in-history-commits.html</url>
+      
+      
+      <categories>
+          
+          <category> 技术周边 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue踩坑：vue-router传参params为空</title>
+      <link href="/blogs/vue-pit-vue-router-params-is-empty.html"/>
+      <url>/blogs/vue-pit-vue-router-params-is-empty.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>程序员如何买保险</title>
+      <link href="/blogs/introduction-guide-to-insurance.html"/>
+      <url>/blogs/introduction-guide-to-insurance.html</url>
+      
+      
+      <categories>
+          
+          <category> 跨界学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 保险 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>什么是用户运营、产品运营、活动运营和内容运营</title>
+      <link href="/blogs/content-operation-activity-operation-product-operation-user-operation.html"/>
+      <url>/blogs/content-operation-activity-operation-product-operation-user-operation.html</url>
+      
+      
+      <categories>
+          
+          <category> 跨界学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 运营 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>运营岗位的18个入门专业术语</title>
+      <link href="/blogs/18-technical-terms-for-an-operations-position.html"/>
+      <url>/blogs/18-technical-terms-for-an-operations-position.html</url>
+      
+      
+      <categories>
+          
+          <category> 跨界学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 运营 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>程序员技术文档写作规范</title>
+      <link href="/blogs/chinese-copywriting-guidelines.html"/>
+      <url>/blogs/chinese-copywriting-guidelines.html</url>
+      
+      
+      <categories>
+          
+          <category> 技术周边 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 规范 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何将Promise.then中的值直接return出来</title>
+      <link href="/blogs/javascript-how-to-return-value-in-promise.html"/>
+      <url>/blogs/javascript-how-to-return-value-in-promise.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>有趣的JavaScript</title>
+      <link href="/blogs/humor-thanks-for-inventing-javascript.html"/>
+      <url>/blogs/humor-thanks-for-inventing-javascript.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Notepad3关联鼠标右键菜单</title>
+      <link href="/blogs/add-text-editors-to-rignt-menu-by-regedit-in-windows.html"/>
+      <url>/blogs/add-text-editors-to-rignt-menu-by-regedit-in-windows.html</url>
+      
+      
+      <categories>
+          
+          <category> 技术周边 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一文详解主流CSS布局</title>
+      <link href="/blogs/css-layout.html"/>
+      <url>/blogs/css-layout.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> HTML5/CSS3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《小狗钱钱》读书笔记</title>
+      <link href="/blogs/reading-notes-xiao-gou-qian-qian.html"/>
+      <url>/blogs/reading-notes-xiao-gou-qian-qian.html</url>
+      
+      
+      <categories>
+          
+          <category> 生活脚步 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nodejs安装及npm全局设置</title>
+      <link href="/blogs/nodejs-install-and-npm-global-config.html"/>
+      <url>/blogs/nodejs-install-and-npm-global-config.html</url>
+      
+      
+      <categories>
+          
+          <category> 运维知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《你没有退路，才有出路》读书笔记</title>
+      <link href="/blogs/reading-notes-ni-mei-you-tui-lu-cai-you-chu-lu.html"/>
+      <url>/blogs/reading-notes-ni-mei-you-tui-lu-cai-you-chu-lu.html</url>
+      
+      
+      <categories>
+          
+          <category> 生活脚步 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue踩坑：父子组件传值问题</title>
+      <link href="/blogs/vue-pit-child-component-value-changes-affect-the-parent-component-value.html"/>
+      <url>/blogs/vue-pit-child-component-value-changes-affect-the-parent-component-value.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>在JS文件中获取Vue组件实例</title>
+      <link href="/blogs/vue-get-the-component-instance-in-javascript-file.html"/>
+      <url>/blogs/vue-get-the-component-instance-in-javascript-file.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue监听值改变事件与函数去抖</title>
+      <link href="/blogs/vue-on-change-event-and-debounce.html"/>
+      <url>/blogs/vue-on-change-event-and-debounce.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue项目打包编译优化</title>
+      <link href="/blogs/vue-project-compiling-optimization.html"/>
+      <url>/blogs/vue-project-compiling-optimization.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vuex冷门知识点和踩坑记录</title>
+      <link href="/blogs/vue-vuex-matters-need-attention.html"/>
+      <url>/blogs/vue-vuex-matters-need-attention.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vuex业务模块划分项目实例</title>
+      <link href="/blogs/vue-vuex-module-division-in-real-project.html"/>
+      <url>/blogs/vue-vuex-module-division-in-real-project.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue开发时配置使用mock数据</title>
+      <link href="/blogs/vue-use-mock-data-when-developing.html"/>
+      <url>/blogs/vue-use-mock-data-when-developing.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue封装Axios请求和拦截器</title>
+      <link href="/blogs/vue-axios-interceptors-packaging.html"/>
+      <url>/blogs/vue-axios-interceptors-packaging.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue封装全局过滤器Filters</title>
+      <link href="/blogs/vue-global-filters-packaging.html"/>
+      <url>/blogs/vue-global-filters-packaging.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue插件Plugins的简单例子</title>
+      <link href="/blogs/vue-plugins-simple-demo.html"/>
+      <url>/blogs/vue-plugins-simple-demo.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue CLI 3.x搭建Vue项目</title>
+      <link href="/blogs/vue-cli3x-to-create-vue-project.html"/>
+      <url>/blogs/vue-cli3x-to-create-vue-project.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Vue CLI 2.x搭建Vue项目</title>
+      <link href="/blogs/vue-cli2x-to-create-vue-project.html"/>
+      <url>/blogs/vue-cli2x-to-create-vue-project.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>WebStorm配置代码格式化</title>
+      <link href="/blogs/webstorm-eslint-prettier-reformat-code.html"/>
+      <url>/blogs/webstorm-eslint-prettier-reformat-code.html</url>
+      
+      
+      <categories>
+          
+          <category> 技术周边 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> Vue.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>浅谈RESTful规范</title>
+      <link href="/blogs/restful-api-design.html"/>
+      <url>/blogs/restful-api-design.html</url>
+      
+      
+      <categories>
+          
+          <category> 技术周边 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTTP抓包神器 - Fiddler</title>
+      <link href="/blogs/fiddler-free-web-debugging-proxy.html"/>
+      <url>/blogs/fiddler-free-web-debugging-proxy.html</url>
+      
+      
+      <categories>
+          
+          <category> 运维知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 抓包 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>如何选择开源许可证？【转】</title>
+      <link href="/blogs/how-to-choose-free-software-licenses.html"/>
+      <url>/blogs/how-to-choose-free-software-licenses.html</url>
+      
+      
+      <categories>
+          
+          <category> 技术周边 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【TF小记】CNN英文文本分类</title>
+      <link href="/blogs/tensorflow-cnn-english-text-classification-implement.html"/>
+      <url>/blogs/tensorflow-cnn-english-text-classification-implement.html</url>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TensorFlow </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【TF小记】CNN文本分类原理</title>
+      <link href="/blogs/tensorflow-cnn-text-classification-theory.html"/>
+      <url>/blogs/tensorflow-cnn-text-classification-theory.html</url>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TensorFlow </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【TF小记】CNN初探</title>
+      <link href="/blogs/tensorflow-cnn-basic.html"/>
+      <url>/blogs/tensorflow-cnn-basic.html</url>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TensorFlow </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【TF小记】线性回归案例</title>
+      <link href="/blogs/tensorflow-basic-learning-2.html"/>
+      <url>/blogs/tensorflow-basic-learning-2.html</url>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TensorFlow </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【TF小记】基础知识</title>
+      <link href="/blogs/tensorflow-basic-learning-1.html"/>
+      <url>/blogs/tensorflow-basic-learning-1.html</url>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TensorFlow </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>机器学习术语表</title>
+      <link href="/blogs/machine-learning-glossary.html"/>
+      <url>/blogs/machine-learning-glossary.html</url>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TensorFlow </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Elasticsearch面试题汇总</title>
+      <link href="/blogs/elasticsearch-interview-questions.html"/>
+      <url>/blogs/elasticsearch-interview-questions.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Elasticsearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2019知识星球学习笔记</title>
+      <link href="/blogs/reading-notes-zhi-shi-xing-qiu-2019.html"/>
+      <url>/blogs/reading-notes-zhi-shi-xing-qiu-2019.html</url>
+      
+      
+      <categories>
+          
+          <category> 生活脚步 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript模块化编程</title>
+      <link href="/blogs/javascript-module.html"/>
+      <url>/blogs/javascript-module.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTML坐标系与鼠标事件坐标</title>
+      <link href="/blogs/html-coordinate-system-and-mouse-event.html"/>
+      <url>/blogs/html-coordinate-system-and-mouse-event.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>最全跨域问题解决方案</title>
+      <link href="/blogs/ajax-cross-domain-solution.html"/>
+      <url>/blogs/ajax-cross-domain-solution.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>命令行测试WebSocket</title>
+      <link href="/blogs/websocket-testing-by-command-in-linux.html"/>
+      <url>/blogs/websocket-testing-by-command-in-linux.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> WebSocket </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Web实时消息推送技术总结</title>
+      <link href="/blogs/realtime-messaging-and-websocket.html"/>
+      <url>/blogs/realtime-messaging-and-websocket.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> WebSocket </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>各种浏览器存储方式总结</title>
+      <link href="/blogs/learn-more-about-browser-storage.html"/>
+      <url>/blogs/learn-more-about-browser-storage.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS库的封装之四：代码整合</title>
+      <link href="/blogs/javascript-library-packaging-4.html"/>
+      <url>/blogs/javascript-library-packaging-4.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS库的封装之三：添加事件</title>
+      <link href="/blogs/javascript-library-packaging-3.html"/>
+      <url>/blogs/javascript-library-packaging-3.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS库的封装之二：添加方法</title>
+      <link href="/blogs/javascript-library-packaging-2.html"/>
+      <url>/blogs/javascript-library-packaging-2.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS库的封装之一：入口函数</title>
+      <link href="/blogs/javascript-library-packaging-1.html"/>
+      <url>/blogs/javascript-library-packaging-1.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ES6箭头函数总结</title>
+      <link href="/blogs/javascript-es6-arrow-functions.html"/>
+      <url>/blogs/javascript-es6-arrow-functions.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ES6常用重要知识点</title>
+      <link href="/blogs/javascript-es6-common-important-points.html"/>
+      <url>/blogs/javascript-es6-common-important-points.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript初探之判断数据类型</title>
+      <link href="/blogs/javascript-judge-data-type.html"/>
+      <url>/blogs/javascript-judge-data-type.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript初探之函数调用方式</title>
+      <link href="/blogs/javascript-4-ways-to-call-a-function.html"/>
+      <url>/blogs/javascript-4-ways-to-call-a-function.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript初探之闭包</title>
+      <link href="/blogs/javascript-closure.html"/>
+      <url>/blogs/javascript-closure.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript初探之原型链</title>
+      <link href="/blogs/javascript-prototype-chain.html"/>
+      <url>/blogs/javascript-prototype-chain.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript初探之继承</title>
+      <link href="/blogs/javascript-inheritance.html"/>
+      <url>/blogs/javascript-inheritance.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CSS3新特性概览</title>
+      <link href="/blogs/css3-new-features.html"/>
+      <url>/blogs/css3-new-features.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> HTML5/CSS3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTML5中的API概览</title>
+      <link href="/blogs/html5-apis.html"/>
+      <url>/blogs/html5-apis.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> HTML5/CSS3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTML5浏览器兼容性解决方案</title>
+      <link href="/blogs/html5-compatibility.html"/>
+      <url>/blogs/html5-compatibility.html</url>
+      
+      
+      <categories>
+          
+          <category> 前端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+            <tag> HTML5/CSS3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Elasticsearch内存那些事儿</title>
+      <link href="/blogs/elasticsearch-memory-considerations.html"/>
+      <url>/blogs/elasticsearch-memory-considerations.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Elasticsearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>倒排索引原理</title>
+      <link href="/blogs/forward-index-and-inverted-index.html"/>
+      <url>/blogs/forward-index-and-inverted-index.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Elasticsearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Elasticsearch中文分词器怎么用</title>
+      <link href="/blogs/elasticsearch-chinese-analyzer.html"/>
+      <url>/blogs/elasticsearch-chinese-analyzer.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Elasticsearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Elasticsearch Analyzer内部机制</title>
+      <link href="/blogs/elasticsearch-all-about-analyzers.html"/>
+      <url>/blogs/elasticsearch-all-about-analyzers.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Elasticsearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Elasticsearch Query DSL入门</title>
+      <link href="/blogs/elasticsearch-simple-query-dsl.html"/>
+      <url>/blogs/elasticsearch-simple-query-dsl.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Elasticsearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Elasticsearch索引备份与迁移</title>
+      <link href="/blogs/elasticsearch-backup-and-migration.html"/>
+      <url>/blogs/elasticsearch-backup-and-migration.html</url>
+      
+      
+      <categories>
+          
+          <category> 运维知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Elasticsearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Elasticsearch部署步骤</title>
+      <link href="/blogs/elasticsearch-deployment.html"/>
+      <url>/blogs/elasticsearch-deployment.html</url>
+      
+      
+      <categories>
+          
+          <category> 运维知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Elasticsearch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nginx正向代理与反向代理</title>
+      <link href="/blogs/nginx-forward-proxy-and-reverse-proxy.html"/>
+      <url>/blogs/nginx-forward-proxy-and-reverse-proxy.html</url>
+      
+      
+      <categories>
+          
+          <category> 运维知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Nmap基础用法</title>
+      <link href="/blogs/nmap-basic-usage.html"/>
+      <url>/blogs/nmap-basic-usage.html</url>
+      
+      
+      <categories>
+          
+          <category> 运维知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Nmap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux连接MySQL命令表</title>
+      <link href="/blogs/mysql-command-in-linux.html"/>
+      <url>/blogs/mysql-command-in-linux.html</url>
+      
+      
+      <categories>
+          
+          <category> 运维知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows环境安装MySQL5.7</title>
+      <link href="/blogs/mysql-install-in-windows.html"/>
+      <url>/blogs/mysql-install-in-windows.html</url>
+      
+      
+      <categories>
+          
+          <category> 运维知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Py实战】获取tcpdump输出</title>
+      <link href="/blogs/python-realtime-tcpdump.html"/>
+      <url>/blogs/python-realtime-tcpdump.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 抓包 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Py实战】单变量异常值检测</title>
+      <link href="/blogs/python-univariate-outlier-detection.html"/>
+      <url>/blogs/python-univariate-outlier-detection.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> 数据处理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Py进阶】经典排序算法</title>
+      <link href="/blogs/python-sorting-algorithm.html"/>
+      <url>/blogs/python-sorting-algorithm.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Py进阶】Pythonic风格整理</title>
+      <link href="/blogs/python-code-and-pythonic-code.html"/>
+      <url>/blogs/python-code-and-pythonic-code.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Py基础】Matplotlib模块</title>
+      <link href="/blogs/python-matplotlib.html"/>
+      <url>/blogs/python-matplotlib.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Py基础】SMTP发送邮件</title>
+      <link href="/blogs/python-send-email.html"/>
+      <url>/blogs/python-send-email.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Py基础】subprocess模块</title>
+      <link href="/blogs/python-subprocess.html"/>
+      <url>/blogs/python-subprocess.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Py基础】文本文件读写</title>
+      <link href="/blogs/python-txt-files-io.html"/>
+      <url>/blogs/python-txt-files-io.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【Py基础】时间和日期模块</title>
+      <link href="/blogs/python-time-and-datetime.html"/>
+      <url>/blogs/python-time-and-datetime.html</url>
+      
+      
+      <categories>
+          
+          <category> 后端技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows下pip安装依赖报错</title>
+      <link href="/blogs/pip-install-error-in-windows.html"/>
+      <url>/blogs/pip-install-error-in-windows.html</url>
+      
+      
+      <categories>
+          
+          <category> 运维知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+            <tag> PyPI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pip修改国内镜像源</title>
+      <link href="/blogs/pip-change-mirror-source.html"/>
+      <url>/blogs/pip-change-mirror-source.html</url>
+      
+      
+      <categories>
+          
+          <category> 运维知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PyPI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>前后端分离优缺点</title>
+      <link href="/blogs/advantages-of-decoupling-frontend-from-backend.html"/>
+      <url>/blogs/advantages-of-decoupling-frontend-from-backend.html</url>
+      
+      
+      <categories>
+          
+          <category> 技术周边 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>免费在线邮箱和短信平台</title>
+      <link href="/blogs/online-email-and-sms-platforms.html"/>
+      <url>/blogs/online-email-and-sms-platforms.html</url>
+      
+      
+      <categories>
+          
+          <category> 资源整理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git迁移仓库并保留commit记录</title>
+      <link href="/blogs/git-migrate-repository-without-losing-history-commit.html"/>
+      <url>/blogs/git-migrate-repository-without-losing-history-commit.html</url>
+      
+      
+      <categories>
+          
+          <category> 技术周边 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git提交信息规范</title>
+      <link href="/blogs/git-commit-message.html"/>
+      <url>/blogs/git-commit-message.html</url>
+      
+      
+      <categories>
+          
+          <category> 技术周边 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+            <tag> 规范 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>群里提问的艺术</title>
+      <link href="/blogs/how-to-ask-questions-correctly.html"/>
+      <url>/blogs/how-to-ask-questions-correctly.html</url>
+      
+      
+      <categories>
+          
+          <category> 生活脚步 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一篇博客</title>
+      <link href="/blogs/hello-world.html"/>
+      <url>/blogs/hello-world.html</url>
+      
+      
+      <categories>
+          
+          <category> 生活脚步 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

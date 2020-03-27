@@ -37,6 +37,7 @@
 
 <body>
 
+<!-- Start of website body -->
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent headbar-cover">
         <div id="navContainer" class="nav-wrapper container">
@@ -130,9 +131,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/诗和远方/">
+                            <a href="/categories/生活脚步/">
                                 
-                                <span>诗和远方</span>
+                                <span>生活脚步</span>
                             </a>
                         </li>
                     
@@ -142,12 +143,38 @@
     
         <li class="hide-on-med-and-down nav-item">
             
-                <a href="/about" class="waves-effect waves-light">
+                <a href="/about.html" class="waves-effect waves-light">
+
                     
                         <i class="fa fa-user-circle-o"></i>
                     
-                    <span>关于我</span>
+                    <span>关于</span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
                 </a>
+                <ul class="sub-nav menus_item_child ">
+                    
+                        <li>
+                            <a href="/about.html">
+                                
+                                <span>关于博客</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/winyuan.html">
+                                
+                                <span>关于文渊</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/guestbook.html">
+                                
+                                <span>留言小本</span>
+                            </a>
+                        </li>
+                    
+                </ul>
             
         </li>
     
@@ -274,9 +301,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/诗和远方/">
+                                <a href="/categories/生活脚步/">
                                     
-                                    <span>诗和远方</span>
+                                    <span>生活脚步</span>
                                 </a>
                             </li>
                         
@@ -286,12 +313,37 @@
         
             <li class="m-nav-item">
                 
-                    <a href="/about" class="waves-effect waves-light">
+                    <a href="javascript:;">
                         
                             <i class="fa fa-fw fa-user-circle-o"></i>
                         
-                        关于我
+                        关于
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
                     </a>
+                    <ul>
+                        
+                            <li>
+                                <a href="/about.html">
+                                    
+                                    <span>关于博客</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/winyuan.html">
+                                    
+                                    <span>关于文渊</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/guestbook.html">
+                                    
+                                    <span>留言小本</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
                 
             </li>
         
@@ -385,267 +437,245 @@
     </div>
 </div>
 <style>
-    .friends-container {
-        margin-top: -100px;
-        margin-bottom: 30px;
-    }
+.friends-container {
+  margin-top: -100px;
+  margin-bottom: 30px;
+}
 
-    .frind-ship img {
-        border-radius: 50%;
-    }
+.frind-ship img {
+  border-radius: 50%;
+}
 
-    /* 一下是按钮样式 */
+/* 一下是按钮样式 */
 
-    .frind-ship {
-        padding: 10px 20px;
-    }
+.frind-ship {
+  padding: 10px 20px;
+}
 
-    .frind-ship .title {
-        display: flex;
-        align-items: center;
-    }
+.frind-ship .title {
+  display: flex;
+  align-items: center;
+}
 
-    .frind-ship .title div {
-        color: #fff;
-        padding-left: 10px;
-    }
+.frind-ship .title div {
+  color: #fff;
+  padding-left: 10px;
+}
 
-    .frind-ship .title img {
-        width: 100px;
-        height: 100px;
-        flex-shrink: 0;
-    }
+.frind-ship .title img {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
 
-    .frind-ship .title h1 {
-        line-height: 0.8rem;
-        padding-bottom: 16px;
-        border-bottom: 2px solid #fff;
-    }
+.frind-ship .title h1 {
+  line-height: 0.8rem;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #fff;
+}
 
-    .friend-button {
-        display: flex;
-        justify-content: center;
-        margin-bottom: -27px;
-    }
+.friend-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -27px;
+}
 
-    .friend-button a {
-        border-radius: 40px;
-    }
+.friend-button a {
+  border-radius: 40px;
+}
 
-    .friend-all .tag-post {
-        margin-bottom: 30px;
-    }
+.friend-all .tag-post {
+  margin-bottom: 30px;
+}
 
-    .friend-all .friend-div .frind-ship .title div p {
-        height: 44px;
-    }
+.friend-all .friend-div .frind-ship .title div p {
+  height: 44px;
+}
 
-    .button-caution {
-        background-color: #FF4351;
-        border-color: #FF4351;
-        color: #FFF;
-    }
+.button-caution {
+  background-color: #FF4351;
+  border-color: #FF4351;
+  color: #FFF;
+}
 
-    .button {
-        font-weight: 300;
-        font-size: 16px;
-        font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        text-decoration: none;
-        text-align: center;
-        line-height: 40px;
-        height: 40px;
-        padding: 0 40px;
-        margin: 0;
-        display: inline-block;
-        appearance: none;
-        cursor: pointer;
-        border: none;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-transition-property: all;
-        transition-property: all;
-        -webkit-transition-duration: .3s;
-        transition-duration: .3s;
-    }
+.button {
+  font-weight: 300;
+  font-size: 16px;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 40px;
+  margin: 0;
+  display: inline-block;
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+}
 
-    .title {
-        margin-bottom: 0rem !important;
-    }
+.title {
+  margin-bottom: 0rem !important;
+}
 
-    .card {
-        margin: 3rem 0 1rem 0 !important;
-    }
+.card {
+  margin: 3rem 0 1rem 0 !important;
+}
 
-    .button-glow.button-caution {
-        -webkit-animation-name: glowing-caution;
-        animation-name: glowing-caution;
-    }
+.button-glow.button-caution {
+  -webkit-animation-name: glowing-caution;
+  animation-name: glowing-caution;
+}
 
-    @-webkit-keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
+@-webkit-keyframes glowing-caution {
+  from {
+    -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+    box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+  }
 
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
+  50% {
+    -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+    box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+  }
 
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
+  to {
+    -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+    box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+  }
+}
 
-    @keyframes glowing-caution {
-        from {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
+@keyframes glowing-caution {
+  from {
+    -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+    box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+  }
 
-        50% {
-            -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-            box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
-        }
+  50% {
+    -webkit-box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+    box-shadow: 0 0 20px rgba(255, 67, 81, 0.8);
+  }
 
-        to {
-            -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-            box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
-        }
-    }
+  to {
+    -webkit-box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+    box-shadow: 0 0 0 rgba(255, 67, 81, 0.3);
+  }
+}
 
-    .button-caution:hover {
-        background-color: #ff7680;
-        border-color: #ff7680;
-        color: #FFF;
-        text-decoration: none;
-    }
+.button-caution:hover {
+  background-color: #ff7680;
+  border-color: #ff7680;
+  color: #FFF;
+  text-decoration: none;
+}
 
-    .frind-card1 {
-        background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-    }
+.frind-card1 {
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
 
-    .frind-card2 {
-        background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
+.frind-card2 {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
 
-    .frind-card3 {
-        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
-    }
+.frind-card3 {
+  background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+}
 
-    .frind-card4 {
-        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-    }
+.frind-card4 {
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
 
-    .frind-card5 {
-        background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
-    }
+.frind-card5 {
+  background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+}
 
-    .frind-card6 {
-        background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
-    }
+.frind-card6 {
+  background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+}
 
-    .frind-card7 {
-        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
-    }
+.frind-card7 {
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
 
-    .frind-card8 {
-        background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
-    }
+.frind-card8 {
+  background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+}
 
-    .frind-card9 {
-        background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-    }
+.frind-card9 {
+  background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+}
 
-    .frind-card10 {
-        background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
-    }
+.frind-card10 {
+  background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+}
 </style>
 
 <main class="content">
-    <div class="container friends-container">
-        <article id="friends-link">
+  <div class="container friends-container">
+    <article id="friends-link">
+      
+        
+        <div class="row tags-posts friend-all">
+          
             
-                
-                <div class="row tags-posts friend-all">
-                    
-                        
-                        <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
-                            <div class="card frind-card1">
-                                <div class="frind-ship">
-                                    <div class="title">
-                                        <img src="/medias/friends/yangqq.gif" alt="img">
-                                        <div>
-                                            <h1 class="friend-name">杨青青</h1>
-                                            <p>一个80后草根女站长！Web前端设计师、网页设计师。</p>
-                                        </div>
-                                    </div>
-                                    <div class="friend-button">
-                                        <a href="https://www.yangqq.com/" target="_blank" class="button button-glow button-rounded button-caution" rel="external nofollow noopener noreferrer">
-                                            前去观摩
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
+            <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
+              <div class="card frind-card1">
+                <div class="frind-ship">
+                  <div class="title">
+                    <img src="/medias/friends/yangqq.gif" alt="img">
+                    <div>
+                      <h1 class="friend-name">杨青青</h1>
+                      <p>一个80后草根女站长！Web前端设计师、网页设计师。</p>
+                    </div>
+                  </div>
+                  <div class="friend-button">
+                    <a href="https://www.yangqq.com/" target="_blank" class="button button-glow button-rounded button-caution" rel="external nofollow noopener noreferrer">
+                      前去观摩
+                    </a>
+                  </div>
                 </div>
-            
-        </article>
-    </div>
+              </div>
+            </div>
+          
+        </div>
+      
+    </article>
+  </div>
 </main>
 
-<script>
-    $(function () {
-        $('#friends-link').masonry({
-            itemSelector: '.friend-div'
-        });
-    });
-</script>
 <footer class="page-footer bg-color footer-cover">
-    <div class="container row center-align">
-        <div class="col s12 m8 l8 copy-right">
-            
+  <div class="container row center-align">
+    <div class="col s12 m8 l8 copy-right">
+      
 
-            
-            
-                <br>
-                <!-- 注释掉总访问量和访客数
-                
-                
-                    <span id="busuanzi_container_site_uv">
-                    <i class="fa fa-users"></i>
-                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
-                </span>
-                
-                -->
+      
+      
+        <i class="fa fa-users">&nbsp;</i>欢迎访问：文渊的个人网站 - WenYuan's Personal Website.
 
-                
-                    <span id="busuanzi_container_site_uv">
-                    <i class="fa fa-users"></i>
-                    欢迎你, 第&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;位访问本站的朋友.
-                </span>
-                
-            
-
-            <br>
-            <a href="http://www.wenyuanblog.com" target="_blank">
-                Copyright © 2019 wenyuanblog.com All Rights Reserved.
-            </a>
-            <a href="http://www.wenyuanblog.com" target="_blank">
-                &nbsp;Powered by WenYuan
-            </a>
-            <br>
-            <a href="http://www.beian.miit.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
-                <span>备案号:苏ICP备19003118号-1</span>
-            </a>
-            <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
-                <span>苏公网安备 32020602000865号</span>
-            </a>
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+      <br>
+      <a href="http://www.wenyuanblog.com" target="_blank">
+        Copyright © 2018 - 2020 wenyuanblog.com All Rights Reserved.
+      </a>
+      <!--
+      <a href="http://www.wenyuanblog.com" target="_blank">
+        &nbsp;Powered by WenYuan
+      </a>
+      -->
+      <br>
+      <a href="http://www.beian.miit.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+        <span>备案号：苏ICP备19003118号-1</span>
+      </a>
+      <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+        <span>苏公网安备 32020602000865号</span>
+      </a>
+    </div>
+    <div class="col s12 m4 l4 social-link ">
   <a href="https://github.com/winyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
     <i class="fa fa-git"></i>
   </a>
@@ -686,30 +716,29 @@ function wechatShow() {
 }
 </script>
 </div>
-    </div>
+  </div>
 </footer>
 
-<div class="progress-bar"></div>
+<!-- End of website body -->
 
-
-<!-- Search Box -->
+<!-- Components: Search Box -->
 <div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
-        </div>
-        <div id="searchResult"></div>
+  <div class="modal-content">
+    <div class="search-header">
+      <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+      <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
     </div>
+    <div id="searchResult"></div>
+  </div>
 </div>
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
-$(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+$(function() {
+  searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
-<!-- Back to Top -->
+<!-- Components: Back to Top -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fa fa-angle-up"></i>
@@ -718,10 +747,6 @@ $(function () {
 
 
 <script src="/libs/materialize/materialize.min.js"></script>
-<script src="/libs/masonry/masonry.pkgd.min.js"></script>
-<!--<script src="/libs/aos/aos.js"></script>-->
-<!--<script src="/libs/scrollprogress/scrollProgress.min.js"></script>-->
-<!--<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>-->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
@@ -757,8 +782,6 @@ $(function () {
 
 
 
-
-  <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
 

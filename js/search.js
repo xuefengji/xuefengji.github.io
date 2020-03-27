@@ -47,6 +47,18 @@ var searchFunc = function (path, search_id, content_id) {
                 }
               }
             });
+          } else if (data_title != '' && data_content == '') {
+            // 优化一下，只索引标题
+            keywords.forEach(function (keyword, i) {
+              index_title = data_title.indexOf(keyword);
+              if (index_title < 0) {
+                isMatch = false;
+              } else {
+                if (i == 0) {
+                  first_occur = index_content;
+                }
+              }
+            });
           }
           // show search results
           if (isMatch) {
