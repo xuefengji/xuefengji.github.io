@@ -131,9 +131,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/生活脚步/">
+                            <a href="/categories/生活小记/">
                                 
-                                <span>生活脚步</span>
+                                <span>生活小记</span>
                             </a>
                         </li>
                     
@@ -301,9 +301,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/生活脚步/">
+                                <a href="/categories/生活小记/">
                                     
-                                    <span>生活脚步</span>
+                                    <span>生活小记</span>
                                 </a>
                             </li>
                         
@@ -574,8 +574,8 @@
 <p>正向代理与反向代理的区别，以及用Nginx配置实现代理服务。</p>
 </blockquote>
 <h2 id="一、正向代理与反向代理"><a href="#一、正向代理与反向代理" class="headerlink" title="一、正向代理与反向代理"></a>一、正向代理与反向代理</h2><h3 id="1-正向代理"><a href="#1-正向代理" class="headerlink" title="1. 正向代理"></a><span style="font-size: 18px;">1. 正向代理</span></h3><p>正向代理其实相当于请求的中继，比如说，如果某个网站国内无法访问，也就是被墙了，我可以选择两种方式：<br>一个是配置代理服务器，第二种就是 VPN。</p>
-<p>其实两种技术原理差不太多，如果说我自己访问不到这个网站，而这时可以通过一台可以访问到这个网站的服务器，也就是代理服务器，来进行访问，这台代理服务器，分析我们请求的信息，然后去对应的要去的网站上将内容取回来发给我，这样我就能读到想要访问的网站上的内容了，通过一下图片，可以很清晰的看出其原理：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/forward_proxy.png" alt="forward_proxy.png" width="500" hegiht="300" align="center"></p>
-<h3 id="2-反向代理"><a href="#2-反向代理" class="headerlink" title="2. 反向代理"></a><span style="font-size: 18px;">2. 反向代理</span></h3><p>反向代理比正向代理更加透明，客户端并不知道访问的是代理服务器，当客户端请求一个网址的时候，会经过反向代理服务器，而这台反向代理服务器，会根据客户端的请求，将请求转发到内网服务器中，内网服务器处理请求并返回结果到反向代理服务器上，通过反向代理服务器，将结果最终返回到客户端，详情如图：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/reverse_proxy.png" alt="reverse_proxy.png" width="500" hegiht="300" align="center"></p>
+<p>其实两种技术原理差不太多，如果说我自己访问不到这个网站，而这时可以通过一台可以访问到这个网站的服务器，也就是代理服务器，来进行访问，这台代理服务器，分析我们请求的信息，然后去对应的要去的网站上将内容取回来发给我，这样我就能读到想要访问的网站上的内容了，通过一下图片，可以很清晰的看出其原理：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/forward_proxy.png" alt="forward_proxy.png" width="500" height="300" align="center"></p>
+<h3 id="2-反向代理"><a href="#2-反向代理" class="headerlink" title="2. 反向代理"></a><span style="font-size: 18px;">2. 反向代理</span></h3><p>反向代理比正向代理更加透明，客户端并不知道访问的是代理服务器，当客户端请求一个网址的时候，会经过反向代理服务器，而这台反向代理服务器，会根据客户端的请求，将请求转发到内网服务器中，内网服务器处理请求并返回结果到反向代理服务器上，通过反向代理服务器，将结果最终返回到客户端，详情如图：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/reverse_proxy.png" alt="reverse_proxy.png" width="500" height="300" align="center"></p>
 <p><strong>简单来说：</strong><br>正向代理代理的是客户端（如通过代理访问谷歌），而反向代理代理的是服务器（如 Nginx 代理 PHP 服务器）。</p>
 <h2 id="二、通过SSH反向代理实现内网穿透"><a href="#二、通过SSH反向代理实现内网穿透" class="headerlink" title="二、通过SSH反向代理实现内网穿透"></a>二、通过SSH反向代理实现内网穿透</h2><h3 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a><span style="font-size: 18px;">1. 背景</span></h3><p>我用学校实验室的一台服务器在跑数据，但是这台服务器没有公网 ip，只有学校内网 ip，故我只能到实验室登录。但有时候，需要在宿舍或者家里远程连接这台服务器。</p>
 <p>于是，我就用到了<strong>反向代理</strong>。前提是我有一台公网 ip 的服务器（例如，阿里的学生机，或者 vultr 的 VPS 都可以）。</p>
@@ -1145,7 +1145,8 @@ server <span class="token punctuation">{</span>
 
 <script src="/libs/valine/av-min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',

@@ -6,7 +6,7 @@
   <meta name="generator" content="django">
   <meta charset="utf-8">
   <meta name="keywords" content="notepad3右键菜单,everedit右键菜单,editplus右键菜单,notepad++右键菜单,关联鼠标右键,关联右键菜单,鼠标右键打开">
-  <meta name="description" content="以Notepad3为例，通过注册表将各类文本编辑器添加到右键菜单，从而可以通过鼠标右键...们一般会在Windows机器上安装一个第三方文本编辑器，从而弥补Windows自">
+  <meta name="description" content="以Notepad3为例，通过注册表将各类文本编辑器添加到右键菜单，从而可以通过鼠标右键...我们一般会在Windows机器上安装一个第三方文本编辑器，从而弥补Win">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Notepad3关联鼠标右键菜单 - 程序员的个人博客 | 一个90后程序员的技术人生</title>
+  <title>Notepad3关联鼠标右键菜单 - 文本编辑器添加右键打开方式_清理鼠标右键菜单 - 文渊博客</title>
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -131,9 +131,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/生活脚步/">
+                            <a href="/categories/生活小记/">
                                 
-                                <span>生活脚步</span>
+                                <span>生活小记</span>
                             </a>
                         </li>
                     
@@ -301,9 +301,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/生活脚步/">
+                                <a href="/categories/生活小记/">
                                     
-                                    <span>生活脚步</span>
+                                    <span>生活小记</span>
                                 </a>
                             </li>
                         
@@ -416,10 +416,107 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+    display: block;
+    content: " ";
+    height: 90px;
+    margin-top: -100px;
+    visibility: hidden;
+}
+
+#articleContent :focus {
+    outline: none;
+}
+
+.toc-fixed {
+    position: fixed;
+    top: 64px;
+}
+
+.toc-widget {
+    padding-left: 20px;
+}
+
+.toc-widget .toc-title {
+    margin: 35px 0 15px 0;
+    padding-left: 17px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+.toc-widget ol {
+    padding: 0;
+    list-style: none;
+}
+
+/*#toc-content {*/
+    /*height: calc(100vh - 250px);*/
+    /*overflow-y: scroll;*/
+/*}*/
+
+#toc-content ol {
+    padding-left: 10px;
+}
+
+#toc-content ol li {
+    padding-left: 10px;
+}
+
+#toc-content .toc-link:hover {
+    /*color: #42b983;*/
+    color: #3498db;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+#toc-content .toc-link::before {
+    background-color: transparent;
+    max-height: 25px;
+}
+
+#toc-content .is-active-link {
+    /*color: #42b983;*/
+    color: #3498db;
+}
+
+#toc-content .is-active-link::before {
+    /*background-color: #42b983;*/
+    background-color: #3498db;
+}
+
+#floating-toc-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 76px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+}
+
+#floating-toc-btn .btn-floating {
+    width: 48px;
+    height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+    line-height: 48px;
+    font-size: 1.4rem;
+}
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
   <div class="card">
     <div class="card-content article-info">
@@ -470,28 +567,26 @@
         <div style="text-align: center; font-size: 32px;">Notepad3关联鼠标右键菜单</div>
 
 <blockquote>
-<p>以Notepad3为例，通过注册表将各类文本编辑器添加到右键菜单，从而可以通过鼠标右键打开文本文件。</p>
+<p>以 Notepad3 为例，通过注册表将各类文本编辑器添加到右键菜单，从而可以通过鼠标右键打开文本文件。</p>
 </blockquote>
-<p>我们一般会在Windows机器上安装一个第三方文本编辑器，从而弥补Windows自带文本编辑器的不足。<br>常用的文本编辑器有 <span style="color: #27ae60;">Notepad3</span>，<span style="color: #27ae60;">EverEdit</span>，<span style="color: #27ae60;">EditPlus</span>，<span style="color: #27ae60;">Notepad++</span> 等。<br><span style="font-size: 10px; color: #FF0000;">* </span><span style="font-size: 10px; color: #9e9e9e;">仅是文本编辑的话，其实它们和Sublime Text这类IDE不属于一类，文本编辑器要更「轻」</span></p>
-<p>EverEdit是我经常使用的文本工具，安装完后就自动添加到右键菜单了，之后把鼠标放在目标文件上，右击就可以选择「<span style="color: #FF0000;">Edit With EverEdit</span>」，很方便。<br>大部分的此类软件也都可以在菜单中设置可以「<span style="color: #FF0000;">添加XXX到鼠标右键</span>」，但是最近在体验 <span style="color: #27ae60;">Notepad3</span> 时，却怎么都找不到Notepad3如何设置，只能通过直接写入注册表的方式完成，下面记录下步骤。<br><span style="font-size: 10px; color: #FF0000;">* </span><span style="font-size: 10px; color: #9e9e9e;">我在安装Notepad3时，没有选择让它完全替代Windows自带文本编辑器。</span></p>
+<p>我们一般会在 Windows 机器上安装一个第三方文本编辑器，从而弥补 Windows 自带文本编辑器的不足。<br>常用的文本编辑器有 <strong>Notepad3</strong>，<strong>EverEdit</strong>，<strong>EditPlus</strong>，<strong>Notepad++</strong> 等。</p>
+<p>大部分的软件在安装完后，可以在菜单中设置「<span style="color: #FF0000;">添加XXX到鼠标右键</span>」，比如下图所示，为 EverEdit 添加右键打开（工具 –&gt; 设置 –&gt; 常规）。</p>
+<p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/everedit_right_menu.png" alt="EverEdit添加右键打开" width="500" align="center"></p>
+<p>但是最近在体验 <strong>Notepad3</strong> 时，却怎么都找不到 Notepad3 如何设置，只能通过直接写入注册表的方式完成，下面记录下步骤。<br><span style="font-size: 10px; color: #FF0000;">* </span><span style="font-size: 10px; color: #9e9e9e;">我在安装Notepad3时，没有选择让它完全替代Windows自带文本编辑器。</span></p>
 <p>这个方法是通用的，任何便携版（portable）软件或绿色单文件版都可以这么做。</p>
-<p><br></p>
-<p><span style="font-size: 27px;"><strong>实现方法</strong></span></p>
-<ol>
+<h2 id="添加右键打开方式"><a href="#添加右键打开方式" class="headerlink" title="添加右键打开方式"></a>添加右键打开方式</h2><ol>
 <li><p>打开注册表编辑器（Windows键+R，输入<code>regedit</code>，回车），如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/notepad3_to_right_menu_01.png" alt="打开注册表编辑器"></p>
 </li>
 <li><p>在注册表编辑器中，<code>HKEY_CLASSES_ROOT</code> –&gt; <code>*</code> –&gt; <code>shell</code> 目录点击右键。<code>新建</code> –&gt; <code>项</code>，这里命名的 <code>项</code> 值就是鼠标右键列表里面显示的内容，这里起名为【Edit With Notepad3】。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/notepad3_to_right_menu_02.png" alt="创建Edit With Notepad3项"></p>
 </li>
-<li><p>在右侧空白区域点击右键 【新建 –&gt; 字符串值】，分别创建如下图所示的两个字符串，名称为【Icon】值为<span style="color: #FF0000;">Notepad3的路径地址</span>，名称为【MultiSelectModel】值为 <code>Single</code>，这一步设置的意义是设置鼠标右键列表中的图标。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/notepad3_to_right_menu_03.png" alt="创建字符串值"></p>
+<li><p>在右侧空白区域点击右键 【新建 –&gt; 字符串值】，分别创建如下图所示的两个字符串，名称为【Icon】值为 <strong>Notepad3 的路径地址</strong>，名称为【MultiSelectModel】值为 <code>Single</code>，这一步设置的意义是设置鼠标右键列表中的图标。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/notepad3_to_right_menu_03.png" alt="创建字符串值"></p>
 </li>
-<li><p>在这里起名为【Edit With Notepad3】的目录下新建名为【Command】的项，编辑右侧默认项的值为Notepad3的路径，如下图所示，<span style="color: #FF0000;">需要用引号</span>并且后面追加 <code>&quot;%1&quot;</code>。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/notepad3_to_right_menu_04.png" alt="创建Command项"></p>
+<li><p>在这里起名为【Edit With Notepad3】的目录下新建名为【Command】的项，编辑右侧默认项的值为Notepad3的路径，如下图所示，<strong>需要用引号</strong>并且后面追加 <code>&quot;%1&quot;</code>。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/notepad3_to_right_menu_04.png" alt="创建Command项"></p>
 </li>
 <li><p>到此就大功告成，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/notepad3_to_right_menu_05.png" alt="鼠标右键打开Notepad3"></p>
 </li>
 </ol>
-<p><br><br><br></p>
-<p><span style="font-size: 27px;"><strong>清理右键菜单</strong></span></p>
-<p>既然我们能够给鼠标右键菜单添加快捷命令，也能用同样的方法删除命令。<br>很多时候当我们安装完一些软件后，在<span style="color: #FF0000;">文件</span>或<span style="color: #FF0000;">文件夹</span>上单击鼠标右键时，会多出来「<span style="color: #FF0000;">上传到有道云笔记</span>」，「<span style="color: #FF0000;">上传到百度云</span>」之类的快捷操作。<br>这种快捷命令多了以后，鼠标的右键菜单就很长，不利于操作，也显得丑陋，可以通过下面的方式清理右键菜单：</p>
+<h2 id="清理鼠标右键菜单"><a href="#清理鼠标右键菜单" class="headerlink" title="清理鼠标右键菜单"></a>清理鼠标右键菜单</h2><p>既然我们能够给鼠标右键菜单添加快捷命令，也能用同样的方法删除命令。<br>很多时候当我们安装完一些软件后，在文件或文件夹上单击鼠标右键时，会多出来「<span style="color: #FF0000;">上传到有道云笔记</span>」，「<span style="color: #FF0000;">上传到百度云</span>」之类的快捷操作。<br>这种快捷命令多了以后，鼠标的右键菜单就很长，不利于操作，也显得丑陋，可以通过下面的方式清理右键菜单：</p>
 <p>打开注册表编辑器（Windows键+R，输入<code>regedit</code>，回车），在下面两个位置删除 <span style="color: #FF0000;">YunShellExt</span>（百度云）和 <span style="color: #FF0000;">YNote</span>（有道云笔记）：</p>
 <ul>
 <li><code>[HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers]</code>，这里是所有文件的右键</li>
@@ -917,7 +1012,8 @@
 
 <script src="/libs/valine/av-min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1043,6 +1139,99 @@
 </div>
 
 
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+    <div id="floating-toc-btn" class="hide-on-med-and-down">
+        <a class="btn-floating btn-large bg-color">
+            <i class="fa fa-list"></i>
+        </a>
+    </div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    // headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
+
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
+
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
+
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
+
+    
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
+
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
+
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+    
+});
+</script>
     
 
 </main>

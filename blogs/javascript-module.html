@@ -131,9 +131,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/生活脚步/">
+                            <a href="/categories/生活小记/">
                                 
-                                <span>生活脚步</span>
+                                <span>生活小记</span>
                             </a>
                         </li>
                     
@@ -301,9 +301,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/生活脚步/">
+                                <a href="/categories/生活小记/">
                                     
-                                    <span>生活脚步</span>
+                                    <span>生活小记</span>
                                 </a>
                             </li>
                         
@@ -662,7 +662,7 @@ mathUtils<span class="token punctuation">.</span><span class="token function">de
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 </code></pre>
 <h2 id="三、主流模块规范时代"><a href="#三、主流模块规范时代" class="headerlink" title="三、主流模块规范时代"></a>三、主流模块规范时代</h2><p>　　在ES6以前，还没有提出一套官方的规范，从社区和框架推广程度而言，目前通行的JavaScript模块规范有两种：CommonJS 和 AMD。</p>
-<h3 id="1-CommonJS规范"><a href="#1-CommonJS规范" class="headerlink" title="1. CommonJS规范"></a><span style="font-size: 18px; color: #27ae60;"><strong>1. CommonJS规范</strong></span></h3><p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/nodejs.jpg" alt="Node.js" width="200" hegiht="123" align="left/"><br>　　Nodejs 的出现，让 JavaScript 能够运行在服务端环境中。在当时，前端的复杂程度有限，没有模块也是可以的，但是在服务器端，一定要有模块，与操作系统和其他应用程序互动，否则根本没法编程。此时迫切需要建立一个标准来实现统一的模块系统，也就是后来的 <span style="color: #FF0000;">CommonJS</span>。<br>　　也是基于此，随后在浏览器端（前端），requirejs 和 seajs 之类的工具包也出现了，可以说在对应规范下，require统治了ES6之前的所有模块化编程。</p>
+<h3 id="1-CommonJS规范"><a href="#1-CommonJS规范" class="headerlink" title="1. CommonJS规范"></a><span style="font-size: 18px; color: #27ae60;"><strong>1. CommonJS规范</strong></span></h3><p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/nodejs.jpg" alt="Node.js" width="200" height="123" align="left/"><br>　　Nodejs 的出现，让 JavaScript 能够运行在服务端环境中。在当时，前端的复杂程度有限，没有模块也是可以的，但是在服务器端，一定要有模块，与操作系统和其他应用程序互动，否则根本没法编程。此时迫切需要建立一个标准来实现统一的模块系统，也就是后来的 <span style="color: #FF0000;">CommonJS</span>。<br>　　也是基于此，随后在浏览器端（前端），requirejs 和 seajs 之类的工具包也出现了，可以说在对应规范下，require统治了ES6之前的所有模块化编程。</p>
 <p>　　CommonJS 规定每个模块内部，module 代表当前模块，这个模块是一个对象，有 id，filename，loaded，parent，children，exports 等属性，<code>module.exports</code> 属性表示当前模块对外输出的接口，其他文件加载该模块，实际上就是读取 <code>module.exports</code> 变量。<br>　　CommonJS 有一个全局性方法 <code>require()</code>，用于加载模块。</p>
 <p>　　假定有一个工具类模块 <code>utils.js</code>，我们要在 <code>base.js</code> 中使用它里面的方法：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 直接赋值给 module.exports 变量</span>
@@ -700,7 +700,7 @@ exports <span class="token operator">=</span> <span class="token string">'Hello 
 </code></pre>
 <p>　　<strong>CommonJS总结：</strong><br>　　CommonJS 规范加载模块是同步的，用于服务端，由于 CommonJS 会在启动时把内置模块加载到内存中，也会把加载过的模块放在内存中。所以在 Node 环境中用同步加载的方式不会有很大问题。</p>
 <p>　　另外，CommonJS模块加载的是输出值的拷贝。也就是说，外部模块输出值变了，当前模块的导入值不会发生变化。</p>
-<h3 id="2-AMD规范"><a href="#2-AMD规范" class="headerlink" title="2. AMD规范"></a><span style="font-size: 18px; color: #27ae60;"><strong>2. AMD规范</strong></span></h3><p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/amd_requirejs.jpg" alt="AMD & Require.js" width="200" hegiht="125" align="left/"><br>　　CommonJS 规范的出现，使得 JS 模块化在 NodeJS 环境中得到了施展机会。但 CommonJS 如果应用在浏览器端，同步加载的机制会使得 JS 阻塞 UI 线程，造成页面卡顿。</p>
+<h3 id="2-AMD规范"><a href="#2-AMD规范" class="headerlink" title="2. AMD规范"></a><span style="font-size: 18px; color: #27ae60;"><strong>2. AMD规范</strong></span></h3><p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/amd_requirejs.jpg" alt="AMD & Require.js" width="200" height="125" align="left/"><br>　　CommonJS 规范的出现，使得 JS 模块化在 NodeJS 环境中得到了施展机会。但 CommonJS 如果应用在浏览器端，同步加载的机制会使得 JS 阻塞 UI 线程，造成页面卡顿。</p>
 <p>　　怎么理解呢，举个例子：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> math <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'math'</span><span class="token punctuation">)</span>
 math<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
@@ -746,7 +746,7 @@ math<span class="token punctuation">.</span><span class="token function">add</sp
 <p>　　<code>math.add()</code> 与 <code>math</code> 模块加载不是同步的，浏览器不会发生假死。所以很显然，AMD比较适合浏览器环境。</p>
 <p>　　<strong>AMD 的特点：</strong><br>　　●　延迟加载<br>　　●　依赖前置</p>
 <p>　　利用模块加载后执行回调的机制，目前，主要有两个JavaScript库实现了AMD规范：<a href="https://requirejs.org/" rel="external nofollow noopener noreferrer" target="_blank">require.js</a>和<a href="http://cujojs.com/" rel="external nofollow noopener noreferrer" target="_blank">cujo.js</a>。</p>
-<h3 id="3-CMD规范"><a href="#3-CMD规范" class="headerlink" title="3. CMD规范"></a><span style="font-size: 18px; color: #27ae60;"><strong>3. CMD规范</strong></span></h3><p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/seajs.jpg" alt="SeaJS" width="200" hegiht="150" align="left/"><br>　　CMD（Common Module Definition），是 SeaJS 推崇的规范。<br>　　归纳一下它的特点：<br>　　●　CMD 可以认为是 CommonJS 的前端实现<br>　　●　SeaJS 由阿里的（玉帛）编写<br>　　●　SeaJS 在几年前比较火，从去年（可能是2017年）开始已经停止更新</p>
+<h3 id="3-CMD规范"><a href="#3-CMD规范" class="headerlink" title="3. CMD规范"></a><span style="font-size: 18px; color: #27ae60;"><strong>3. CMD规范</strong></span></h3><p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/seajs.jpg" alt="SeaJS" width="200" height="150" align="left/"><br>　　CMD（Common Module Definition），是 SeaJS 推崇的规范。<br>　　归纳一下它的特点：<br>　　●　CMD 可以认为是 CommonJS 的前端实现<br>　　●　SeaJS 由阿里的（玉帛）编写<br>　　●　SeaJS 在几年前比较火，从去年（可能是2017年）开始已经停止更新</p>
 <p>　　与AMD不同，CMD 则是依赖就近，用的时候再 require。它写起来是这样的：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>require<span class="token punctuation">,</span> exports<span class="token punctuation">,</span> module<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> clock <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"clock"</span><span class="token punctuation">)</span>
@@ -848,7 +848,7 @@ say: I'm mod2
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <p>　　应用 UMD 规范的 JS 文件其实就是一个立即执行函数，通过检验 JS 环境是否支持 CommonJS 或 AMD 再进行模块化定义。</p>
-<h2 id="四、ES6时代"><a href="#四、ES6时代" class="headerlink" title="四、ES6时代"></a>四、ES6时代</h2><p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/ecmascript6_modules.jpg" alt="ECMAScript6 Modules" width="573" hegiht="150" align="center/"><br>　　ES6 标准发布后，module 成为标准，标准使用是以 <code>export</code> 指令导出接口，以 <code>import</code> 引入模块，但是在我们一贯的 node 模块中，依然采用的是 CommonJS 规范，使用 <code>require</code> 引入模块，使用 <code>module.exports</code> 导出接口。</p>
+<h2 id="四、ES6时代"><a href="#四、ES6时代" class="headerlink" title="四、ES6时代"></a>四、ES6时代</h2><p><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/ecmascript6_modules.jpg" alt="ECMAScript6 Modules" width="573" height="150" align="center/"><br>　　ES6 标准发布后，module 成为标准，标准使用是以 <code>export</code> 指令导出接口，以 <code>import</code> 引入模块，但是在我们一贯的 node 模块中，依然采用的是 CommonJS 规范，使用 <code>require</code> 引入模块，使用 <code>module.exports</code> 导出接口。</p>
 <p>　　下面来看一下 ES6 模块化的写法。</p>
 <h3 id="1-export导出模块"><a href="#1-export导出模块" class="headerlink" title="1. export导出模块"></a><span style="font-size: 18px; color: #27ae60;"><strong>1. export导出模块</strong></span></h3><p>　　export 语法声明用于导出函数、对象、指定文件（或模块）的原始值，如下代码：<br>　　<span style="font-size: 10px; color: #FF0000;">* </span><span style="font-size: 10px; color: #9e9e9e;">注意：在 node 中使用的是 exports ,不要混淆了。</span></p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token punctuation">{</span> name1<span class="token punctuation">,</span> name2<span class="token punctuation">,</span> …<span class="token punctuation">,</span> nameN <span class="token punctuation">}</span>
@@ -1492,7 +1492,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <script src="/libs/valine/av-min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1541,8 +1542,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/生活脚步/" class="post-category" target="_blank">
-                                    生活脚步
+                            <a href="/categories/生活小记/" class="post-category" target="_blank">
+                                    生活小记
                                 </a>
                             
                             

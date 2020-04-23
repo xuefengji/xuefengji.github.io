@@ -131,9 +131,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/生活脚步/">
+                            <a href="/categories/生活小记/">
                                 
-                                <span>生活脚步</span>
+                                <span>生活小记</span>
                             </a>
                         </li>
                     
@@ -301,9 +301,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/生活脚步/">
+                                <a href="/categories/生活小记/">
                                     
-                                    <span>生活脚步</span>
+                                    <span>生活小记</span>
                                 </a>
                             </li>
                         
@@ -570,7 +570,7 @@
 <p>通过学习几篇不错的文章，再结合自己的理解，重新梳理了CNN做文本分类的实现原理，在此记录下学习笔记。</p>
 </blockquote>
 <h2 id="一、文本分类"><a href="#一、文本分类" class="headerlink" title="一、文本分类"></a>一、文本分类</h2><p>　　目前文本分类在工业界的应用场景非常普遍，从新闻的分类、商品评论信息的情感分类到微博信息打标签辅助推荐系统，都用到了这种技术。</p>
-<h2 id="二、数据准备"><a href="#二、数据准备" class="headerlink" title="二、数据准备"></a>二、数据准备</h2><p>　　在机器学习领域有一句话：<strong>数据决定了模型最终的高度，不断优化的模型只不过是为了不断逼近这个高度而已。</strong><br>　　<br>　　文本分类作为一种有监督学习的任务，毫无疑问的需要一个可用于有监督学习的语料集（X,Y）。本文中使用以下标记，X为特征，文本分类中即为文本序列，Y是标签，即文本的分类名称。<br>　　<br>　　机器学习与传统编程技术的明显区别就是：机器学习是以数据为驱动的，传统的编程中，我们核心任务是人工设计分类规则（指令代码），然后实现输入特征X获得分类标签Y。而在机器学习的方式中，我们首要的是获得一个高质量的、大数据量的有监督语料集（X，Y），然后机器学习的方式会自动的从已构建的数据集上归纳出（训练出）一套分类规则（分类模型），最后我们利用获得的分类规则来实现对未标记文本的分类。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/ml_vs_traditional_coding.png" alt="ml_vs_traditional_coding.png" width="500" hegiht="300" align="center"><br>　　换言之，<strong>传统的编程方式输入的是指令代码，而机器学习输入的是结构化数据。</strong><br>　　因此，在机器学习任务中，数据的质量与数量对最终模型的预测结果好坏具有决定性的作用。<br>　　<strong>常言道：Garbage in, garbage out！</strong><br>　　在文本分类中，语料集（X,Y）的质量、数量决定了文本分类模型的分类效果。</p>
+<h2 id="二、数据准备"><a href="#二、数据准备" class="headerlink" title="二、数据准备"></a>二、数据准备</h2><p>　　在机器学习领域有一句话：<strong>数据决定了模型最终的高度，不断优化的模型只不过是为了不断逼近这个高度而已。</strong><br>　　<br>　　文本分类作为一种有监督学习的任务，毫无疑问的需要一个可用于有监督学习的语料集（X,Y）。本文中使用以下标记，X为特征，文本分类中即为文本序列，Y是标签，即文本的分类名称。<br>　　<br>　　机器学习与传统编程技术的明显区别就是：机器学习是以数据为驱动的，传统的编程中，我们核心任务是人工设计分类规则（指令代码），然后实现输入特征X获得分类标签Y。而在机器学习的方式中，我们首要的是获得一个高质量的、大数据量的有监督语料集（X，Y），然后机器学习的方式会自动的从已构建的数据集上归纳出（训练出）一套分类规则（分类模型），最后我们利用获得的分类规则来实现对未标记文本的分类。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/ml_vs_traditional_coding.png" alt="ml_vs_traditional_coding.png" width="500" height="300" align="center"><br>　　换言之，<strong>传统的编程方式输入的是指令代码，而机器学习输入的是结构化数据。</strong><br>　　因此，在机器学习任务中，数据的质量与数量对最终模型的预测结果好坏具有决定性的作用。<br>　　<strong>常言道：Garbage in, garbage out！</strong><br>　　在文本分类中，语料集（X,Y）的质量、数量决定了文本分类模型的分类效果。</p>
 <h2 id="三、文本的预处理"><a href="#三、文本的预处理" class="headerlink" title="三、文本的预处理"></a>三、文本的预处理</h2><p>　　文本的预处理，主要针对剔除无意义的符号信息，或其它的冗余信息。例如，在使用爬虫获取的语料集上可能存在一些html的标签，这些符号对于文本分类任务来说应该是冗余的无意义信息，可以剔除掉。</p>
 <p>　　此外，针对中文、日语等无空格切分字词的语言，还需要进行分词处理，将一段文本序列划分为合理的词（字）序列。</p>
 <p>　　英文中天生的就有空格把每个词汇分割开来，所以不需要分词操作，但由于英文存在时态、缩写等问题，在预处理阶段会有词干提取、词性还原、大小写转换等。</p>
@@ -578,16 +578,16 @@
 <h2 id="四、文本的数值化【词向量技术】"><a href="#四、文本的数值化【词向量技术】" class="headerlink" title="四、文本的数值化【词向量技术】"></a>四、文本的数值化【词向量技术】</h2><p>　　我们知道，在图像的分类任务中，输入是一个图像数据（是一个矩阵，具有长和宽），而文本是一个字符串，如果能把文本转换成一种类似的格式（矩阵），那么很多之前在图像领域很适用的深度学习算法比如CNN等也可以很好地迁移到文本领域了。</p>
 <p>　　词向量技术就很好地解决了文本表示的问题。通过词向量技术，我们能将词汇信息映射到一个数值化的语义空间中，这个语义空间我们可以称之为词向量空间（词向量模型），于是，每个词汇都对应了一个指定维度的数组。</p>
 <p>　　简单地理解，就是<span style="color: #FF0000;">我们把每一种语言中的每一个单词都与一串被叫做向量的数字联系起来了。</span><br>　　<br>　　文本转换成词向量（word embedding）的方式有很多种，例如：TF-IDF、BOW、One-Hot、分布式的表示方式（word2vec、Glove）等。一般常用的是word2vec工具。它是一种无监督的学习模型，可以在一个语料集上（不需要标记，主要思想是“具有相似邻近词分布的中心词之间具有一定的语义相似度”），实现词汇信息到语义空间的映射，最终获得一个词向量模型（每个词汇对应一个指定维度的数组）。</p>
-<h2 id="五、文本分类模型"><a href="#五、文本分类模型" class="headerlink" title="五、文本分类模型"></a>五、文本分类模型</h2><p>　　文本分类模型，从最经典的2013年Kim提出Text-CNN模型开始，深度学习模型在文本分类任务上具有广泛的应用。2016年Kim跳槽FaceBook后提出了工业界的文本分类模型的“新宠”—FastText。<br>　　所以大家广泛认为，TextCNN是深度学习在文本分类中的鼻祖，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_simple_structure.png" alt="text_cnn_simple_structure.png" width="600" hegiht="400" align="center"><br>　　本文选择使用2013年Kim提出的 <span style="color: #FF0000;">Text-CNN</span> 模型作为文本分类模型，通过验证实验以及业界的共识，在文本分类任务中，CNN模型已经能够取到比较好的结果，虽然在某些数据集上效果可能会比RNN稍差一点，但是CNN模型训练的效率更高。所以，一般认为CNN模型在文本分类任务中是兼具效率与质量的理想模型。</p>
+<h2 id="五、文本分类模型"><a href="#五、文本分类模型" class="headerlink" title="五、文本分类模型"></a>五、文本分类模型</h2><p>　　文本分类模型，从最经典的2013年Kim提出Text-CNN模型开始，深度学习模型在文本分类任务上具有广泛的应用。2016年Kim跳槽FaceBook后提出了工业界的文本分类模型的“新宠”—FastText。<br>　　所以大家广泛认为，TextCNN是深度学习在文本分类中的鼻祖，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_simple_structure.png" alt="text_cnn_simple_structure.png" width="600" height="400" align="center"><br>　　本文选择使用2013年Kim提出的 <span style="color: #FF0000;">Text-CNN</span> 模型作为文本分类模型，通过验证实验以及业界的共识，在文本分类任务中，CNN模型已经能够取到比较好的结果，虽然在某些数据集上效果可能会比RNN稍差一点，但是CNN模型训练的效率更高。所以，一般认为CNN模型在文本分类任务中是兼具效率与质量的理想模型。</p>
 <p>　　关于什么是卷积神经网络，请阅读 <a href="/blogs/tensorflow-basic-learning-3.html">CNN初探</a>。</p>
-<p>　　Text-CNN 模型的整体网络架构如下图所示，如果你学习过CNN或者CNN在图像中的使用，应该很容易就理解，因为该模型就是一个最简单、基础的CNN网络结构。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_structure.png" alt="text_cnn_structure.png" width="600" hegiht="500" align="center"></p>
+<p>　　Text-CNN 模型的整体网络架构如下图所示，如果你学习过CNN或者CNN在图像中的使用，应该很容易就理解，因为该模型就是一个最简单、基础的CNN网络结构。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_structure.png" alt="text_cnn_structure.png" width="600" height="500" align="center"></p>
 <p>　　整个模型由四部分构成：<span style="color: #FF0000;">输入层</span>、<span style="color: #FF0000;">卷积层</span>、<span style="color: #FF0000;">池化层</span>、<span style="color: #FF0000;">全连接层</span>。</p>
 <p>　　<strong>它的过程大致是：</strong> 第一层是图中最左边的7乘5的句子矩阵，每行是词向量，维度=5，这个可以类比为图像中的原始像素点了。然后经过有 filter_size=(2,3,4) 的一维卷积层，每个filter_size 有两个输出 channel（每种filter_size设置了2个filter，如果只设置1个filter会略显单薄）。第三层是一个1-max pooling层，这样不同长度句子经过pooling层之后都能变成定长的表示了，最后接一层全连接的 softmax 层，输出每个类别的概率。<br>　　<br>　　●　<strong>特征：</strong> 这里的特征就是词向量<br>　　●　<strong>通道（Channels）：</strong> 图像中可以利用 (R, G, B) 作为不同channel，而文本的输入的channel通常是不同方式的embedding方式（比如 word2vec或Glove），实践中也有利用静态词向量和fine-tunning词向量作为不同channel的做法。<br>　　●　<strong>一维卷积（conv-1d）：</strong> 图像是二维数据，经过词向量表达的文本为一维数据，因此在TextCNN卷积用的是一维卷积。一维卷积带来的问题是需要设计通过不同 filter_size 的 filter 获取不同宽度的视野。这里的设计是，分别对2，3，4个单词做一次卷积，因为不同个数的单词组合可能会带来不同的含义。</p>
 <p>　　下面对每个环节进行分别说明。</p>
-<h3 id="1-输入层（词嵌入层）"><a href="#1-输入层（词嵌入层）" class="headerlink" title="1. 输入层（词嵌入层）"></a><span style="font-size: 18px;">1. 输入层（词嵌入层）</span></h3><p>　　Text-CNN模型的输入层需要输入一个定长的文本序列，我们需要通过分析语料集样本的长度指定一个输入序列的长度L，比L短的样本序列需要填充(自己定义填充符)，比L长的序列需要截取。最终输入层输入的是文本序列中各个词汇对应的分布式表示，即 <span style="color: #FF0000;">词向量（word embedding）</span>。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_word_embedding.png" alt="text_cnn_word_embedding.png" width="400" hegiht="300" align="center"><br>　　如上图所示，此时的输入不再是图片像素，而是以矩阵表示的句子或者文档。矩阵的每一行对应一个<span style="color: #FF0000;">单词或者字符</span>。也即每行代表一个词向量。在图像问题中，卷积核滑过的是图像的一“块”区域，但在自然语言领域里我们一般用卷积核滑过矩阵的一“行”（单词）。<br>　　<br>　　如果一个句子有6个词，每个词的<span style="color: #FF0000;">词向量长度（也叫词向量的维度embedding_size）</span>为7，那输入矩阵就是6x7，这就是我们的“图像”。可以理解为通道为1的图片。</p>
+<h3 id="1-输入层（词嵌入层）"><a href="#1-输入层（词嵌入层）" class="headerlink" title="1. 输入层（词嵌入层）"></a><span style="font-size: 18px;">1. 输入层（词嵌入层）</span></h3><p>　　Text-CNN模型的输入层需要输入一个定长的文本序列，我们需要通过分析语料集样本的长度指定一个输入序列的长度L，比L短的样本序列需要填充(自己定义填充符)，比L长的序列需要截取。最终输入层输入的是文本序列中各个词汇对应的分布式表示，即 <span style="color: #FF0000;">词向量（word embedding）</span>。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_word_embedding.png" alt="text_cnn_word_embedding.png" width="400" height="300" align="center"><br>　　如上图所示，此时的输入不再是图片像素，而是以矩阵表示的句子或者文档。矩阵的每一行对应一个<span style="color: #FF0000;">单词或者字符</span>。也即每行代表一个词向量。在图像问题中，卷积核滑过的是图像的一“块”区域，但在自然语言领域里我们一般用卷积核滑过矩阵的一“行”（单词）。<br>　　<br>　　如果一个句子有6个词，每个词的<span style="color: #FF0000;">词向量长度（也叫词向量的维度embedding_size）</span>为7，那输入矩阵就是6x7，这就是我们的“图像”。可以理解为通道为1的图片。</p>
 <h3 id="2-卷积层"><a href="#2-卷积层" class="headerlink" title="2. 卷积层"></a><span style="font-size: 18px;">2. 卷积层</span></h3><p>　　上一段提到，但在自然语言领域里我们一般用卷积核滑过矩阵的一“行”（单词），即卷积核的宽度与词向量的维度等宽，卷积核只进行一维的滑动。</p>
-<p>　　在Text-CNN模型中一般使用多个不同尺寸的卷积核。卷积核的高度，即窗口值，可以理解为N-gram模型中的N，即利用的局部词序的长度，窗口值也是一个超参数，需要在任务中尝试，一般选取2-8之间的值。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_convolution.png" alt="text_cnn_convolution.png" width="600" hegiht="400" align="center"></p>
-<h3 id="3-池化层"><a href="#3-池化层" class="headerlink" title="3. 池化层"></a><span style="font-size: 18px;">3. 池化层</span></h3><p>　　在Text-CNN模型的池化层中使用了Max-pool（最大值池化），既减少了模型的参数，又保证了在不定长的卷基层的输出上获得一个定长的全连接层的输入。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_max_pool.png" alt="text_cnn_max_pool.png" width="600" hegiht="400" align="center"></p>
+<p>　　在Text-CNN模型中一般使用多个不同尺寸的卷积核。卷积核的高度，即窗口值，可以理解为N-gram模型中的N，即利用的局部词序的长度，窗口值也是一个超参数，需要在任务中尝试，一般选取2-8之间的值。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_convolution.png" alt="text_cnn_convolution.png" width="600" height="400" align="center"></p>
+<h3 id="3-池化层"><a href="#3-池化层" class="headerlink" title="3. 池化层"></a><span style="font-size: 18px;">3. 池化层</span></h3><p>　　在Text-CNN模型的池化层中使用了Max-pool（最大值池化），既减少了模型的参数，又保证了在不定长的卷基层的输出上获得一个定长的全连接层的输入。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_max_pool.png" alt="text_cnn_max_pool.png" width="600" height="400" align="center"></p>
 <blockquote>
 <p>池化层除了最大值池化之外，也有论文讨论过 Top K最大值池化，即选取每一个卷积层输出的Top k个最大值作为池化层的输出。<br>比如在情感分析场景，举个例子：“ 我觉得这个地方景色还不错，但是人也实在太多了 ”<br>虽然前半部分体现情感是正向的，全局文本表达的是偏负面的情感，利用 k-max pooling能够很好捕捉这类信息。</p>
 </blockquote>
@@ -1017,7 +1017,8 @@
 
 <script src="/libs/valine/av-min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',

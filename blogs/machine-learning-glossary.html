@@ -131,9 +131,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/生活脚步/">
+                            <a href="/categories/生活小记/">
                                 
-                                <span>生活脚步</span>
+                                <span>生活小记</span>
                             </a>
                         </li>
                     
@@ -301,9 +301,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/生活脚步/">
+                                <a href="/categories/生活小记/">
                                     
-                                    <span>生活脚步</span>
+                                    <span>生活小记</span>
                                 </a>
                             </li>
                         
@@ -570,10 +570,10 @@
 <p>介绍一些机器学习术语和 TensorFlow 专用术语的含义。</p>
 </blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　最近工作需要，初学了一下机器学习。一开始对其中的很多名词都不理解，就在网上找了一些资料。这里简单整理下。</p>
-<h2 id="一、AI、机器学习、深度学习"><a href="#一、AI、机器学习、深度学习" class="headerlink" title="一、AI、机器学习、深度学习"></a>一、AI、机器学习、深度学习</h2><h3 id="1-人工智能知识图谱"><a href="#1-人工智能知识图谱" class="headerlink" title="1. 人工智能知识图谱"></a><span style="font-size: 18px;">1. 人工智能知识图谱</span></h3><p>　　人工智能不是一门独立的学科，它和其它很多学科都有交集，如下为人工智能知识图谱。<br>　　总的来说，机器学习还是属于人工智能范围内的，深度学习也属于机器学习的一个子领域。<br>　　神经网络横穿其中，深度学习是基于神经网络的。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/ai_knowledge_graph.png" alt="ai_knowledge_graph.png" width="500" hegiht="300" align="center"></p>
+<h2 id="一、AI、机器学习、深度学习"><a href="#一、AI、机器学习、深度学习" class="headerlink" title="一、AI、机器学习、深度学习"></a>一、AI、机器学习、深度学习</h2><h3 id="1-人工智能知识图谱"><a href="#1-人工智能知识图谱" class="headerlink" title="1. 人工智能知识图谱"></a><span style="font-size: 18px;">1. 人工智能知识图谱</span></h3><p>　　人工智能不是一门独立的学科，它和其它很多学科都有交集，如下为人工智能知识图谱。<br>　　总的来说，机器学习还是属于人工智能范围内的，深度学习也属于机器学习的一个子领域。<br>　　神经网络横穿其中，深度学习是基于神经网络的。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/ai_knowledge_graph.png" alt="ai_knowledge_graph.png" width="500" height="300" align="center"></p>
 <h3 id="2-人工智能、机器学习和深度学习的关系"><a href="#2-人工智能、机器学习和深度学习的关系" class="headerlink" title="2. 人工智能、机器学习和深度学习的关系"></a><span style="font-size: 18px;">2. 人工智能、机器学习和深度学习的关系</span></h3><p>　　机器学习是实现人工智能的一种方法，深度学习是机器学习的一个分支。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/ai_ml_dl.jpg" alt="ai_ml_dl.jpg"></p>
 <h3 id="3-机器学习"><a href="#3-机器学习" class="headerlink" title="3. 机器学习"></a><span style="font-size: 18px;">3. 机器学习</span></h3><p>　　机器学习算法是一类从数据中自动分析获得规律（模型），并利用规律对未知数据进行预测的算法<br>　　<a href="/static/机器学习思维导图.png" title="机器学习思维导图">机器学习思维导图</a></p>
-<h3 id="4-深度学习"><a href="#4-深度学习" class="headerlink" title="4. 深度学习"></a><span style="font-size: 18px;">4. 深度学习</span></h3><p>　　基于深度神经网络的学习研究称之为深度学习。<br>　　大于两个隐藏层的神经网络称为深度神经网络，深度指的隐藏层的层数。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/deep_neural_network.png" alt="deep_neural_network.png" width="500" hegiht="300" align="center"></p>
+<h3 id="4-深度学习"><a href="#4-深度学习" class="headerlink" title="4. 深度学习"></a><span style="font-size: 18px;">4. 深度学习</span></h3><p>　　基于深度神经网络的学习研究称之为深度学习。<br>　　大于两个隐藏层的神经网络称为深度神经网络，深度指的隐藏层的层数。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/deep_neural_network.png" alt="deep_neural_network.png" width="500" height="300" align="center"></p>
 <h2 id="二、TensorFlow"><a href="#二、TensorFlow" class="headerlink" title="二、TensorFlow"></a>二、TensorFlow</h2><p>　　TensorFlow是Google在2015年年底开源的内部使用的深度学习框架。<br>　　它的流行让深度学习门槛变得越来越低，只要你有Python和机器学习基础，入门和使用神经网络模型变得非常简单。TensorFlow支持Python和C++两种编程语言，再复杂的多层神经网络模型都可以用Python来实现，如果业务使用其他编程也不用担心，使用跨语言的gRPC或者HTTP服务也可以访问使用TensorFlow训练好的智能模型。<br>　　为什么说TensorFlow强大呢？因为在使用TensorFlow训练模型时，我们不需要手动实现最小二乘法等算法，也无需通过if-else来控制代码逻辑，完全是由数据驱动并且根据选择的算法动态调整Loss值来学习。</p>
 <h2 id="三、术语表"><a href="#三、术语表" class="headerlink" title="三、术语表"></a>三、术语表</h2><p>　　重复搬运文章没什么意思，这里只记录下两份中文版术语表的官方链接：<br>　　<span style="color: #3498db;">1. 《机器学习术语表》</span><br>　　<a href="https://developers.google.cn/machine-learning/glossary/?hl=zh-CN" rel="external nofollow noopener noreferrer" target="_blank">https://developers.google.cn/machine-learning/glossary/?hl=zh-CN</a><br>　　由Google官方的工程教育团队发布，该术语表中列出了一般的Machine Learning术语和 TensorFlow 专用术语的定义。语言版本包括西班牙语，法语，韩语和简体中文。<br>　　<span style="color: #3498db;">2. 《TensorFlow术语表》</span><br>　　<a href="http://www.tensorfly.cn/tfdoc/resources/glossary.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.tensorfly.cn/tfdoc/resources/glossary.html</a><br>　　由TensorFlow中文社区翻译官方文档。</p>
 <h2 id="四、我们用机器学习做什么"><a href="#四、我们用机器学习做什么" class="headerlink" title="四、我们用机器学习做什么"></a>四、我们用机器学习做什么</h2><p>　　说到机器学习，一般人肯定会想，这是博士生做的事情，我们碰不了。其实并非如此，不同人群对于机器学习的应用也是不同的：</p>
@@ -1016,7 +1016,8 @@
 
 <script src="/libs/valine/av-min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1094,9 +1095,9 @@
                 <a href="/blogs/elasticsearch-interview-questions.html">
                     <div class="card-image">
                         
-                        <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="Elasticsearch面试题汇总">
+                        <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="Elasticsearch面试题汇总与解析">
                         
-                        <span class="card-title">Elasticsearch面试题汇总</span>
+                        <span class="card-title">Elasticsearch面试题汇总与解析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

@@ -131,9 +131,9 @@
                         </li>
                     
                         <li>
-                            <a href="/categories/生活脚步/">
+                            <a href="/categories/生活小记/">
                                 
-                                <span>生活脚步</span>
+                                <span>生活小记</span>
                             </a>
                         </li>
                     
@@ -301,9 +301,9 @@
                             </li>
                         
                             <li>
-                                <a href="/categories/生活脚步/">
+                                <a href="/categories/生活小记/">
                                     
-                                    <span>生活脚步</span>
+                                    <span>生活小记</span>
                                 </a>
                             </li>
                         
@@ -570,21 +570,21 @@
 <p>介绍卷积神经网络（CNN）的概念、网络结构、基本模块、特点等等。</p>
 </blockquote>
 <h2 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h2><p>　　CNN的全拼是Convolutional Neural Networks，直译过来就是<strong>卷积神经网络</strong>。<br>　　CNN最初主要用来做图片分类、目标检测等图像相关的任务。</p>
-<h3 id="1-什么是卷积"><a href="#1-什么是卷积" class="headerlink" title="1. 什么是卷积"></a><span style="font-size: 18px;">1. 什么是卷积</span></h3><p>　　简单介绍一下卷积运算，卷积运算作用就是用滤波器来学习或者检测图片的特征。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/convolution_operation_static.png" alt="convolution_operation_static.png" width="550" hegiht="300" align="center"><br>　　看上图，左边是一张5×5的黑白图片，现在是矩阵的形式，每个格子代表一个像素点。中间的3×3的矩阵叫做滤波器，也可以叫做<span style="color: #FF0000;">卷积核</span>。星号代表的就是卷积运算，用滤波器对左边的图片做卷积运算，得出3×3的矩阵。<br>　　具体怎么算呢？先说结果的第一个元素：就是用滤波器，覆盖在图片的左上角，<span style="color: #3498db;">对应的每格元素相乘，得到9个数字，最后把这9个数字相加，就得到了第一个元素。</span>滤波器在图片上右移一格，再计算就得到了第二个元素，之后的元素同理。<br>　　通过滑动卷积核，就可以得到整张图片的卷积结果，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/convolution_operation_gif.gif" alt="convolution_operation_gif.gif"><br>　　<strong>卷积公式</strong>如下，其中S SS代表运算结果，I II是原始图片，K KK是卷积核，m mm、n nn是卷积核的高和宽，括号中的两个值代表元素的位置：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/convolution_formula.png" alt="convolution_formula.png"></p>
+<h3 id="1-什么是卷积"><a href="#1-什么是卷积" class="headerlink" title="1. 什么是卷积"></a><span style="font-size: 18px;">1. 什么是卷积</span></h3><p>　　简单介绍一下卷积运算，卷积运算作用就是用滤波器来学习或者检测图片的特征。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/convolution_operation_static.png" alt="convolution_operation_static.png" width="550" height="300" align="center"><br>　　看上图，左边是一张5×5的黑白图片，现在是矩阵的形式，每个格子代表一个像素点。中间的3×3的矩阵叫做滤波器，也可以叫做<span style="color: #FF0000;">卷积核</span>。星号代表的就是卷积运算，用滤波器对左边的图片做卷积运算，得出3×3的矩阵。<br>　　具体怎么算呢？先说结果的第一个元素：就是用滤波器，覆盖在图片的左上角，<span style="color: #3498db;">对应的每格元素相乘，得到9个数字，最后把这9个数字相加，就得到了第一个元素。</span>滤波器在图片上右移一格，再计算就得到了第二个元素，之后的元素同理。<br>　　通过滑动卷积核，就可以得到整张图片的卷积结果，如下图所示：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/convolution_operation_gif.gif" alt="convolution_operation_gif.gif"><br>　　<strong>卷积公式</strong>如下，其中S SS代表运算结果，I II是原始图片，K KK是卷积核，m mm、n nn是卷积核的高和宽，括号中的两个值代表元素的位置：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/convolution_formula.png" alt="convolution_formula.png"></p>
 <blockquote>
 <p>其实该函数叫<strong>互相关函数(cross-correlation)</strong>，和卷积函数几乎一样，只是没有对卷积核进行翻转，很多深度学习的库实现的都是这个函数而并非真正的卷积函数。在深度学习中我们默认它为卷积函数。</p>
 </blockquote>
-<h3 id="2-卷积神经网络结构"><a href="#2-卷积神经网络结构" class="headerlink" title="2. 卷积神经网络结构"></a><span style="font-size: 18px;">2. 卷积神经网络结构</span></h3><p>　　现在知道卷积运算了，那么CNN呢？我们知道神经网络的结构是这样的：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/neural_network.jpg" alt="neural_network.jpg" width="450" hegiht="190" align="center"><br>　　其实卷积神经网络依旧是层级网络，只是层的功能和形式做了变化，可以说是传统神经网络的一个改进。比如下图（识别交通工具）中就多了许多传统神经网络没有的层次。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_traffic.jpg" alt="cnn_traffic.jpg" width="500" hegiht="200" align="center"></p>
+<h3 id="2-卷积神经网络结构"><a href="#2-卷积神经网络结构" class="headerlink" title="2. 卷积神经网络结构"></a><span style="font-size: 18px;">2. 卷积神经网络结构</span></h3><p>　　现在知道卷积运算了，那么CNN呢？我们知道神经网络的结构是这样的：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/neural_network.jpg" alt="neural_network.jpg" width="450" height="190" align="center"><br>　　其实卷积神经网络依旧是层级网络，只是层的功能和形式做了变化，可以说是传统神经网络的一个改进。比如下图（识别交通工具）中就多了许多传统神经网络没有的层次。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_traffic.jpg" alt="cnn_traffic.jpg" width="500" height="200" align="center"></p>
 <h2 id="二、CNN基本模块"><a href="#二、CNN基本模块" class="headerlink" title="二、CNN基本模块"></a>二、CNN基本模块</h2><p>　　CNN由输入和输出层以及多个隐藏层组成，隐藏层可分为<strong>卷积层</strong>，<strong>池化层</strong>，<strong>ReLU激励层</strong>和<strong>全连接层</strong>。</p>
 <h3 id="1-输入层"><a href="#1-输入层" class="headerlink" title="1. 输入层"></a><span style="font-size: 18px;">1. 输入层</span></h3><p>　　CNN的输入一般是二维向量，可以有高度，比如，RGB图像。如果是黑白图片，高度是1；如果是彩色图片，高度是3。</p>
 <h3 id="2-卷积层"><a href="#2-卷积层" class="headerlink" title="2. 卷积层"></a><span style="font-size: 18px;">2. 卷积层</span></h3><p>　　卷积层是CNN的核心，可以简单理解为：<span style="color: #FF0000;">卷积层用于对输入层进行卷积，提取更高层次的特征。</span><br>　　在这个卷积层，有两个关键操作：<br>　　●　局部关联。每个神经元看做一个滤波器（filter）<br>　　●　窗口（receptive field）滑动，filter对局部数据计算</p>
-<p>　　先介绍卷积层遇到的几个名词：<br>　　●　深度/depth（解释见下图）<br>　　●　步长/stride（每隔多少步采集一下，设置为1就是全采样）<br>　　●　填充值/zero-padding<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_conv_layer.png" alt="cnn_conv_layer.png" width="550" hegiht="250" align="center"><br>　　图中的滑动窗口，就是一个过滤器。过滤器会从左上角到右下角一点一点移动，采集图片的信息（类似用一个手电筒去一格一格地扫描）。</p>
+<p>　　先介绍卷积层遇到的几个名词：<br>　　●　深度/depth（解释见下图）<br>　　●　步长/stride（每隔多少步采集一下，设置为1就是全采样）<br>　　●　填充值/zero-padding<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_conv_layer.png" alt="cnn_conv_layer.png" width="550" height="250" align="center"><br>　　图中的滑动窗口，就是一个过滤器。过滤器会从左上角到右下角一点一点移动，采集图片的信息（类似用一个手电筒去一格一格地扫描）。</p>
 <p>　　填充值是什么呢？以下图为例子，比如有这么一个 5*5 的图片（一个格子一个像素），我们滑动窗口取 2*2，步长取2，那么我们发现还剩下1个像素没法滑完，那怎么办呢？<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_zero_padding_01.png" alt="cnn_zero_padding_01.png"><br>　　那我们在原先的矩阵加了一层填充值，使得变成 6*6 的矩阵，那么窗口就可以刚好把所有像素遍历完。这就是填充值的作用。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_zero_padding_02.png" alt="cnn_zero_padding_02.png"></p>
 <p>　　讲下比较重要的<span style="color: #FF0000;">卷积的计算</span>。如果大学里《线性代数》学的不错的话，这里会比较好理解。<br>　　下面的动态图形象地展示了卷积层的计算过程：<br>　　<strong>蓝色矩阵</strong>就是输入的图像，它周围有一圈灰色的框，那些就是上面所说到的填充值。<br>　　<strong>粉色矩阵</strong>就是卷积层的神经元，这里表示了有两个神经元（w0, w1）。<br>　　<strong>绿色矩阵</strong>就是经过卷积运算后的输出矩阵，这里的步长设置为2。<br>　　<span style="color: #FF0000;">蓝色的矩阵（输入图像）对粉色的矩阵（filter）进行矩阵内积计算并将三个内积运算的结果与偏置值b相加，计算后的值就是绿框矩阵的一个元素。</span><br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_conv_calc.gif" alt="cnn_conv_calc.gif"></p>
-<p>　　<span style="color: #FF0000;">参数共享机制</span><br>　　●　在卷积层中每个神经元连接数据窗的权重是固定的，每个神经元只关注一个特性。神经元就是图像处理中的滤波器，比如边缘检测专用的Sobel滤波器，即卷积层的每个滤波器都会有自己所关注一个图像特征，比如垂直边缘，水平边缘，颜色，纹理等等，这些所有神经元加起来就好比就是整张图像的特征提取器集合。<br>　　●　需要估算的权重个数减少: AlexNet 1亿 =&gt; 3.5w<br>　　●　一组固定的权重和不同窗口内数据做内积: 卷积<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_filters.png" alt="cnn_filters.png" width="600" hegiht="320" align="center"></p>
+<p>　　<span style="color: #FF0000;">参数共享机制</span><br>　　●　在卷积层中每个神经元连接数据窗的权重是固定的，每个神经元只关注一个特性。神经元就是图像处理中的滤波器，比如边缘检测专用的Sobel滤波器，即卷积层的每个滤波器都会有自己所关注一个图像特征，比如垂直边缘，水平边缘，颜色，纹理等等，这些所有神经元加起来就好比就是整张图像的特征提取器集合。<br>　　●　需要估算的权重个数减少: AlexNet 1亿 =&gt; 3.5w<br>　　●　一组固定的权重和不同窗口内数据做内积: 卷积<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_filters.png" alt="cnn_filters.png" width="600" height="320" align="center"></p>
 <h3 id="3-ReLU激励层"><a href="#3-ReLU激励层" class="headerlink" title="3. ReLU激励层"></a><span style="font-size: 18px;">3. ReLU激励层</span></h3><p>　　作用：把卷积层输出结果做非线性映射。<br>　　看了这句话其实比较懵。<br>　　<span style="color: #FF0000;">一言以蔽之</span>，其实，relu函数的作用就是增加了神经网络各层之间的非线性关系，否则，如果没有激活函数，层与层之间是简单的线性关系，每层都相当于矩阵相乘，这样怎么能够完成我们需要神经网络完成的复杂任务。<br>　　我们利用神经网络去解决图像分割，边界探测，超分辨等问题时候，我们的输入（假设为x），与期望的输出（假设为y）之间的关系究竟是什么？也就是 <code>y=f(x)</code> 中，<span style="color: #FF0000;">f是什么</span>，我们也不清楚，但是我们对一点很确信，那就是<span style="color: #FF0000;">f不是一个简单的线性函数</span>，应该是一个抽象的复杂的关系，那么利用神经网络就是去学习这个关系，存放在model中，利用得到的model去推测训练集之外的数据，得到期望的结果<br>　　<br>　　这里我为什么直接叫ReLU激励层呢，因为CNN采用的激励函数一般为ReLU（The Rectified Linear Unit/修正线性单元），它的特点是收敛快，求梯度简单。<br>　　当然ReLU只是一种选择，还有选LeakyReLU等等，目前我只是初学，就不深究了，参考别人的一个实践经验：<br>　　① 不要用sigmoid！不要用sigmoid！不要用sigmoid！（强调了三次）<br>　　② 首先试ReLU，因为快，但要小心点<br>　　③ 如果②失效，请用LeakyReLU或者Maxout<br>　　④ 某些情况下tanh倒是有不错的结果，但是很少</p>
 <h3 id="4-池化层"><a href="#4-池化层" class="headerlink" title="4. 池化层"></a><span style="font-size: 18px;">4. 池化层</span></h3><p>　　池化层又称亚采样，它夹在连续的卷积层中间，用于压缩数据和参数的量，减小过拟合，同时保留有用信息。<br>　　<span style="color: #FF0000;">简而言之</span>，如果输入是图像的话，那么池化层的最主要作用就是压缩图像。<br>　　它是怎么做到的呢？<br>　　通常池化层是每邻域四个像素中的最大值变为一个像素（就是后面会讲到的max_pooling），为什么可以这么做呢？这是因为卷积已经提取出特征，相邻区域的特征是类似、近乎不变的，这时池化只是选出最能表征特征的像素，缩减了数据量，同时保留了特征，何乐而不为呢？池化层的作用可以描述为模糊图像，丢掉了一些不是那么重要的特征。<br>　　下面这张图就是描述了池化的作用：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_pooling_layers.jpg" alt="cnn_pooling_layers.jpg"><br>　　这里再展开叙述池化层的具体作用。<br>　　●　<span style="color: #FF0000;">特征不变性</span>，也就是我们在图像处理中经常提到的特征的尺度不变性，池化操作就是图像的resize，平时一张狗的图像被缩小了一倍我们还能认出这是一张狗的照片，这说明这张图像中仍保留着狗最重要的特征，我们一看就能判断图像中画的是一只狗，图像压缩时去掉的信息只是一些无关紧要的信息，而留下的信息则是具有尺度不变性的特征，是最能表达图像的特征。<br>　　●　<span style="color: #FF0000;">特征降维</span>，我们知道一幅图像含有的信息是很大的，特征也很多，但是有些信息对于我们做图像任务时没有太多用途或者有重复，我们可以把这类冗余信息去除，把最重要的特征抽取出来，这也是池化操作的一大作用。<br>　　●　在一定程度上<span style="color: #FF0000;">防止过拟合</span>，更方便优化。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/cnn_downsampling.jpg" alt="cnn_downsampling.jpg"><br>　　池化层用的方法有 max_pooling 和 average_pooling，而实际用的较多的是max_pooling。<br>　　这里就说一下<span style="color: #FF0000;">max_pooling</span>，其实思想非常简单。<br>　　对于每个 2*2 的窗口选出最大的数作为输出矩阵的相应元素的值，比如输入矩阵第一个 2*2 窗口中最大的数是6，那么输出矩阵的第一个元素就是6，如此类推。(见前面的图)</p>
-<h3 id="5-全连接层"><a href="#5-全连接层" class="headerlink" title="5. 全连接层"></a><span style="font-size: 18px;">5. 全连接层</span></h3><p>　　这个层就是一个常规的神经网络，它的作用是对经过多次卷积层和多次池化层所得出来的高级特征进行全连接（全连接就是常规神经网络的性质），算出最后的预测值。<br>　　通常全连接层在卷积神经网络尾部。也就是跟传统的神经网络神经元的连接方式是一样的：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/neural_network.jpg" alt="neural_network.jpg" width="450" hegiht="190" align="center"></p>
+<h3 id="5-全连接层"><a href="#5-全连接层" class="headerlink" title="5. 全连接层"></a><span style="font-size: 18px;">5. 全连接层</span></h3><p>　　这个层就是一个常规的神经网络，它的作用是对经过多次卷积层和多次池化层所得出来的高级特征进行全连接（全连接就是常规神经网络的性质），算出最后的预测值。<br>　　通常全连接层在卷积神经网络尾部。也就是跟传统的神经网络神经元的连接方式是一样的：<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/neural_network.jpg" alt="neural_network.jpg" width="450" height="190" align="center"></p>
 <h3 id="6-输出层"><a href="#6-输出层" class="headerlink" title="6. 输出层"></a><span style="font-size: 18px;">6. 输出层</span></h3><p>　　输出层就不用介绍了，就是对结果的预测值，一般会加一个softmax层。<br>　　softmax：分类器，应用于分类问题，位于卷积神经网络层的最后一层。<br>　　softmax意义：输出输入图片，对应概率最大的类别，以及属于该类别的可能性概率。</p>
 <h2 id="三、CNN的特点"><a href="#三、CNN的特点" class="headerlink" title="三、CNN的特点"></a>三、CNN的特点</h2><p>　　这里主要讨论CNN相比与传统的神经网络的不同之处，CNN主要有三大特色，分别是<strong>局部感知</strong>、<strong>权重共享</strong>和<strong>多卷积核</strong>。</p>
 <h3 id="1-局部感知"><a href="#1-局部感知" class="headerlink" title="1. 局部感知"></a><span style="font-size: 18px;">1. 局部感知</span></h3><p>　　局部感知就是我们上面说的感受野，实际上就是卷积核和图像卷积的时候，每次卷积核所覆盖的像素只是一小部分，是局部特征，所以说是局部感知。CNN是一个从局部到整体的过程（局部到整体的实现是在全连通层），而传统的神经网络是整体的过程。</p>
@@ -1012,7 +1012,8 @@
 
 <script src="/libs/valine/av-min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
