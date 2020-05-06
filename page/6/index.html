@@ -453,7 +453,7 @@
             <a href="/blogs/javascript-judge-data-type.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="JavaScript初探之判断数据类型">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="JavaScript初探之判断数据类型">
                 
                 <span class="card-title">JavaScript初探之判断数据类型</span>
               </div>
@@ -503,7 +503,7 @@
             <a href="/blogs/javascript-4-ways-to-call-a-function.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="JavaScript初探之函数调用方式">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="JavaScript初探之函数调用方式">
                 
                 <span class="card-title">JavaScript初探之函数调用方式</span>
               </div>
@@ -553,7 +553,7 @@
             <a href="/blogs/javascript-closure.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="JavaScript初探之闭包">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="JavaScript初探之闭包">
                 
                 <span class="card-title">JavaScript初探之闭包</span>
               </div>
@@ -603,7 +603,7 @@
             <a href="/blogs/javascript-prototype-chain.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="JavaScript初探之原型链">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="JavaScript初探之原型链">
                 
                 <span class="card-title">JavaScript初探之原型链</span>
               </div>
@@ -653,7 +653,7 @@
             <a href="/blogs/javascript-inheritance.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="JavaScript初探之继承">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="JavaScript初探之继承">
                 
                 <span class="card-title">JavaScript初探之继承</span>
               </div>
@@ -703,7 +703,7 @@
             <a href="/blogs/css3-new-features.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/css3.jpg" class="responsive-img" alt="CSS3新特性概览">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/css3.jpg" alt="CSS3新特性概览">
                 
                 <span class="card-title">CSS3新特性概览</span>
               </div>
@@ -753,7 +753,7 @@
             <a href="/blogs/html5-apis.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/html5.jpg" class="responsive-img" alt="HTML5中的API概览">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/html5.jpg" alt="HTML5中的API概览">
                 
                 <span class="card-title">HTML5中的API概览</span>
               </div>
@@ -803,7 +803,7 @@
             <a href="/blogs/html5-compatibility.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/html5.jpg" class="responsive-img" alt="HTML5浏览器兼容性解决方案">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/html5.jpg" alt="HTML5浏览器兼容性解决方案">
                 
                 <span class="card-title">HTML5浏览器兼容性解决方案</span>
               </div>
@@ -853,7 +853,7 @@
             <a href="/blogs/elasticsearch-memory-considerations.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="Elasticsearch内存那些事儿">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/elasticsearch.jpg" alt="Elasticsearch内存那些事儿">
                 
                 <span class="card-title">Elasticsearch内存那些事儿</span>
               </div>
@@ -899,7 +899,7 @@
             <a href="/blogs/elasticsearch-forward-index-and-inverted-index.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="Elasticsearch倒排索引原理">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/elasticsearch.jpg" alt="Elasticsearch倒排索引原理">
                 
                 <span class="card-title">Elasticsearch倒排索引原理</span>
               </div>
@@ -945,7 +945,7 @@
             <a href="/blogs/elasticsearch-chinese-analyzer.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="Elasticsearch中文分词器怎么用">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/elasticsearch.jpg" alt="Elasticsearch中文分词器怎么用">
                 
                 <span class="card-title">Elasticsearch中文分词器怎么用</span>
               </div>
@@ -991,7 +991,7 @@
             <a href="/blogs/elasticsearch-all-about-analyzers.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="Elasticsearch Analyzer内部机制">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/elasticsearch.jpg" alt="Elasticsearch Analyzer内部机制">
                 
                 <span class="card-title">Elasticsearch Analyzer内部机制</span>
               </div>
@@ -1061,6 +1061,16 @@
 </div>
 
 
+
+<script src="/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $("img.lazy").lazyload({
+    effect: "fadeIn",
+    threshold: 200
+  });
+});
+</script>
 
 <footer class="page-footer bg-color footer-cover">
   <div class="container row center-align">

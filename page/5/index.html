@@ -453,7 +453,7 @@
             <a href="/blogs/javascript-module.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="JavaScript模块化编程">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="JavaScript模块化编程">
                 
                 <span class="card-title">JavaScript模块化编程</span>
               </div>
@@ -503,7 +503,7 @@
             <a href="/blogs/html-coordinate-system-and-mouse-event.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="HTML坐标系与鼠标事件坐标">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="HTML坐标系与鼠标事件坐标">
                 
                 <span class="card-title">HTML坐标系与鼠标事件坐标</span>
               </div>
@@ -553,7 +553,7 @@
             <a href="/blogs/ajax-cross-domain-solution.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="最全跨域问题解决方案">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="最全跨域问题解决方案">
                 
                 <span class="card-title">最全跨域问题解决方案</span>
               </div>
@@ -603,7 +603,7 @@
             <a href="/blogs/websocket-testing-by-command-in-linux.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/terminal.jpg" class="responsive-img" alt="命令行测试WebSocket">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/terminal.jpg" alt="命令行测试WebSocket">
                 
                 <span class="card-title">命令行测试WebSocket</span>
               </div>
@@ -653,7 +653,7 @@
             <a href="/blogs/realtime-messaging-and-websocket.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="Web实时消息推送技术总结">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="Web实时消息推送技术总结">
                 
                 <span class="card-title">Web实时消息推送技术总结</span>
               </div>
@@ -703,7 +703,7 @@
             <a href="/blogs/learn-more-about-browser-storage.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="各种浏览器存储方式总结">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="各种浏览器存储方式总结">
                 
                 <span class="card-title">各种浏览器存储方式总结</span>
               </div>
@@ -753,7 +753,7 @@
             <a href="/blogs/javascript-library-packaging-4.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="JS库的封装之四：代码整合">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="JS库的封装之四：代码整合">
                 
                 <span class="card-title">JS库的封装之四：代码整合</span>
               </div>
@@ -803,7 +803,7 @@
             <a href="/blogs/javascript-library-packaging-3.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="JS库的封装之三：添加事件">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="JS库的封装之三：添加事件">
                 
                 <span class="card-title">JS库的封装之三：添加事件</span>
               </div>
@@ -853,7 +853,7 @@
             <a href="/blogs/javascript-library-packaging-2.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="JS库的封装之二：添加方法">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="JS库的封装之二：添加方法">
                 
                 <span class="card-title">JS库的封装之二：添加方法</span>
               </div>
@@ -903,7 +903,7 @@
             <a href="/blogs/javascript-library-packaging-1.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="JS库的封装之一：入口函数">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="JS库的封装之一：入口函数">
                 
                 <span class="card-title">JS库的封装之一：入口函数</span>
               </div>
@@ -953,7 +953,7 @@
             <a href="/blogs/javascript-es6-arrow-functions.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="ES6箭头函数总结">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="ES6箭头函数总结">
                 
                 <span class="card-title">ES6箭头函数总结</span>
               </div>
@@ -1003,7 +1003,7 @@
             <a href="/blogs/javascript-es6-common-important-points.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/javascript.jpg" class="responsive-img" alt="ES6常用重要知识点">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/javascript.jpg" alt="ES6常用重要知识点">
                 
                 <span class="card-title">ES6常用重要知识点</span>
               </div>
@@ -1077,6 +1077,16 @@
 </div>
 
 
+
+<script src="/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $("img.lazy").lazyload({
+    effect: "fadeIn",
+    threshold: 200
+  });
+});
+</script>
 
 <footer class="page-footer bg-color footer-cover">
   <div class="container row center-align">

@@ -453,7 +453,7 @@
             <a href="/blogs/webstorm-eslint-prettier-reformat-code.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/webstorm.png" class="responsive-img" alt="WebStorm配置代码格式化">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/webstorm.png" alt="WebStorm配置代码格式化">
                 
                 <span class="card-title">WebStorm配置代码格式化</span>
               </div>
@@ -503,7 +503,7 @@
             <a href="/blogs/restful-api-design.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/web.jpg" class="responsive-img" alt="浅谈RESTful规范">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/web.jpg" alt="浅谈RESTful规范">
                 
                 <span class="card-title">浅谈RESTful规范</span>
               </div>
@@ -549,7 +549,7 @@
             <a href="/blogs/fiddler-free-web-debugging-proxy.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/fiddler.jpg" class="responsive-img" alt="HTTP抓包神器 - Fiddler">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/fiddler.jpg" alt="HTTP抓包神器 - Fiddler">
                 
                 <span class="card-title">HTTP抓包神器 - Fiddler</span>
               </div>
@@ -595,7 +595,7 @@
             <a href="/blogs/how-to-choose-free-software-licenses.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/web.jpg" class="responsive-img" alt="如何选择开源许可证？【转】">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/web.jpg" alt="如何选择开源许可证？【转】">
                 
                 <span class="card-title">如何选择开源许可证？【转】</span>
               </div>
@@ -641,7 +641,7 @@
             <a href="/blogs/tensorflow-cnn-english-text-classification-implement.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/tensorflow.jpg" class="responsive-img" alt="【TF小记】CNN英文文本分类">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/tensorflow.jpg" alt="【TF小记】CNN英文文本分类">
                 
                 <span class="card-title">【TF小记】CNN英文文本分类</span>
               </div>
@@ -687,7 +687,7 @@
             <a href="/blogs/tensorflow-cnn-text-classification-theory.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/tensorflow.jpg" class="responsive-img" alt="【TF小记】CNN文本分类原理">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/tensorflow.jpg" alt="【TF小记】CNN文本分类原理">
                 
                 <span class="card-title">【TF小记】CNN文本分类原理</span>
               </div>
@@ -733,7 +733,7 @@
             <a href="/blogs/tensorflow-cnn-basic.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/tensorflow.jpg" class="responsive-img" alt="【TF小记】CNN初探">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/tensorflow.jpg" alt="【TF小记】CNN初探">
                 
                 <span class="card-title">【TF小记】CNN初探</span>
               </div>
@@ -779,7 +779,7 @@
             <a href="/blogs/tensorflow-basic-learning-2.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/tensorflow.jpg" class="responsive-img" alt="【TF小记】线性回归案例">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/tensorflow.jpg" alt="【TF小记】线性回归案例">
                 
                 <span class="card-title">【TF小记】线性回归案例</span>
               </div>
@@ -825,7 +825,7 @@
             <a href="/blogs/tensorflow-basic-learning-1.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/tensorflow.jpg" class="responsive-img" alt="【TF小记】基础知识">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/tensorflow.jpg" alt="【TF小记】基础知识">
                 
                 <span class="card-title">【TF小记】基础知识</span>
               </div>
@@ -871,7 +871,7 @@
             <a href="/blogs/machine-learning-glossary.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/machine_learning.jpg" class="responsive-img" alt="机器学习术语表">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/machine_learning.jpg" alt="机器学习术语表">
                 
                 <span class="card-title">机器学习术语表</span>
               </div>
@@ -917,7 +917,7 @@
             <a href="/blogs/elasticsearch-interview-questions.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="Elasticsearch面试题汇总与解析">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/elasticsearch.jpg" alt="Elasticsearch面试题汇总与解析">
                 
                 <span class="card-title">Elasticsearch面试题汇总与解析</span>
               </div>
@@ -963,7 +963,7 @@
             <a href="/blogs/reading-notes-zhi-shi-xing-qiu-2019.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/zhi_shi_xing_qiu.png" class="responsive-img" alt="2019知识星球学习笔记">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/zhi_shi_xing_qiu.png" alt="2019知识星球学习笔记">
                 
                 <span class="card-title">2019知识星球学习笔记</span>
               </div>
@@ -1033,6 +1033,16 @@
 </div>
 
 
+
+<script src="/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $("img.lazy").lazyload({
+    effect: "fadeIn",
+    threshold: 200
+  });
+});
+</script>
 
 <footer class="page-footer bg-color footer-cover">
   <div class="container row center-align">

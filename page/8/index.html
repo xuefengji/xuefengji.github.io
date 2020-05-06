@@ -453,7 +453,7 @@
             <a href="/blogs/python-send-email.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/python.jpg" class="responsive-img" alt="【Py基础】SMTP发送邮件">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/python.jpg" alt="【Py基础】SMTP发送邮件">
                 
                 <span class="card-title">【Py基础】SMTP发送邮件</span>
               </div>
@@ -499,7 +499,7 @@
             <a href="/blogs/python-subprocess.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/python.jpg" class="responsive-img" alt="【Py基础】subprocess模块">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/python.jpg" alt="【Py基础】subprocess模块">
                 
                 <span class="card-title">【Py基础】subprocess模块</span>
               </div>
@@ -545,7 +545,7 @@
             <a href="/blogs/python-txt-files-io.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/python.jpg" class="responsive-img" alt="【Py基础】文本文件读写">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/python.jpg" alt="【Py基础】文本文件读写">
                 
                 <span class="card-title">【Py基础】文本文件读写</span>
               </div>
@@ -591,7 +591,7 @@
             <a href="/blogs/python-time-and-datetime.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/python.jpg" class="responsive-img" alt="【Py基础】时间和日期模块">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/python.jpg" alt="【Py基础】时间和日期模块">
                 
                 <span class="card-title">【Py基础】时间和日期模块</span>
               </div>
@@ -637,7 +637,7 @@
             <a href="/blogs/pip-install-error-in-windows.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/pip.jpg" class="responsive-img" alt="Windows下pip安装依赖报错">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/pip.jpg" alt="Windows下pip安装依赖报错">
                 
                 <span class="card-title">Windows下pip安装依赖报错</span>
               </div>
@@ -691,7 +691,7 @@
             <a href="/blogs/pip-change-mirror-source.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/pip.jpg" class="responsive-img" alt="pip修改国内镜像源">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/pip.jpg" alt="pip修改国内镜像源">
                 
                 <span class="card-title">pip修改国内镜像源</span>
               </div>
@@ -741,7 +741,7 @@
             <a href="/blogs/advantages-of-decoupling-frontend-from-backend.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/web.jpg" class="responsive-img" alt="前后端分离优缺点">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/web.jpg" alt="前后端分离优缺点">
                 
                 <span class="card-title">前后端分离优缺点</span>
               </div>
@@ -787,7 +787,7 @@
             <a href="/blogs/online-email-and-sms-platforms.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/online-email-and-sms-platforms.jpg" class="responsive-img" alt="免费在线邮箱和短信平台">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/online-email-and-sms-platforms.jpg" alt="免费在线邮箱和短信平台">
                 
                 <span class="card-title">免费在线邮箱和短信平台</span>
               </div>
@@ -833,7 +833,7 @@
             <a href="/blogs/git-migrate-repository-without-losing-history-commit.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/git.png" class="responsive-img" alt="Git迁移仓库并保留commit记录">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/git.png" alt="Git迁移仓库并保留commit记录">
                 
                 <span class="card-title">Git迁移仓库并保留commit记录</span>
               </div>
@@ -879,7 +879,7 @@
             <a href="/blogs/git-commit-message.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/git.png" class="responsive-img" alt="Git提交信息规范">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/git.png" alt="Git提交信息规范">
                 
                 <span class="card-title">Git提交信息规范</span>
               </div>
@@ -929,7 +929,7 @@
             <a href="/blogs/how-to-ask-questions-correctly.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/how_to_ask_questions_correctly.jpg" class="responsive-img" alt="群里提问的艺术">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/how_to_ask_questions_correctly.jpg" alt="群里提问的艺术">
                 
                 <span class="card-title">群里提问的艺术</span>
               </div>
@@ -975,7 +975,7 @@
             <a href="/blogs/hello-world.html">
               <div class="card-image">
                 
-                  <img src="/medias/blogimages/hello-world.jpg" class="responsive-img" alt="第一篇博客">
+                  <img class="lazy responsive-img" data-original="/medias/blogimages/hello-world.jpg" alt="第一篇博客">
                 
                 <span class="card-title">第一篇博客</span>
               </div>
@@ -1045,6 +1045,16 @@
 </div>
 
 
+
+<script src="/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  $("img.lazy").lazyload({
+    effect: "fadeIn",
+    threshold: 200
+  });
+});
+</script>
 
 <footer class="page-footer bg-color footer-cover">
   <div class="container row center-align">

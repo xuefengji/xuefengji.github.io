@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-what-is-this-keyword-inside-a-function.html</loc>
+    <lastmod>2020-04-14</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-what-is-a-closure.html</loc>
+    <lastmod>2020-04-12</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-what-is-execution-context-and-call-stack.html</loc>
+    <lastmod>2020-04-09</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/what-happens-from-the-input-url-to-the-presentation-of-the-page.html</loc>
+    <lastmod>2020-04-04</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/how-to-define-the-software-version-number.html</loc>
+    <lastmod>2020-03-31</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-libraries-for-graph-visualization.html</loc>
+    <lastmod>2020-03-27</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/how-do-i-choose-books.html</loc>
+    <lastmod>2020-03-01</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/reading-notes-yang-cong-yue-du-fa.html</loc>
+    <lastmod>2020-01-21</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/ui-design-spec-for-pc-web.html</loc>
+    <lastmod>2020-01-10</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/chinese-copywriting-guidelines.html</loc>
+    <lastmod>2020-01-07</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/css-mouse-hover-card-float-effects.html</loc>
+    <lastmod>2020-01-06</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/reading-notes-zhi-shi-xing-qiu-2019.html</loc>
+    <lastmod>2019-12-31</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/annual-summary-2019.html</loc>
+    <lastmod>2019-12-31</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/git-change-user-name-and-email-in-history-commits.html</loc>
+    <lastmod>2019-12-14</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-pit-vue-router-params-is-empty.html</loc>
+    <lastmod>2019-12-10</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/introduction-guide-to-insurance.html</loc>
+    <lastmod>2019-12-09</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/18-technical-terms-for-an-operations-position.html</loc>
+    <lastmod>2019-12-07</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/content-operation-activity-operation-product-operation-user-operation.html</loc>
+    <lastmod>2019-12-03</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-how-to-return-value-in-promise.html</loc>
+    <lastmod>2019-11-18</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/reading-notes-ni-mei-you-tui-lu-cai-you-chu-lu.html</loc>
+    <lastmod>2019-11-14</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/humor-thanks-for-inventing-javascript.html</loc>
+    <lastmod>2019-11-12</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/add-text-editors-to-rignt-menu-by-regedit-in-windows.html</loc>
+    <lastmod>2019-11-10</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/html-coordinate-system-and-mouse-event.html</loc>
+    <lastmod>2019-11-08</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/css-layout.html</loc>
+    <lastmod>2019-10-27</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/reading-notes-xiao-gou-qian-qian.html</loc>
+    <lastmod>2019-10-06</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/nodejs-install-and-npm-global-config.html</loc>
+    <lastmod>2019-10-02</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/git-commit-message.html</loc>
+    <lastmod>2019-10-01</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-pit-child-component-value-changes-affect-the-parent-component-value.html</loc>
+    <lastmod>2019-08-17</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-get-the-component-instance-in-javascript-file.html</loc>
+    <lastmod>2019-08-13</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-on-change-event-and-debounce.html</loc>
+    <lastmod>2019-08-09</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-project-compiling-optimization.html</loc>
+    <lastmod>2019-07-29</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-vuex-matters-need-attention.html</loc>
+    <lastmod>2019-07-23</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-vuex-module-division-in-real-project.html</loc>
+    <lastmod>2019-07-22</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-use-mock-data-when-developing.html</loc>
+    <lastmod>2019-07-18</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-axios-interceptors-packaging.html</loc>
+    <lastmod>2019-07-16</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-global-filters-packaging.html</loc>
+    <lastmod>2019-07-13</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-plugins-simple-demo.html</loc>
+    <lastmod>2019-07-08</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-cli3x-to-create-vue-project.html</loc>
+    <lastmod>2019-07-05</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/vue-cli2x-to-create-vue-project.html</loc>
+    <lastmod>2019-07-04</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/webstorm-eslint-prettier-reformat-code.html</loc>
+    <lastmod>2019-06-24</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/python-matplotlib.html</loc>
+    <lastmod>2019-06-18</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/restful-api-design.html</loc>
+    <lastmod>2019-06-02</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/fiddler-free-web-debugging-proxy.html</loc>
+    <lastmod>2019-05-30</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/how-to-choose-free-software-licenses.html</loc>
+    <lastmod>2019-05-28</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/elasticsearch-simple-query-dsl.html</loc>
+    <lastmod>2019-05-12</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/tensorflow-cnn-english-text-classification-implement.html</loc>
+    <lastmod>2019-05-02</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/tensorflow-cnn-text-classification-theory.html</loc>
+    <lastmod>2019-05-01</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/tensorflow-cnn-basic.html</loc>
+    <lastmod>2019-04-27</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/tensorflow-basic-learning-2.html</loc>
+    <lastmod>2019-04-24</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/tensorflow-basic-learning-1.html</loc>
+    <lastmod>2019-04-23</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/machine-learning-glossary.html</loc>
+    <lastmod>2019-04-22</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/elasticsearch-interview-questions.html</loc>
+    <lastmod>2019-04-07</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/python-time-and-datetime.html</loc>
+    <lastmod>2019-04-02</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/online-email-and-sms-platforms.html</loc>
+    <lastmod>2019-03-19</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/hello-world.html</loc>
+    <lastmod>2019-01-19</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/how-to-ask-questions-correctly.html</loc>
+    <lastmod>2019-01-18</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/mysql-install-in-windows.html</loc>
+    <lastmod>2018-12-20</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/elasticsearch-memory-considerations.html</loc>
+    <lastmod>2018-08-07</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-module.html</loc>
+    <lastmod>2018-07-21</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/elasticsearch-deployment.html</loc>
+    <lastmod>2018-07-05</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/ajax-cross-domain-solution.html</loc>
+    <lastmod>2018-06-29</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/websocket-testing-by-command-in-linux.html</loc>
+    <lastmod>2018-06-28</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/realtime-messaging-and-websocket.html</loc>
+    <lastmod>2018-06-27</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/learn-more-about-browser-storage.html</loc>
+    <lastmod>2018-06-26</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-library-packaging-4.html</loc>
+    <lastmod>2018-05-07</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-library-packaging-3.html</loc>
+    <lastmod>2018-05-07</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-library-packaging-2.html</loc>
+    <lastmod>2018-05-06</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-library-packaging-1.html</loc>
+    <lastmod>2018-05-06</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-es6-arrow-functions.html</loc>
+    <lastmod>2018-05-04</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-es6-common-important-points.html</loc>
+    <lastmod>2018-05-03</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-judge-data-type.html</loc>
+    <lastmod>2018-05-02</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-4-ways-to-call-a-function.html</loc>
+    <lastmod>2018-05-02</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-closure.html</loc>
+    <lastmod>2018-05-02</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-prototype-chain.html</loc>
+    <lastmod>2018-05-01</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/javascript-inheritance.html</loc>
+    <lastmod>2018-05-01</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/css3-new-features.html</loc>
+    <lastmod>2018-04-24</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/html5-apis.html</loc>
+    <lastmod>2018-04-21</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/html5-compatibility.html</loc>
+    <lastmod>2018-04-21</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/python-txt-files-io.html</loc>
+    <lastmod>2018-03-12</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/elasticsearch-forward-index-and-inverted-index.html</loc>
+    <lastmod>2018-03-11</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/elasticsearch-chinese-analyzer.html</loc>
+    <lastmod>2018-03-06</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/elasticsearch-all-about-analyzers.html</loc>
+    <lastmod>2018-03-05</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/elasticsearch-backup-and-migration.html</loc>
+    <lastmod>2018-03-01</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/mysql-command-in-linux.html</loc>
+    <lastmod>2018-02-20</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/nginx-forward-proxy-and-reverse-proxy.html</loc>
+    <lastmod>2017-11-03</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/nmap-basic-usage.html</loc>
+    <lastmod>2017-10-21</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/python-realtime-tcpdump.html</loc>
+    <lastmod>2017-07-12</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/python-univariate-outlier-detection.html</loc>
+    <lastmod>2017-07-09</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/python-sorting-algorithm.html</loc>
+    <lastmod>2017-06-28</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/python-code-and-pythonic-code.html</loc>
+    <lastmod>2017-06-25</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/python-send-email.html</loc>
+    <lastmod>2017-06-10</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/python-subprocess.html</loc>
+    <lastmod>2017-06-08</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/pip-install-error-in-windows.html</loc>
+    <lastmod>2017-06-03</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/pip-change-mirror-source.html</loc>
+    <lastmod>2017-06-02</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/advantages-of-decoupling-frontend-from-backend.html</loc>
+    <lastmod>2017-05-25</lastmod>
+  </url>  <url>
+    <loc>https://www.wenyuanblog.com/blogs/git-migrate-repository-without-losing-history-commit.html</loc>
+    <lastmod>2017-05-16</lastmod>
+  </url>
+</urlset>
