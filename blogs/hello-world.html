@@ -89,6 +89,13 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
+                            <a href="/categories/基本技能/">
+                                
+                                <span>基本技能</span>
+                            </a>
+                        </li>
+                    
+                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -131,9 +138,23 @@
                         </li>
                     
                         <li>
+                            <a href="/categories/读书笔记/">
+                                
+                                <span>读书笔记</span>
+                            </a>
+                        </li>
+                    
+                        <li>
                             <a href="/categories/生活小记/">
                                 
                                 <span>生活小记</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/资源整理/">
+                                
+                                <span>资源整理</span>
                             </a>
                         </li>
                     
@@ -161,7 +182,7 @@
                         </li>
                     
                         <li>
-                            <a href="/winyuan.html">
+                            <a href="/aboutme.html">
                                 
                                 <span>关于文渊</span>
                             </a>
@@ -180,7 +201,7 @@
     
         <li class="hide-on-med-and-down nav-item">
             
-                <a href="/books" class="waves-effect waves-light">
+                <a href="/books.html" class="waves-effect waves-light">
                     
                         <i class="fa fa-book"></i>
                     
@@ -259,6 +280,13 @@
                     <ul>
                         
                             <li>
+                                <a href="/categories/基本技能/">
+                                    
+                                    <span>基本技能</span>
+                                </a>
+                            </li>
+                        
+                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -301,9 +329,23 @@
                             </li>
                         
                             <li>
+                                <a href="/categories/读书笔记/">
+                                    
+                                    <span>读书笔记</span>
+                                </a>
+                            </li>
+                        
+                            <li>
                                 <a href="/categories/生活小记/">
                                     
                                     <span>生活小记</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/资源整理/">
+                                    
+                                    <span>资源整理</span>
                                 </a>
                             </li>
                         
@@ -330,7 +372,7 @@
                             </li>
                         
                             <li>
-                                <a href="/winyuan.html">
+                                <a href="/aboutme.html">
                                     
                                     <span>关于文渊</span>
                                 </a>
@@ -349,7 +391,7 @@
         
             <li class="m-nav-item">
                 
-                    <a href="/books" class="waves-effect waves-light">
+                    <a href="/books.html" class="waves-effect waves-light">
                         
                             <i class="fa fa-fw fa-book"></i>
                         
@@ -428,8 +470,12 @@
           
             <div class="article-tag">
               
-                <a href="/tags/日记/" target="_blank">
-                  <span class="chip bg-color">日记</span>
+                <a href="/tags/回顾/" target="_blank">
+                  <span class="chip bg-color">回顾</span>
+                </a>
+              
+                <a href="/tags/总结/" target="_blank">
+                  <span class="chip bg-color">总结</span>
                 </a>
               
             </div>
@@ -467,7 +513,7 @@
     <hr class="clearfix">
     <div class="card-content article-card-content">
       <div id="articleContent">
-        <div style="text-align: center; font-size: 32px;">第一篇博客</div>
+        <h1 style="text-align: center; font-size: 32px; font-weight: normal;">第一篇博客</h1>
 
 <blockquote>
 <p>这是改版后的博客，暂且称为wenyuanblog_v2.0吧。回顾下1.0版本的个人博客。</p>
@@ -484,7 +530,7 @@
 </li>
 <li><h5 id="新增文章页"><a href="#新增文章页" class="headerlink" title="新增文章页"></a>新增文章页</h5><p>　　新增和编辑文章页，除了传统表单，还有缩略图上传和富文本编辑器功能。<br>　　因为用的是bootstrap，原生组件对于缩略图上传后的页面回显功能，没有layUI和elementUI提供的那么好，所以自己定制了一下。<br>　　富文本编辑器用的是<span style="color: #FF0000;">CKEditor</span>，用过UEditor，觉得还是CK颜值高一些，也比wangEditor出名些。<br>　　Django生态圈似乎有人基于Django封装过富文本编辑器，可以直接以app的形式引入，不过我还是采用了原生的方式，自己实现下其实也不麻烦。<br>　　最后存了两份信息，一份带html标签的用于页面显示，一份纯文本用于搜索。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/blog_add_page.png" alt="blog_add_page.png"></p>
 </li>
-<li><h5 id="文章列表页"><a href="#文章列表页" class="headerlink" title="文章列表页"></a>文章列表页</h5><p>　　对比jQuery DataTables，感觉wenzhixin封装的bootstrap-table颜值挺高的，也很好用（jQuery DataTables很强大，但毕竟难用，我以html单文件的形式整理过几个demo，<a href="https://github.com/winyuan/datatables_demos" title="DataTables Demos" rel="external nofollow noopener noreferrer" target="_blank">点击查看</a>）。<br>　　不过最后发现首列的多选框很难看，参照GitHub上作者对某issue的回复，我做了修改，最后效果如下图。个人觉得现在好看多了。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/blog_list_page.png" alt="blog_list_page.png"></p>
+<li><h5 id="文章列表页"><a href="#文章列表页" class="headerlink" title="文章列表页"></a>文章列表页</h5><p>　　对比jQuery DataTables，感觉wenzhixin封装的bootstrap-table颜值挺高的，也很好用（jQuery DataTables很强大，但毕竟难用，我以html单文件的形式整理过几个demo，<a href="https://github.com/wenyuan/datatables_demos" title="DataTables Demos" rel="external nofollow noopener noreferrer" target="_blank">点击查看</a>）。<br>　　不过最后发现首列的多选框很难看，参照GitHub上作者对某issue的回复，我做了修改，最后效果如下图。个人觉得现在好看多了。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/blog_list_page.png" alt="blog_list_page.png"></p>
 </li>
 </ul>
 <h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>　　第一版的博客花了点精力，主要是后端和CMS页面尽可能做成通用，这样以后好复制。顺便把用户注册和邮箱验证那一套也一起做了（虽然是个人博客，但先按多用户的模式起了个头）。<br>　　然后我比较喜欢折腾，所以又搞了第二版。</p>
@@ -494,140 +540,20 @@
 
       
         <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
+#reward {
+  margin: 40px 0;
+  text-align: center;
+}
 
-    #reward .reward-link {
-        font-size: 1.88rem;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 400px;
-        height: 400px;
-        background-color: #FFF;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-        font-weight: normal;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .close:hover {
-        color: #ef5350;
-        transform: scale(1.3);
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
-        -o-transform:scale(1.3);
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 300px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-content ul {
-        padding-left: 0 !important;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        font-size: 13px;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        background-color: #ccc;
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff !important;
-        background-color: #3DA149 !important;
-    }
-
-    .reward-tabs .wechatpay-tab .active {
-        color: #fff !important;
-        background-color: #22AB38 !important;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff !important;
-        background-color: #019FE8 !important;
-    }
-
-    .reward-tabs .reward-img {
-        width: 250px;
-        height: 250px;
-    }
 </style>
 
 <div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">戳</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">钱和朋友之间，更想多认识朋友</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s4 wechat-tab waves-effect waves-light"><a href="#wechat">微信</a></li>
-                        <li class="tab col s4 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s4 wechatpay-tab waves-effect waves-light"><a href="#wechatpay">微信投资</a></li>
-                    </ul>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="交个朋友吧">
-                    </div>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechatpay">
-                        <img src="/medias/reward/wechatpay.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <a href="/gift.html"><img src="/medias/reward/reward.png" style="width: 64px"></a>
+  <div style="margin-top: 5px;text-align: center; color: #888;">
+    博文对你有帮助吗？如果有的话，想不想<a href="/gift.html">送我一本书</a>呢？
+    <img src="/medias/reward/emoji.png" style="width: 24px;vertical-align: bottom"></div>
 </div>
 
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
       
 
       <!--<link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
@@ -934,18 +860,18 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/blogs/how-to-ask-questions-correctly.html">
+                <a href="/blogs/git-common-command-manual.html">
                     <div class="card-image">
                         
-                        <img src="/medias/blogimages/how_to_ask_questions_correctly.jpg" class="responsive-img" alt="群里提问的艺术">
+                        <img src="/medias/blogimages/git.png" class="responsive-img" alt="Git常用命令参考手册">
                         
-                        <span class="card-title">群里提问的艺术</span>
+                        <span class="card-title">Git常用命令参考手册</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在技术交流群里，只有正确地提问，才能最有效地得到期望的答案。
+                            本文整理了我在日常开发中使用频率最高的 Git 命令，涵盖了一些 Git 基本操作。
                         
                     </div>
                     <div class="publish-info">
@@ -956,8 +882,8 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/技术周边/" class="post-category" target="_blank">
-                                    技术周边
+                            <a href="/categories/基本技能/" class="post-category" target="_blank">
+                                    基本技能
                                 </a>
                             
                             
@@ -967,8 +893,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/杂谈/" target="_blank">
-                        <span class="chip bg-color">杂谈</span>
+                    <a href="/tags/Git/" target="_blank">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
                 </div>
@@ -1016,8 +942,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/日记/" target="_blank">
-                        <span class="chip bg-color">日记</span>
+                    <a href="/tags/回顾/" target="_blank">
+                        <span class="chip bg-color">回顾</span>
+                    </a>
+                    
+                    <a href="/tags/总结/" target="_blank">
+                        <span class="chip bg-color">总结</span>
                     </a>
                     
                 </div>
@@ -1062,7 +992,7 @@
       </a>
     </div>
     <div class="col s12 m4 l4 social-link ">
-  <a href="https://github.com/winyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+  <a href="https://github.com/wenyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
     <i class="fa fa-git"></i>
   </a>
 
@@ -1075,10 +1005,6 @@
 
 
 
-
-  <a href="javascript:void(0);" onclick="wechatShow()">
-    <i class="fa fa-wechat"></i>
-  </a>
 
 
 
@@ -1097,7 +1023,7 @@ function wechatShow() {
     offset: 'rb',
     skin: 'layui-layer-nobg', //没有背景色
     shadeClose: true,
-    content: '/medias/socialimages/wechat.png'
+    content: ''
   });
 }
 </script>

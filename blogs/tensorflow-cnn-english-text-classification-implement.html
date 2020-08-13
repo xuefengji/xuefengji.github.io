@@ -89,6 +89,13 @@
                 <ul class="sub-nav menus_item_child ">
                     
                         <li>
+                            <a href="/categories/基本技能/">
+                                
+                                <span>基本技能</span>
+                            </a>
+                        </li>
+                    
+                        <li>
                             <a href="/categories/前端技术/">
                                 
                                 <span>前端技术</span>
@@ -131,9 +138,23 @@
                         </li>
                     
                         <li>
+                            <a href="/categories/读书笔记/">
+                                
+                                <span>读书笔记</span>
+                            </a>
+                        </li>
+                    
+                        <li>
                             <a href="/categories/生活小记/">
                                 
                                 <span>生活小记</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/资源整理/">
+                                
+                                <span>资源整理</span>
                             </a>
                         </li>
                     
@@ -161,7 +182,7 @@
                         </li>
                     
                         <li>
-                            <a href="/winyuan.html">
+                            <a href="/aboutme.html">
                                 
                                 <span>关于文渊</span>
                             </a>
@@ -180,7 +201,7 @@
     
         <li class="hide-on-med-and-down nav-item">
             
-                <a href="/books" class="waves-effect waves-light">
+                <a href="/books.html" class="waves-effect waves-light">
                     
                         <i class="fa fa-book"></i>
                     
@@ -259,6 +280,13 @@
                     <ul>
                         
                             <li>
+                                <a href="/categories/基本技能/">
+                                    
+                                    <span>基本技能</span>
+                                </a>
+                            </li>
+                        
+                            <li>
                                 <a href="/categories/前端技术/">
                                     
                                     <span>前端技术</span>
@@ -301,9 +329,23 @@
                             </li>
                         
                             <li>
+                                <a href="/categories/读书笔记/">
+                                    
+                                    <span>读书笔记</span>
+                                </a>
+                            </li>
+                        
+                            <li>
                                 <a href="/categories/生活小记/">
                                     
                                     <span>生活小记</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/资源整理/">
+                                    
+                                    <span>资源整理</span>
                                 </a>
                             </li>
                         
@@ -330,7 +372,7 @@
                             </li>
                         
                             <li>
-                                <a href="/winyuan.html">
+                                <a href="/aboutme.html">
                                     
                                     <span>关于文渊</span>
                                 </a>
@@ -349,7 +391,7 @@
         
             <li class="m-nav-item">
                 
-                    <a href="/books" class="waves-effect waves-light">
+                    <a href="/books.html" class="waves-effect waves-light">
                         
                             <i class="fa fa-fw fa-book"></i>
                         
@@ -427,96 +469,96 @@
 #articleContent h4::before,
 #articleContent h5::before,
 #articleContent h6::before {
-    display: block;
-    content: " ";
-    height: 90px;
-    margin-top: -100px;
-    visibility: hidden;
+  display: block;
+  content: " ";
+  height: 90px;
+  margin-top: -100px;
+  visibility: hidden;
 }
 
 #articleContent :focus {
-    outline: none;
+  outline: none;
 }
 
 .toc-fixed {
-    position: fixed;
-    top: 64px;
+  position: fixed;
+  top: 64px;
 }
 
 .toc-widget {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .toc-widget .toc-title {
-    margin: 35px 0 15px 0;
-    padding-left: 17px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 1.5rem;
+  margin: 35px 0 15px 0;
+  padding-left: 17px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
 }
 
 .toc-widget ol {
-    padding: 0;
-    list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 /*#toc-content {*/
-    /*height: calc(100vh - 250px);*/
-    /*overflow-y: scroll;*/
+/*height: calc(100vh - 250px);*/
+/*overflow-y: scroll;*/
 /*}*/
 
 #toc-content ol {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 #toc-content ol li {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 #toc-content .toc-link:hover {
-    /*color: #42b983;*/
-    color: #3498db;
-    font-weight: 700;
-    text-decoration: underline;
+  /*color: #42b983;*/
+  color: #3498db;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 #toc-content .toc-link::before {
-    background-color: transparent;
-    max-height: 25px;
+  background-color: transparent;
+  max-height: 25px;
 }
 
 #toc-content .is-active-link {
-    /*color: #42b983;*/
-    color: #3498db;
+  /*color: #42b983;*/
+  color: #3498db;
 }
 
-#toc-content .is-active-link::before {
-    /*background-color: #42b983;*/
-    background-color: #3498db;
-}
+/*#toc-content .is-active-link::before {*/
+/*  !*background-color: #42b983;*!*/
+/*  background-color: #3498db;*/
+/*}*/
 
 #floating-toc-btn {
-    position: fixed;
-    right: 20px;
-    bottom: 76px;
-    padding-top: 15px;
-    margin-bottom: 0;
-    z-index: 998;
+  position: fixed;
+  right: 20px;
+  bottom: 76px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 998;
 }
 
 #floating-toc-btn .btn-floating {
-    width: 48px;
-    height: 48px;
+  width: 48px;
+  height: 48px;
 }
 
 #floating-toc-btn .btn-floating i {
-    line-height: 48px;
-    font-size: 1.4rem;
+  line-height: 48px;
+  font-size: 1.4rem;
 }
 </style>
 <div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+  <div id="main-content" class="col s12 m12 l9">
+    <!-- 文章内容详情 -->
 <div id="artDetail">
   <div class="card">
     <div class="card-content article-info">
@@ -564,7 +606,7 @@
     <hr class="clearfix">
     <div class="card-content article-card-content">
       <div id="articleContent">
-        <div style="text-align: center; font-size: 32px;">【TensorFlow小记】CNN英文文本分类</div>
+        <h1 style="text-align: center; font-size: 32px; font-weight: normal;">【TensorFlow小记】CNN英文文本分类</h1>
 
 <blockquote>
 <p>学习GitHub上一个不错的CNN英文文本分类项目，代码解读。</p>
@@ -587,7 +629,7 @@
 <h2 id="二、项目介绍"><a href="#二、项目介绍" class="headerlink" title="二、项目介绍"></a>二、项目介绍</h2><p>　　因为工作需要，要用CNN实现文本分类，但机器学习这块还不能算入门，仅是利用零碎时间做了了解。于是在GitHub上找到了<a href="https://github.com/dennybritz/cnn-text-classification-tf" rel="external nofollow noopener noreferrer" target="_blank">cnn-text-classification-tf</a>项目，一边解读一边学习吧。<br>　　<span style="font-size: 10px; color: #9e9e9e;">PS：这个项目的作者很酷，注意看关键词“High-shool dropout”，而且在GitHub上有多个不错的机器学习项目，学习能力和知识量可见一斑。当然了，国内也有很多没有学校光环的技术大牛，这些都是题外话了。</span><br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/github_dennybritz.png" alt="github_dennybritz.png"></p>
 <p>　　关于这个项目，其实<a href="http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/" rel="external nofollow noopener noreferrer" target="_blank">Implementing a CNN for Text Classification in TensorFlow</a>这篇blog已经写的很详细了，但是它是英文的，而且对于刚入手tensorflow的新人来说代码可能仍存在一些细节不太容易理解，我也是初学，就简单总结下自己的理解，如果对读者有帮助那将是极好的。</p>
 <p>　　首先看这个项目，共有四个PY文件，分别是：<br>　　●　text_cnn.py：网络结构设计<br>　　●　train.py：网络训练<br>　　●　eval.py：预测&amp;评估<br>　　●　data_helpers.py：数据预处理</p>
-<p>　　下面对最核心的部分，即<span style="color: #FF0000;">CNN模型</span>进行解读，具体代码看<a href="https://github.com/winyuan/cnn_text_classification_tf" rel="external nofollow noopener noreferrer" target="_blank">这里</a>。</p>
+<p>　　下面对最核心的部分，即<span style="color: #FF0000;">CNN模型</span>进行解读，具体代码看<a href="https://github.com/wenyuan/cnn_text_classification_tf" rel="external nofollow noopener noreferrer" target="_blank">这里</a>。</p>
 <h2 id="三、模型原理"><a href="#三、模型原理" class="headerlink" title="三、模型原理"></a>三、模型原理</h2><p>　　在<code>text_cnn.py</code>中，主要定义了一个类 <span style="color: #FF0000;">TextCNN</span>。<br>　　这个类搭建了一个最basic的CNN模型，有 input layer，convolutional layer，max-pooling layer 和最后输出的 softmax layer。<br>　　但是又因为整个模型是用于文本的（而非CNN的传统处理对象：图像），因此在CNN的操作上相对应地做了一些小调整：</p>
 <p>　　●　<span style="font-size: 10px;">对于文本任务，输入层自然使用了word embedding来将文本转换成词向量。</span><br>　　●　<span style="font-size: 10px;">接下来是卷积层，在图像处理中经常看到的卷积核都是正方形的，比如4*4矩阵，然后在整张image上沿宽和高逐步移动进行卷积操作。但是在NLP中输入的“image”是一个词矩阵，比如n个words，每个word用200维（embedding_size）的 vector（矢量/一维数组）表示的话，这个“image”就是n*200的矩阵，卷积核只在高度上滑动，在宽度上和 word vector（word embedding） 的维度一致（=200），也就是说每次窗口滑动过的位置都是完整的单词，不会将几个单词的一部分“vector”进行卷积，这也保证了word作为语言中最小粒度的合理性。（当然，如果研究的粒度是character-level而不是word-level，需要另外的方式处理）</span><br>　　●　<span style="font-size: 10px;">由于卷积核和 word embedding 的宽度一致，一个卷积核对于一个sentence，卷积后得到的结果是一个 vector，shape=(sentence_len - filter_size + 1, 1)，那么，在 max-pooling 后得到的就是一个 scalar。所以，这点也是和图像卷积的不同之处，需要注意一下。</span><br>　　●　<span style="font-size: 10px;">正是由于 max-pooling 后只是得到一个 scalar，在NLP中，会实施多个 filter_size（比如3,4,5个words的宽度分别作为卷积的窗口大小），每个 filter_size 又有 num_filters 个（比如64个）卷积核。一个卷积核得到的只是一个scalar太孤单了，智慧的人们就将相同 filter_size 卷积出来的 num_filters 个 scalar 组合在一起，组成这个 filter_size 下的 feature_vector。</span><br>　　●　<span style="font-size: 10px;">最后再将所有 filter_size 下的 feature_vector 也组合成一个 single vector，作为最后一层softmax的输入。</span></p>
 <p>　　整个过程如下图所示，这个模型在<a href="/blogs/tensorflow-cnn-text-classification-theory.html">CNN文本分类原理</a>一文中也进行了讲述。<br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/text_cnn_structure.png" alt="text_cnn_structure.png" width="600" height="500" align="center"></p>
@@ -701,7 +743,7 @@
 <p>　　预处理的第二步就是构建词典，把我们的句子序列（由单词列表构成）转换成数据序列（单词在词典里面的索引），这边完全由tensorflow的内置函数完成。</p>
 <p>　　之后就是打乱数据和划分训练和测试集了。这些代码都是可以直接复用的代码。大部分的深度学习NLP任务都要经过相应的处理。</p>
 <p><strong>train</strong><br>　　训练部分的相关分析我都在代码注释中体现了。</p>
-<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><p>　　以上是第一遍学习并解读 <span style="color: #3498db;">cnn-text-classification-tf</span> 这个项目的笔记。主要还是参考了作者在项目里提到的两篇博客，讲的很好。同时还参考了多篇国人翻译版博客，除去copy来copy去的内容，也在理解上得到了不少帮助。鉴于每篇总有翻译的不是很到位的地方，尤其对于我这种新手，故自己加以修改，重新做了笔记。<br>　　当然了，第一遍解读还是会有很多存疑的地方，后续随着理解加深再修改吧。<br>　　PS：我fork了一份源码并加了代码中文注释：<a href="https://github.com/winyuan/cnn_text_classification_tf" rel="external nofollow noopener noreferrer" target="_blank">加注释版本</a>。</p>
+<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><p>　　以上是第一遍学习并解读 <span style="color: #3498db;">cnn-text-classification-tf</span> 这个项目的笔记。主要还是参考了作者在项目里提到的两篇博客，讲的很好。同时还参考了多篇国人翻译版博客，除去copy来copy去的内容，也在理解上得到了不少帮助。鉴于每篇总有翻译的不是很到位的地方，尤其对于我这种新手，故自己加以修改，重新做了笔记。<br>　　当然了，第一遍解读还是会有很多存疑的地方，后续随着理解加深再修改吧。<br>　　PS：我fork了一份源码并加了代码中文注释：<a href="https://github.com/wenyuan/cnn_text_classification_tf" rel="external nofollow noopener noreferrer" target="_blank">加注释版本</a>。</p>
 <p class="reference"><br>参考<br><a href="http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/" rel="external nofollow noopener noreferrer" target="_blank">http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/</a><br><a href="http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/" rel="external nofollow noopener noreferrer" target="_blank">http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/</a><br></p><br><p class="reference" style="display:none"><br><a href="https://blog.csdn.net/chivalrousli/article/details/77168397" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/chivalrousli/article/details/77168397</a><br><a href="https://www.cnblogs.com/wilde/p/8353639.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/wilde/p/8353639.html</a><br><a href="https://blog.csdn.net/Ding_xiaofei/article/details/81051780" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/Ding_xiaofei/article/details/81051780</a><br><a href="https://blog.csdn.net/rlnLo2pNEfx9c/article/details/80288372" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/rlnLo2pNEfx9c/article/details/80288372</a><br><a href="https://kiseliu.github.io/2016/09/22/implementing-a-cnn-for-text-classification-in-tensorflow/" rel="external nofollow noopener noreferrer" target="_blank">https://kiseliu.github.io/2016/09/22/implementing-a-cnn-for-text-classification-in-tensorflow/</a><br></p>
 
       </div>
@@ -709,140 +751,20 @@
 
       
         <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
+#reward {
+  margin: 40px 0;
+  text-align: center;
+}
 
-    #reward .reward-link {
-        font-size: 1.88rem;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 400px;
-        height: 400px;
-        background-color: #FFF;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-        font-weight: normal;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .close:hover {
-        color: #ef5350;
-        transform: scale(1.3);
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
-        -o-transform:scale(1.3);
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 300px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-content ul {
-        padding-left: 0 !important;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        font-size: 13px;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        background-color: #ccc;
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff !important;
-        background-color: #3DA149 !important;
-    }
-
-    .reward-tabs .wechatpay-tab .active {
-        color: #fff !important;
-        background-color: #22AB38 !important;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff !important;
-        background-color: #019FE8 !important;
-    }
-
-    .reward-tabs .reward-img {
-        width: 250px;
-        height: 250px;
-    }
 </style>
 
 <div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">戳</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">钱和朋友之间，更想多认识朋友</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s4 wechat-tab waves-effect waves-light"><a href="#wechat">微信</a></li>
-                        <li class="tab col s4 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s4 wechatpay-tab waves-effect waves-light"><a href="#wechatpay">微信投资</a></li>
-                    </ul>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="交个朋友吧">
-                    </div>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechatpay">
-                        <img src="/medias/reward/wechatpay.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <a href="/gift.html"><img src="/medias/reward/reward.png" style="width: 64px"></a>
+  <div style="margin-top: 5px;text-align: center; color: #888;">
+    博文对你有帮助吗？如果有的话，想不想<a href="/gift.html">送我一本书</a>呢？
+    <img src="/medias/reward/emoji.png" style="width: 24px;vertical-align: bottom"></div>
 </div>
 
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
       
 
       <!--<link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
@@ -1244,22 +1166,22 @@
 </div>
 
 
+  </div>
+  <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+    <div class="toc-widget">
+      <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+      <div id="toc-content"></div>
     </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
-            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
+  </div>
 </div>
 
 <!-- TOC 悬浮按钮. -->
 
-    <div id="floating-toc-btn" class="hide-on-med-and-down">
-        <a class="btn-floating btn-large bg-color">
-            <i class="fa fa-list"></i>
-        </a>
-    </div>
+  <div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+      <i class="fa fa-list"></i>
+    </a>
+  </div>
 
 
 <script src="/libs/tocbot/tocbot.min.js"></script>
@@ -1268,8 +1190,8 @@ $(function() {
   tocbot.init({
     tocSelector: '#toc-content',
     contentSelector: '#articleContent',
-    headingsOffset: -($(window).height() * 0.4 - 45),
-    // headingsOffset: -205,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -205,
     headingSelector: 'h2, h3, h4'
   });
 
@@ -1299,7 +1221,7 @@ $(function() {
     }
   });
 
-    
+  
   /* 修复文章卡片 div 的宽度. */
   let fixPostCardWidth = function(srcId, targetId) {
     let srcDiv = $('#' + srcId);
@@ -1334,7 +1256,7 @@ $(function() {
     }
     fixPostCardWidth('artDetail', 'prenext-posts');
   });
-    
+  
 });
 </script>
     
@@ -1369,7 +1291,7 @@ $(function() {
       </a>
     </div>
     <div class="col s12 m4 l4 social-link ">
-  <a href="https://github.com/winyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+  <a href="https://github.com/wenyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
     <i class="fa fa-git"></i>
   </a>
 
@@ -1382,10 +1304,6 @@ $(function() {
 
 
 
-
-  <a href="javascript:void(0);" onclick="wechatShow()">
-    <i class="fa fa-wechat"></i>
-  </a>
 
 
 
@@ -1404,7 +1322,7 @@ function wechatShow() {
     offset: 'rb',
     skin: 'layui-layer-nobg', //没有背景色
     shadeClose: true,
-    content: '/medias/socialimages/wechat.png'
+    content: ''
   });
 }
 </script>

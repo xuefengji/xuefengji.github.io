@@ -95,16 +95,17 @@ pre .code-area-title .code-shrink .code-expand {
   transition: all .3s;
 }
 
-/* 代码块选中文字的颜色和背景颜色 */
-#articleContent pre code::selection {
-  background:#ccc;
-  color:#ff645d;
+/* 代码块选中文字的颜色和背景颜色 - override prism-duotone-light.css */
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #3190fe !important;
+  color:#fff;
 }
-#articleContent pre code::-moz-selection {
-  background:#ccc;
-  color:#ff645d;
-}
-#articleContent pre code::-webkit-selection {
-  background:#ccc;
-  color:#ff645d;
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #3190fe !important;
+  color:#fff;
 }

@@ -1,0 +1,1389 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+  <meta name="generator" content="django">
+  <meta charset="utf-8">
+  <meta name="keywords" content="elasticsearch,部署,elasticsearch部署,es部署">
+  <meta name="description" content="记录JDK、ES、Kibana的安装和基础配置_比较稳定的是5.x。这里我简单记录下针对5.x版本的部署配置过程，暂不考虑">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="renderer" content="webkit|ie-stand|ie-comp">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>【Elasticsearch基础】ES部署步骤_如何部署Elasticsearch环境 - 文渊博客</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">-->
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/element-ui.css">
+
+  <style type="text/css">
+  
+  </style>
+
+  <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+
+<link rel="stylesheet" href="/css/prism-duotone-light.css" type="text/css"></head>
+
+
+<body>
+
+<!-- Start of website body -->
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent headbar-cover">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">文渊博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-home"></i>
+                    
+                    <span>首页</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/tags" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-tags"></i>
+                    
+                    <span>标签</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/categories" class="waves-effect waves-light">
+
+                    
+                        <i class="fa fa-bookmark"></i>
+                    
+                    <span>分类</span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-nav menus_item_child ">
+                    
+                        <li>
+                            <a href="/categories/基本技能/">
+                                
+                                <span>基本技能</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/前端技术/">
+                                
+                                <span>前端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/后端技术/">
+                                
+                                <span>后端技术</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/运维知识/">
+                                
+                                <span>运维知识</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/机器学习/">
+                                
+                                <span>机器学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/技术周边/">
+                                
+                                <span>技术周边</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/跨界学习/">
+                                
+                                <span>跨界学习</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/读书笔记/">
+                                
+                                <span>读书笔记</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/生活小记/">
+                                
+                                <span>生活小记</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/categories/资源整理/">
+                                
+                                <span>资源整理</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/about.html" class="waves-effect waves-light">
+
+                    
+                        <i class="fa fa-user-circle-o"></i>
+                    
+                    <span>关于</span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-nav menus_item_child ">
+                    
+                        <li>
+                            <a href="/about.html">
+                                
+                                <span>关于博客</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/aboutme.html">
+                                
+                                <span>关于文渊</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/guestbook.html">
+                                
+                                <span>留言小本</span>
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/books.html" class="waves-effect waves-light">
+                    
+                        <i class="fa fa-book"></i>
+                    
+                    <span>我的书单</span>
+                </a>
+            
+        </li>
+    
+        <li class="hide-on-med-and-down nav-item">
+            
+                <a href="/navpage.html" class="waves-effect waves-light">
+                    
+                        <i class="fa fa fa-rocket"></i>
+                    
+                    <span>友情链接</span>
+                </a>
+            
+        </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+            <span style="display: inline-block;width:40px;height: 40px;background-image: url('/medias/logo.png');background-size: cover;vertical-align: middle; margin: 15px auto"></span>
+        
+        <div class="logo-name">文渊博客</div>
+        <div class="logo-desc">
+            
+                一个90后程序员，终身学习者。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+            <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                        
+                            <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                    <ul>
+                        
+                            <li>
+                                <a href="/categories/基本技能/">
+                                    
+                                    <span>基本技能</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/前端技术/">
+                                    
+                                    <span>前端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/后端技术/">
+                                    
+                                    <span>后端技术</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/运维知识/">
+                                    
+                                    <span>运维知识</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/机器学习/">
+                                    
+                                    <span>机器学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/技术周边/">
+                                    
+                                    <span>技术周边</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/跨界学习/">
+                                    
+                                    <span>跨界学习</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/读书笔记/">
+                                    
+                                    <span>读书笔记</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/生活小记/">
+                                    
+                                    <span>生活小记</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/categories/资源整理/">
+                                    
+                                    <span>资源整理</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                        
+                            <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                    <ul>
+                        
+                            <li>
+                                <a href="/about.html">
+                                    
+                                    <span>关于博客</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/aboutme.html">
+                                    
+                                    <span>关于文渊</span>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/guestbook.html">
+                                    
+                                    <span>留言小本</span>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/books.html" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa-book"></i>
+                        
+                        我的书单
+                    </a>
+                
+            </li>
+        
+            <li class="m-nav-item">
+                
+                    <a href="/navpage.html" class="waves-effect waves-light">
+                        
+                            <i class="fa fa-fw fa fa-rocket"></i>
+                        
+                        友情链接
+                    </a>
+                
+            </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<!--<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blogimages/elasticsearch.jpg')">-->
+<div class="bg-cover pd-header post-cover">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <!--
+                    <div class="description center-align post-title">
+                        Elasticsearch部署步骤
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+#articleContent h1::before,
+#articleContent h2::before,
+#articleContent h3::before,
+#articleContent h4::before,
+#articleContent h5::before,
+#articleContent h6::before {
+  display: block;
+  content: " ";
+  height: 90px;
+  margin-top: -100px;
+  visibility: hidden;
+}
+
+#articleContent :focus {
+  outline: none;
+}
+
+.toc-fixed {
+  position: fixed;
+  top: 64px;
+}
+
+.toc-widget {
+  padding-left: 20px;
+}
+
+.toc-widget .toc-title {
+  margin: 35px 0 15px 0;
+  padding-left: 17px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.toc-widget ol {
+  padding: 0;
+  list-style: none;
+}
+
+/*#toc-content {*/
+/*height: calc(100vh - 250px);*/
+/*overflow-y: scroll;*/
+/*}*/
+
+#toc-content ol {
+  padding-left: 10px;
+}
+
+#toc-content ol li {
+  padding-left: 10px;
+}
+
+#toc-content .toc-link:hover {
+  /*color: #42b983;*/
+  color: #3498db;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+#toc-content .toc-link::before {
+  background-color: transparent;
+  max-height: 25px;
+}
+
+#toc-content .is-active-link {
+  /*color: #42b983;*/
+  color: #3498db;
+}
+
+/*#toc-content .is-active-link::before {*/
+/*  !*background-color: #42b983;*!*/
+/*  background-color: #3498db;*/
+/*}*/
+
+#floating-toc-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 76px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 998;
+}
+
+#floating-toc-btn .btn-floating {
+  width: 48px;
+  height: 48px;
+}
+
+#floating-toc-btn .btn-floating i {
+  line-height: 48px;
+  font-size: 1.4rem;
+}
+</style>
+<div class="row">
+  <div id="main-content" class="col s12 m12 l9">
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+  <div class="card">
+    <div class="card-content article-info">
+      <div class="row tag-cate">
+        <div class="col s7">
+          
+            <div class="article-tag">
+              
+                <a href="/tags/Elasticsearch/" target="_blank">
+                  <span class="chip bg-color">Elasticsearch</span>
+                </a>
+              
+            </div>
+          
+        </div>
+        <div class="col s5 right-align">
+          
+            <div class="post-cate">
+              <i class="fa fa-bookmark fa-fw icon-category"></i>
+              
+                <a href="/categories/运维知识/" class="post-category" target="_blank">
+                  运维知识
+                </a>
+              
+            </div>
+          
+        </div>
+      </div>
+
+      <div class="post-info">
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+          2018-02-27
+        </div>
+        <div class="post-date info-break-policy">
+          <i class="fa fa-calendar-minus-o fa-fw"></i>最近更新:&nbsp;&nbsp;
+          2018-07-05
+        </div>
+
+        
+
+        
+      </div>
+    </div>
+    <hr class="clearfix">
+    <div class="card-content article-card-content">
+      <div id="articleContent">
+        <h1 style="text-align: center; font-size: 32px; font-weight: normal;">Elasticsearch部署步骤</h1>
+
+<blockquote>
+<p>现在官方已经出到了 ES7 beta，不过现在为止用的最多也是比较稳定的是 5.x。<br>这里我简单记录下针对 5.x 版本的部署配置过程，暂不考虑优化（后面再总结优化相关的笔记）。</p>
+</blockquote>
+<h2 id="一、环境"><a href="#一、环境" class="headerlink" title="一、环境"></a>一、环境</h2><ul>
+<li>Ubuntu 14.04/16、04</li>
+<li>JDK1.8</li>
+<li>Elasticsearch 5.6</li>
+</ul>
+<h2 id="二、安装JDK"><a href="#二、安装JDK" class="headerlink" title="二、安装JDK"></a>二、安装JDK</h2><h3 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1. 下载安装"></a><span style="font-size: 18px;">1. 下载安装</span></h3><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a><br><img src="/medias/blogimages/loading.gif" data-original="/medias/blogimages/jdk_download.png" alt="jdk_download.png"><br>将刚刚下载的文件拷贝到 <span style="color: #FF0000;">/opt</span> 目录下，<br>解压 jdk 到当前目录，使用命令 <code>tar -zxvf jdk-8u161-linux-x64.tar.gz</code></p>
+<p>修改文件名 <code>mv jdk1.8.0_161 jdk1.8</code><br>至此，jdk1.8 已经全部安装完成了。</p>
+<h3 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2. 配置环境变量"></a><span style="font-size: 18px;">2. 配置环境变量</span></h3><p>修改 <code>vim /etc/profile</code> ，最底部添加:</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># Sun JDK profile</span>
+<span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/opt/jdk1.8
+<span class="token function">export</span> JRE_HOME<span class="token operator">=</span><span class="token variable">${JAVA_HOME}</span>/jre  
+<span class="token function">export</span> CLASSPATH<span class="token operator">=</span>.:<span class="token variable">${JAVA_HOME}</span>/lib:<span class="token variable">${JRE_HOME}</span>/lib  
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">${JAVA_HOME}</span>/bin:<span class="token variable">$PATH</span>
+</code></pre>
+<p>运行 <code>source /etc/profile</code>，使 <span style="color: #FF0000;">/etc/profile</span> 文件生效。</p>
+<p>使用 <code>java -version</code> 和 <code>javac -version</code> 命令查看 jdk 版本及其相关信息，不会出现 command not found 错误，且显示的版本信息与前面安装的一致。</p>
+<p><code>echo $JAVA_HOME</code>, <code>echo $CLASSPATH</code>, <code>echo $PATH</code>，看看自己的配置是否都正确。</p>
+<h3 id="3-开机设置"><a href="#3-开机设置" class="headerlink" title="3. 开机设置"></a><span style="font-size: 18px;">3. 开机设置</span></h3><p>每次重启服务器的时候，会发现 jdk 版本不正确，或者使用 <code>java -version</code> 显示不是所需版本，使用　<code>javac -version</code> 会出现 command not found 错误。</p>
+<p>解决方法是再次运行 <code>source /etc/profile</code>，使 <span style="color: #FF0000;">/etc/profile</span> 文件生效。显然每次这么操作很麻烦。</p>
+<p>因此我们编辑 <code>vim ~/.bashrc</code>，最后加一句 </p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile
+</code></pre>
+<h2 id="三、安装Elasticsearch"><a href="#三、安装Elasticsearch" class="headerlink" title="三、安装Elasticsearch"></a>三、安装Elasticsearch</h2><h3 id="1-下载安装-1"><a href="#1-下载安装-1" class="headerlink" title="1. 下载安装"></a><span style="font-size: 18px;">1. 下载安装</span></h3><p>登录官网 <a href="https://www.elastic.co/cn/downloads。" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/cn/downloads。</a></p>
+<p>选择下载 elasticsearch，根据需要选择对应的安装包，这里选择 5.6 版本，下载完后得到 elasticsearch-5.6.0.tar.gz</p>
+<p>操作系统中创建一个新用户专门用来管理 es：<code>adduser elasticsearch</code></p>
+<p>用 elasticsearch 用户将 elasticsearch-5.6.0.tar.gz 拷贝到 <span style="color: #FF0000;">/opt</span> 目录下。</p>
+<p>解压到当前目录，使用命令 <code>tar -zxvf elasticsearch-5.6.0.tar.gz</code>。</p>
+<p>删除压缩文件，使用命令 <code>rm -f elasticsearch-5.6.0.tar.gz</code>。</p>
+<p>至此，elasticsearch 安装完成</p>
+<h3 id="2-ES集群需要改的系统配置"><a href="#2-ES集群需要改的系统配置" class="headerlink" title="2. ES集群需要改的系统配置"></a><span style="font-size: 18px;">2. ES集群需要改的系统配置</span></h3><p><code>vim /etc/security/limits.conf</code></p>
+<pre class=" language-bash"><code class="language-bash">* soft nofile 65536
+* hard nofile 131072
+* soft nproc 2048
+* hard nproc 4096
+* soft memlock unlimited
+* hard memlock unlimited
+* - nofile 65536
+
+root soft nofile 65536
+root hard nofile 131072
+root soft nproc 2048
+root hard nproc 4096
+root soft memlock unlimited
+root hard memlock unlimited
+root - nofile 65536
+</code></pre>
+<p><code>vim /etc/sysctl.conf</code></p>
+<pre class=" language-bash"><code class="language-bash">vm.max_map_count<span class="token operator">=</span>655360
+vm.swappiness <span class="token operator">=</span> 0
+</code></pre>
+<p>并执行 <code>sysctl -p</code></p>
+<p>如果是 supervisor 托管的，修改 <span style="color: #FF0000;">/etc/supervisord.conf</span> 中的：<br>minfd = 65536<br>并重启 supervisor。</p>
+<h3 id="3-修改ES配置文件elasticsearch-yml"><a href="#3-修改ES配置文件elasticsearch-yml" class="headerlink" title="3. 修改ES配置文件elasticsearch.yml"></a><span style="font-size: 18px;">3. 修改ES配置文件elasticsearch.yml</span></h3><pre class=" language-bash"><code class="language-bash">bootstrap.memory_lock: <span class="token boolean">false</span>
+bootstrap.system_call_filter: <span class="token boolean">false</span>
+
+cluster.name: elasticsearch
+node.name: 192.168.10.201
+node.master: <span class="token boolean">true</span>
+node.data: <span class="token boolean">true</span>
+http.enabled: <span class="token boolean">true</span>
+network.host: 0.0.0.0
+discovery.zen.ping.unicast.hosts: <span class="token punctuation">[</span><span class="token string">"192.168.10.198"</span>,<span class="token string">"192.168.10.201"</span><span class="token punctuation">]</span>
+
+http.port: 9200
+
+script.engine.groovy.inline.update: on
+script.engine.groovy.inline.search: on
+script.engine.groovy.inline.aggs: on
+script.max_compilations_per_minute: 10000
+
+path.data: /data/es
+
+action.auto_create_index: cc-*,sc-*,.nina*,.security,.monitoring*,.watches,.triggered_watches,.watcher-history*
+
+</code></pre>
+<p>同时也要指定一下 <span style="color: #FF0000;">jvm.options</span>（同级目录下的一个配置文件） 里的 jvm 虚拟机内存。</p>
+<h3 id="4-ES交给supervisor托管"><a href="#4-ES交给supervisor托管" class="headerlink" title="4. ES交给supervisor托管"></a><span style="font-size: 18px;">4. ES交给supervisor托管</span></h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>program:elasticsearch<span class="token punctuation">]</span>
+user <span class="token operator">=</span> elasticsearch
+startsecs <span class="token operator">=</span> 3
+autostart <span class="token operator">=</span> <span class="token boolean">true</span>
+autorestart <span class="token operator">=</span> <span class="token boolean">true</span>
+startretries <span class="token operator">=</span> 3
+stdout_logfile<span class="token operator">=</span>NONE
+stderr_logfile<span class="token operator">=</span>NONE
+environment <span class="token operator">=</span> JAVA_HOME<span class="token operator">=</span><span class="token string">"/opt/jdk/"</span>, ES_JAVA_OPTS <span class="token operator">=</span> <span class="token string">"-Xms8g -Xmx8g"</span>
+<span class="token function">command</span> <span class="token operator">=</span> /opt/elasticsearch/bin/elasticsearch
+</code></pre>
+<h2 id="四、安装Kibana"><a href="#四、安装Kibana" class="headerlink" title="四、安装Kibana"></a>四、安装Kibana</h2><h3 id="1-从官网下载和es一样版本的Kibana"><a href="#1-从官网下载和es一样版本的Kibana" class="headerlink" title="1. 从官网下载和es一样版本的Kibana"></a><span style="font-size: 18px;">1. 从官网下载和es一样版本的Kibana</span></h3><p>拷贝到 <span style="color: #FF0000;">/opt</span> 目录，解压，修改配置文件 <span style="color: #FF0000;">kibana.yml</span>。</p>
+<pre class=" language-bash"><code class="language-bash">server.host: <span class="token string">"192.168.10.201"</span>
+elasticsearch.url: <span class="token string">"http://192.168.10.198:9200"</span>
+</code></pre>
+<h3 id="2-Kibana交给supervisor托管"><a href="#2-Kibana交给supervisor托管" class="headerlink" title="2. Kibana交给supervisor托管"></a><span style="font-size: 18px;">2. Kibana交给supervisor托管</span></h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>program:kibana<span class="token punctuation">]</span>
+startsecs <span class="token operator">=</span> 3
+autostart <span class="token operator">=</span> <span class="token boolean">true</span>
+autorestart <span class="token operator">=</span> <span class="token boolean">true</span>
+startretries <span class="token operator">=</span> 3
+redirect_stderr <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token function">command</span> <span class="token operator">=</span> /opt/kibana/bin/kibana
+stdout_logfile <span class="token operator">=</span> /var/log/kibana.log
+</code></pre>
+
+      </div>
+      <hr>
+
+      
+        <style>
+#reward {
+  margin: 40px 0;
+  text-align: center;
+}
+
+</style>
+
+<div id="reward">
+  <a href="/gift.html"><img src="/medias/reward/reward.png" style="width: 64px"></a>
+  <div style="margin-top: 5px;text-align: center; color: #888;">
+    博文对你有帮助吗？如果有的话，想不想<a href="/gift.html">送我一本书</a>呢？
+    <img src="/medias/reward/emoji.png" style="width: 24px;vertical-align: bottom"></div>
+</div>
+
+      
+
+      <!--<link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>-->
+
+      <div class="reprint">
+        <p>
+          <span class="reprint-tip">
+            <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+          </span>
+          <a href="https://www.wenyuanblog.com" class="b-link-green">文渊博客</a>
+          <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+          <a href="/blogs/elasticsearch-deployment.html" class="b-link-green">Elasticsearch部署步骤</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'IirbHl64M5MqyIVCnfJsdjvU-gzGzoHsz',
+        appKey: '9K4u0nf4Ret3ntR3Uh9FHqYs',
+        notify: 'false' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'false' === 'true',
+        avatar: '',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '记得留下您的昵称和邮箱...可以快速收到回复',
+        avatar_cdn: 'https://www.gravatar.com/avatar/'
+    });
+</script>
+  
+
+  
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/blogs/elasticsearch-backup-and-migration.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/elasticsearch.jpg" class="responsive-img" alt="Elasticsearch索引备份与迁移">
+                        
+                        <span class="card-title">Elasticsearch索引备份与迁移</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            总结 Elasticsearch 各种备份与迁移方案，亲测。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-03-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/运维知识/" class="post-category" target="_blank">
+                                    运维知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Elasticsearch/" target="_blank">
+                        <span class="chip bg-color">Elasticsearch</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 animated pulse" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/blogs/nginx-forward-proxy-and-reverse-proxy.html">
+                    <div class="card-image">
+                        
+                        <img src="/medias/blogimages/nginx.jpg" class="responsive-img" alt="Nginx正向代理与反向代理">
+                        
+                        <span class="card-title">Nginx正向代理与反向代理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            正/反向代理的区别，Nginx配置实现代理服务。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-11-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/运维知识/" class="post-category" target="_blank">
+                                    运维知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Nginx/" target="_blank">
+                        <span class="chip bg-color">Nginx</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+  </div>
+  <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+    <div class="toc-widget">
+      <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+      <div id="toc-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+  <div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+      <i class="fa fa-list"></i>
+    </a>
+  </div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+$(function() {
+  tocbot.init({
+    tocSelector: '#toc-content',
+    contentSelector: '#articleContent',
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -205,
+    headingSelector: 'h2, h3, h4'
+  });
+
+  // modify the toc link href to support Chinese.
+  let i = 0;
+  let tocHeading = 'toc-heading-';
+  $('#toc-content a').each(function() {
+    $(this).attr('href', '#' + tocHeading + (++i));
+  });
+
+  // modify the heading title id to support Chinese.
+  i = 0;
+  $('#articleContent').children('h2, h3, h4').each(function() {
+    $(this).attr('id', tocHeading + (++i));
+  });
+
+  // Set scroll toc fixed.
+  let tocHeight = parseInt($(window).height() * 0.4 - 64);
+  let $tocWidget = $('.toc-widget');
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop();
+    /* add post toc fixed. */
+    if (scroll > tocHeight) {
+      $tocWidget.addClass('toc-fixed');
+    } else {
+      $tocWidget.removeClass('toc-fixed');
+    }
+  });
+
+  
+  /* 修复文章卡片 div 的宽度. */
+  let fixPostCardWidth = function(srcId, targetId) {
+    let srcDiv = $('#' + srcId);
+    if (srcDiv.length === 0) {
+      return;
+    }
+
+    let w = srcDiv.width();
+    if (w >= 450) {
+      w = w + 21;
+    } else if (w >= 350 && w < 450) {
+      w = w + 18;
+    } else if (w >= 300 && w < 350) {
+      w = w + 16;
+    } else {
+      w = w + 14;
+    }
+    $('#' + targetId).width(w);
+  };
+
+  // 切换TOC目录展开收缩的相关操作.
+  const expandedClass = 'expanded';
+  let $tocAside = $('#toc-aside');
+  let $mainContent = $('#main-content');
+  $('#floating-toc-btn .btn-floating').click(function() {
+    if ($tocAside.hasClass(expandedClass)) {
+      $tocAside.removeClass(expandedClass).slideUp(500);
+      $mainContent.removeClass('l9');
+    } else {
+      $tocAside.addClass(expandedClass).slideDown(500);
+      $mainContent.addClass('l9');
+    }
+    fixPostCardWidth('artDetail', 'prenext-posts');
+  });
+  
+});
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color footer-cover">
+  <div class="container row center-align">
+    <div class="col s12 m8 l8 copy-right">
+      
+
+      
+      
+        <i class="fa fa-users">&nbsp;</i>欢迎访问：文渊的个人网站 - WenYuan's Personal Website.
+
+      <br>
+      <a href="http://www.wenyuanblog.com" target="_blank">
+        Copyright © 2018 - 2020 wenyuanblog.com All Rights Reserved.
+      </a>
+      <!--
+      <a href="http://www.wenyuanblog.com" target="_blank">
+        &nbsp;Powered by WenYuan
+      </a>
+      -->
+      <br>
+      <a href="http://www.beian.miit.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+        <span>备案号：苏ICP备19003118号-1</span>
+      </a>
+      <a href="http://www.beian.gov.cn" target="_blank" style="text-decoration:none;" draggable="false" rel="external nofollow noopener noreferrer">
+        <span>苏公网安备 32020602000865号</span>
+      </a>
+    </div>
+    <div class="col s12 m4 l4 social-link ">
+  <a href="https://github.com/wenyuan/blog" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-git"></i>
+  </a>
+
+
+
+  <a href="mailto:wenyuan.xu@vip.163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50" rel="external nofollow noopener noreferrer">
+    <i class="fa fa-envelope-open"></i>
+  </a>
+
+
+
+
+
+
+
+  <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+  </a>
+
+
+<script>
+function wechatShow() {
+  layer.open({
+    type: 2,
+    title: false,
+    closeBtn: 0,
+    area: ['200px', '200px'],
+    offset: 'rb',
+    skin: 'layui-layer-nobg', //没有背景色
+    shadeClose: true,
+    content: ''
+  });
+}
+</script>
+</div>
+  </div>
+</footer>
+
+<!-- End of website body -->
+
+<!-- Components: Search Box -->
+<div id="searchModal" class="modal">
+  <div class="modal-content">
+    <div class="search-header">
+      <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+      <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+    </div>
+    <div id="searchResult"></div>
+  </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function() {
+  searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- Components: Back to Top -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<!-- Baidu Analytics -->
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ffafc579f91ca273792cb428f9ef63d5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+<!-- Baidu Push -->
+
+    <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+
+
+
+
+
+<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="/libs/layer-v3.1.1/layer/layer.js"></script>
+<!--<script src="/js/jquery.ripples.min.js"></script>-->
+<script src="/js/clipboard.min.js"></script>
+
+
+<script src="/js/vue.js"></script>
+
+<div id="rightClickMenu">
+  <ul class="list-group" style="margin: 0">
+    <li class="list-group-item disabled" style="text-align: center; line-height: 50px; border-bottom: 1px #ddd solid;">
+      欢迎访问我的博客
+    </li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;IP：<span id="client-ip">127.0.0.1</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;地址：<span id="client-location">本地</span></li>
+    <li class="list-group-item" style="border-bottom: 1px #ddd solid;">&#12288;&nbsp;系统：<span id="client-os">Windows10</span></li>
+    <li class="list-group-item">&#12288;&nbsp;浏览器：<span id="client-browser">Chrome47</span></li>
+  </ul>
+</div>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>
