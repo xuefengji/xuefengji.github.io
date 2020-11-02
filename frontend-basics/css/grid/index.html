@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Grid 布局 | 前端修炼小册</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script charset="utf-8" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script charset="utf-8" src="/js/main.js"></script>
+    <meta name="description" content="Wenyuan's Front-End Development Book">
+    <meta name="author" content="wenyuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="preload" href="/assets/css/0.styles.13b2da0c.css" as="style"><link rel="preload" href="/assets/js/app.2fbd5b99.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.18a5017f.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.6bf330a1.js" as="script"><link rel="preload" href="/assets/js/page-Grid布局--49593358.2b2881c9.js" as="script"><link rel="prefetch" href="/assets/js/layout-Blog.433c5dbd.js"><link rel="prefetch" href="/assets/js/layout-Layout.41206fcc.js"><link rel="prefetch" href="/assets/js/layout-NotFound.3bd50c83.js"><link rel="prefetch" href="/assets/js/page--1023afe2.cf114e16.js"><link rel="prefetch" href="/assets/js/page--225e7fc0.1deff0b1.js"><link rel="prefetch" href="/assets/js/page-BFC--5e44e96a.bb10f035.js"><link rel="prefetch" href="/assets/js/page-CSS--3d96f347.243b9c0d.js"><link rel="prefetch" href="/assets/js/page-CSS引入方式--7f764570.22e35583.js"><link rel="prefetch" href="/assets/js/page-CSS问题--874255f6.b5e1c09e.js"><link rel="prefetch" href="/assets/js/page-Flexbox布局--70aef1ca.96c221d8.js"><link rel="prefetch" href="/assets/js/page-HTML--0e153407.9dabfb88.js"><link rel="prefetch" href="/assets/js/page-HTML基本结构--bad6a678.e4f4711f.js"><link rel="prefetch" href="/assets/js/page-HTML问题--c5b3c832.b41a4b5c.js"><link rel="prefetch" href="/assets/js/page-Home--729d88f7.5176f31d.js"><link rel="prefetch" href="/assets/js/page-JavaScript--713abc47.829ba22c.js"><link rel="prefetch" href="/assets/js/page-Vuejs--5286914f.5d6745d9.js"><link rel="prefetch" href="/assets/js/page-this指向--4caae304.282ea005.js"><link rel="prefetch" href="/assets/js/page-事件循环机制，微任务和宏任务的关系--360e9eb8.4338d87f.js"><link rel="prefetch" href="/assets/js/page-伪元素和伪类--42a17178.25ffb427.js"><link rel="prefetch" href="/assets/js/page-作用域--601b6a0e.0b06a5c0.js"><link rel="prefetch" href="/assets/js/page-关于本站--73bdf728.6422192e.js"><link rel="prefetch" href="/assets/js/page-写作规范--167b6d11.635361a2.js"><link rel="prefetch" href="/assets/js/page-前端基础--e379337c.4af14e82.js"><link rel="prefetch" href="/assets/js/page-前言--1b2ae04c.eba35c32.js"><link rel="prefetch" href="/assets/js/page-原型与原型链--29f4760c.4be7ab87.js"><link rel="prefetch" href="/assets/js/page-同步与异步--01469684.22399c1b.js"><link rel="prefetch" href="/assets/js/page-声明函数的六种方式--dfb3d838.edb6ab3e.js"><link rel="prefetch" href="/assets/js/page-定位（position）--2772d9ac.5ef8e68d.js"><link rel="prefetch" href="/assets/js/page-执行上下文--ff11e27c.c580a29e.js"><link rel="prefetch" href="/assets/js/page-数据类型--50ad3dc4.ba150c7f.js"><link rel="prefetch" href="/assets/js/page-更新日志--6b3ccd5a.a1f02477.js"><link rel="prefetch" href="/assets/js/page-未完待续--30d94570.7e829154.js"><link rel="prefetch" href="/assets/js/page-未完待续--ace7f3a8.00b362e3.js"><link rel="prefetch" href="/assets/js/page-未完待续--f8a2fbac.4728043d.js"><link rel="prefetch" href="/assets/js/page-浮动（float）--2bcae454.90e2e4cb.js"><link rel="prefetch" href="/assets/js/page-理解响应式数据--b50797ec.3f590300.js"><link rel="prefetch" href="/assets/js/page-盒模型--396b992c.506e4c2f.js"><link rel="prefetch" href="/assets/js/page-知识体系总览--af599312.a1d83e95.js"><link rel="prefetch" href="/assets/js/page-经典布局--4a8c3b4c.2345be05.js"><link rel="prefetch" href="/assets/js/page-继承--6cb4f262.a73fa4e6.js"><link rel="prefetch" href="/assets/js/page-语义类标签--0543807e.7159e658.js"><link rel="prefetch" href="/assets/js/page-调用函数的四种方式--4c34b82c.2c7f6a10.js"><link rel="prefetch" href="/assets/js/page-选择器与样式优先级--d300e02c.610a8719.js"><link rel="prefetch" href="/assets/js/page-长度和单位--c3927e88.20317465.js"><link rel="prefetch" href="/assets/js/page-闭包--76d85600.4b40d07f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.13b2da0c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><span class="icon"></span></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="前端修炼小册" class="logo"> <!----> <span class="site-name can-hide">前端修炼小册</span></a> <div class="links"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前言" class="dropdown-title"><span class="title"><!---->
+      前言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前言" class="mobile-dropdown-title"><span class="title"><!---->
+      前言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/foreword/roadmap/" class="nav-link"><!---->
+  知识体系
+</a></li><li class="dropdown-item"><!----> <a href="/foreword/document-style-guide/" class="nav-link"><!---->
+  写作规范
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title"><!---->
+      前端基础
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title"><!---->
+      前端基础
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-basics/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-basics/css/" class="nav-link router-link-active"><!---->
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-basics/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试相关" class="dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="面试相关" class="mobile-dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/html/" class="nav-link"><!---->
+  HTML 问题
+</a></li><li class="dropdown-item"><!----> <a href="/interview/css/" class="nav-link"><!---->
+  CSS 问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/share/" class="nav-link"><!---->
+  随心分享
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="线路" class="dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="线路" class="mobile-dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内(主)
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://winyuan.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内(备)
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://wenyuan.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前言" class="dropdown-title"><span class="title"><!---->
+      前言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前言" class="mobile-dropdown-title"><span class="title"><!---->
+      前言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/foreword/roadmap/" class="nav-link"><!---->
+  知识体系
+</a></li><li class="dropdown-item"><!----> <a href="/foreword/document-style-guide/" class="nav-link"><!---->
+  写作规范
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title"><!---->
+      前端基础
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title"><!---->
+      前端基础
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-basics/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-basics/css/" class="nav-link router-link-active"><!---->
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-basics/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试相关" class="dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="面试相关" class="mobile-dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/html/" class="nav-link"><!---->
+  HTML 问题
+</a></li><li class="dropdown-item"><!----> <a href="/interview/css/" class="nav-link"><!---->
+  CSS 问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/share/" class="nav-link"><!---->
+  随心分享
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="线路" class="dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="线路" class="mobile-dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内(主)
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://winyuan.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内(备)
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://wenyuan.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/frontend-basics/css/" class="sidebar-heading clickable router-link-active open"><!----> <span>CSS</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontend-basics/css/ways-to-insert-css/" class="sidebar-link">CSS 引入方式</a></li><li><a href="/frontend-basics/css/selectors-and-selector-priority/" class="sidebar-link">选择器与样式优先级</a></li><li><a href="/frontend-basics/css/pseudo-elements-and-pseudo-classes/" class="sidebar-link">伪元素和伪类</a></li><li><a href="/frontend-basics/css/length-and-units/" class="sidebar-link">长度和单位</a></li><li><a href="/frontend-basics/css/box-model/" class="sidebar-link">盒模型</a></li><li><a href="/frontend-basics/css/position-property/" class="sidebar-link">定位（position）</a></li><li><a href="/frontend-basics/css/float-property/" class="sidebar-link">浮动（float）</a></li><li><a href="/frontend-basics/css/bfc/" class="sidebar-link">BFC</a></li><li><a href="/frontend-basics/css/layout/" class="sidebar-link">经典布局</a></li><li><a href="/frontend-basics/css/flexbox/" class="sidebar-link">Flexbox 布局</a></li><li><a href="/frontend-basics/css/grid/" aria-current="page" class="active sidebar-link">Grid 布局</a></li><li><a href="/frontend-basics/css/to-be-continued/" class="sidebar-link">未完待续</a></li></ul></section></li></ul> </aside> <main class="page"><nav class="breadcrumb disable"><!----></nav>  <!----> <!----> <div class="theme-default-content content__default"><h1 id="grid-布局"><a href="#grid-布局" class="header-anchor">#</a> Grid 布局</h1> <p>Grid 网格布局虽然强大，但由于其兼容性比 Flex 更差一点，目前并未得到全面应用。这主要取决于现代化浏览器的普及率（有些单位还是会更多地使用 IE）。</p> <p>但作为一种全新的布局方式，随着现代化浏览器的逐渐普及，再加上不可能总是做面向 IE 客户的产品，Grid 网格布局未来也许会是一种趋势。</p> <p>因此这一章节先放两篇比较好的Grid 网格布局文章，等以后用到了再系统整理。</p> <ul><li>《<a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank" rel="noopener noreferrer">CSS Grid 网格布局教程 - 阮一峰<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>》</li> <li>《<a href="https://www.html.cn/archives/8510" target="_blank" rel="noopener noreferrer">Flexbox 布局完全指南(图解 Flexbox 布局详细教程)<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>》</li></ul></div> <aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"></ul></div></aside> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wenyuan/fedbook/edit/master/docs/frontend-basics/css/grid.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次编辑于:</span> <span class="time">2020年10月29日 18:08</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/frontend-basics/css/flexbox/" class="prev"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="icon prev-icon"><path d="M906.78272 588.78976c-0.02048 8.4992-6.88128 15.36-15.38048 15.37024l-443.6992-0.01024 75.70432 191.68256c2.51904 6.42048 0.48128 13.76256-5.03808 17.90976-5.51936 4.16768-13.13792 4.1472-18.61632-0.09216l-376.5248-289.47456c-3.77856-2.89792-6.00064-7.41376-6.00064-12.16512 0-4.78208 2.22208-9.27744 6.00064-12.1856l376.5248-289.47456c2.7648-2.11968 6.06208-3.19488 9.37984-3.19488 3.23584 0 6.5024 1.03424 9.23648 3.10272 5.51936 4.1472 7.5776 11.48928 5.03808 17.90976L447.68256 419.84l443.71968-0.01024c8.4992 0.01024 15.36 6.88128 15.36 15.36L906.78272 588.78976z" fill="currentColor"></path></svg>
+        Flexbox 布局
+      </a></span> <span class="next"><a href="/frontend-basics/css/to-be-continued/">
+        未完待续
+        <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" class="icon next-icon"><path d="M906.77248 512c0 4.77184-2.21184 9.2672-5.9904 12.17536l-376.5248 289.4848c-2.7648 2.11968-6.06208 3.18464-9.3696 3.18464-3.25632 0-6.5024-1.03424-9.24672-3.09248-5.50912-4.15744-7.5776-11.48928-5.03808-17.90976l75.71456-191.67232L132.58752 604.17024c-8.48896 0-15.36-6.88128-15.36-15.36l0-153.6c0-8.48896 6.87104-15.36 15.36-15.36l443.72992 0-75.71456-191.68256c-2.53952-6.42048-0.47104-13.75232 5.04832-17.90976 5.50912-4.15744 13.12768-4.13696 18.60608 0.09216l376.5248 289.4848C904.56064 502.7328 906.77248 507.22816 906.77248 512z" fill="currentColor"></path></svg></a></span></p></div> <!----> <!----> </main></div><div class="global-ui"><!----><div tabindex="-1" role="dialog" aria-hidden="true" class="pswp"><div class="pswp__bg"></div> <div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div> <div class="pswp__item"></div> <div class="pswp__item"></div></div> <div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div> <button title="Close (Esc)" class="pswp__button pswp__button--close"></button> <button title="Share" class="pswp__button pswp__button--share"></button> <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button> <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button> <div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div> <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div> <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button> <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button> <div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div></div></div>
+    <script src="/assets/js/app.2fbd5b99.js" defer></script><script src="/assets/js/vendors~layout-Layout.18a5017f.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.6bf330a1.js" defer></script><script src="/assets/js/page-Grid布局--49593358.2b2881c9.js" defer></script>
+  </body>
+</html>
