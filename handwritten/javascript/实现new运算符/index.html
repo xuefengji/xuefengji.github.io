@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>实现 new | 前端修炼小册</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script charset="utf-8" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script charset="utf-8" src="/js/main.js"></script>
+    <meta name="description" content="Wenyuan's Front-End Development Book">
+    <link rel="preload" href="/assets/css/0.styles.032af4b5.css" as="style"><link rel="preload" href="/assets/js/app.837ae494.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.0ee4718e.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.fb3afbc7.js" as="script"><link rel="preload" href="/assets/js/page-实现new.cd3ae139.js" as="script"><link rel="prefetch" href="/assets/js/79.623d6b20.js"><link rel="prefetch" href="/assets/js/80.ba23587f.js"><link rel="prefetch" href="/assets/js/81.351d476e.js"><link rel="prefetch" href="/assets/js/82.025dded7.js"><link rel="prefetch" href="/assets/js/layout-Blog.dab7760c.js"><link rel="prefetch" href="/assets/js/layout-Layout.80a05bb8.js"><link rel="prefetch" href="/assets/js/layout-NotFound.e1661076.js"><link rel="prefetch" href="/assets/js/page-BFC.a4e8989e.js"><link rel="prefetch" href="/assets/js/page-CSS.2471b767.js"><link rel="prefetch" href="/assets/js/page-CSS引入方式.121b56ed.js"><link rel="prefetch" href="/assets/js/page-CSS规范.ad21b521.js"><link rel="prefetch" href="/assets/js/page-CSS问题.8c1c1c44.js"><link rel="prefetch" href="/assets/js/page-Flexbox布局.5caca826.js"><link rel="prefetch" href="/assets/js/page-Grid布局.f57ab487.js"><link rel="prefetch" href="/assets/js/page-HTML.c0f656f1.js"><link rel="prefetch" href="/assets/js/page-HTML基本结构.db18febe.js"><link rel="prefetch" href="/assets/js/page-HTML规范.dbaa9d68.js"><link rel="prefetch" href="/assets/js/page-HTML问题.80d7003e.js"><link rel="prefetch" href="/assets/js/page-Home.dfb9ff24.js"><link rel="prefetch" href="/assets/js/page-JavaScript.20bd2218.js"><link rel="prefetch" href="/assets/js/page-JavaScript手写函数.eba4121d.js"><link rel="prefetch" href="/assets/js/page-JavaScript规范.e11734b5.js"><link rel="prefetch" href="/assets/js/page-Python.d42124f9.js"><link rel="prefetch" href="/assets/js/page-Vuejs.6a93f09b.js"><link rel="prefetch" href="/assets/js/page-Vue项目规范.21d278d4.js"><link rel="prefetch" href="/assets/js/page-this指向.0f2b7ffb.js"><link rel="prefetch" href="/assets/js/page-事件循环机制，微任务和宏任务的关系.62e841a9.js"><link rel="prefetch" href="/assets/js/page-代码风格.f290e424.js"><link rel="prefetch" href="/assets/js/page-伪元素和伪类.1b50a534.js"><link rel="prefetch" href="/assets/js/page-作用域.4196c7e4.js"><link rel="prefetch" href="/assets/js/page-关于本站.48b79578.js"><link rel="prefetch" href="/assets/js/page-函数参数.67efb52b.js"><link rel="prefetch" href="/assets/js/page-函数柯里化.ad2e2683.js"><link rel="prefetch" href="/assets/js/page-函数装饰器.f12cd367.js"><link rel="prefetch" href="/assets/js/page-原型与原型链.1acde7e4.js"><link rel="prefetch" href="/assets/js/page-变量与常量.d11726a2.js"><link rel="prefetch" href="/assets/js/page-同步与异步.c53421d4.js"><link rel="prefetch" href="/assets/js/page-声明函数的六种方式.f3559218.js"><link rel="prefetch" href="/assets/js/page-复杂度分析.6a6e9ab3.js"><link rel="prefetch" href="/assets/js/page-定位（position）.fc8e54e8.js"><link rel="prefetch" href="/assets/js/page-实现Objectcreate.c195d013.js"><link rel="prefetch" href="/assets/js/page-实现apply方法.749f87c2.js"><link rel="prefetch" href="/assets/js/page-实现bind方法.65926949.js"><link rel="prefetch" href="/assets/js/page-实现call方法.2db18c41.js"><link rel="prefetch" href="/assets/js/page-实现instanceof.da21db88.js"><link rel="prefetch" href="/assets/js/page-实现浅克隆（shallowClone）.b4bf384d.js"><link rel="prefetch" href="/assets/js/page-实现深克隆（deepClone）.5789f94f.js"><link rel="prefetch" href="/assets/js/page-实现节流函数（throttle）.5052861b.js"><link rel="prefetch" href="/assets/js/page-实现防抖函数（debounce）.e0151434.js"><link rel="prefetch" href="/assets/js/page-执行上下文.e92e6e09.js"><link rel="prefetch" href="/assets/js/page-数据类型.149e96f9.js"><link rel="prefetch" href="/assets/js/page-数据结构与算法.8ff5fd25.js"><link rel="prefetch" href="/assets/js/page-数据结构之数组.b5aee5d1.js"><link rel="prefetch" href="/assets/js/page-数据结构之链表.d8e7a849.js"><link rel="prefetch" href="/assets/js/page-数组遍历的几种方式.73076cb4.js"><link rel="prefetch" href="/assets/js/page-文档规范.07b6ca94.js"><link rel="prefetch" href="/assets/js/page-更新日志.d8f3ef0f.js"><link rel="prefetch" href="/assets/js/page-未完待续.9e514764.js"><link rel="prefetch" href="/assets/js/page-浅克隆与深克隆.c82c5fc8.js"><link rel="prefetch" href="/assets/js/page-浮动（float）.9b5268a7.js"><link rel="prefetch" href="/assets/js/page-理解响应式数据.e5673f5b.js"><link rel="prefetch" href="/assets/js/page-盒模型.05d0cdb0.js"><link rel="prefetch" href="/assets/js/page-类和实例.41923b35.js"><link rel="prefetch" href="/assets/js/page-类成员保护.02e3c6b2.js"><link rel="prefetch" href="/assets/js/page-类的继承.626d6e17.js"><link rel="prefetch" href="/assets/js/page-经典布局.f71c7025.js"><link rel="prefetch" href="/assets/js/page-继承的八种方式.9fa29f60.js"><link rel="prefetch" href="/assets/js/page-编译器与解释器.d638ec15.js"><link rel="prefetch" href="/assets/js/page-语义类标签.a7729814.js"><link rel="prefetch" href="/assets/js/page-语法规范.446bf98c.js"><link rel="prefetch" href="/assets/js/page-调用函数的四种方式.9d3f2fe6.js"><link rel="prefetch" href="/assets/js/page-选择器与样式优先级.d32795bc.js"><link rel="prefetch" href="/assets/js/page-长度和单位.6d4fb317.js"><link rel="prefetch" href="/assets/js/page-闭包.ba0b527e.js"><link rel="prefetch" href="/assets/js/page-面向对象编程.f058048e.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.7b43130e.js"><link rel="prefetch" href="/assets/js/vendors~layout-Slide.5ef8935f.js"><link rel="prefetch" href="/assets/js/vendors~reveal.ebe5634a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.032af4b5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><button class="sidebar-button"><span class="icon"></span></button> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="前端修炼小册" class="logo"> <!----> <span class="site-name can-hide">前端修炼小册</span></a> <div class="links"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="风格指南" class="mobile-dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-languages/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="后端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-languages/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="编程进阶" class="mobile-dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/advanced-programming/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="手写系列" class="mobile-dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/handwritten/javascript/" class="nav-link router-link-active"><!---->
+  JavaScript 手写函数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试相关" class="dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="面试相关" class="mobile-dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/html/" class="nav-link"><!---->
+  HTML 问题
+</a></li><li class="dropdown-item"><!----> <a href="/interview/css/" class="nav-link"><!---->
+  CSS 问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="线路" class="dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="线路" class="mobile-dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="风格指南" class="mobile-dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-languages/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="后端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-languages/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="编程进阶" class="mobile-dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/advanced-programming/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="手写系列" class="mobile-dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/handwritten/javascript/" class="nav-link router-link-active"><!---->
+  JavaScript 手写函数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试相关" class="dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="面试相关" class="mobile-dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/html/" class="nav-link"><!---->
+  HTML 问题
+</a></li><li class="dropdown-item"><!----> <a href="/interview/css/" class="nav-link"><!---->
+  CSS 问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="线路" class="dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="线路" class="mobile-dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/handwritten/javascript/" class="sidebar-heading clickable router-link-active open"><!----> <span>JavaScript 手写函数</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0%E9%98%B2%E6%8A%96%E5%87%BD%E6%95%B0-debounce/" class="sidebar-link">实现防抖函数（debounce）</a></li><li><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0-throttle/" class="sidebar-link">实现节流函数（throttle）</a></li><li><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0%E6%B5%85%E5%85%8B%E9%9A%86-shallow-clone/" class="sidebar-link">实现浅克隆（shallowClone）</a></li><li><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0%E6%B7%B1%E5%85%8B%E9%9A%86-deep-clone/" class="sidebar-link">实现深克隆（deepClone）</a></li><li><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0instanceof%E8%BF%90%E7%AE%97%E7%AC%A6/" class="sidebar-link">实现 instanceof 运算符</a></li><li><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0object-create%E6%96%B9%E6%B3%95/" class="sidebar-link">实现 Object.create 方法</a></li><li><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0new%E8%BF%90%E7%AE%97%E7%AC%A6/" aria-current="page" class="active sidebar-link">实现 new 运算符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0new%E8%BF%90%E7%AE%97%E7%AC%A6/#_1-功能描述" class="sidebar-link">1. 功能描述</a></li><li class="sidebar-sub-header"><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0new%E8%BF%90%E7%AE%97%E7%AC%A6/#_2-实现思路" class="sidebar-link">2. 实现思路</a></li><li class="sidebar-sub-header"><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0new%E8%BF%90%E7%AE%97%E7%AC%A6/#_3-手写实现" class="sidebar-link">3. 手写实现</a></li><li class="sidebar-sub-header"><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0new%E8%BF%90%E7%AE%97%E7%AC%A6/#_4-测试用例" class="sidebar-link">4. 测试用例</a></li></ul></li><li><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0call%E6%96%B9%E6%B3%95/" class="sidebar-link">实现 call 方法</a></li><li><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0apply%E6%96%B9%E6%B3%95/" class="sidebar-link">实现 apply 方法</a></li><li><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0bind%E6%96%B9%E6%B3%95/" class="sidebar-link">实现 bind 方法</a></li><li><a href="/handwritten/javascript/to-be-continued/" class="sidebar-link">未完待续</a></li></ul></section></li></ul> </aside> <main class="page"><nav class="breadcrumb disable"><!----></nav>  <!----> <!----> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"><li class="anchor anchor2"><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0new%E8%BF%90%E7%AE%97%E7%AC%A6/#_1-功能描述" class="anchor-link"><div>1. 功能描述</div></a></li><li class="anchor anchor2"><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0new%E8%BF%90%E7%AE%97%E7%AC%A6/#_2-实现思路" class="anchor-link"><div>2. 实现思路</div></a></li><li class="anchor anchor2"><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0new%E8%BF%90%E7%AE%97%E7%AC%A6/#_3-手写实现" class="anchor-link"><div>3. 手写实现</div></a></li><li class="anchor anchor2"><a href="/handwritten/javascript/%E5%AE%9E%E7%8E%B0new%E8%BF%90%E7%AE%97%E7%AC%A6/#_4-测试用例" class="anchor-link"><div>4. 测试用例</div></a></li></ul></div></aside></div> <div class="theme-default-content content__default"><h1 id="实现-new"><a href="#实现-new" class="header-anchor">#</a> 实现 new</h1> <h2 id="_1-功能描述"><a href="#_1-功能描述" class="header-anchor">#</a> 1. 功能描述</h2> <p><code>new</code> 运算符用于创建一个自定义对象的实例，或具有构造函数的内置对象的实例。</p> <h2 id="_2-实现思路"><a href="#_2-实现思路" class="header-anchor">#</a> 2. 实现思路</h2> <ul><li>步骤 1：创建构造函数的实例对象，这个对象的 <code>__proto__</code> 要指向构造函数的 <code>prototype</code></li> <li>步骤 2：把构造函数当作普通函数执行，并改变 <code>this</code> 指向</li> <li>步骤 3：分析构造函数的返回值
+<ul><li>返回值为 <code>object</code> 或 <code>function</code> 类型则作为 <code>new</code> 方法的返回值返回；</li> <li>否则返回构造函数的实例对象。</li></ul></li></ul> <h2 id="_3-手写实现"><a href="#_3-手写实现" class="header-anchor">#</a> 3. 手写实现</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">/**
+  * Func：要操作的构造函数（最后要创建这个构造函数的实例）
+  * args：存储未来传递给构造函数 Func 的实参
+  */</span>
+<span class="token keyword">function</span> <span class="token function">myNew</span><span class="token punctuation">(</span><span class="token parameter">Func<span class="token punctuation">,</span> <span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 创建一个 Func 的实例对象（实例.__proto__ = 构造函数.prototype）</span>
+  <span class="token keyword">let</span> instance <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Func</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 把 Func 当做普通函数执行，并将其 this 指向 instance</span>
+  <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token function">Func</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>instance<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 分析构造函数的返回值</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token regex">/^(object|function)$/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> result<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="_4-测试用例"><a href="#_4-测试用例" class="header-anchor">#</a> 4. 测试用例</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 对比两个输出结果</span>
+<span class="token keyword">const</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'zhangsan'</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'new:'</span><span class="token punctuation">,</span> p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> p2 <span class="token operator">=</span> <span class="token function">myNew</span><span class="token punctuation">(</span>Person<span class="token punctuation">,</span> <span class="token string">'zhangsan'</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'myNew:'</span><span class="token punctuation">,</span> p2<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>（完）</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wenyuan/fedbook/edit/master/docs/handwritten/javascript/实现new运算符.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次编辑于:</span> <span class="time">2021年4月2日 15:59</span></div></footer> <!----> <!----> </main> <!----></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.837ae494.js" defer></script><script src="/assets/js/vendors~layout-Layout.0ee4718e.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.fb3afbc7.js" defer></script><script src="/assets/js/page-实现new.cd3ae139.js" defer></script>
+  </body>
+</html>

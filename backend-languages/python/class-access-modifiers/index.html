@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>类成员保护 | 前端修炼小册</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script charset="utf-8" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script charset="utf-8" src="/js/main.js"></script>
+    <meta name="description" content="Wenyuan's Front-End Development Book">
+    <link rel="preload" href="/assets/css/0.styles.032af4b5.css" as="style"><link rel="preload" href="/assets/js/app.837ae494.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.0ee4718e.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.fb3afbc7.js" as="script"><link rel="preload" href="/assets/js/page-类成员保护.02e3c6b2.js" as="script"><link rel="prefetch" href="/assets/js/79.623d6b20.js"><link rel="prefetch" href="/assets/js/80.ba23587f.js"><link rel="prefetch" href="/assets/js/81.351d476e.js"><link rel="prefetch" href="/assets/js/82.025dded7.js"><link rel="prefetch" href="/assets/js/layout-Blog.dab7760c.js"><link rel="prefetch" href="/assets/js/layout-Layout.80a05bb8.js"><link rel="prefetch" href="/assets/js/layout-NotFound.e1661076.js"><link rel="prefetch" href="/assets/js/page-BFC.a4e8989e.js"><link rel="prefetch" href="/assets/js/page-CSS.2471b767.js"><link rel="prefetch" href="/assets/js/page-CSS引入方式.121b56ed.js"><link rel="prefetch" href="/assets/js/page-CSS规范.ad21b521.js"><link rel="prefetch" href="/assets/js/page-CSS问题.8c1c1c44.js"><link rel="prefetch" href="/assets/js/page-Flexbox布局.5caca826.js"><link rel="prefetch" href="/assets/js/page-Grid布局.f57ab487.js"><link rel="prefetch" href="/assets/js/page-HTML.c0f656f1.js"><link rel="prefetch" href="/assets/js/page-HTML基本结构.db18febe.js"><link rel="prefetch" href="/assets/js/page-HTML规范.dbaa9d68.js"><link rel="prefetch" href="/assets/js/page-HTML问题.80d7003e.js"><link rel="prefetch" href="/assets/js/page-Home.dfb9ff24.js"><link rel="prefetch" href="/assets/js/page-JavaScript.20bd2218.js"><link rel="prefetch" href="/assets/js/page-JavaScript手写函数.eba4121d.js"><link rel="prefetch" href="/assets/js/page-JavaScript规范.e11734b5.js"><link rel="prefetch" href="/assets/js/page-Python.d42124f9.js"><link rel="prefetch" href="/assets/js/page-Vuejs.6a93f09b.js"><link rel="prefetch" href="/assets/js/page-Vue项目规范.21d278d4.js"><link rel="prefetch" href="/assets/js/page-this指向.0f2b7ffb.js"><link rel="prefetch" href="/assets/js/page-事件循环机制，微任务和宏任务的关系.62e841a9.js"><link rel="prefetch" href="/assets/js/page-代码风格.f290e424.js"><link rel="prefetch" href="/assets/js/page-伪元素和伪类.1b50a534.js"><link rel="prefetch" href="/assets/js/page-作用域.4196c7e4.js"><link rel="prefetch" href="/assets/js/page-关于本站.48b79578.js"><link rel="prefetch" href="/assets/js/page-函数参数.67efb52b.js"><link rel="prefetch" href="/assets/js/page-函数柯里化.ad2e2683.js"><link rel="prefetch" href="/assets/js/page-函数装饰器.f12cd367.js"><link rel="prefetch" href="/assets/js/page-原型与原型链.1acde7e4.js"><link rel="prefetch" href="/assets/js/page-变量与常量.d11726a2.js"><link rel="prefetch" href="/assets/js/page-同步与异步.c53421d4.js"><link rel="prefetch" href="/assets/js/page-声明函数的六种方式.f3559218.js"><link rel="prefetch" href="/assets/js/page-复杂度分析.6a6e9ab3.js"><link rel="prefetch" href="/assets/js/page-定位（position）.fc8e54e8.js"><link rel="prefetch" href="/assets/js/page-实现Objectcreate.c195d013.js"><link rel="prefetch" href="/assets/js/page-实现apply方法.749f87c2.js"><link rel="prefetch" href="/assets/js/page-实现bind方法.65926949.js"><link rel="prefetch" href="/assets/js/page-实现call方法.2db18c41.js"><link rel="prefetch" href="/assets/js/page-实现instanceof.da21db88.js"><link rel="prefetch" href="/assets/js/page-实现new.cd3ae139.js"><link rel="prefetch" href="/assets/js/page-实现浅克隆（shallowClone）.b4bf384d.js"><link rel="prefetch" href="/assets/js/page-实现深克隆（deepClone）.5789f94f.js"><link rel="prefetch" href="/assets/js/page-实现节流函数（throttle）.5052861b.js"><link rel="prefetch" href="/assets/js/page-实现防抖函数（debounce）.e0151434.js"><link rel="prefetch" href="/assets/js/page-执行上下文.e92e6e09.js"><link rel="prefetch" href="/assets/js/page-数据类型.149e96f9.js"><link rel="prefetch" href="/assets/js/page-数据结构与算法.8ff5fd25.js"><link rel="prefetch" href="/assets/js/page-数据结构之数组.b5aee5d1.js"><link rel="prefetch" href="/assets/js/page-数据结构之链表.d8e7a849.js"><link rel="prefetch" href="/assets/js/page-数组遍历的几种方式.73076cb4.js"><link rel="prefetch" href="/assets/js/page-文档规范.07b6ca94.js"><link rel="prefetch" href="/assets/js/page-更新日志.d8f3ef0f.js"><link rel="prefetch" href="/assets/js/page-未完待续.9e514764.js"><link rel="prefetch" href="/assets/js/page-浅克隆与深克隆.c82c5fc8.js"><link rel="prefetch" href="/assets/js/page-浮动（float）.9b5268a7.js"><link rel="prefetch" href="/assets/js/page-理解响应式数据.e5673f5b.js"><link rel="prefetch" href="/assets/js/page-盒模型.05d0cdb0.js"><link rel="prefetch" href="/assets/js/page-类和实例.41923b35.js"><link rel="prefetch" href="/assets/js/page-类的继承.626d6e17.js"><link rel="prefetch" href="/assets/js/page-经典布局.f71c7025.js"><link rel="prefetch" href="/assets/js/page-继承的八种方式.9fa29f60.js"><link rel="prefetch" href="/assets/js/page-编译器与解释器.d638ec15.js"><link rel="prefetch" href="/assets/js/page-语义类标签.a7729814.js"><link rel="prefetch" href="/assets/js/page-语法规范.446bf98c.js"><link rel="prefetch" href="/assets/js/page-调用函数的四种方式.9d3f2fe6.js"><link rel="prefetch" href="/assets/js/page-选择器与样式优先级.d32795bc.js"><link rel="prefetch" href="/assets/js/page-长度和单位.6d4fb317.js"><link rel="prefetch" href="/assets/js/page-闭包.ba0b527e.js"><link rel="prefetch" href="/assets/js/page-面向对象编程.f058048e.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.7b43130e.js"><link rel="prefetch" href="/assets/js/vendors~layout-Slide.5ef8935f.js"><link rel="prefetch" href="/assets/js/vendors~reveal.ebe5634a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.032af4b5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><button class="sidebar-button"><span class="icon"></span></button> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="前端修炼小册" class="logo"> <!----> <span class="site-name can-hide">前端修炼小册</span></a> <div class="links"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="风格指南" class="mobile-dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-languages/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="后端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-languages/python/" class="nav-link router-link-active"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="编程进阶" class="mobile-dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/advanced-programming/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="手写系列" class="mobile-dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/handwritten/javascript/" class="nav-link"><!---->
+  JavaScript 手写函数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试相关" class="dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="面试相关" class="mobile-dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/html/" class="nav-link"><!---->
+  HTML 问题
+</a></li><li class="dropdown-item"><!----> <a href="/interview/css/" class="nav-link"><!---->
+  CSS 问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="线路" class="dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="线路" class="mobile-dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="风格指南" class="mobile-dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-languages/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="后端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-languages/python/" class="nav-link router-link-active"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="编程进阶" class="mobile-dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/advanced-programming/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="手写系列" class="mobile-dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/handwritten/javascript/" class="nav-link"><!---->
+  JavaScript 手写函数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面试相关" class="dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="面试相关" class="mobile-dropdown-title"><span class="title"><!---->
+      面试相关
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/interview/html/" class="nav-link"><!---->
+  HTML 问题
+</a></li><li class="dropdown-item"><!----> <a href="/interview/css/" class="nav-link"><!---->
+  CSS 问题
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="线路" class="dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="线路" class="mobile-dropdown-title"><span class="title"><!---->
+      线路
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/backend-languages/python/" class="sidebar-heading clickable router-link-active open"><!----> <span>Python</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/backend-languages/python/compiler-and-interpreter/" class="sidebar-link">编译器与解释器</a></li><li><a href="/backend-languages/python/grammar/" class="sidebar-link">语法规范</a></li><li><a href="/backend-languages/python/variables-and-constants/" class="sidebar-link">变量与常量</a></li><li><a href="/backend-languages/python/data-types/" class="sidebar-link">数据类型</a></li><li><a href="/backend-languages/python/function-params/" class="sidebar-link">函数参数</a></li><li><a href="/backend-languages/python/function-decorators/" class="sidebar-link">函数装饰器</a></li><li><a href="/backend-languages/python/oop/" class="sidebar-link">面向对象编程</a></li><li><a href="/backend-languages/python/class-and-instance/" class="sidebar-link">类和实例</a></li><li><a href="/backend-languages/python/class-inheritance/" class="sidebar-link">类的继承</a></li><li><a href="/backend-languages/python/class-access-modifiers/" aria-current="page" class="active sidebar-link">类成员保护</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/backend-languages/python/class-access-modifiers/#_1-设置私有成员" class="sidebar-link">1. 设置私有成员</a></li><li class="sidebar-sub-header"><a href="/backend-languages/python/class-access-modifiers/#_2-外部访问和修改私有成员" class="sidebar-link">2. 外部访问和修改私有成员</a></li><li class="sidebar-sub-header"><a href="/backend-languages/python/class-access-modifiers/#_3-私有成员的原理" class="sidebar-link">3. 私有成员的原理</a></li><li class="sidebar-sub-header"><a href="/backend-languages/python/class-access-modifiers/#_4-类的成员与下划线总结" class="sidebar-link">4. 类的成员与下划线总结</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"><nav class="breadcrumb disable"><!----></nav>  <!----> <!----> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"><li class="anchor anchor2"><a href="/backend-languages/python/class-access-modifiers/#_1-设置私有成员" class="anchor-link"><div>1. 设置私有成员</div></a></li><li class="anchor anchor2"><a href="/backend-languages/python/class-access-modifiers/#_2-外部访问和修改私有成员" class="anchor-link"><div>2. 外部访问和修改私有成员</div></a></li><li class="anchor anchor2"><a href="/backend-languages/python/class-access-modifiers/#_3-私有成员的原理" class="anchor-link"><div>3. 私有成员的原理</div></a></li><li class="anchor anchor2"><a href="/backend-languages/python/class-access-modifiers/#_4-类的成员与下划线总结" class="anchor-link"><div>4. 类的成员与下划线总结</div></a></li></ul></div></aside></div> <div class="theme-default-content content__default"><h1 id="类成员保护"><a href="#类成员保护" class="header-anchor">#</a> 类成员保护</h1> <p>在 JAVA 语言中，有 <code>private</code> 关键字，可以将类的某些变量和方法设为私有，阻止外部访问。但是 Python 没有这个机制。</p> <p>在 Python 中，如果要让内部成员不被外部访问，可以利用变量和方法名字的变化：在成员的名字前加上两个下划线 <code>__</code>，这个成员就变成了一个私有成员（private）。私有成员只能在类的内部访问，外部无法访问。</p> <h2 id="_1-设置私有成员"><a href="#_1-设置私有成员" class="header-anchor">#</a> 1. 设置私有成员</h2> <p>如下所示，在 <code>Student</code> 类中，<code>title</code> 可以在外部访问；而 <code>__name</code> 和 <code>__age</code> 由于加了两个下划线，已经变成了私有成员，只能在类的内部访问，外部访问时会报错。</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">:</span>
+    title <span class="token operator">=</span> <span class="token string">&quot;学生&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>__age <span class="token operator">=</span> age
+
+    <span class="token keyword">def</span> <span class="token function">print_age</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s: %s'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>__name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>__age<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+obj <span class="token operator">=</span> Student<span class="token punctuation">(</span><span class="token string">&quot;zhangsan&quot;</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>title<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>__name<span class="token punctuation">)</span> <span class="token comment"># 这里会报错</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="_2-外部访问和修改私有成员"><a href="#_2-外部访问和修改私有成员" class="header-anchor">#</a> 2. 外部访问和修改私有成员</h2> <p>如果要在外部访问和修改类的私有成员，可以通过在类的内部创建 get 和 set 方法。这种设计思想在很多编程语言中都很常见。</p> <p>如下代码所示：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">:</span>
+    title <span class="token operator">=</span> <span class="token string">&quot;学生&quot;</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>__age <span class="token operator">=</span> age
+
+    <span class="token keyword">def</span> <span class="token function">print_age</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s: %s'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>__name<span class="token punctuation">,</span> self<span class="token punctuation">.</span>__age<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_name</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__name
+
+    <span class="token keyword">def</span> <span class="token function">get_age</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__age
+
+    <span class="token keyword">def</span> <span class="token function">set_name</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__name <span class="token operator">=</span> name
+
+    <span class="token keyword">def</span> <span class="token function">set_age</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__age <span class="token operator">=</span> age
+
+obj <span class="token operator">=</span> Student<span class="token punctuation">(</span><span class="token string">&quot;zhangsan&quot;</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>get_name<span class="token punctuation">(</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>set_name<span class="token punctuation">(</span><span class="token string">&quot;lisi&quot;</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>这样做，不但对数据进行了保护的同时也提供了外部访问的接口，而且在 <code>get_name</code>，<code>set_name</code> 这些方法中，可以额外添加对数据进行检测、处理、加工、包裹等等各种操作。</p> <p>比如下面这个方法，会在设置年龄之前对参数进行检测，如果参数不是一个整数类型，则抛出异常。</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">set_age</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">isinstance</span><span class="token punctuation">(</span>age<span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__age <span class="token operator">=</span> age
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> ValueError
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_3-私有成员的原理"><a href="#_3-私有成员的原理" class="header-anchor">#</a> 3. 私有成员的原理</h2> <p>为什么以双下划线开头的数据成员就不能从外部访问了呢？</p> <p>以上面的代码为例，从内部机制原理讲，外部不能直接访问 <code>__age</code> 是因为 Python 解释器对外把 <code>__age</code> 变量改成了 <code>_Student__age</code> ，也就是 <code>_类名__age</code>（类名前是一个下划线）。因此，投机取巧的话，你可以通过 <code>_Student__age</code> 在类的外部访问 <code>__age</code> 变量。</p> <p>知道了这样一个原理，我们就要规避这样一个问题：</p> <div class="language-python line-numbers-mode"><pre class="language-python"><code>obj <span class="token operator">=</span> Student<span class="token punctuation">(</span><span class="token string">&quot;zhangsan&quot;</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span>
+obj<span class="token punctuation">.</span>__name <span class="token operator">=</span> <span class="token string">&quot;lisi&quot;</span> <span class="token comment"># 注意这一行</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>注意上面第二行，千万不要写这样的代码，因为这相当于给 <code>obj</code> 实例添加了一个新的实例变量 <code>__name</code>，而不是对原有私有成员 <code>__name</code> 重新赋值。</p> <h2 id="_4-类的成员与下划线总结"><a href="#_4-类的成员与下划线总结" class="header-anchor">#</a> 4. 类的成员与下划线总结</h2> <ul><li><code>_name</code>、<code>_name_</code>、<code>_name__</code>：建议性的私有成员，不要在外部访问。</li> <li><code>__name</code>、 <code>__name_</code>：强制的私有成员，但是你依然可以蛮横地在外部危险访问。</li> <li><code>__name__</code>：特殊成员，与私有性质无关，尽量不要给自定义的成员这样命名，它们都是 Python 中具有特殊意义的魔法方法名。例如 <code>__doc__</code>。</li> <li><code>name_</code>、<code>name__</code>：没有任何特殊性，普通的标识符，但最好不要这么起名。</li></ul> <p>（完）</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wenyuan/fedbook/edit/master/docs/backend-languages/python/class-access-modifiers.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次编辑于:</span> <span class="time">2021年4月4日 21:43</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/backend-languages/python/class-inheritance/" class="prev"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon prev-icon"><path d="M906.783 588.79c-.02 8.499-6.882 15.36-15.38 15.37l-443.7-.01 75.704 191.682c2.52 6.42.482 13.763-5.038 17.91-5.52 4.168-13.138 4.147-18.616-.092L123.228 524.175a15.362 15.362 0 01-6-12.165c0-4.782 2.222-9.277 6-12.185L499.753 210.35a15.388 15.388 0 019.38-3.195c3.236 0 6.502 1.034 9.236 3.103 5.52 4.147 7.578 11.49 5.038 17.91L447.683 419.84l443.72-.01c8.498.01 15.36 6.881 15.36 15.36l.02 153.6z" fill="currentColor"></path></svg>
+        类的继承
+      </a></span> <!----></p></div> <!----> </main> <!----></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.837ae494.js" defer></script><script src="/assets/js/vendors~layout-Layout.0ee4718e.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.fb3afbc7.js" defer></script><script src="/assets/js/page-类成员保护.02e3c6b2.js" defer></script>
+  </body>
+</html>
