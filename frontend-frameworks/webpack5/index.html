@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack5 | 前端修炼小册</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script charset="utf-8" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script charset="utf-8" src="/js/main.js"></script>
+    <meta name="description" content="Wenyuan's Front-End Development Book">
+    <link rel="preload" href="/assets/css/0.styles.e0422ad3.css" as="style"><link rel="preload" href="/assets/js/app.17da51c0.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.41e105c5.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.f25279d3.js" as="script"><link rel="preload" href="/assets/js/page-webpack5.9e9ab13c.js" as="script"><link rel="prefetch" href="/assets/js/92.4a36f578.js"><link rel="prefetch" href="/assets/js/93.f3af6dfd.js"><link rel="prefetch" href="/assets/js/94.a6f30dfb.js"><link rel="prefetch" href="/assets/js/95.d8b5e693.js"><link rel="prefetch" href="/assets/js/layout-Blog.0c896da0.js"><link rel="prefetch" href="/assets/js/layout-Layout.80a05bb8.js"><link rel="prefetch" href="/assets/js/layout-NotFound.1c14d4aa.js"><link rel="prefetch" href="/assets/js/page-BFC.6d10cd24.js"><link rel="prefetch" href="/assets/js/page-CSS.f6660638.js"><link rel="prefetch" href="/assets/js/page-CSS引入方式.32915d38.js"><link rel="prefetch" href="/assets/js/page-CSS规范.b5945a80.js"><link rel="prefetch" href="/assets/js/page-CSS问题.6462a909.js"><link rel="prefetch" href="/assets/js/page-Flexbox布局.07027752.js"><link rel="prefetch" href="/assets/js/page-Grid布局.1edf7b5d.js"><link rel="prefetch" href="/assets/js/page-HTML.80306e81.js"><link rel="prefetch" href="/assets/js/page-HTML基本结构.0270d87c.js"><link rel="prefetch" href="/assets/js/page-HTML规范.36bb9ca9.js"><link rel="prefetch" href="/assets/js/page-HTML问题.29ee6fc3.js"><link rel="prefetch" href="/assets/js/page-Home.2cafd7db.js"><link rel="prefetch" href="/assets/js/page-JavaScript.959da57c.js"><link rel="prefetch" href="/assets/js/page-JavaScript手写函数.9db42857.js"><link rel="prefetch" href="/assets/js/page-JavaScript规范.c43df8f3.js"><link rel="prefetch" href="/assets/js/page-Python.01bdc84e.js"><link rel="prefetch" href="/assets/js/page-Vuejs.923cd88a.js"><link rel="prefetch" href="/assets/js/page-Vue项目规范.821983f6.js"><link rel="prefetch" href="/assets/js/page-this指向.f4c402b9.js"><link rel="prefetch" href="/assets/js/page-事件循环机制，微任务和宏任务的关系.471dd99b.js"><link rel="prefetch" href="/assets/js/page-代码风格.55c2bdc5.js"><link rel="prefetch" href="/assets/js/page-伪元素和伪类.f720d342.js"><link rel="prefetch" href="/assets/js/page-作用域.f8791463.js"><link rel="prefetch" href="/assets/js/page-关于本站.79078b32.js"><link rel="prefetch" href="/assets/js/page-函数参数.4abaa024.js"><link rel="prefetch" href="/assets/js/page-函数柯里化.e50de733.js"><link rel="prefetch" href="/assets/js/page-函数装饰器.1287c8d3.js"><link rel="prefetch" href="/assets/js/page-前端路由原理.a7c13f23.js"><link rel="prefetch" href="/assets/js/page-原型与原型链.7cbbcf9f.js"><link rel="prefetch" href="/assets/js/page-变量与常量.ed8d5fe5.js"><link rel="prefetch" href="/assets/js/page-同步与异步.df62c7e1.js"><link rel="prefetch" href="/assets/js/page-响应式原理.b89d88db.js"><link rel="prefetch" href="/assets/js/page-基本配置.e4329249.js"><link rel="prefetch" href="/assets/js/page-基础用法要点.0724ee4e.js"><link rel="prefetch" href="/assets/js/page-声明函数的六种方式.601e00bd.js"><link rel="prefetch" href="/assets/js/page-复杂度分析.46b1a2bf.js"><link rel="prefetch" href="/assets/js/page-定位（position）.a66ac383.js"><link rel="prefetch" href="/assets/js/page-实现Objectcreate方法.17a6533c.js"><link rel="prefetch" href="/assets/js/page-实现apply方法.4943cb4a.js"><link rel="prefetch" href="/assets/js/page-实现bind方法.33961b5a.js"><link rel="prefetch" href="/assets/js/page-实现call方法.bdcc4c16.js"><link rel="prefetch" href="/assets/js/page-实现instanceof运算符.d94cee78.js"><link rel="prefetch" href="/assets/js/page-实现new运算符.5213b645.js"><link rel="prefetch" href="/assets/js/page-实现浅克隆（shallowClone）.fb78e6e8.js"><link rel="prefetch" href="/assets/js/page-实现深克隆（deepClone）.dd104795.js"><link rel="prefetch" href="/assets/js/page-实现节流函数（throttle）.c3684b2c.js"><link rel="prefetch" href="/assets/js/page-实现防抖函数（debounce）.1b429267.js"><link rel="prefetch" href="/assets/js/page-对象遍历的几种方式.efdc3f1c.js"><link rel="prefetch" href="/assets/js/page-性能优化-产出代码.4e6d860e.js"><link rel="prefetch" href="/assets/js/page-性能优化-构建速度.7f1747cc.js"><link rel="prefetch" href="/assets/js/page-执行上下文.3be4270e.js"><link rel="prefetch" href="/assets/js/page-数据类型.65d6ca07.js"><link rel="prefetch" href="/assets/js/page-数据结构与算法.48e8354c.js"><link rel="prefetch" href="/assets/js/page-数据结构之数组.95ba4b59.js"><link rel="prefetch" href="/assets/js/page-数据结构之链表.be495167.js"><link rel="prefetch" href="/assets/js/page-数组遍历的几种方式.af821ebd.js"><link rel="prefetch" href="/assets/js/page-文档规范.d18610a4.js"><link rel="prefetch" href="/assets/js/page-更新日志.20ccfa03.js"><link rel="prefetch" href="/assets/js/page-未完待续.86c6a41d.js"><link rel="prefetch" href="/assets/js/page-核心概念.b768a0d1.js"><link rel="prefetch" href="/assets/js/page-模板编译.573aeaaf.js"><link rel="prefetch" href="/assets/js/page-浅克隆与深克隆.bca1b9f8.js"><link rel="prefetch" href="/assets/js/page-浮动（float）.d64379fa.js"><link rel="prefetch" href="/assets/js/page-盒模型.cd34796a.js"><link rel="prefetch" href="/assets/js/page-类和实例.388418e4.js"><link rel="prefetch" href="/assets/js/page-类成员保护.a7f79c9c.js"><link rel="prefetch" href="/assets/js/page-类的继承.8ccc227b.js"><link rel="prefetch" href="/assets/js/page-组件渲染与更新.ba2004d0.js"><link rel="prefetch" href="/assets/js/page-经典布局.d2d46f78.js"><link rel="prefetch" href="/assets/js/page-继承的八种方式.e596a5fb.js"><link rel="prefetch" href="/assets/js/page-编译器与解释器.dea92797.js"><link rel="prefetch" href="/assets/js/page-虚拟DOM与diff算法.c6bc3801.js"><link rel="prefetch" href="/assets/js/page-语义类标签.3ac8a511.js"><link rel="prefetch" href="/assets/js/page-语法规范.94a3bbf0.js"><link rel="prefetch" href="/assets/js/page-调用函数的四种方式.e1ecb2bf.js"><link rel="prefetch" href="/assets/js/page-选择器与样式优先级.5807d124.js"><link rel="prefetch" href="/assets/js/page-长度和单位.b935819a.js"><link rel="prefetch" href="/assets/js/page-闭包.1b9efc44.js"><link rel="prefetch" href="/assets/js/page-面向对象编程.92c52227.js"><link rel="prefetch" href="/assets/js/page-高级用法特性.51e776b9.js"><link rel="prefetch" href="/assets/js/page-高级配置.7f2d4e06.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.a400d8e5.js"><link rel="prefetch" href="/assets/js/vendors~layout-Slide.3722e391.js"><link rel="prefetch" href="/assets/js/vendors~reveal.a409e6bc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e0422ad3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar"><header class="navbar"><button class="sidebar-button"><span class="icon"></span></button> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="前端修炼小册" class="logo"> <!----> <span class="site-name can-hide">前端修炼小册</span></a> <div class="links"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="风格指南" class="mobile-dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-languages/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title"><!---->
+      前端框架
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端框架" class="mobile-dropdown-title"><span class="title"><!---->
+      前端框架
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/vuejs/" class="nav-link"><!---->
+  Vue.js
+</a></li></ul></li><li class="dropdown-item"><h4>工具</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/webpack5/" aria-current="page" class="nav-link router-link-exact-active router-link-active active"><!---->
+  webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="后端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-languages/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="编程进阶" class="mobile-dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/advanced-programming/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="手写系列" class="mobile-dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/handwritten/javascript/" class="nav-link"><!---->
+  JavaScript 手写函数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>线路</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="风格指南" class="mobile-dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-languages/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title"><!---->
+      前端框架
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端框架" class="mobile-dropdown-title"><span class="title"><!---->
+      前端框架
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/vuejs/" class="nav-link"><!---->
+  Vue.js
+</a></li></ul></li><li class="dropdown-item"><h4>工具</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/webpack5/" aria-current="page" class="nav-link router-link-exact-active router-link-active active"><!---->
+  webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="后端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-languages/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="编程进阶" class="mobile-dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/advanced-programming/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="手写系列" class="mobile-dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/handwritten/javascript/" class="nav-link"><!---->
+  JavaScript 手写函数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>线路</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/frontend-frameworks/webpack5/" aria-current="page" class="sidebar-heading clickable router-link-exact-active router-link-active open active"><!----> <span>webpack5</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontend-frameworks/webpack5/core-concept/" class="sidebar-link">核心概念</a></li><li><a href="/frontend-frameworks/webpack5/basic-config/" class="sidebar-link">基本配置</a></li><li><a href="/frontend-frameworks/webpack5/advanced-config/" class="sidebar-link">高级配置</a></li><li><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/" class="sidebar-link">性能优化 - 构建速度</a></li><li><a href="/frontend-frameworks/webpack5/performance-optimization-in-output/" class="sidebar-link">性能优化 - 产出代码</a></li></ul></section></li></ul> </aside> <main class="page"><nav class="breadcrumb disable"><!----></nav>  <!----> <!----> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"></ul></div></aside></div> <div class="theme-default-content content__default"><h1 id="webpack5"><a href="#webpack5" class="header-anchor">#</a> webpack5</h1> <blockquote><p>本系列主要针对 webpack5 进行知识点梳理，该版本目前（2021 年）是最新稳定版。</p></blockquote> <p><strong>webpack 是什么？</strong></p> <p>简单的说，webpack 用于编译 JavaScript 模块，它是一个模块打包工具。</p> <p>打包工具帮你获得一些准备用于部署的 js 和 css 等，把它们转化为适合浏览器的可用的格式。</p> <p>通过压缩、分离、懒加载等，来提升性能，提高开发效率。</p> <div style="text-align:center;"><img src="/assets/img/webpack.ebebf71f.png" alt="webpack"> <p style="text-align:center;color:#888;">（webpack，图来源于官网文档）</p></div> <hr> <p><strong>webpack 不是什么？</strong></p> <p>webpack 不是任务执行的工具，它不能自动化的处理一些常见的开发任务，例如代码检测、构建、测试。这些都是一些重复性比较强的事情，一般偏重于上层的问题。</p> <p>任务执行工具：grunt、gulp。</p> <p><strong>为什么要学习 webpack？</strong></p> <p>早期，在浏览器里运行 js，有二种方式：</p> <ol><li>直接引用 js 脚本程序，有多少个 js，就引用多少个 .js 文件；</li> <li>直接一个大的 .js 文件，包含所有的 js 代码，但是文件大小体积就不可控。</li></ol> <p>后来，出现了使用立即执行函数表达式（IIFE）的方式，这种方式主要是用来解决大型项目的作用域的问题。针对这种做法，有一些工具 grunt、gulp，它们都是任务执行器，更多做的是项目文件的拼接。这类工具优化代码的能力比较弱，很难判断某个 js 方法是否被重复的引用，或是否未被引用。</p> <p>Node.js 出来后，就出现了 JavaScript 的模块化开发。主要是引入了 require 机制，允许你在当前文件中加载和使用某个模块。</p> <p>webpack 最出色的功能，是它还可以引入任何其它类型的文件，包括非 js 类型的文件，可以用来引用应用程序中的所有的非 js 的内容，例如图片、css 等。webpack 把这些都视为模块，这样每个模块都可以通过相互的引用（依赖）来表明它们之间的关系，就可以避免打包未使用的模块（资源）。</p> <p>这就是 webpack 存在的原因，也是学习 webpack 的原因。</p> <hr> <p><strong>webpack5 和 webpack4 有什么区别?</strong></p> <p>webpack5 主要是内部效率的优化，对比 webpack4，没有太多使用上的改动。</p> <p>升级 webpack5 以及周边插件后，代码需要做出的调整：</p> <ul><li>package.json 的 dev-server 命令
+<ul><li>老版本：<code>&quot;dev&quot;: &quot;webpack-dev-server --config build/webpack.dev.js&quot;,</code></li> <li>新版本：<code>&quot;dev&quot;: &quot;webpack serve --config build/webpack.dev.js&quot;</code></li></ul></li> <li>拆分配置文件后，引入 webpack-merge 的方法名
+<ul><li>老版本：<code>const { smart } = require('webpack-merge')</code></li> <li>新版本：<code>const { merge } = require('webpack-merge')</code></li></ul></li> <li><code>webpack.prod.js</code> 中 CleanWebpackPlugin 方法的引入方式
+<ul><li>老版本：<code>const CleanWebpackPlugin = require('clean-webpack-plugin')</code></li> <li>新版本：<code>const { CleanWebpackPlugin } = require('clean-webpack-plugin')</code></li></ul></li> <li><code>module.rules</code> 中 loader 的调用方式
+<ul><li>老版本：<code>loader: ['xxx-loader']</code></li> <li>新版本：<code>use: ['xxx-loader']</code></li></ul></li> <li><code>webpack.prod.js</code> 的 <code>output</code> 中 hash 的写法
+<ul><li>老版本：<code>filename: 'bundle.[contentHash:8].js'</code></li> <li>新版本：<code>filename: 'bundle.[contenthash:8].js'</code> 其中 <code>h</code> 小写，不能大写</li></ul></li></ul> <hr> <p>关于 webpack5 的知识点，主要参考：</p> <ul><li>官方文档</li></ul> <div style="text-align:right;"><svg t="1622560522153" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3671" width="64" height="64" class="icon"><path d="M882.23288889 749.45422222L526.90488889 950.38577778V793.94133333l221.41155556-121.856 133.91644444 77.36888889z m24.34844444-22.07288889V307.08622222l-129.93422222 75.09333333v270.22222223l129.93422222 74.97955555z m-766.17955555 22.07288889l355.328 201.04533333V793.94133333L274.20444445 672.08533333l-133.80266667 77.36888889zM116.05333333 727.38133333V307.08622222l129.93422222 75.09333333v270.22222223L116.05333333 727.38133333z m15.24622222-447.60177778l364.43022223-206.16533333v151.32444445L262.144 353.39377778l-1.82044445 1.024c0 0.11377778-129.024-74.63822222-129.024-74.63822223z m760.03555556 0L526.90488889 73.728v151.32444445l233.472 128.34133333 1.82044444 1.024 129.13777778-74.63822223z" fill="#8ED6FB" p-id="3672"></path><path d="M495.72977778 758.21511111l-218.45333333-120.14933333V400.15644445l218.45333333 126.17955555v231.87911111z m31.17511111 0l218.45333333-120.03555556V400.15644445l-218.45333333 126.17955555v231.87911111zM291.95377778 372.62222222l219.24977777-120.49066667L730.45333333 372.62222222 511.31733333 499.25688889 291.95377778 372.62222222z" fill="#1C78C0" p-id="3673"></path></svg></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wenyuan/fedbook/edit/master/docs/frontend-frameworks/webpack5/README.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次编辑于:</span> <span class="time">2021年6月14日 23:55</span></div></footer> <!----> <!----> </main> <!----></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.17da51c0.js" defer></script><script src="/assets/js/vendors~layout-Layout.41e105c5.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.f25279d3.js" defer></script><script src="/assets/js/page-webpack5.9e9ab13c.js" defer></script>
+  </body>
+</html>

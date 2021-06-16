@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>性能优化 - 构建速度 | 前端修炼小册</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script charset="utf-8" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script charset="utf-8" src="/js/main.js"></script>
+    <meta name="description" content="Wenyuan's Front-End Development Book">
+    <link rel="preload" href="/assets/css/0.styles.e0422ad3.css" as="style"><link rel="preload" href="/assets/js/app.17da51c0.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.41e105c5.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.f25279d3.js" as="script"><link rel="preload" href="/assets/js/page-性能优化-构建速度.7f1747cc.js" as="script"><link rel="prefetch" href="/assets/js/92.4a36f578.js"><link rel="prefetch" href="/assets/js/93.f3af6dfd.js"><link rel="prefetch" href="/assets/js/94.a6f30dfb.js"><link rel="prefetch" href="/assets/js/95.d8b5e693.js"><link rel="prefetch" href="/assets/js/layout-Blog.0c896da0.js"><link rel="prefetch" href="/assets/js/layout-Layout.80a05bb8.js"><link rel="prefetch" href="/assets/js/layout-NotFound.1c14d4aa.js"><link rel="prefetch" href="/assets/js/page-BFC.6d10cd24.js"><link rel="prefetch" href="/assets/js/page-CSS.f6660638.js"><link rel="prefetch" href="/assets/js/page-CSS引入方式.32915d38.js"><link rel="prefetch" href="/assets/js/page-CSS规范.b5945a80.js"><link rel="prefetch" href="/assets/js/page-CSS问题.6462a909.js"><link rel="prefetch" href="/assets/js/page-Flexbox布局.07027752.js"><link rel="prefetch" href="/assets/js/page-Grid布局.1edf7b5d.js"><link rel="prefetch" href="/assets/js/page-HTML.80306e81.js"><link rel="prefetch" href="/assets/js/page-HTML基本结构.0270d87c.js"><link rel="prefetch" href="/assets/js/page-HTML规范.36bb9ca9.js"><link rel="prefetch" href="/assets/js/page-HTML问题.29ee6fc3.js"><link rel="prefetch" href="/assets/js/page-Home.2cafd7db.js"><link rel="prefetch" href="/assets/js/page-JavaScript.959da57c.js"><link rel="prefetch" href="/assets/js/page-JavaScript手写函数.9db42857.js"><link rel="prefetch" href="/assets/js/page-JavaScript规范.c43df8f3.js"><link rel="prefetch" href="/assets/js/page-Python.01bdc84e.js"><link rel="prefetch" href="/assets/js/page-Vuejs.923cd88a.js"><link rel="prefetch" href="/assets/js/page-Vue项目规范.821983f6.js"><link rel="prefetch" href="/assets/js/page-this指向.f4c402b9.js"><link rel="prefetch" href="/assets/js/page-webpack5.9e9ab13c.js"><link rel="prefetch" href="/assets/js/page-事件循环机制，微任务和宏任务的关系.471dd99b.js"><link rel="prefetch" href="/assets/js/page-代码风格.55c2bdc5.js"><link rel="prefetch" href="/assets/js/page-伪元素和伪类.f720d342.js"><link rel="prefetch" href="/assets/js/page-作用域.f8791463.js"><link rel="prefetch" href="/assets/js/page-关于本站.79078b32.js"><link rel="prefetch" href="/assets/js/page-函数参数.4abaa024.js"><link rel="prefetch" href="/assets/js/page-函数柯里化.e50de733.js"><link rel="prefetch" href="/assets/js/page-函数装饰器.1287c8d3.js"><link rel="prefetch" href="/assets/js/page-前端路由原理.a7c13f23.js"><link rel="prefetch" href="/assets/js/page-原型与原型链.7cbbcf9f.js"><link rel="prefetch" href="/assets/js/page-变量与常量.ed8d5fe5.js"><link rel="prefetch" href="/assets/js/page-同步与异步.df62c7e1.js"><link rel="prefetch" href="/assets/js/page-响应式原理.b89d88db.js"><link rel="prefetch" href="/assets/js/page-基本配置.e4329249.js"><link rel="prefetch" href="/assets/js/page-基础用法要点.0724ee4e.js"><link rel="prefetch" href="/assets/js/page-声明函数的六种方式.601e00bd.js"><link rel="prefetch" href="/assets/js/page-复杂度分析.46b1a2bf.js"><link rel="prefetch" href="/assets/js/page-定位（position）.a66ac383.js"><link rel="prefetch" href="/assets/js/page-实现Objectcreate方法.17a6533c.js"><link rel="prefetch" href="/assets/js/page-实现apply方法.4943cb4a.js"><link rel="prefetch" href="/assets/js/page-实现bind方法.33961b5a.js"><link rel="prefetch" href="/assets/js/page-实现call方法.bdcc4c16.js"><link rel="prefetch" href="/assets/js/page-实现instanceof运算符.d94cee78.js"><link rel="prefetch" href="/assets/js/page-实现new运算符.5213b645.js"><link rel="prefetch" href="/assets/js/page-实现浅克隆（shallowClone）.fb78e6e8.js"><link rel="prefetch" href="/assets/js/page-实现深克隆（deepClone）.dd104795.js"><link rel="prefetch" href="/assets/js/page-实现节流函数（throttle）.c3684b2c.js"><link rel="prefetch" href="/assets/js/page-实现防抖函数（debounce）.1b429267.js"><link rel="prefetch" href="/assets/js/page-对象遍历的几种方式.efdc3f1c.js"><link rel="prefetch" href="/assets/js/page-性能优化-产出代码.4e6d860e.js"><link rel="prefetch" href="/assets/js/page-执行上下文.3be4270e.js"><link rel="prefetch" href="/assets/js/page-数据类型.65d6ca07.js"><link rel="prefetch" href="/assets/js/page-数据结构与算法.48e8354c.js"><link rel="prefetch" href="/assets/js/page-数据结构之数组.95ba4b59.js"><link rel="prefetch" href="/assets/js/page-数据结构之链表.be495167.js"><link rel="prefetch" href="/assets/js/page-数组遍历的几种方式.af821ebd.js"><link rel="prefetch" href="/assets/js/page-文档规范.d18610a4.js"><link rel="prefetch" href="/assets/js/page-更新日志.20ccfa03.js"><link rel="prefetch" href="/assets/js/page-未完待续.86c6a41d.js"><link rel="prefetch" href="/assets/js/page-核心概念.b768a0d1.js"><link rel="prefetch" href="/assets/js/page-模板编译.573aeaaf.js"><link rel="prefetch" href="/assets/js/page-浅克隆与深克隆.bca1b9f8.js"><link rel="prefetch" href="/assets/js/page-浮动（float）.d64379fa.js"><link rel="prefetch" href="/assets/js/page-盒模型.cd34796a.js"><link rel="prefetch" href="/assets/js/page-类和实例.388418e4.js"><link rel="prefetch" href="/assets/js/page-类成员保护.a7f79c9c.js"><link rel="prefetch" href="/assets/js/page-类的继承.8ccc227b.js"><link rel="prefetch" href="/assets/js/page-组件渲染与更新.ba2004d0.js"><link rel="prefetch" href="/assets/js/page-经典布局.d2d46f78.js"><link rel="prefetch" href="/assets/js/page-继承的八种方式.e596a5fb.js"><link rel="prefetch" href="/assets/js/page-编译器与解释器.dea92797.js"><link rel="prefetch" href="/assets/js/page-虚拟DOM与diff算法.c6bc3801.js"><link rel="prefetch" href="/assets/js/page-语义类标签.3ac8a511.js"><link rel="prefetch" href="/assets/js/page-语法规范.94a3bbf0.js"><link rel="prefetch" href="/assets/js/page-调用函数的四种方式.e1ecb2bf.js"><link rel="prefetch" href="/assets/js/page-选择器与样式优先级.5807d124.js"><link rel="prefetch" href="/assets/js/page-长度和单位.b935819a.js"><link rel="prefetch" href="/assets/js/page-闭包.1b9efc44.js"><link rel="prefetch" href="/assets/js/page-面向对象编程.92c52227.js"><link rel="prefetch" href="/assets/js/page-高级用法特性.51e776b9.js"><link rel="prefetch" href="/assets/js/page-高级配置.7f2d4e06.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.a400d8e5.js"><link rel="prefetch" href="/assets/js/vendors~layout-Slide.3722e391.js"><link rel="prefetch" href="/assets/js/vendors~reveal.a409e6bc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e0422ad3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><button class="sidebar-button"><span class="icon"></span></button> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="前端修炼小册" class="logo"> <!----> <span class="site-name can-hide">前端修炼小册</span></a> <div class="links"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="风格指南" class="mobile-dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-languages/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title"><!---->
+      前端框架
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端框架" class="mobile-dropdown-title"><span class="title"><!---->
+      前端框架
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/vuejs/" class="nav-link"><!---->
+  Vue.js
+</a></li></ul></li><li class="dropdown-item"><h4>工具</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/webpack5/" class="nav-link router-link-active"><!---->
+  webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="后端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-languages/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="编程进阶" class="mobile-dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/advanced-programming/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="手写系列" class="mobile-dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/handwritten/javascript/" class="nav-link"><!---->
+  JavaScript 手写函数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>线路</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="风格指南" class="mobile-dropdown-title"><span class="title"><!---->
+      风格指南
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      前端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-languages/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title"><!---->
+      前端框架
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端框架" class="mobile-dropdown-title"><span class="title"><!---->
+      前端框架
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/vuejs/" class="nav-link"><!---->
+  Vue.js
+</a></li></ul></li><li class="dropdown-item"><h4>工具</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/webpack5/" class="nav-link router-link-active"><!---->
+  webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="后端语言" class="mobile-dropdown-title"><span class="title"><!---->
+      后端语言
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-languages/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="编程进阶" class="mobile-dropdown-title"><span class="title"><!---->
+      编程进阶
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/advanced-programming/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="手写系列" class="mobile-dropdown-title"><span class="title"><!---->
+      手写系列
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/handwritten/javascript/" class="nav-link"><!---->
+  JavaScript 手写函数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>线路</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/frontend-frameworks/webpack5/" class="sidebar-heading clickable router-link-active open"><!----> <span>webpack5</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/frontend-frameworks/webpack5/core-concept/" class="sidebar-link">核心概念</a></li><li><a href="/frontend-frameworks/webpack5/basic-config/" class="sidebar-link">基本配置</a></li><li><a href="/frontend-frameworks/webpack5/advanced-config/" class="sidebar-link">高级配置</a></li><li><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/" aria-current="page" class="active sidebar-link">性能优化 - 构建速度</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_1-优化-babel-loader" class="sidebar-link">1. 优化 babel-loader</a></li><li class="sidebar-sub-header"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_2-ignoreplugin-避免引入无用模块" class="sidebar-link">2. IgnorePlugin 避免引入无用模块</a></li><li class="sidebar-sub-header"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_3-noparse-避免重复打包" class="sidebar-link">3. noParse 避免重复打包</a></li><li class="sidebar-sub-header"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_4-happypack-多进程打包" class="sidebar-link">4. happyPack 多进程打包</a></li><li class="sidebar-sub-header"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_5-paralleluglifyplugin-多进程压缩-js" class="sidebar-link">5. ParallelUglifyPlugin 多进程压缩 JS</a></li><li class="sidebar-sub-header"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_6-自动刷新" class="sidebar-link">6. 自动刷新</a></li><li class="sidebar-sub-header"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_7-热更新" class="sidebar-link">7. 热更新</a></li><li class="sidebar-sub-header"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_8-dllplugin-动态链接库插件" class="sidebar-link">8. DllPlugin 动态链接库插件</a></li></ul></li><li><a href="/frontend-frameworks/webpack5/performance-optimization-in-output/" class="sidebar-link">性能优化 - 产出代码</a></li></ul></section></li></ul> </aside> <main class="page"><nav class="breadcrumb disable"><!----></nav>  <!----> <!----> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"><li class="anchor anchor2"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_1-优化-babel-loader" class="anchor-link"><div>1. 优化 babel-loader</div></a></li><li class="anchor anchor2"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_2-ignoreplugin-避免引入无用模块" class="anchor-link"><div>2. IgnorePlugin 避免引入无用模块</div></a></li><li class="anchor anchor2"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_3-noparse-避免重复打包" class="anchor-link"><div>3. noParse 避免重复打包</div></a></li><li class="anchor anchor2"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_4-happypack-多进程打包" class="anchor-link"><div>4. happyPack 多进程打包</div></a></li><li class="anchor anchor2"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_5-paralleluglifyplugin-多进程压缩-js" class="anchor-link"><div>5. ParallelUglifyPlugin 多进程压缩 JS</div></a></li><li class="anchor anchor2"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_6-自动刷新" class="anchor-link"><div>6. 自动刷新</div></a></li><li class="anchor anchor2"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_7-热更新" class="anchor-link"><div>7. 热更新</div></a></li><li class="anchor anchor2"><a href="/frontend-frameworks/webpack5/performance-optimization-in-build/#_8-dllplugin-动态链接库插件" class="anchor-link"><div>8. DllPlugin 动态链接库插件</div></a></li></ul></div></aside></div> <div class="theme-default-content content__default"><h1 id="性能优化-构建速度"><a href="#性能优化-构建速度" class="header-anchor">#</a> 性能优化 - 构建速度</h1> <blockquote><p>webpack 性能优化主要有两个方向：优化打包构建速度 - 提高开发体验和效率，优化产出代码 - 提升产品性能，本文主要介绍如何优化构建速度。</p></blockquote> <p>构建速度的优化措施有 8 点：</p> <ul><li>优化 babel-loader</li> <li>IgnorePlugin</li> <li>noParse</li> <li>happyPack</li> <li>ParallelUglifyPlugin</li> <li>自动刷新</li> <li>热更新</li> <li>DllPlugin</li></ul> <p>前 5 个可用于生产环境，后 3 个只用于开发环境。</p> <h2 id="_1-优化-babel-loader"><a href="#_1-优化-babel-loader" class="header-anchor">#</a> 1. 优化 babel-loader</h2> <ul><li>开启缓存：在原配置的基础上增加一个 <code>?cacheDirectory</code> 开启缓存，只要是 ES6 代码没有改动的部分，就不会重新编译。</li> <li>明确范围：通过 <code>include</code> 或 <code>exclude</code> 明确打包范围，两者选一个即可。</li></ul> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+  test<span class="token operator">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+  use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'babel-loader?cacheDirectory'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>    <span class="token comment">// 开启缓存 </span>
+  include<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">)</span>  <span class="token comment">// 明确范围</span>
+  <span class="token comment">// 排除范围，include 和 exclude 两者选一个即可</span>
+  <span class="token comment">// exclude: path.resovle(__dirname, 'node_modules')</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="_2-ignoreplugin-避免引入无用模块"><a href="#_2-ignoreplugin-避免引入无用模块" class="header-anchor">#</a> 2. IgnorePlugin 避免引入无用模块</h2> <p>例如我们在项目中引入了 Moment.js 这个日期处理类库 <code>import moment from 'moment'</code>，该库有多国语言支持，默认会引入所有语言的 JS 代码，导致体积庞大。</p> <p>如果我们只想打包进中文语言的代码，就需要启用 IgnorePlugin 插件。</p> <p>修改 <code>webpack.prod.js</code> 文件，在 <code>plugins</code> 中追加配置：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 忽略 moment 下的 /locale 目录</span>
+    <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>IgnorePlugin</span><span class="token punctuation">(</span><span class="token regex">/\.\/locale/</span><span class="token punctuation">,</span> <span class="token regex">/moment/</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>通过上述配置后，在打包时 <code>moment</code> 库的 <code>locale</code> 这个文件夹就被跳过了。那么在使用时，为了能显示语言，就要动态引入：</p> <div class="language-javascript line-numbers-mode"><div class="highlight-lines"><br><div class="highlighted"> </div><br><br><br><br></div><pre class="language-javascript"><code><span class="token keyword">import</span> moment <span class="token keyword">from</span> <span class="token string">'moment'</span>
+<span class="token keyword">import</span> <span class="token string">'moment/locale/zh-cn'</span> <span class="token comment">// 手动引入中文语言包</span>
+moment<span class="token punctuation">.</span><span class="token function">locale</span><span class="token punctuation">(</span><span class="token string">'zh-cn'</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'ll'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="_3-noparse-避免重复打包"><a href="#_3-noparse-避免重复打包" class="header-anchor">#</a> 3. noParse 避免重复打包</h2> <p>代码中引入的第三方包，形如 <code>xxx.min.js</code>，往往已经采用模块化处理过了，我们不需要重新进行打包。这个时候就在 <code>module</code></p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  module<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 忽略对 react.min.js 文件的递归解析处理</span>
+    noParse<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token regex">/react\.min\.js$/</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_4-happypack-多进程打包"><a href="#_4-happypack-多进程打包" class="header-anchor">#</a> 4. happyPack 多进程打包</h2> <p>JS（Node.js/webpack）是<strong>单线程</strong>的，因此如果开启<strong>多进程</strong>打包，可以提高构建速度（特别是多核 CPU）。</p> <p>首先需要安装 happyPack：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> happypack --save-dev
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后在 <code>webpack.prod.js</code> 文件中引入并配置：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> HappyPack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'happypack'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> srcPath<span class="token punctuation">,</span> distPath <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./paths'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  module<span class="token operator">:</span> <span class="token punctuation">{</span>
+    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token operator">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+        <span class="token comment">// 用 happypack/loader 替换原来的 babel-loader</span>
+        <span class="token comment">// 把对 .js 文件的处理转交给 id 为 babel 的 HappyPack 实例</span>
+        <span class="token comment">// id=babel 对应下面 plugins 中 new HappyPack 中的 id</span>
+        use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'happypack/loader?id=babel'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        include<span class="token operator">:</span> srcPath<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+      <span class="token comment">// 省略其它配置……</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 省略其它配置……</span>
+
+    <span class="token comment">// happyPack 开启多进程打包</span>
+    <span class="token keyword">new</span> <span class="token class-name">HappyPack</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// 用唯一的标识符 id 来代表当前的 HappyPack 是用来处理一类特定的文件</span>
+      id<span class="token operator">:</span> <span class="token string">'babel'</span><span class="token punctuation">,</span>
+      <span class="token comment">// 如何处理 .js 文件，用法和 Loader 配置中一样</span>
+      loaders<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'babel-loader?cacheDirectory'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h2 id="_5-paralleluglifyplugin-多进程压缩-js"><a href="#_5-paralleluglifyplugin-多进程压缩-js" class="header-anchor">#</a> 5. ParallelUglifyPlugin 多进程压缩 JS</h2> <p>webpack 内置了 Uglify 工具压缩 JS，但它是单进程的。开启多进程压缩会更快，和 happyPack 同理。</p> <p>首先需要安装 ParallelUglifyPlugin：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> webpack-parallel-uglify-plugin --save-dev
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后在 <code>webpack.prod.js</code> 文件中引入并配置：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> ParallelUglifyPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-parallel-uglify-plugin'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 省略其它配置……</span>
+
+    <span class="token comment">// 使用 ParallelUglifyPlugin 并行压缩输出的 JS 代码</span>
+    <span class="token keyword">new</span> <span class="token class-name">ParallelUglifyPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// 传递给 UglifyJS 的参数</span>
+      <span class="token comment">// （还是使用 UglifyJS 压缩，只不过帮助开启了多进程）</span>
+      uglifyJS<span class="token operator">:</span> <span class="token punctuation">{</span>
+        output<span class="token operator">:</span> <span class="token punctuation">{</span>
+          beautify<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 最紧凑的输出</span>
+          comments<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 删除所有的注释</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        compress<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 删除所有的 `console` 语句，可以兼容 IE 浏览器</span>
+          drop_console<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token comment">// 内嵌定义了但是只用到一次的变量</span>
+          collapse_vars<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token comment">// 提取出出现多次但是没有定义成变量去引用的静态值</span>
+          reduce_vars<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><div class="custom-block warning"><p class="custom-block-title">关于开启多进程</p> <ul><li>如果项目较大，打包较慢，开启多进程能提高速度</li> <li>如果项目较小，打包很快，开启多进程会较低速度（进程开销）</li></ul></div> <h2 id="_6-自动刷新"><a href="#_6-自动刷新" class="header-anchor">#</a> 6. 自动刷新</h2> <p>每次代码修改保存之后，会自动进行重新构建并刷新页面，不用再次输入命令，用于开发环境。但一般我们在开发环境中都会使用 <code>webpack-dev-server</code>，该插件自带自动刷新功能，所以不用特地开启该功能。</p> <p>下面代码演示怎么配置自动刷新的，<strong>实际工作中不用</strong>。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>export <span class="token operator">=</span> <span class="token punctuation">{</span>
+  watch<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 开启监听，默认为 false</span>
+  
+  <span class="token comment">// 监听配置</span>
+  watchOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+    ignored<span class="token operator">:</span> <span class="token regex">/node_modules/</span><span class="token punctuation">,</span> <span class="token comment">// 忽略哪些</span>
+    <span class="token comment">// 监听到变化发生后会等 300ms 再去执行动作，防止文件更新太快导致重新编译频率太高</span>
+    aggregateTimeout<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span>   <span class="token comment">// 默认为 300ms</span>
+    <span class="token comment">// 判断文件是否发生变化是通过不停的去询问系统指定文件有没有变化实现的</span>
+    poll<span class="token operator">:</span> <span class="token number">1000</span>               <span class="token comment">// 默认每隔 1000ms 询问一次</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="_7-热更新"><a href="#_7-热更新" class="header-anchor">#</a> 7. 热更新</h2> <p>热更新替换（HMR - Hot Module Replacement）。</p> <ul><li>自动刷新：
+<ul><li>整个网页全部刷新，速度较慢</li> <li>整个网页全部刷新，状态会丢失</li></ul></li> <li>热更新：
+<ul><li>新代码生效，网页不刷新，状态不丢失</li></ul></li></ul> <p>热更新插件是 webpack 自带的，无需另外安装，在 <code>webpack.dev.js</code> 中配置如下：</p> <div class="language-javascript line-numbers-mode"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br></div><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> srcPath<span class="token punctuation">,</span> distPath <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./paths'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> HotModuleReplacementPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack/lib/HotModuleReplacementPlugin'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  mode<span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+  entry<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// index: path.join(srcPath, 'index.js'),</span>
+    index<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">'webpack-dev-server/client?http://localhost:8080/'</span><span class="token punctuation">,</span>
+      <span class="token string">'webpack/hot/dev-server'</span><span class="token punctuation">,</span>
+      path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>srcPath<span class="token punctuation">,</span> <span class="token string">'index.js'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  module<span class="token operator">:</span> <span class="token punctuation">{</span>
+   <span class="token comment">// 省略……</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 省略其它……</span>
+
+    <span class="token keyword">new</span> <span class="token class-name">HotModuleReplacementPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  devServer<span class="token operator">:</span> <span class="token punctuation">{</span>
+    port<span class="token operator">:</span> <span class="token number">8080</span><span class="token punctuation">,</span>
+    progress<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 显示打包的进度条</span>
+    contentBase<span class="token operator">:</span> distPath<span class="token punctuation">,</span>  <span class="token comment">// 根目录</span>
+    open<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 自动打开浏览器</span>
+    compress<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// 启动 gzip 压缩</span>
+
+    hot<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 设置代理</span>
+    proxy<span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token comment">// 省略……</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><p>本质上要实现 HMR，都要写类似以下 <code>index.js</code> 中的代码（判断是否开启热更新，单独执行某代码块），否则不会热更新，还是走刷新的逻辑。</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">import</span> counter <span class="token keyword">from</span> <span class="token string">'./counter'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> number <span class="token keyword">from</span> <span class="token string">'./number'</span><span class="token punctuation">;</span>
+<span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">number</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 这里需要判断下是否开启了热更新，如果开启了，就只让number函数再执行一次，否则不会热更新</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>module<span class="token punctuation">.</span>hot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  module<span class="token punctuation">.</span>hot<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token string">'./number'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'number'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">number</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><code>index.js</code> 中引入两个模块，如果不开启热更新，那么当一个模块里的数据变化了，就会导致页面刷新，使另一个模块内的数据也恢复到初始值，如果我们想一个模块里的 JS 代码的变化，不影响另一个模块代码变更过的数据，每改一个 JS 模块里的代码，只会更新当前模块的数据，不会影响其他 JS 模块的数据。以上需求可借助 HMR 来实现。</p> <p>但在很多时候，我们开发过程中并没有去写这样的代码，是因为在相应的 loader 中，已经帮我们实现了热更新的代码。如：</p> <ul><li>css-loader 中同样也配置了热更新，不需要自己额外添加代码</li> <li>我们使用的 vue 框架里，vue-loader 里也已经配置了热更新，所以不需要额外添加代码</li></ul> <h2 id="_8-dllplugin-动态链接库插件"><a href="#_8-dllplugin-动态链接库插件" class="header-anchor">#</a> 8. DllPlugin 动态链接库插件</h2> <p>前端框架如 Vue.js 和 React 体积大，构建慢。但它们的版本较稳定，不常升级版本。那么同一个版本只构建一次即可，不用每次都重新构建。</p> <p>webpack 已内置 DllPlugin 支持，无需另外安装。它包含两个插件：</p> <ul><li>DllPlugin：打包出 dll 文件</li> <li>DllReferencePlugin：使用 dll 文件</li></ul> <p>这个过程比较复杂，目前在开发环境中不怎么用，所以暂时先不整理，后续再补。</p> <p>（完）</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wenyuan/fedbook/edit/master/docs/frontend-frameworks/webpack5/performance-optimization-in-build.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次编辑于:</span> <span class="time">2021年6月14日 23:07</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/frontend-frameworks/webpack5/advanced-config/" class="prev"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon prev-icon"><path d="M906.783 588.79c-.02 8.499-6.882 15.36-15.38 15.37l-443.7-.01 75.704 191.682c2.52 6.42.482 13.763-5.038 17.91-5.52 4.168-13.138 4.147-18.616-.092L123.228 524.175a15.362 15.362 0 01-6-12.165c0-4.782 2.222-9.277 6-12.185L499.753 210.35a15.388 15.388 0 019.38-3.195c3.236 0 6.502 1.034 9.236 3.103 5.52 4.147 7.578 11.49 5.038 17.91L447.683 419.84l443.72-.01c8.498.01 15.36 6.881 15.36 15.36l.02 153.6z" fill="currentColor"></path></svg>
+        高级配置
+      </a></span> <span class="next"><a href="/frontend-frameworks/webpack5/performance-optimization-in-output/">
+        性能优化 - 产出代码
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon next-icon"><path d="M906.772 512c0 4.772-2.211 9.267-5.99 12.175L524.257 813.66a15.37 15.37 0 01-18.616.092 15.368 15.368 0 01-5.038-17.91l75.714-191.672h-443.73c-8.488 0-15.36-6.881-15.36-15.36v-153.6c0-8.489 6.872-15.36 15.36-15.36h443.73l-75.714-191.682a15.358 15.358 0 015.048-17.91c5.51-4.158 13.128-4.137 18.606.092l376.525 289.485a15.323 15.323 0 015.99 12.165z" fill="currentColor"></path></svg></a></span></p></div> <!----> </main> <!----></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.17da51c0.js" defer></script><script src="/assets/js/vendors~layout-Layout.41e105c5.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.f25279d3.js" defer></script><script src="/assets/js/page-性能优化-构建速度.7f1747cc.js" defer></script>
+  </body>
+</html>
