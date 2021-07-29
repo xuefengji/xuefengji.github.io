@@ -4,153 +4,137 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Ngixn 配置文件模板 | 前端修炼小册</title>
-    <meta name="generator" content="VuePress 1.5.3">
+    <meta name="generator" content="VuePress 1.8.2">
     <link rel="icon" href="/img/favicon.png">
     <link rel="stylesheet" href="/css/style.css">
     <script charset="utf-8" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script charset="utf-8" src="/js/main.js"></script>
+    <link rel="alternate" type="application/atom+xml" href="https://www.fedbook.cn/atom.xml" title="前端修炼小册 Atom Feed">
+    <link rel="alternate" type="application/json" href="https://www.fedbook.cn/feed.json" title="前端修炼小册 JSON Feed">
+    <link rel="alternate" type="application/rss+xml" href="https://www.fedbook.cn/rss.xml" title="前端修炼小册 RSS Feed">
     <meta name="description" content="Wenyuan's Front-End Development Book">
-    <link rel="preload" href="/assets/css/0.styles.e0422ad3.css" as="style"><link rel="preload" href="/assets/js/app.8210ba4c.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.bcd22327.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.58a48dae.js" as="script"><link rel="preload" href="/assets/js/page-Ngixn配置文件模板.7a845cff.js" as="script"><link rel="prefetch" href="/assets/js/102.1b7ad358.js"><link rel="prefetch" href="/assets/js/103.aac2ea4c.js"><link rel="prefetch" href="/assets/js/104.9731e32b.js"><link rel="prefetch" href="/assets/js/105.e8723798.js"><link rel="prefetch" href="/assets/js/layout-Blog.be16c431.js"><link rel="prefetch" href="/assets/js/layout-Layout.80a05bb8.js"><link rel="prefetch" href="/assets/js/layout-NotFound.b3181707.js"><link rel="prefetch" href="/assets/js/page-BFC.8ca7ede7.js"><link rel="prefetch" href="/assets/js/page-CSS.3c167c89.js"><link rel="prefetch" href="/assets/js/page-CSS引入方式.c903886d.js"><link rel="prefetch" href="/assets/js/page-CSS规范.e6e78ce3.js"><link rel="prefetch" href="/assets/js/page-CSS问题.359da03f.js"><link rel="prefetch" href="/assets/js/page-Flexbox布局.bbc62eb3.js"><link rel="prefetch" href="/assets/js/page-Grid布局.3e5d5021.js"><link rel="prefetch" href="/assets/js/page-HTML.1ff85f28.js"><link rel="prefetch" href="/assets/js/page-HTML基本结构.5de96a0c.js"><link rel="prefetch" href="/assets/js/page-HTML规范.bde27c6d.js"><link rel="prefetch" href="/assets/js/page-HTML问题.71b18bcb.js"><link rel="prefetch" href="/assets/js/page-Home.9d9f997d.js"><link rel="prefetch" href="/assets/js/page-JavaScript.f730c541.js"><link rel="prefetch" href="/assets/js/page-JavaScript手写函数.3a49e436.js"><link rel="prefetch" href="/assets/js/page-JavaScript规范.aa69c946.js"><link rel="prefetch" href="/assets/js/page-Nginx.6942e1ef.js"><link rel="prefetch" href="/assets/js/page-Nginx常用命令.1665bb3e.js"><link rel="prefetch" href="/assets/js/page-Nginx的卸载.34dcc759.js"><link rel="prefetch" href="/assets/js/page-Nginx的安装.35071e12.js"><link rel="prefetch" href="/assets/js/page-Nginx设置开机自启.863f65c0.js"><link rel="prefetch" href="/assets/js/page-Ngixn配置文件详解.b3c46dd1.js"><link rel="prefetch" href="/assets/js/page-Python.f3a251f4.js"><link rel="prefetch" href="/assets/js/page-Vuejs.dfccd9bc.js"><link rel="prefetch" href="/assets/js/page-Vue项目规范.c2d560c9.js"><link rel="prefetch" href="/assets/js/page-Webpack5.b2a228e7.js"><link rel="prefetch" href="/assets/js/page-this指向.718225e5.js"><link rel="prefetch" href="/assets/js/page-事件循环机制，微任务和宏任务的关系.89624d48.js"><link rel="prefetch" href="/assets/js/page-代码风格.afe3b4d1.js"><link rel="prefetch" href="/assets/js/page-伪元素和伪类.faad15bc.js"><link rel="prefetch" href="/assets/js/page-作用域.3c2b8990.js"><link rel="prefetch" href="/assets/js/page-关于本站.1556b5ea.js"><link rel="prefetch" href="/assets/js/page-函数参数.352fd24e.js"><link rel="prefetch" href="/assets/js/page-函数柯里化.ec1daf2e.js"><link rel="prefetch" href="/assets/js/page-函数装饰器.6dbdad59.js"><link rel="prefetch" href="/assets/js/page-前端路由原理.9a1352f1.js"><link rel="prefetch" href="/assets/js/page-原型与原型链.f7abb5eb.js"><link rel="prefetch" href="/assets/js/page-变量与常量.e7bf6dff.js"><link rel="prefetch" href="/assets/js/page-同步与异步.2e8ab6c2.js"><link rel="prefetch" href="/assets/js/page-响应式原理.3f360550.js"><link rel="prefetch" href="/assets/js/page-基本配置.482c68ad.js"><link rel="prefetch" href="/assets/js/page-基础用法要点.161929ca.js"><link rel="prefetch" href="/assets/js/page-声明函数的六种方式.ff2d8ff4.js"><link rel="prefetch" href="/assets/js/page-复杂度分析.231cefee.js"><link rel="prefetch" href="/assets/js/page-定位（position）.a5e4b293.js"><link rel="prefetch" href="/assets/js/page-实现Objectcreate方法.a25a25af.js"><link rel="prefetch" href="/assets/js/page-实现apply方法.54318a39.js"><link rel="prefetch" href="/assets/js/page-实现bind方法.98efa7bc.js"><link rel="prefetch" href="/assets/js/page-实现call方法.38bd3c36.js"><link rel="prefetch" href="/assets/js/page-实现instanceof运算符.039f9695.js"><link rel="prefetch" href="/assets/js/page-实现new运算符.8700cba1.js"><link rel="prefetch" href="/assets/js/page-实现浅克隆（shallowClone）.3446c820.js"><link rel="prefetch" href="/assets/js/page-实现深克隆（deepClone）.f896bf2e.js"><link rel="prefetch" href="/assets/js/page-实现节流函数（throttle）.c9b602f1.js"><link rel="prefetch" href="/assets/js/page-实现防抖函数（debounce）.c1df2bb9.js"><link rel="prefetch" href="/assets/js/page-对象遍历的几种方式.9085f8d3.js"><link rel="prefetch" href="/assets/js/page-性能优化-产出代码.896b453d.js"><link rel="prefetch" href="/assets/js/page-性能优化-构建速度.2d4f3008.js"><link rel="prefetch" href="/assets/js/page-执行上下文.b58218bd.js"><link rel="prefetch" href="/assets/js/page-数据类型.8f340ae2.js"><link rel="prefetch" href="/assets/js/page-数据结构与算法.76d243c5.js"><link rel="prefetch" href="/assets/js/page-数据结构之数组.607f632c.js"><link rel="prefetch" href="/assets/js/page-数据结构之链表.5318f57b.js"><link rel="prefetch" href="/assets/js/page-数组遍历的几种方式.7d433523.js"><link rel="prefetch" href="/assets/js/page-文档规范.bef54530.js"><link rel="prefetch" href="/assets/js/page-更新日志.395a3aec.js"><link rel="prefetch" href="/assets/js/page-最佳实践-通用模板.bc840869.js"><link rel="prefetch" href="/assets/js/page-未完待续.dc69a058.js"><link rel="prefetch" href="/assets/js/page-核心概念.71ba7a5c.js"><link rel="prefetch" href="/assets/js/page-模板编译.dd046481.js"><link rel="prefetch" href="/assets/js/page-正向代理与反向代理.d7503c3f.js"><link rel="prefetch" href="/assets/js/page-浅克隆与深克隆.afa02155.js"><link rel="prefetch" href="/assets/js/page-浮动（float）.03a89c3b.js"><link rel="prefetch" href="/assets/js/page-盒模型.65e1f57e.js"><link rel="prefetch" href="/assets/js/page-类和实例.04c29600.js"><link rel="prefetch" href="/assets/js/page-类成员保护.80a9b1fc.js"><link rel="prefetch" href="/assets/js/page-类的继承.8e0c21e0.js"><link rel="prefetch" href="/assets/js/page-组件渲染与更新.b7585e35.js"><link rel="prefetch" href="/assets/js/page-经典布局.b9627a2d.js"><link rel="prefetch" href="/assets/js/page-继承的八种方式.39d47439.js"><link rel="prefetch" href="/assets/js/page-编译器与解释器.04a8fddd.js"><link rel="prefetch" href="/assets/js/page-虚拟DOM与diff算法.4c40926b.js"><link rel="prefetch" href="/assets/js/page-语义类标签.b09a581f.js"><link rel="prefetch" href="/assets/js/page-语法规范.8d293d6a.js"><link rel="prefetch" href="/assets/js/page-调用函数的四种方式.8e667187.js"><link rel="prefetch" href="/assets/js/page-负载均衡.f48fdbaa.js"><link rel="prefetch" href="/assets/js/page-选择器与样式优先级.9677b448.js"><link rel="prefetch" href="/assets/js/page-长度和单位.95b49863.js"><link rel="prefetch" href="/assets/js/page-闭包.4c0d5e65.js"><link rel="prefetch" href="/assets/js/page-面向对象编程.3c371193.js"><link rel="prefetch" href="/assets/js/page-高级用法特性.da2d3aee.js"><link rel="prefetch" href="/assets/js/page-高级配置.83299131.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.11ab0e52.js"><link rel="prefetch" href="/assets/js/vendors~layout-Slide.e9e829ea.js"><link rel="prefetch" href="/assets/js/vendors~reveal.97e709a2.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.e0422ad3.css">
+    <meta property="og:url" content="/basic-skills/nginx/config-file-generic-template.html">
+    <meta property="og:site_name" content="前端修炼小册">
+    <meta property="og:title" content="Ngixn 配置文件模板">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh-CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="前端修炼小册">
+    <meta property="article:author" content="wenyuan">
+    
+    <link rel="preload" href="/assets/css/0.styles.c70c8c87.css" as="style"><link rel="preload" href="/assets/js/app.3f5bc73a.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.d45b37c8.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.0485fa05.js" as="script"><link rel="preload" href="/assets/js/page-Ngixn配置文件模板.7ec48808.js" as="script"><link rel="prefetch" href="/assets/js/layout-Blog.ae041e64.js"><link rel="prefetch" href="/assets/js/layout-Layout.18ece50b.js"><link rel="prefetch" href="/assets/js/layout-NotFound.8f13fe3b.js"><link rel="prefetch" href="/assets/js/page-BFC.8f13c6b8.js"><link rel="prefetch" href="/assets/js/page-CSS.3ac483e2.js"><link rel="prefetch" href="/assets/js/page-CSS引入方式.2b852286.js"><link rel="prefetch" href="/assets/js/page-CSS规范.6db4b707.js"><link rel="prefetch" href="/assets/js/page-CSS问题.f5549874.js"><link rel="prefetch" href="/assets/js/page-Flexbox布局.89a3a52b.js"><link rel="prefetch" href="/assets/js/page-Grid布局.a3bbbaf4.js"><link rel="prefetch" href="/assets/js/page-HTML.d1e2fc09.js"><link rel="prefetch" href="/assets/js/page-HTML基本结构.e355eaf5.js"><link rel="prefetch" href="/assets/js/page-HTML规范.e5829f0c.js"><link rel="prefetch" href="/assets/js/page-HTML问题.097bde85.js"><link rel="prefetch" href="/assets/js/page-Home.8552b31d.js"><link rel="prefetch" href="/assets/js/page-JavaScript.4607daed.js"><link rel="prefetch" href="/assets/js/page-JavaScript手写函数.97c77ca7.js"><link rel="prefetch" href="/assets/js/page-JavaScript规范.71beb185.js"><link rel="prefetch" href="/assets/js/page-Nginx.eff0405a.js"><link rel="prefetch" href="/assets/js/page-Nginx安全访问控制.5b46c711.js"><link rel="prefetch" href="/assets/js/page-Nginx常用命令.1164c3fa.js"><link rel="prefetch" href="/assets/js/page-Nginx文件列表功能.80598c33.js"><link rel="prefetch" href="/assets/js/page-Nginx的卸载.0f9fd6e8.js"><link rel="prefetch" href="/assets/js/page-Nginx的安装.4bb588fd.js"><link rel="prefetch" href="/assets/js/page-Nginx设置开机自启.24fae9ab.js"><link rel="prefetch" href="/assets/js/page-Nginx部署Https安全认证.2872eea4.js"><link rel="prefetch" href="/assets/js/page-Nginx部署前后端分离项目.ebd684d2.js"><link rel="prefetch" href="/assets/js/page-Nginx限流常用模块.91df3882.js"><link rel="prefetch" href="/assets/js/page-Nginx页面安全认证.15590b47.js"><link rel="prefetch" href="/assets/js/page-Ngixn配置文件详解.94547398.js"><link rel="prefetch" href="/assets/js/page-Python.33dd6150.js"><link rel="prefetch" href="/assets/js/page-TypeScript.c995cac3.js"><link rel="prefetch" href="/assets/js/page-Vuejs.4444e362.js"><link rel="prefetch" href="/assets/js/page-Vue项目规范.1dab314f.js"><link rel="prefetch" href="/assets/js/page-Webpack5.1514a631.js"><link rel="prefetch" href="/assets/js/page-this指向.48a4d379.js"><link rel="prefetch" href="/assets/js/page-事件循环机制，微任务和宏任务的关系.542fe3ef.js"><link rel="prefetch" href="/assets/js/page-代码风格.ba677ee9.js"><link rel="prefetch" href="/assets/js/page-任意类型与未知类型.2a26f61b.js"><link rel="prefetch" href="/assets/js/page-伪元素和伪类.3ceba283.js"><link rel="prefetch" href="/assets/js/page-作用域.ee336841.js"><link rel="prefetch" href="/assets/js/page-使用Fabric执行SSH.5ebd7320.js"><link rel="prefetch" href="/assets/js/page-使用Paramiko执行SSH.c0cdfd84.js"><link rel="prefetch" href="/assets/js/page-使用smtplib发送电子邮件.abbd7161.js"><link rel="prefetch" href="/assets/js/page-使用subprocess执行cmd.4c7d33e7.js"><link rel="prefetch" href="/assets/js/page-使用telnetlib执行Telnet.005fca00.js"><link rel="prefetch" href="/assets/js/page-关于本站.840e9da2.js"><link rel="prefetch" href="/assets/js/page-函数参数.82f5c049.js"><link rel="prefetch" href="/assets/js/page-函数柯里化.2fd8ed9f.js"><link rel="prefetch" href="/assets/js/page-函数类型.b4336550.js"><link rel="prefetch" href="/assets/js/page-函数装饰器.51c44729.js"><link rel="prefetch" href="/assets/js/page-前端路由原理.d00523ee.js"><link rel="prefetch" href="/assets/js/page-原型与原型链.671d71e2.js"><link rel="prefetch" href="/assets/js/page-变量与常量.a6f4448a.js"><link rel="prefetch" href="/assets/js/page-同步与异步.97c5f3f9.js"><link rel="prefetch" href="/assets/js/page-响应式原理.d4927916.js"><link rel="prefetch" href="/assets/js/page-基本配置.0f179f6c.js"><link rel="prefetch" href="/assets/js/page-基础用法要点.c2f3118b.js"><link rel="prefetch" href="/assets/js/page-声明函数的六种方式.97864e0f.js"><link rel="prefetch" href="/assets/js/page-复杂度分析.70df12f0.js"><link rel="prefetch" href="/assets/js/page-定位（position）.a082e99c.js"><link rel="prefetch" href="/assets/js/page-实现Objectcreate方法.8dda0fa5.js"><link rel="prefetch" href="/assets/js/page-实现apply方法.3a78364a.js"><link rel="prefetch" href="/assets/js/page-实现bind方法.bbb5e5f6.js"><link rel="prefetch" href="/assets/js/page-实现call方法.60827591.js"><link rel="prefetch" href="/assets/js/page-实现instanceof运算符.982f0f94.js"><link rel="prefetch" href="/assets/js/page-实现new运算符.ed2607db.js"><link rel="prefetch" href="/assets/js/page-实现浅克隆（shallowClone）.b29da0de.js"><link rel="prefetch" href="/assets/js/page-实现深克隆（deepClone）.f795a15c.js"><link rel="prefetch" href="/assets/js/page-实现节流函数（throttle）.167fca32.js"><link rel="prefetch" href="/assets/js/page-实现防抖函数（debounce）.c04c8c95.js"><link rel="prefetch" href="/assets/js/page-对象类型：接口.d0d88d27.js"><link rel="prefetch" href="/assets/js/page-对象遍历的几种方式.78d8aa91.js"><link rel="prefetch" href="/assets/js/page-布尔、数值与字符串.74617d5d.js"><link rel="prefetch" href="/assets/js/page-性能优化-产出代码.01732f49.js"><link rel="prefetch" href="/assets/js/page-性能优化-构建速度.8bb92cae.js"><link rel="prefetch" href="/assets/js/page-执行上下文.7a037cda.js"><link rel="prefetch" href="/assets/js/page-数据类型.43af92ba.js"><link rel="prefetch" href="/assets/js/page-数据类型简介.718f5fa8.js"><link rel="prefetch" href="/assets/js/page-数据结构与算法.866ceaa6.js"><link rel="prefetch" href="/assets/js/page-数据结构之数组.ecc5fc11.js"><link rel="prefetch" href="/assets/js/page-数据结构之链表.f92bd5cd.js"><link rel="prefetch" href="/assets/js/page-数组和元组.b668270d.js"><link rel="prefetch" href="/assets/js/page-数组遍历的几种方式.863293d5.js"><link rel="prefetch" href="/assets/js/page-文档规范.c1b7d318.js"><link rel="prefetch" href="/assets/js/page-更新日志.66822cae.js"><link rel="prefetch" href="/assets/js/page-最佳实践-通用模板.1c0b22a3.js"><link rel="prefetch" href="/assets/js/page-未完待续.786fa104.js"><link rel="prefetch" href="/assets/js/page-枚举.f14b85b2.js"><link rel="prefetch" href="/assets/js/page-核心概念.18627814.js"><link rel="prefetch" href="/assets/js/page-模板编译.bd52c4b3.js"><link rel="prefetch" href="/assets/js/page-正向代理与反向代理.66b857b5.js"><link rel="prefetch" href="/assets/js/page-泛型.c8c32321.js"><link rel="prefetch" href="/assets/js/page-浅克隆与深克隆.4eb12ead.js"><link rel="prefetch" href="/assets/js/page-浮动（float）.f9eb2ec1.js"><link rel="prefetch" href="/assets/js/page-盒模型.5c5ca40b.js"><link rel="prefetch" href="/assets/js/page-空值、未定义和不存在.38a2f873.js"><link rel="prefetch" href="/assets/js/page-类和实例.70694339.js"><link rel="prefetch" href="/assets/js/page-类成员保护.bde47195.js"><link rel="prefetch" href="/assets/js/page-类的继承.bed63de9.js"><link rel="prefetch" href="/assets/js/page-组件渲染与更新.6707d8b2.js"><link rel="prefetch" href="/assets/js/page-经典布局.f3287df5.js"><link rel="prefetch" href="/assets/js/page-继承的八种方式.6edbe1c8.js"><link rel="prefetch" href="/assets/js/page-编译器与解释器.9c5d1d0e.js"><link rel="prefetch" href="/assets/js/page-联合和字面量.eff5e89d.js"><link rel="prefetch" href="/assets/js/page-虚拟DOM与diff算法.14756214.js"><link rel="prefetch" href="/assets/js/page-语义类标签.a5775246.js"><link rel="prefetch" href="/assets/js/page-语法规范.86630f42.js"><link rel="prefetch" href="/assets/js/page-调用函数的四种方式.628cd372.js"><link rel="prefetch" href="/assets/js/page-负载均衡.112cc1bf.js"><link rel="prefetch" href="/assets/js/page-选择器与样式优先级.0b32d9de.js"><link rel="prefetch" href="/assets/js/page-长度和单位.79e558be.js"><link rel="prefetch" href="/assets/js/page-闭包.91050e4a.js"><link rel="prefetch" href="/assets/js/page-面向对象编程.936bba78.js"><link rel="prefetch" href="/assets/js/page-高级用法特性.dab9eb1a.js"><link rel="prefetch" href="/assets/js/page-高级配置.99cda9e9.js"><link rel="prefetch" href="/assets/js/vendors~layout-Slide.e8ed77fc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c70c8c87.css">
   </head>
   <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><button class="sidebar-button"><span class="icon"></span></button> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="前端修炼小册" class="logo"> <!----> <span class="site-name can-hide">前端修炼小册</span></a> <div class="links"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
-      风格指南
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="风格指南" class="mobile-dropdown-title"><span class="title"><!---->
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><!----> <div class="content__navbar-start"></div> <button title="Sidebar Button" class="sidebar-button"><span class="icon"></span></button> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="前端修炼小册" class="logo"> <!----> <span class="site-name can-hide">前端修炼小册</span></a> <!----> <div class="content__navbar-center"></div> <div class="links"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
+        风格指南
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
+        前端语言
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>基础</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-languages/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/frontend-languages/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/frontend-languages/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>进阶</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-languages/typescript/" class="nav-link"><!---->
+  TypeScript
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title"><!---->
+        前端框架
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>框架</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/vuejs/" class="nav-link"><!---->
+  Vue.js
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>工具</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/webpack5/" class="nav-link"><!---->
+  Webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
+        后端语言
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/backend-languages/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="必知必会" class="dropdown-title"><span class="title"><!---->
+        必知必会
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/basic-skills/nginx/" class="nav-link router-link-active active"><!---->
+  Nginx
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
+        编程进阶
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/advanced-programming/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
+        手写系列
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/handwritten/javascript/" class="nav-link"><!---->
+  JavaScript 手写函数
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+        其它
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站内</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
+  更新日志
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站外</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>线路</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div></nav> <!----> <!----> <!----> <div class="content__navbar-end"></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!----> <!----> <div class="content__sidebar-top"></div> <nav class="sidebar-nav-links"><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
       风格指南
     </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
   文档规范
 </a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
   代码风格
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
       前端语言
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端语言" class="mobile-dropdown-title"><span class="title"><!---->
-      前端语言
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-languages/html/" class="nav-link"><!---->
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>基础</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-languages/html/" class="nav-link"><!---->
   HTML
-</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/css/" class="nav-link"><!---->
+</a></li><li class="dropdown-subitem"><a href="/frontend-languages/css/" class="nav-link"><!---->
   CSS
-</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/javascript/" class="nav-link"><!---->
+</a></li><li class="dropdown-subitem"><a href="/frontend-languages/javascript/" class="nav-link"><!---->
   JavaScript
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title"><!---->
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>进阶</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-languages/typescript/" class="nav-link"><!---->
+  TypeScript
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title"><!---->
       前端框架
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端框架" class="mobile-dropdown-title"><span class="title"><!---->
-      前端框架
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/vuejs/" class="nav-link"><!---->
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>框架</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/vuejs/" class="nav-link"><!---->
   Vue.js
-</a></li></ul></li><li class="dropdown-item"><h4>工具</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/webpack5/" class="nav-link"><!---->
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>工具</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/webpack5/" class="nav-link"><!---->
   Webpack
-</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
-      后端语言
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="后端语言" class="mobile-dropdown-title"><span class="title"><!---->
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
       后端语言
     </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-languages/python/" class="nav-link"><!---->
   Python
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="必知必会" class="dropdown-title"><span class="title"><!---->
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="必知必会" class="dropdown-title"><span class="title"><!---->
       必知必会
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="必知必会" class="mobile-dropdown-title"><span class="title"><!---->
-      必知必会
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic-skills/nginx/" class="nav-link router-link-active"><!---->
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic-skills/nginx/" class="nav-link router-link-active active"><!---->
   Nginx
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
-      编程进阶
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="编程进阶" class="mobile-dropdown-title"><span class="title"><!---->
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
       编程进阶
     </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/advanced-programming/algorithm/" class="nav-link"><!---->
   数据结构与算法
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
-      手写系列
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="手写系列" class="mobile-dropdown-title"><span class="title"><!---->
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
       手写系列
     </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/handwritten/javascript/" class="nav-link"><!---->
   JavaScript 手写函数
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
       其它
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
-      其它
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站内</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
   关于本站
 </a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
   更新日志
-</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站外</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
   博客
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
   GitHub
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
   支持一下
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>线路</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>线路</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
   国内
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
   国外
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="风格指南" class="dropdown-title"><span class="title"><!---->
-      风格指南
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="风格指南" class="mobile-dropdown-title"><span class="title"><!---->
-      风格指南
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
-  文档规范
-</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
-  代码风格
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端语言" class="dropdown-title"><span class="title"><!---->
-      前端语言
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端语言" class="mobile-dropdown-title"><span class="title"><!---->
-      前端语言
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontend-languages/html/" class="nav-link"><!---->
-  HTML
-</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/css/" class="nav-link"><!---->
-  CSS
-</a></li><li class="dropdown-item"><!----> <a href="/frontend-languages/javascript/" class="nav-link"><!---->
-  JavaScript
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端框架" class="dropdown-title"><span class="title"><!---->
-      前端框架
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="前端框架" class="mobile-dropdown-title"><span class="title"><!---->
-      前端框架
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>框架</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/vuejs/" class="nav-link"><!---->
-  Vue.js
-</a></li></ul></li><li class="dropdown-item"><h4>工具</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-frameworks/webpack5/" class="nav-link"><!---->
-  Webpack
-</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端语言" class="dropdown-title"><span class="title"><!---->
-      后端语言
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="后端语言" class="mobile-dropdown-title"><span class="title"><!---->
-      后端语言
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-languages/python/" class="nav-link"><!---->
-  Python
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="必知必会" class="dropdown-title"><span class="title"><!---->
-      必知必会
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="必知必会" class="mobile-dropdown-title"><span class="title"><!---->
-      必知必会
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/basic-skills/nginx/" class="nav-link router-link-active"><!---->
-  Nginx
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="编程进阶" class="dropdown-title"><span class="title"><!---->
-      编程进阶
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="编程进阶" class="mobile-dropdown-title"><span class="title"><!---->
-      编程进阶
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/advanced-programming/algorithm/" class="nav-link"><!---->
-  数据结构与算法
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="手写系列" class="dropdown-title"><span class="title"><!---->
-      手写系列
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="手写系列" class="mobile-dropdown-title"><span class="title"><!---->
-      手写系列
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/handwritten/javascript/" class="nav-link"><!---->
-  JavaScript 手写函数
-</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
-      其它
-    </span> <span class="arrow down"></span></button> <button type="button" aria-label="其它" class="mobile-dropdown-title"><span class="title"><!---->
-      其它
-    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>站内</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
-  关于本站
-</a></li><li class="dropdown-subitem"><a href="/history/" class="nav-link"><!---->
-  更新日志
-</a></li></ul></li><li class="dropdown-item"><h4>站外</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
-  博客
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
-  GitHub
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
-  支持一下
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li><li class="dropdown-item"><h4>线路</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
-  国内
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
-  国外
-  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/basic-skills/nginx/" class="sidebar-heading clickable router-link-active open"><!----> <span>Nginx</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic-skills/nginx/forward-proxy-and-reverse-proxy/" class="sidebar-link">正向代理与反向代理</a></li><li><a href="/basic-skills/nginx/load-balancing/" class="sidebar-link">负载均衡</a></li><li><a href="/basic-skills/nginx/installation-of-nginx/" class="sidebar-link">Nginx 的安装</a></li><li><a href="/basic-skills/nginx/uninstallation-of-nginx/" class="sidebar-link">Nginx 的卸载</a></li><li><a href="/basic-skills/nginx/common-commands/" class="sidebar-link">Nginx 常用命令</a></li><li><a href="/basic-skills/nginx/set-auto-start-after-server-reboot/" class="sidebar-link">Nginx 设置开机自启</a></li><li><a href="/basic-skills/nginx/config-file-params-explanation/" class="sidebar-link">Ngixn 配置文件详解</a></li><li><a href="/basic-skills/nginx/config-file-generic-template/" aria-current="page" class="active sidebar-link">Ngixn 配置文件模板</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic-skills/nginx/config-file-generic-template/#模块拆分" class="sidebar-link">模块拆分</a></li><li class="sidebar-sub-header"><a href="/basic-skills/nginx/config-file-generic-template/#主配置文件" class="sidebar-link">主配置文件</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"><nav class="breadcrumb disable"><!----></nav>  <!----> <!----> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"><li class="anchor anchor2"><a href="/basic-skills/nginx/config-file-generic-template/#模块拆分" class="anchor-link"><div>模块拆分</div></a></li><li class="anchor anchor2"><a href="/basic-skills/nginx/config-file-generic-template/#主配置文件" class="anchor-link"><div>主配置文件</div></a></li></ul></div></aside></div> <div class="theme-default-content content__default"><h1 id="ngixn-配置文件模板"><a href="#ngixn-配置文件模板" class="header-anchor">#</a> Ngixn 配置文件模板</h1> <p>本文基于 Nginx 1.18.0，整理一份配置文件 nginx.conf 的通用模板。</p> <h2 id="模块拆分"><a href="#模块拆分" class="header-anchor">#</a> 模块拆分</h2> <p>当项目或业务越来越多的时候，Nginx 的配置文件 nginx.conf 会越来越大和复杂，不便于管理，所以需要拆分出多个子配置文件。</p> <p>以下命令，如果你是 root 账户，直接执行即可，不是的话前面加 <code>sudo</code> 获取权限。</p> <p>首先建立子配置文件目录：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/nginx/conf
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <!----></nav> <!----> <div class="content__sidebar-center"></div> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><!----> <span class="title">Nginx 用法整理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic-skills/nginx/forward-proxy-and-reverse-proxy/" class="sidebar-link">正向代理与反向代理</a></li><li><a href="/basic-skills/nginx/load-balancing/" class="sidebar-link">负载均衡</a></li><li><a href="/basic-skills/nginx/installation-of-nginx/" class="sidebar-link">Nginx 的安装</a></li><li><a href="/basic-skills/nginx/uninstallation-of-nginx/" class="sidebar-link">Nginx 的卸载</a></li><li><a href="/basic-skills/nginx/common-commands/" class="sidebar-link">Nginx 常用命令</a></li><li><a href="/basic-skills/nginx/set-auto-start-after-server-reboot/" class="sidebar-link">Nginx 设置开机自启</a></li><li><a href="/basic-skills/nginx/config-file-params-explanation/" class="sidebar-link">Nginx 配置文件详解</a></li><li><a href="/basic-skills/nginx/config-file-generic-template/" aria-current="page" class="active sidebar-link">Nginx 配置文件模板</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic-skills/nginx/config-file-generic-template/#模块拆分" class="sidebar-link">模块拆分</a></li><li class="sidebar-sub-header"><a href="/basic-skills/nginx/config-file-generic-template/#主配置文件" class="sidebar-link">主配置文件</a></li><li class="sidebar-sub-header"><a href="/basic-skills/nginx/config-file-generic-template/#子配置文件" class="sidebar-link">子配置文件</a></li></ul></li><li><a href="/basic-skills/nginx/ngx-http-access-module/" class="sidebar-link">Nginx 安全访问控制</a></li><li><a href="/basic-skills/nginx/ngx-http-autoindex-module/" class="sidebar-link">Nginx 文件列表功能</a></li><li><a href="/basic-skills/nginx/ngx-http-auth-basic-module/" class="sidebar-link">Nginx 页面安全认证</a></li><li><a href="/basic-skills/nginx/deploy-https-security-auth/" class="sidebar-link">Nginx 部署 Https 安全认证</a></li><li><a href="/basic-skills/nginx/traffic-limiting-modules/" class="sidebar-link">Nginx 限流常用模块</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><!----> <span class="title">Nginx 部署方案</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic-skills/nginx/practice-in-front-end-separation-project/" class="sidebar-link">Nginx 部署前后端分离项目</a></li></ul></section></li></ul> <!----> <div class="content__sidebar-bottom"></div> <!----></aside> <main class="page"><nav class="breadcrumb disable"><!----></nav> <!----> <div class="content__page-top"></div> <div vocab="https://schema.org/" typeof="Article" class="page-title"><h1><!----> <span property="headline">Ngixn 配置文件模板</span></h1> <!----> <!----> <hr></div> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"><li class="anchor"><a href="/basic-skills/nginx/config-file-generic-template/#模块拆分" class="anchor-link heading2"><div>模块拆分</div></a></li><li class="anchor"><a href="/basic-skills/nginx/config-file-generic-template/#主配置文件" class="anchor-link heading2"><div>主配置文件</div></a></li><li class="anchor"><a href="/basic-skills/nginx/config-file-generic-template/#子配置文件" class="anchor-link heading2"><div>子配置文件</div></a></li></ul></div></aside></div> <!----> <div class="content__content-top"></div> <div class="theme-default-content content__default"><h1 id="ngixn-配置文件模板"><a href="#ngixn-配置文件模板" class="header-anchor">#</a> Ngixn 配置文件模板</h1> <p>本文基于 Nginx 1.18.0，整理一份配置文件 nginx.conf 的通用模板。</p> <h2 id="模块拆分"><a href="#模块拆分" class="header-anchor">#</a> 模块拆分</h2> <p>当项目或业务越来越多的时候，Nginx 的配置文件 nginx.conf 会越来越大和复杂，不便于管理，所以需要拆分出多个子配置文件。</p> <p>以下命令，如果你是 root 账户，直接执行即可，不是的话前面加 <code>sudo</code> 获取权限。</p> <p>首先建立子配置文件目录：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/nginx/conf
 <span class="token function">mkdir</span> vhosts
 </code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>然后在 nginx.conf 中使用 <code>include</code> 引入文件：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>http <span class="token punctuation">{</span>
     <span class="token punctuation">..</span>.
@@ -182,125 +166,93 @@ server<span class="token punctuation">{</span>
         └── vhosts             <span class="token comment"># 子配置文件的目录</span>
             ├── web.conf       <span class="token comment"># 子配置文件 1</span>
             └── api.conf       <span class="token comment"># 子配置文件 2</span>
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>思路就是上面介绍的这样，下面是实际生产环境中的通用模板。</p> <h2 id="主配置文件"><a href="#主配置文件" class="header-anchor">#</a> 主配置文件</h2> <p>我在这份主配置文件中仅设置了几个核心参数，如果有特定需求可自行定制，如下所示：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment">#user  nobody;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>思路就是上面介绍的这样，下面是实际生产环境中的通用模板。</p> <h2 id="主配置文件"><a href="#主配置文件" class="header-anchor">#</a> 主配置文件</h2> <p>我在这份主配置文件中仅设置了几个核心参数，如果有特定需求可自行定制，如下所示：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>user  nginx nginx<span class="token punctuation">;</span>
 worker_processes  <span class="token number">1</span><span class="token punctuation">;</span>
 
-<span class="token comment">#error_log  logs/error.log;</span>
-<span class="token comment">#error_log  logs/error.log  notice;</span>
-<span class="token comment">#error_log  logs/error.log  info;</span>
+error_log  /var/log/nginx/error.log crit<span class="token punctuation">;</span>
 
-<span class="token comment">#pid        logs/nginx.pid;</span>
-
+pid        /var/run/nginx.pid<span class="token punctuation">;</span>
 
 events <span class="token punctuation">{</span>
     worker_connections  <span class="token number">1024</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-
 http <span class="token punctuation">{</span>
     include       mime.types<span class="token punctuation">;</span>
     default_type  application/octet-stream<span class="token punctuation">;</span>
 
-    <span class="token comment">#log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '</span>
-    <span class="token comment">#                  '$status $body_bytes_sent &quot;$http_referer&quot; '</span>
-    <span class="token comment">#                  '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';</span>
+    charset utf-8<span class="token punctuation">;</span>
 
-    <span class="token comment">#access_log  logs/access.log  main;</span>
+    access_log  off<span class="token punctuation">;</span>
 
     sendfile        on<span class="token punctuation">;</span>
-    <span class="token comment">#tcp_nopush     on;</span>
+    tcp_nopush     on<span class="token punctuation">;</span>
+    tcp_nodelay on<span class="token punctuation">;</span>
 
-    <span class="token comment">#keepalive_timeout  0;</span>
     keepalive_timeout  <span class="token number">65</span><span class="token punctuation">;</span>
 
-    <span class="token comment">#gzip  on;</span>
+    fastcgi_connect_timeout <span class="token number">300</span><span class="token punctuation">;</span>
+    fastcgi_send_timeout <span class="token number">300</span><span class="token punctuation">;</span>
+    fastcgi_read_timeout <span class="token number">300</span><span class="token punctuation">;</span>
+    fastcgi_buffer_size 64k<span class="token punctuation">;</span>
+    fastcgi_buffers <span class="token number">4</span> 64k<span class="token punctuation">;</span>
+    fastcgi_busy_buffers_size 128k<span class="token punctuation">;</span>
+    fastcgi_temp_file_write_size 128k<span class="token punctuation">;</span>
 
-    server <span class="token punctuation">{</span>
-        listen       <span class="token number">80</span><span class="token punctuation">;</span>
-        server_name  localhost<span class="token punctuation">;</span>
+    <span class="token function">gzip</span> on<span class="token punctuation">;</span>
+    gzip_min_length 1k<span class="token punctuation">;</span>
+    gzip_buffers <span class="token number">4</span> 16k<span class="token punctuation">;</span>
+    gzip_http_version <span class="token number">1.0</span><span class="token punctuation">;</span>
+    gzip_comp_level <span class="token number">2</span><span class="token punctuation">;</span>
+    gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/bmp application/x-bmp image/x-ms-bmp application/vnd.ms-fontobject font/ttf font/opentype font/x-woff<span class="token punctuation">;</span>
+    gzip_vary on<span class="token punctuation">;</span>
+    <span class="token comment"># limit_zone crawler $binary_remote_addr 10m;    # 开启限制 IP 连接数的时候需要使用</span>
 
-        <span class="token comment">#charset koi8-r;</span>
+    log_format  main  <span class="token string">'$remote_addr - $remote_user [$time_local] &quot;$request&quot; '</span>
+                      <span class="token string">'$status $body_bytes_sent &quot;$http_referer&quot; '</span>
+                      <span class="token string">'&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;'</span><span class="token punctuation">;</span>
 
-        <span class="token comment">#access_log  logs/host.access.log  main;</span>
-
-        location / <span class="token punctuation">{</span>
-            root   html<span class="token punctuation">;</span>
-            index  index.html index.htm<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token comment">#error_page  404              /404.html;</span>
-
-        <span class="token comment"># redirect server error pages to the static page /50x.html</span>
-        <span class="token comment">#</span>
-        error_page   <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span>  /50x.html<span class="token punctuation">;</span>
-        location <span class="token operator">=</span> /50x.html <span class="token punctuation">{</span>
-            root   html<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token comment"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span>
-        <span class="token comment">#</span>
-        <span class="token comment">#location ~ \.php$ {</span>
-        <span class="token comment">#    proxy_pass   http://127.0.0.1;</span>
-        <span class="token comment">#}</span>
-
-        <span class="token comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span>
-        <span class="token comment">#</span>
-        <span class="token comment">#location ~ \.php$ {</span>
-        <span class="token comment">#    root           html;</span>
-        <span class="token comment">#    fastcgi_pass   127.0.0.1:9000;</span>
-        <span class="token comment">#    fastcgi_index  index.php;</span>
-        <span class="token comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span>
-        <span class="token comment">#    include        fastcgi_params;</span>
-        <span class="token comment">#}</span>
-
-        <span class="token comment"># deny access to .htaccess files, if Apache's document root</span>
-        <span class="token comment"># concurs with nginx's one</span>
-        <span class="token comment">#</span>
-        <span class="token comment">#location ~ /\.ht {</span>
-        <span class="token comment">#    deny  all;</span>
-        <span class="token comment">#}</span>
-    <span class="token punctuation">}</span>
-
-
-    <span class="token comment"># another virtual host using mix of IP-, name-, and port-based configuration</span>
-    <span class="token comment">#</span>
-    <span class="token comment">#server {</span>
-    <span class="token comment">#    listen       8000;</span>
-    <span class="token comment">#    listen       somename:8080;</span>
-    <span class="token comment">#    server_name  somename  alias  another.alias;</span>
-
-    <span class="token comment">#    location / {</span>
-    <span class="token comment">#        root   html;</span>
-    <span class="token comment">#        index  index.html index.htm;</span>
-    <span class="token comment">#    }</span>
-    <span class="token comment">#}</span>
-
-
-    <span class="token comment"># HTTPS server</span>
-    <span class="token comment">#</span>
-    <span class="token comment">#server {</span>
-    <span class="token comment">#    listen       443 ssl;</span>
-    <span class="token comment">#    server_name  localhost;</span>
-
-    <span class="token comment">#    ssl_certificate      cert.pem;</span>
-    <span class="token comment">#    ssl_certificate_key  cert.key;</span>
-
-    <span class="token comment">#    ssl_session_cache    shared:SSL:1m;</span>
-    <span class="token comment">#    ssl_session_timeout  5m;</span>
-
-    <span class="token comment">#    ssl_ciphers  HIGH:!aNULL:!MD5;</span>
-    <span class="token comment">#    ssl_prefer_server_ciphers  on;</span>
-
-    <span class="token comment">#    location / {</span>
-    <span class="token comment">#        root   html;</span>
-    <span class="token comment">#        index  index.html index.htm;</span>
-    <span class="token comment">#    }</span>
-    <span class="token comment">#}</span>
+    include /usr/local/nginx/conf/vhosts/*.conf<span class="token punctuation">;</span>
 
 <span class="token punctuation">}</span>
-</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/wenyuan/fedbook/edit/master/docs/basic-skills/nginx/config-file-generic-template.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/basic-skills/nginx/config-file-params-explanation/" class="prev"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon prev-icon"><path d="M906.783 588.79c-.02 8.499-6.882 15.36-15.38 15.37l-443.7-.01 75.704 191.682c2.52 6.42.482 13.763-5.038 17.91-5.52 4.168-13.138 4.147-18.616-.092L123.228 524.175a15.362 15.362 0 01-6-12.165c0-4.782 2.222-9.277 6-12.185L499.753 210.35a15.388 15.388 0 019.38-3.195c3.236 0 6.502 1.034 9.236 3.103 5.52 4.147 7.578 11.49 5.038 17.91L447.683 419.84l443.72-.01c8.498.01 15.36 6.881 15.36 15.36l.02 153.6z" fill="currentColor"></path></svg>
-        Ngixn 配置文件详解
-      </a></span> <!----></p></div> <!----> </main> <!----></div><div class="global-ui"><!----></div></div>
-    <script src="/assets/js/app.8210ba4c.js" defer></script><script src="/assets/js/vendors~layout-Layout.bcd22327.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.58a48dae.js" defer></script><script src="/assets/js/page-Ngixn配置文件模板.7a845cff.js" defer></script>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br></div></div><h2 id="子配置文件"><a href="#子配置文件" class="header-anchor">#</a> 子配置文件</h2> <p>首先别忘了创建文件夹：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> /usr/local/nginx/conf
+<span class="token function">mkdir</span> vhosts
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>在该文件夹下所有以 <code>.conf</code> 结尾的文件都是子配置文件，在主配置文件的末尾被 <code>include</code> 引入了。</p> <p>这里只做一份最基础的子配置文件（server 部分）模板，实现一个静态网站的部署配置。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>server <span class="token punctuation">{</span>
+    listen <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name  www.fedbook.cn fedbook.cn<span class="token punctuation">;</span>
+
+    root /sites/fedbook<span class="token punctuation">;</span>
+    index index.html<span class="token punctuation">;</span>
+
+    location / <span class="token punctuation">{</span>
+        try_files <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ /index.html<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    location ~* <span class="token punctuation">\</span>.<span class="token punctuation">(</span>html<span class="token operator">|</span>htm<span class="token punctuation">)</span>$ <span class="token punctuation">{</span>
+        expires 24h<span class="token punctuation">;</span>
+        add_header Cache-Control <span class="token string">&quot;public&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    location ~* <span class="token punctuation">\</span>.<span class="token punctuation">(</span>css<span class="token operator">|</span>js<span class="token operator">|</span>jpg<span class="token operator">|</span>jpeg<span class="token operator">|</span>gif<span class="token operator">|</span>png<span class="token operator">|</span>ico<span class="token operator">|</span>cur<span class="token operator">|</span>gz<span class="token operator">|</span>svg<span class="token operator">|</span>svgz<span class="token operator">|</span>map<span class="token operator">|</span>mp4<span class="token operator">|</span>ogg<span class="token operator">|</span>ogv<span class="token operator">|</span>webm<span class="token operator">|</span>htc<span class="token punctuation">)</span>$ <span class="token punctuation">{</span>
+        expires 24h<span class="token punctuation">;</span>
+        access_log off<span class="token punctuation">;</span>
+        add_header Cache-Control <span class="token string">&quot;public&quot;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    access_log  /var/log/nginx/access/fedbook.log<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>上面配置文件我们指定了这个子模块的日志输出路径，所以需要创建该路径的文件夹，否则在写入日志时会因文件夹不存在而报错：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">mkdir</span> -p /var/log/nginx/access/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>检查 Nginx 配置文件的正确性：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>/usr/local/nginx/sbin/nginx -t
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>最后重新加载 Nginx 配置即可上线该静态网站：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 如果已将 Nginx 加入开机自启（有 Nginx 开机自启脚本）</span>
+/etc/init.d/nginx reload
+
+<span class="token comment"># 如果未将 Nginx 加入开机自启</span>
+/usr/local/nginx/sbin/nginx -s reload
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>对于如何配置来实现更多强大的功能，会在后面章节一一展开介绍。</p> <p>（完）</p></div> <!----> <div class="content__content-bottom"></div> <footer class="page-meta"><div class="edit-link"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon edit-icon"><path d="M117.953 696.992 64.306 959.696l265.931-49.336 450.204-452.505-212.284-213.376-450.204 452.513zm496.384-296.326L219.039 797.993l-46.108-46.34L568.233 354.33l46.104 46.335zm345.357-122.99-114.45 115.04-212.288-213.377 114.45-115.035 212.288 213.371zm0 0" fill="currentColor"></path></svg> <a href="https://github.com/wenyuan/fedbook/edit/main/docs/basic-skills/nginx/config-file-generic-template.md" target="_blank" rel="noopener noreferrer">编辑此页</a></div> <div class="meta-item update-time"><span class="label">上次编辑于:</span> <span class="info">2021年7月11日 11:16</span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/basic-skills/nginx/config-file-params-explanation/" class="prev"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon prev-icon"><path d="M906.783 588.79c-.02 8.499-6.882 15.36-15.38 15.37l-443.7-.01 75.704 191.682c2.52 6.42.482 13.763-5.038 17.91-5.52 4.168-13.138 4.147-18.616-.092L123.228 524.175a15.362 15.362 0 0 1-6-12.165c0-4.782 2.222-9.277 6-12.185L499.753 210.35a15.388 15.388 0 0 1 9.38-3.195c3.236 0 6.502 1.034 9.236 3.103 5.52 4.147 7.578 11.49 5.038 17.91L447.683 419.84l443.72-.01c8.498.01 15.36 6.881 15.36 15.36l.02 153.6z" fill="currentColor"></path></svg>
+        Nginx 配置文件详解
+      </a></span> <span class="next"><a href="/basic-skills/nginx/ngx-http-access-module/">
+        Nginx 安全访问控制
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon next-icon"><path d="M906.772 512c0 4.772-2.211 9.267-5.99 12.175L524.257 813.66a15.37 15.37 0 0 1-18.616.092 15.368 15.368 0 0 1-5.038-17.91l75.714-191.672h-443.73c-8.488 0-15.36-6.881-15.36-15.36v-153.6c0-8.489 6.872-15.36 15.36-15.36h443.73l-75.714-191.682a15.358 15.358 0 0 1 5.048-17.91c5.51-4.158 13.128-4.137 18.606.092l376.525 289.485a15.323 15.323 0 0 1 5.99 12.165z" fill="currentColor"></path></svg></a></span></p></div> <!----> <!----> <div class="content__page-bottom"></div></main> <!----></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.3f5bc73a.js" defer></script><script src="/assets/js/vendors~layout-Layout.d45b37c8.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.0485fa05.js" defer></script><script src="/assets/js/page-Ngixn配置文件模板.7ec48808.js" defer></script>
   </body>
 </html>
