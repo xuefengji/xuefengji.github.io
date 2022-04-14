@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>常用命令 | 前端修炼小册</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script charset="utf-8" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script charset="utf-8" src="/js/main.js"></script>
+    <link rel="alternate" type="application/atom+xml" href="https://www.fedbook.cn/atom.xml" title="前端修炼小册 Atom Feed">
+    <link rel="alternate" type="application/json" href="https://www.fedbook.cn/feed.json" title="前端修炼小册 JSON Feed">
+    <link rel="alternate" type="application/rss+xml" href="https://www.fedbook.cn/rss.xml" title="前端修炼小册 RSS Feed">
+    <meta name="description" content="Wenyuan's Front-End Development Book">
+    <meta property="og:url" content="/basic-skills/linux/common-commands.html">
+    <meta property="og:site_name" content="前端修炼小册">
+    <meta property="og:title" content="常用命令">
+    <meta property="og:description" content="常用命令 文件管理 查看与检索文件内容 1）cat 命令 用于连接文件并打印到标准输出设备上。 " 语法格式：cat [-nbs] [--help] [--version] fileName" "" " 参数说明：" "" " * -n 或 --number：由 1 开始对所有输出的行数编号。" " * -b 或 --number-nonblank：和 -n">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh-CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="前端修炼小册">
+    <meta property="article:author" content="wenyuan">
+    
+    <link rel="preload" href="/assets/css/0.styles.ccbf91ab.css" as="style"><link rel="preload" href="/assets/js/app.3369b0a4.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.7790a1fa.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.801dfb38.js" as="script"><link rel="preload" href="/assets/js/page-常用命令.8e3a7759.js" as="script"><link rel="prefetch" href="/assets/js/layout-Blog.6ca78724.js"><link rel="prefetch" href="/assets/js/layout-Layout.e61d1468.js"><link rel="prefetch" href="/assets/js/layout-NotFound.d0063127.js"><link rel="prefetch" href="/assets/js/page-Arrayprototypeincludes().869ad10a.js"><link rel="prefetch" href="/assets/js/page-Array扩展.f61ac159.js"><link rel="prefetch" href="/assets/js/page-BFC.f8688ce5.js"><link rel="prefetch" href="/assets/js/page-BigInt.79e52113.js"><link rel="prefetch" href="/assets/js/page-B端产品文案指南.ddd23061.js"><link rel="prefetch" href="/assets/js/page-CSS.2678e435.js"><link rel="prefetch" href="/assets/js/page-CSS引入方式.c61cc1be.js"><link rel="prefetch" href="/assets/js/page-CSS规范.760d5fc8.js"><link rel="prefetch" href="/assets/js/page-CSS问题.459ac2a1.js"><link rel="prefetch" href="/assets/js/page-Class.e0d12c72.js"><link rel="prefetch" href="/assets/js/page-CodeReview.e8b6b9d3.js"><link rel="prefetch" href="/assets/js/page-ES6-ES12新特性.05b3943d.js"><link rel="prefetch" href="/assets/js/page-Flexbox布局.5a9d8966.js"><link rel="prefetch" href="/assets/js/page-Function扩展.2bd3bca5.js"><link rel="prefetch" href="/assets/js/page-Generator.e514125d.js"><link rel="prefetch" href="/assets/js/page-Git.d57c60f4.js"><link rel="prefetch" href="/assets/js/page-Git工作流—分支策略.b61ae701.js"><link rel="prefetch" href="/assets/js/page-Git提交信息规范.ab62c574.js"><link rel="prefetch" href="/assets/js/page-Grid布局.d412b4de.js"><link rel="prefetch" href="/assets/js/page-HTML.c34b0d5a.js"><link rel="prefetch" href="/assets/js/page-HTML基本结构.bad9da98.js"><link rel="prefetch" href="/assets/js/page-HTML规范.f3a11eb6.js"><link rel="prefetch" href="/assets/js/page-HTML问题.3d45aab7.js"><link rel="prefetch" href="/assets/js/page-Home.f99abc83.js"><link rel="prefetch" href="/assets/js/page-JSON扩展.09eeb732.js"><link rel="prefetch" href="/assets/js/page-JavaScript.15a8d9fa.js"><link rel="prefetch" href="/assets/js/page-JavaScript手写函数.f7a4d2d2.js"><link rel="prefetch" href="/assets/js/page-JavaScript规范.14cd6db4.js"><link rel="prefetch" href="/assets/js/page-Map.9b2945a4.js"><link rel="prefetch" href="/assets/js/page-Module.674c322f.js"><link rel="prefetch" href="/assets/js/page-MySQL.9f2d8a1c.js"><link rel="prefetch" href="/assets/js/page-MySQL常用命令.ac4fe811.js"><link rel="prefetch" href="/assets/js/page-MySQL数据库设计规范.a2f952e2.js"><link rel="prefetch" href="/assets/js/page-MySQL的安装与卸载.7029f49b.js"><link rel="prefetch" href="/assets/js/page-Nginx.bdef5440.js"><link rel="prefetch" href="/assets/js/page-Nginx安全访问控制.aaea2a64.js"><link rel="prefetch" href="/assets/js/page-Nginx常用命令.0a852b65.js"><link rel="prefetch" href="/assets/js/page-Nginx文件列表功能.7ae3620d.js"><link rel="prefetch" href="/assets/js/page-Nginx的卸载.455e951b.js"><link rel="prefetch" href="/assets/js/page-Nginx的安装.c62e4460.js"><link rel="prefetch" href="/assets/js/page-Nginx设置开机自启.72008874.js"><link rel="prefetch" href="/assets/js/page-Nginx部署Https安全认证.af9450c1.js"><link rel="prefetch" href="/assets/js/page-Nginx部署前后端分离项目.238b5e80.js"><link rel="prefetch" href="/assets/js/page-Nginx限流常用模块.f289d52e.js"><link rel="prefetch" href="/assets/js/page-Nginx页面安全认证.4be89a14.js"><link rel="prefetch" href="/assets/js/page-Ngixn配置文件模板.bf7041ae.js"><link rel="prefetch" href="/assets/js/page-Ngixn配置文件详解.c2ab3c81.js"><link rel="prefetch" href="/assets/js/page-Number.ee87eef0.js"><link rel="prefetch" href="/assets/js/page-ObjectfromEntries().d5e5c272.js"><link rel="prefetch" href="/assets/js/page-Object扩展.51e12057.js"><link rel="prefetch" href="/assets/js/page-Promise.692c59f4.js"><link rel="prefetch" href="/assets/js/page-PromiseallSettled().7a1958ab.js"><link rel="prefetch" href="/assets/js/page-Promiseany()和AggregateError.44a6f421.js"><link rel="prefetch" href="/assets/js/page-Promiseprototypefinally().d1200b5e.js"><link rel="prefetch" href="/assets/js/page-Proxy.87b77f1d.js"><link rel="prefetch" href="/assets/js/page-Python.007e6c64.js"><link rel="prefetch" href="/assets/js/page-React.3815ddad.js"><link rel="prefetch" href="/assets/js/page-ReactJSX.0ad8935f.js"><link rel="prefetch" href="/assets/js/page-Reflect.fb54b29a.js"><link rel="prefetch" href="/assets/js/page-RegExp扩展.4d939f32.js"><link rel="prefetch" href="/assets/js/page-Set.a8ead675.js"><link rel="prefetch" href="/assets/js/page-String扩展.d28c856a.js"><link rel="prefetch" href="/assets/js/page-Symbol.3a8612e2.js"><link rel="prefetch" href="/assets/js/page-Symbol扩展.10d4e424.js"><link rel="prefetch" href="/assets/js/page-TypeScript.1cf92c63.js"><link rel="prefetch" href="/assets/js/page-UML类图.1c3b47a5.js"><link rel="prefetch" href="/assets/js/page-V8引擎的工作原理.035e5b9d.js"><link rel="prefetch" href="/assets/js/page-Vue3源码中的基础工具函数.169487a2.js"><link rel="prefetch" href="/assets/js/page-Vuejs.51fdf4dd.js"><link rel="prefetch" href="/assets/js/page-Vue项目规范.8608636c.js"><link rel="prefetch" href="/assets/js/page-Webpack5.8478b9b9.js"><link rel="prefetch" href="/assets/js/page-asyncawait.b1417524.js"><link rel="prefetch" href="/assets/js/page-clone速度过慢.3479dc01.js"><link rel="prefetch" href="/assets/js/page-forawaitof.fbf0e3e9.js"><link rel="prefetch" href="/assets/js/page-gitrebase的两种用法.52b832fb.js"><link rel="prefetch" href="/assets/js/page-globalThis.a8bb6776.js"><link rel="prefetch" href="/assets/js/page-let和const.7bded1d0.js"><link rel="prefetch" href="/assets/js/page-pull时发现代码冲突，如何解决.9d50dee5.js"><link rel="prefetch" href="/assets/js/page-this指向.00e79616.js"><link rel="prefetch" href="/assets/js/page-中介者模式.873dbe40.js"><link rel="prefetch" href="/assets/js/page-事件循环机制，微任务和宏任务的关系.061827dd.js"><link rel="prefetch" href="/assets/js/page-产品与人性28个心理学效应.2e7f2c8d.js"><link rel="prefetch" href="/assets/js/page-享元模式.f50fb255.js"><link rel="prefetch" href="/assets/js/page-代理模式.50d067b6.js"><link rel="prefetch" href="/assets/js/page-代码风格.fb8ff32d.js"><link rel="prefetch" href="/assets/js/page-伪元素和伪类.85275f33.js"><link rel="prefetch" href="/assets/js/page-作用域.53986ca6.js"><link rel="prefetch" href="/assets/js/page-使用Fabric执行SSH.14cd7217.js"><link rel="prefetch" href="/assets/js/page-使用Paramiko执行SSH.0a7496b4.js"><link rel="prefetch" href="/assets/js/page-使用openpyxl处理新版本Excel.1bcb043a.js"><link rel="prefetch" href="/assets/js/page-使用smtplib发送电子邮件.4368a3bd.js"><link rel="prefetch" href="/assets/js/page-使用subprocess执行cmd.4ff40714.js"><link rel="prefetch" href="/assets/js/page-使用telnetlib执行Telnet.ff997659.js"><link rel="prefetch" href="/assets/js/page-使用xlrd处理旧版本Excel.59183a18.js"><link rel="prefetch" href="/assets/js/page-修改commit信息.3312218c.js"><link rel="prefetch" href="/assets/js/page-修订FunctionprototypetoString().738c285d.js"><link rel="prefetch" href="/assets/js/page-关于本站.2e9439ee.js"><link rel="prefetch" href="/assets/js/page-函数参数.af2a4844.js"><link rel="prefetch" href="/assets/js/page-函数类型.ebc97b9d.js"><link rel="prefetch" href="/assets/js/page-函数装饰器.79aa97a6.js"><link rel="prefetch" href="/assets/js/page-刚刚的commit有误，想要撤回.79fc0910.js"><link rel="prefetch" href="/assets/js/page-刚刚的push有误，想要撤回.ff3dbf52.js"><link rel="prefetch" href="/assets/js/page-前端登录方案总结.1b490791.js"><link rel="prefetch" href="/assets/js/page-前端路由原理.2b101bb2.js"><link rel="prefetch" href="/assets/js/page-动态引入.eb6eeb1b.js"><link rel="prefetch" href="/assets/js/page-单例模式.a2fd323f.js"><link rel="prefetch" href="/assets/js/page-原型与原型链.cde00f73.js"><link rel="prefetch" href="/assets/js/page-原型模式.b08ebb32.js"><link rel="prefetch" href="/assets/js/page-变量与常量.dd727509.js"><link rel="prefetch" href="/assets/js/page-可选的CatchBinding.4869d16d.js"><link rel="prefetch" href="/assets/js/page-可选链Optionalchaining.1c4b9986.js"><link rel="prefetch" href="/assets/js/page-同步与异步.38bee4ac.js"><link rel="prefetch" href="/assets/js/page-命令模式.925f15a0.js"><link rel="prefetch" href="/assets/js/page-响应式原理.932d34c7.js"><link rel="prefetch" href="/assets/js/page-垃圾回收.89a9272b.js"><link rel="prefetch" href="/assets/js/page-基本配置.bc45861a.js"><link rel="prefetch" href="/assets/js/page-基础用法要点.c345f661.js"><link rel="prefetch" href="/assets/js/page-基础类型.6a3d503f.js"><link rel="prefetch" href="/assets/js/page-声明函数的六种方式.7a32d529.js"><link rel="prefetch" href="/assets/js/page-备忘录模式.44804281.js"><link rel="prefetch" href="/assets/js/page-复杂度分析.a41a2232.js"><link rel="prefetch" href="/assets/js/page-外观模式.22d74f27.js"><link rel="prefetch" href="/assets/js/page-大文件分片上传和断点续传.709e118f.js"><link rel="prefetch" href="/assets/js/page-如何使用GitFlow工作流进行团队协作.0574cb69.js"><link rel="prefetch" href="/assets/js/page-如何修改历史commits中的用户名和邮箱.fde7f428.js"><link rel="prefetch" href="/assets/js/page-如何参与开源项目-提交PR与更新Fork分支.635dbf6d.js"><link rel="prefetch" href="/assets/js/page-如何迁移仓库并保留commits记录.d1851f8c.js"><link rel="prefetch" href="/assets/js/page-字面量类型.a89025fa.js"><link rel="prefetch" href="/assets/js/page-定位（position）.c3f31eaf.js"><link rel="prefetch" href="/assets/js/page-实现Objectcreate方法.8b25bc9b.js"><link rel="prefetch" href="/assets/js/page-实现apply方法.bb2439b0.js"><link rel="prefetch" href="/assets/js/page-实现bind方法.e8672bfd.js"><link rel="prefetch" href="/assets/js/page-实现call方法.43fcadb3.js"><link rel="prefetch" href="/assets/js/page-实现instanceof运算符.9f75d3f7.js"><link rel="prefetch" href="/assets/js/page-实现new运算符.3681d0f9.js"><link rel="prefetch" href="/assets/js/page-实现浅克隆（shallowClone）.43138174.js"><link rel="prefetch" href="/assets/js/page-实现深克隆（deepClone）.c977cebb.js"><link rel="prefetch" href="/assets/js/page-实现符合PromisesA+规范的Promise.0ab1e738.js"><link rel="prefetch" href="/assets/js/page-实现节流函数（throttle）.2c5eaaf4.js"><link rel="prefetch" href="/assets/js/page-实现防抖函数（debounce）.85be7087.js"><link rel="prefetch" href="/assets/js/page-对象遍历的几种方式.321ff118.js"><link rel="prefetch" href="/assets/js/page-尾逗号Trailingcommas.a850241b.js"><link rel="prefetch" href="/assets/js/page-工厂模式.03a08b2a.js"><link rel="prefetch" href="/assets/js/page-已commit未push，想修改代码.5e5d044c.js"><link rel="prefetch" href="/assets/js/page-已commit未push，漏提交文件.604cfc8b.js"><link rel="prefetch" href="/assets/js/page-常用命令清单.1f4da8ed.js"><link rel="prefetch" href="/assets/js/page-幂运算符.48ab635d.js"><link rel="prefetch" href="/assets/js/page-建造者模式.68dfc896.js"><link rel="prefetch" href="/assets/js/page-性能优化-产出代码.0323918f.js"><link rel="prefetch" href="/assets/js/page-性能优化-构建速度.85bbd8f4.js"><link rel="prefetch" href="/assets/js/page-执行上下文和调用栈.13ea1df4.js"><link rel="prefetch" href="/assets/js/page-抽象工厂模式.2c05704f.js"><link rel="prefetch" href="/assets/js/page-接口类型与类型别名.15812d08.js"><link rel="prefetch" href="/assets/js/page-接口设计.12dd6c90.js"><link rel="prefetch" href="/assets/js/page-数字分隔符.9cd74d72.js"><link rel="prefetch" href="/assets/js/page-数据类型.edfabb2d.js"><link rel="prefetch" href="/assets/js/page-数据结构与算法.0f51297f.js"><link rel="prefetch" href="/assets/js/page-数据结构之数组.ca4c4d1f.js"><link rel="prefetch" href="/assets/js/page-数据结构之链表.693c0b38.js"><link rel="prefetch" href="/assets/js/page-数组遍历的几种方式.b924cbc8.js"><link rel="prefetch" href="/assets/js/page-文案指南.5884db8b.js"><link rel="prefetch" href="/assets/js/page-文档规范.f265a3ac.js"><link rel="prefetch" href="/assets/js/page-新的逻辑操作符.2cf5e204.js"><link rel="prefetch" href="/assets/js/page-更新日志.9a8251c9.js"><link rel="prefetch" href="/assets/js/page-最佳实践-通用模板.e6615876.js"><link rel="prefetch" href="/assets/js/page-未完待续.e7f444bb.js"><link rel="prefetch" href="/assets/js/page-枚举.9bcffb9a.js"><link rel="prefetch" href="/assets/js/page-栈空间和堆空间.110c6c10.js"><link rel="prefetch" href="/assets/js/page-核心概念.401d7797.js"><link rel="prefetch" href="/assets/js/page-桥接模式.078f1b0e.js"><link rel="prefetch" href="/assets/js/page-模板方法模式.b49745c4.js"><link rel="prefetch" href="/assets/js/page-模板编译.bbb1b65f.js"><link rel="prefetch" href="/assets/js/page-正向代理与反向代理.9ebb06a8.js"><link rel="prefetch" href="/assets/js/page-泛型.545c8c81.js"><link rel="prefetch" href="/assets/js/page-浅克隆与深克隆.c06f1b8d.js"><link rel="prefetch" href="/assets/js/page-浏览器内核与JavaScript引擎.649879ad.js"><link rel="prefetch" href="/assets/js/page-浏览器宏观认识.5a0826cc.js"><link rel="prefetch" href="/assets/js/page-浏览器工作原理.4bed6f2b.js"><link rel="prefetch" href="/assets/js/page-浮动（float）.ef12b2f6.js"><link rel="prefetch" href="/assets/js/page-渲染引擎的工作原理.fa66179f.js"><link rel="prefetch" href="/assets/js/page-源码阅读与学习.38bf04bb.js"><link rel="prefetch" href="/assets/js/page-版本号定义规范.f98e21da.js"><link rel="prefetch" href="/assets/js/page-版本控制.3e9ce272.js"><link rel="prefetch" href="/assets/js/page-状态模式.f4fbba61.js"><link rel="prefetch" href="/assets/js/page-盒模型.4e632116.js"><link rel="prefetch" href="/assets/js/page-空值合并运算符.815c3e52.js"><link rel="prefetch" href="/assets/js/page-策略模式.fd2a728b.js"><link rel="prefetch" href="/assets/js/page-类和实例.ee59b2dd.js"><link rel="prefetch" href="/assets/js/page-类型守卫.f1a0861e.js"><link rel="prefetch" href="/assets/js/page-类成员保护.2ccacf9f.js"><link rel="prefetch" href="/assets/js/page-类的继承.efd3b83d.js"><link rel="prefetch" href="/assets/js/page-类私有域.68dd5861.js"><link rel="prefetch" href="/assets/js/page-类类型.2f1ac55a.js"><link rel="prefetch" href="/assets/js/page-组件渲染与更新.4ca2e895.js"><link rel="prefetch" href="/assets/js/page-组合模式.dfabee3e.js"><link rel="prefetch" href="/assets/js/page-经典布局.5266359e.js"><link rel="prefetch" href="/assets/js/page-继承的八种方式.c38e84f5.js"><link rel="prefetch" href="/assets/js/page-编译器与解释器.b6933a8f.js"><link rel="prefetch" href="/assets/js/page-职责链模式.5f33e697.js"><link rel="prefetch" href="/assets/js/page-联合类型与交叉类型.9cc15f24.js"><link rel="prefetch" href="/assets/js/page-虚拟DOM与diff算法.5c7715bf.js"><link rel="prefetch" href="/assets/js/page-装饰器模式.c03d9064.js"><link rel="prefetch" href="/assets/js/page-观察者模式.e7f41aaf.js"><link rel="prefetch" href="/assets/js/page-解决vim中文乱码问题.50f4aa03.js"><link rel="prefetch" href="/assets/js/page-解决方案.a269608c.js"><link rel="prefetch" href="/assets/js/page-解构赋值.c315b7c2.js"><link rel="prefetch" href="/assets/js/page-认知偏差知识手册.2146db24.js"><link rel="prefetch" href="/assets/js/page-设计原则.7bf0f511.js"><link rel="prefetch" href="/assets/js/page-设计模式.dfae8672.js"><link rel="prefetch" href="/assets/js/page-设计模式简介.bf349319.js"><link rel="prefetch" href="/assets/js/page-访问者模式和解释器模式.b59269ca.js"><link rel="prefetch" href="/assets/js/page-语义类标签.09a37586.js"><link rel="prefetch" href="/assets/js/page-语法规范.65487bee.js"><link rel="prefetch" href="/assets/js/page-课外学习.00388ff6.js"><link rel="prefetch" href="/assets/js/page-调用函数的四种方式.fa15135c.js"><link rel="prefetch" href="/assets/js/page-负载均衡.14a03929.js"><link rel="prefetch" href="/assets/js/page-迭代器模式.10dcc116.js"><link rel="prefetch" href="/assets/js/page-适配器模式.0c4f5ddf.js"><link rel="prefetch" href="/assets/js/page-选择器与样式优先级.0fee29b4.js"><link rel="prefetch" href="/assets/js/page-配置密钥实现免密操作.559b0020.js"><link rel="prefetch" href="/assets/js/page-长度和单位.42c31b70.js"><link rel="prefetch" href="/assets/js/page-闭包.427bdbfd.js"><link rel="prefetch" href="/assets/js/page-面向对象编程.ac88906b.js"><link rel="prefetch" href="/assets/js/page-高级用法特性.4ef8271d.js"><link rel="prefetch" href="/assets/js/page-高级配置.29b8aa2b.js"><link rel="prefetch" href="/assets/js/page-高阶函数.ed6b4d3f.js"><link rel="prefetch" href="/assets/js/vendors~layout-Slide.f66f981a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccbf91ab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><!----> <div class="content__navbar-start"></div> <button title="Sidebar Button" class="sidebar-button"><span class="icon"></span></button> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="前端修炼小册" class="logo"> <!----> <span class="site-name can-hide">前端修炼小册</span></a> <!----> <div class="content__navbar-center"></div> <div class="links"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术规范" class="dropdown-title"><span class="title"><!---->
+        技术规范
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/style-guide/version-control/" class="nav-link"><!---->
+  版本控制
+</a></li><li class="dropdown-item"><a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li><li class="dropdown-item"><a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><a href="/style-guide/apis/" class="nav-link"><!---->
+  接口设计
+</a></li><li class="dropdown-item"><a href="/style-guide/product/" class="nav-link"><!---->
+  文案指南
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识" class="dropdown-title"><span class="title"><!---->
+        前端知识
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>基础</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>进阶</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/es6-and-beyond/" class="nav-link"><!---->
+  ECMAScript 6+
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/typescript/" class="nav-link"><!---->
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/browser/" class="nav-link"><!---->
+  浏览器工作原理
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>手写</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/javascript-handwritten/" class="nav-link"><!---->
+  JS 手写
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title"><!---->
+        工程化
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>框架</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-engineering/vuejs/" class="nav-link"><!---->
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/frontend-engineering/react/" class="nav-link"><!---->
+  React
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>工具</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-engineering/webpack/" class="nav-link"><!---->
+  Webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="必知必会" class="dropdown-title"><span class="title"><!---->
+        必知必会
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>日常使用</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/basic-skills/git/" class="nav-link"><!---->
+  Git
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/nginx/" class="nav-link"><!---->
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/linux/common-commands/" aria-current="page" class="nav-link router-link-exact-active router-link-active active"><!---->
+  Linux
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>数据库/中间件</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/basic-skills/mysql/" class="nav-link"><!---->
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="深入学习" class="dropdown-title"><span class="title"><!---->
+        深入学习
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/in-depth-learning/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li><li class="dropdown-item"><a href="/in-depth-learning/design-patterns/" class="nav-link"><!---->
+  设计模式
+</a></li><li class="dropdown-item"><a href="/in-depth-learning/source-code/" class="nav-link"><!---->
+  源码阅读与学习
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端知识" class="dropdown-title"><span class="title"><!---->
+        后端知识
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/backend-knowledge/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目相关" class="dropdown-title"><span class="title"><!---->
+        项目相关
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/project/solutions/" class="nav-link"><!---->
+  解决方案
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+        其它
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站内</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/extracurricular/" class="nav-link"><!---->
+  课外学习
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站外</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>线路</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div></nav> <!----> <!----> <!----> <div class="content__navbar-end"></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!----> <!----> <div class="content__sidebar-top"></div> <nav class="sidebar-nav-links"><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="技术规范" class="dropdown-title"><span class="title"><!---->
+      技术规范
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/version-control/" class="nav-link"><!---->
+  版本控制
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/apis/" class="nav-link"><!---->
+  接口设计
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/product/" class="nav-link"><!---->
+  文案指南
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="前端知识" class="dropdown-title"><span class="title"><!---->
+      前端知识
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>基础</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>进阶</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/es6-and-beyond/" class="nav-link"><!---->
+  ECMAScript 6+
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/typescript/" class="nav-link"><!---->
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/browser/" class="nav-link"><!---->
+  浏览器工作原理
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>手写</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/javascript-handwritten/" class="nav-link"><!---->
+  JS 手写
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title"><!---->
+      工程化
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>框架</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-engineering/vuejs/" class="nav-link"><!---->
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/frontend-engineering/react/" class="nav-link"><!---->
+  React
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>工具</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-engineering/webpack/" class="nav-link"><!---->
+  Webpack
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="必知必会" class="dropdown-title"><span class="title"><!---->
+      必知必会
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>日常使用</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/basic-skills/git/" class="nav-link"><!---->
+  Git
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/nginx/" class="nav-link"><!---->
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/linux/common-commands/" aria-current="page" class="nav-link router-link-exact-active router-link-active active"><!---->
+  Linux
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>数据库/中间件</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/basic-skills/mysql/" class="nav-link"><!---->
+  MySQL
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="深入学习" class="dropdown-title"><span class="title"><!---->
+      深入学习
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/in-depth-learning/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li><li class="dropdown-item"><!----> <a href="/in-depth-learning/design-patterns/" class="nav-link"><!---->
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/in-depth-learning/source-code/" class="nav-link"><!---->
+  源码阅读与学习
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="后端知识" class="dropdown-title"><span class="title"><!---->
+      后端知识
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-knowledge/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="项目相关" class="dropdown-title"><span class="title"><!---->
+      项目相关
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/project/solutions/" class="nav-link"><!---->
+  解决方案
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站内</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/extracurricular/" class="nav-link"><!---->
+  课外学习
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站外</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>线路</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://fedbook.gitee.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <!----></nav> <!----> <div class="content__sidebar-center"></div> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><!----> <span class="title">Linux 基础知识</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic-skills/linux/common-commands/" aria-current="page" class="active sidebar-link">常用命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#文件管理" class="sidebar-link">文件管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#查看与检索文件内容" class="sidebar-link heading3">查看与检索文件内容</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#查找文件的四个命令" class="sidebar-link heading3">查找文件的四个命令</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#常用压缩-解压缩命令" class="sidebar-link heading3">常用压缩，解压缩命令</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#机器间的文件传输" class="sidebar-link heading3">机器间的文件传输</a></li></ul></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#磁盘管理" class="sidebar-link">磁盘管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#创建与查询目录" class="sidebar-link heading3">创建与查询目录</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#统计磁盘使用情况" class="sidebar-link heading3">统计磁盘使用情况</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#打印树状目录结构" class="sidebar-link heading3">打印树状目录结构</a></li></ul></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#网络通讯" class="sidebar-link">网络通讯</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#ifconfig-命令" class="sidebar-link heading3">ifconfig 命令</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#检测主机和端口连接情况" class="sidebar-link heading3">检测主机和端口连接情况</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#netstat-命令" class="sidebar-link heading3">netstat 命令</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#tcpdump-命令" class="sidebar-link heading3">tcpdump 命令</a></li></ul></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#系统管理" class="sidebar-link">系统管理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#添加、修改、删除用户" class="sidebar-link heading3">添加、修改、删除用户</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#date-命令" class="sidebar-link heading3">date 命令</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#最近登录信息列表" class="sidebar-link heading3">最近登录信息列表</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#查找进程-ps-命令" class="sidebar-link heading3">查找进程：ps 命令</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#监控服务器性能" class="sidebar-link heading3">监控服务器性能</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#shutdown-命令" class="sidebar-link heading3">shutdown 命令</a></li></ul></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#系统设置" class="sidebar-link">系统设置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#alias-和-unalias-命令" class="sidebar-link heading3">alias 和 unalias 命令</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#清除历史命令记录" class="sidebar-link heading3">清除历史命令记录</a></li></ul></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#日常操作" class="sidebar-link">日常操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#后台运行命令" class="sidebar-link heading3">后台运行命令</a></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#同步服务器时间" class="sidebar-link heading3">同步服务器时间</a></li></ul></li><li class="sidebar-sub-header"><a href="/basic-skills/linux/common-commands/#linux-命令大全" class="sidebar-link">Linux 命令大全</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><!----> <span class="title">Linux 常见问题</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic-skills/linux/solution-to-vim-encoding/" class="sidebar-link">解决 vim 中文乱码问题</a></li></ul></section></li></ul> <!----> <div class="content__sidebar-bottom"></div> <!----></aside> <main class="page"><nav class="breadcrumb disable"><!----></nav> <!----> <div class="content__page-top"></div> <div vocab="https://schema.org/" typeof="Article" class="page-title"><h1><!----> <span property="headline">常用命令</span></h1> <!----> <!----> <hr></div> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"><li class="anchor"><a href="/basic-skills/linux/common-commands/#文件管理" class="anchor-link heading2"><div>文件管理</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#查看与检索文件内容" class="anchor-link heading3"><div>查看与检索文件内容</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#查找文件的四个命令" class="anchor-link heading3"><div>查找文件的四个命令</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#常用压缩-解压缩命令" class="anchor-link heading3"><div>常用压缩，解压缩命令</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#机器间的文件传输" class="anchor-link heading3"><div>机器间的文件传输</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#磁盘管理" class="anchor-link heading2"><div>磁盘管理</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#创建与查询目录" class="anchor-link heading3"><div>创建与查询目录</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#统计磁盘使用情况" class="anchor-link heading3"><div>统计磁盘使用情况</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#打印树状目录结构" class="anchor-link heading3"><div>打印树状目录结构</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#网络通讯" class="anchor-link heading2"><div>网络通讯</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#ifconfig-命令" class="anchor-link heading3"><div>ifconfig 命令</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#检测主机和端口连接情况" class="anchor-link heading3"><div>检测主机和端口连接情况</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#netstat-命令" class="anchor-link heading3"><div>netstat 命令</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#tcpdump-命令" class="anchor-link heading3"><div>tcpdump 命令</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#系统管理" class="anchor-link heading2"><div>系统管理</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#添加、修改、删除用户" class="anchor-link heading3"><div>添加、修改、删除用户</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#date-命令" class="anchor-link heading3"><div>date 命令</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#最近登录信息列表" class="anchor-link heading3"><div>最近登录信息列表</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#查找进程-ps-命令" class="anchor-link heading3"><div>查找进程：ps 命令</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#监控服务器性能" class="anchor-link heading3"><div>监控服务器性能</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#shutdown-命令" class="anchor-link heading3"><div>shutdown 命令</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#系统设置" class="anchor-link heading2"><div>系统设置</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#alias-和-unalias-命令" class="anchor-link heading3"><div>alias 和 unalias 命令</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#清除历史命令记录" class="anchor-link heading3"><div>清除历史命令记录</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#日常操作" class="anchor-link heading2"><div>日常操作</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#后台运行命令" class="anchor-link heading3"><div>后台运行命令</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#同步服务器时间" class="anchor-link heading3"><div>同步服务器时间</div></a></li><li class="anchor"><a href="/basic-skills/linux/common-commands/#linux-命令大全" class="anchor-link heading2"><div>Linux 命令大全</div></a></li></ul></div></aside></div> <!----> <div class="content__content-top"></div> <div class="theme-default-content content__default"><h1 id="常用命令"><a href="#常用命令" class="header-anchor">#</a> 常用命令</h1> <h2 id="文件管理"><a href="#文件管理" class="header-anchor">#</a> 文件管理</h2> <h3 id="查看与检索文件内容"><a href="#查看与检索文件内容" class="header-anchor">#</a> 查看与检索文件内容</h3> <h4 id="_1-cat-命令"><a href="#_1-cat-命令" class="header-anchor">#</a> 1）cat 命令</h4> <p>用于连接文件并打印到标准输出设备上。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 把 text1 的文档内容加上行号后输入 text2 这个文档里</span>
+<span class="token function">cat</span> -n text1 <span class="token operator">&gt;</span> text2
+
+<span class="token comment"># 把 text1 和 text2 的文档内容加上行号（空白行不加）之后将内容附加到 text3 文档里</span>
+<span class="token function">cat</span> -b text1 text2 <span class="token operator">&gt;&gt;</span> text3
+
+<span class="token comment"># 清空 /etc/test.txt 文档内容</span>
+<span class="token function">cat</span> /dev/null <span class="token operator">&gt;</span> /etc/test.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><blockquote><p>语法格式：<code>cat [-nbs] [--help] [--version] fileName</code></p> <p>参数说明：</p> <ul><li>-n 或 --number：由 1 开始对所有输出的行数编号。</li> <li>-b 或 --number-nonblank：和 -n 相似，只不过对于空白行不编号。</li> <li>-s 或 --squeeze-blank：当遇到有连续两行以上的空白行，就代换为一行的空白行。</li></ul></blockquote> <h4 id="_2-wc-命令"><a href="#_2-wc-命令" class="header-anchor">#</a> 2）wc 命令</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查看文件里有多少行</span>
+<span class="token function">wc</span> -l filename
+ 
+<span class="token comment"># 看文件里有多少个word</span>
+<span class="token function">wc</span> -w filename
+
+<span class="token comment"># 文件里最长的那一行是多少个字</span>
+<span class="token function">wc</span> -L filename
+
+<span class="token comment"># 统计字节数</span>
+<span class="token function">wc</span> -c
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h4 id="_3-grep-命令"><a href="#_3-grep-命令" class="header-anchor">#</a> 3）grep 命令</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 在当前目录下查找含有指定字符串的文件，并标出行号</span>
+<span class="token function">grep</span> -rn <span class="token string">&quot;hello&quot;</span>
+
+<span class="token comment"># 反向匹配，查找不包含指定字符串的内容</span>
+<span class="token function">grep</span> -v <span class="token string">&quot;hello&quot;</span>
+
+<span class="token comment"># 查询指定文件中以 abc 开头的行</span>
+<span class="token function">grep</span> -n <span class="token string">&quot;^abc&quot;</span> access.log
+
+<span class="token comment"># 计算一下该字串出现的次数</span>
+<span class="token function">grep</span> <span class="token string">&quot;hello&quot;</span> -c access.log
+
+<span class="token comment"># 比对的时候，不计较大小写的不同</span>
+<span class="token function">grep</span> <span class="token string">&quot;hello&quot;</span> -i access.log
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h4 id="_4-vim-操作"><a href="#_4-vim-操作" class="header-anchor">#</a> 4）vim 操作</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># normal模式下</span>
+<span class="token number">0</span>         <span class="token comment"># 光标移到行首（数字0）</span>
+$         <span class="token comment"># 光标移至行尾</span>
+<span class="token builtin class-name">shift</span> + g <span class="token comment"># 跳到文件最后</span>
+gg        <span class="token comment"># 跳到文件头</span>
+	
+<span class="token comment"># 显示行号</span>
+:set number
+	
+<span class="token comment"># 去除行号</span>
+:set nonumber
+	
+<span class="token comment"># 检索</span>
+/xxx<span class="token punctuation">(</span>检索内容<span class="token punctuation">)</span>  <span class="token comment"># 从头检索，按 n 查找下一个</span>
+?xxx<span class="token punctuation">(</span>检索内容<span class="token punctuation">)</span>  <span class="token comment"># 从尾部检索</span>
+
+<span class="token comment"># 检索的关键字会高亮，取消高亮显示</span>
+:noh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="查找文件的四个命令"><a href="#查找文件的四个命令" class="header-anchor">#</a> 查找文件的四个命令</h3> <h4 id="_1-which-命令"><a href="#_1-which-命令" class="header-anchor">#</a> 1）which 命令</h4> <p>用于在环境变量 $PATH 指定的路径中，搜索某个系统命令的位置，并且返回第一个搜索结果。</p> <p>也就是说，使用which命令，就可以看到某个系统命令是否存在，以及执行的到底是哪一个位置的命令。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">which</span> <span class="token function">grep</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_2-whereis-命令"><a href="#_2-whereis-命令" class="header-anchor">#</a> 2）whereis 命令</h4> <p>用于程序名的搜索，而且只搜索二进制文件（参数 -b）、man 说明文件（参数 -m）和源代码文件（参数 -s）。如果省略参数，则返回所有信息。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">whereis</span> <span class="token function">bash</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="_3-find-命令"><a href="#_3-find-命令" class="header-anchor">#</a> 3）find 命令</h4> <p>这才是用于查找一般文件所在位置的命令。</p> <p>如果不设置任何参数，则将在当前目录下查找子目录与文件，并且将查找到的子目录和文件全部进行显示。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 将当前目录及其子目录下所有文件后缀为 .c 的文件列出来</span>
+<span class="token function">find</span> <span class="token builtin class-name">.</span> -name <span class="token string">&quot;*.c&quot;</span>
+
+<span class="token comment"># 同上，但需要显示它们的详细信息</span>
+<span class="token function">find</span> <span class="token builtin class-name">.</span> -name <span class="token string">&quot;*.c&quot;</span> -ls
+
+<span class="token comment"># 将当前目录及其子目录中的所有文件列出</span>
+<span class="token function">find</span> <span class="token builtin class-name">.</span> -type f
+
+<span class="token comment"># 将当前目录及其子目录下所有最近 20 天内更新过的文件列出</span>
+<span class="token function">find</span> <span class="token builtin class-name">.</span> -ctime  <span class="token number">20</span>
+
+<span class="token comment"># 查找 /var/log 目录中更改时间在 7 日以前的普通文件，并在删除之前询问它们</span>
+<span class="token function">find</span> /var/log -type f -mtime +7 -ok <span class="token function">rm</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><blockquote><p>语法格式：<code>find &lt;指定目录&gt; &lt;指定条件&gt; &lt;指定动作&gt;</code></p> <ul><li>&lt;指定目录&gt;：所要搜索的目录及其所有子目录，默认为当前目录。</li> <li>&lt;指定条件&gt;：所要搜索的文件的特征。</li> <li>&lt;指定动作&gt;：对搜索结果进行特定的处理。</li></ul> <p>&lt;指定条件&gt; 有很多，常用的有：</p> <ul><li>-amin n：在过去 n 分钟内被读取过</li> <li>-atime n：在过去n天内被读取过的文件</li> <li>-cmin n：在过去 n 分钟内被修改过</li> <li>-ctime n：在过去n天内被修改过的文件</li> <li>-name name，-iname name：文件名称符合 name 的文件，iname 会忽略大小写</li> <li>-type &lt;文件类型&gt;：指定类型的文件，文件类型可选：
+<ul><li>d：目录</li> <li>f：一般文件</li> <li>s：socket</li></ul></li></ul></blockquote> <h4 id="_4-locate-命令"><a href="#_4-locate-命令" class="header-anchor">#</a> 4）locate 命令</h4> <p>这也是用于查找一般文件所在位置的命令。它其实是 <code>find -name</code> 的另一种写法，但速度要快得多，原因在于它不搜索具体目录，而是搜索一个数据库（/var/lib/mlocate/mlocate.db），这个数据库中含有本地所有文件信息。</p> <p>Linux 系统自动创建这个数据库，并且每天自动更新一次，所以使用 <code>locate</code> 命令查不到最新变动过的文件。为了避免这种情况，可以在使用 <code>locate</code> 之前，先使用 <code>updatedb</code> 命令，手动更新数据库。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查找 passwd 文件</span>
+<span class="token function">locate</span> <span class="token function">passwd</span>
+
+<span class="token comment"># 搜索 etc 目录下所有以 sh 开头的文件</span>
+<span class="token function">locate</span> /etc/sh
+
+<span class="token comment"># 搜索用户主目录下，所有以 m 开头的文件</span>
+<span class="token function">locate</span> ~/m
+
+<span class="token comment"># 搜索用户主目录下，所有以 m 开头的文件，并且忽略大小写</span>
+<span class="token function">locate</span> -i ~/m
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="常用压缩-解压缩命令"><a href="#常用压缩-解压缩命令" class="header-anchor">#</a> 常用压缩，解压缩命令</h3> <p>压缩命令：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 压缩成后缀 .tar 格式的文件</span>
+<span class="token function">tar</span> -zcvf test.tar <span class="token builtin class-name">test</span>
+
+<span class="token comment"># 压缩成后缀 .tar.gz 格式的文件</span>
+<span class="token function">tar</span> -zcvf test.tar.gz <span class="token builtin class-name">test</span>
+
+<span class="token comment"># 压缩成后缀 .zip 格式的文件</span>
+<span class="token function">zip</span> -r test.zip <span class="token builtin class-name">test</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>解压命令：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 解压后缀为 .tar 格式的压缩包</span>
+<span class="token function">tar</span> zxvf test.tar
+
+<span class="token comment"># 解压后缀为 .tar.gz 格式的压缩包</span>
+<span class="token function">tar</span> zxvf test.tar.gz
+
+<span class="token comment"># 解压后缀为 .zip 格式的压缩包</span>
+<span class="token function">unzip</span> test.zip
+<span class="token comment"># 解压到指定目录</span>
+<span class="token function">unzip</span> test.zip -d /opt/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="机器间的文件传输"><a href="#机器间的文件传输" class="header-anchor">#</a> 机器间的文件传输</h3> <h4 id="_1-scp-命令"><a href="#_1-scp-命令" class="header-anchor">#</a> 1）scp 命令</h4> <p>用于向另一台机器发送文件。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 将 /home/hello.py 发送到 192.168.10.50 机器的 /opt/ 目录下</span>
+<span class="token function">scp</span> /home/hello.py root@192.168.10.50:/opt/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="_2-rz-sz-命令"><a href="#_2-rz-sz-命令" class="header-anchor">#</a> 2）rz/sz 命令</h4> <p>用于 PC 和服务器之间传输文件，这组命令需要安装包：<code>lrzsz</code>。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># Linux 向 Windows 发送文件</span>
+sz filename
+
+<span class="token comment"># Windows 向 Linux 发送文件</span>
+rz -be
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><blockquote><p>-be 参数是为了防止文件较大时可能长传出错的情况，如果执行命令有弹框，记得取消弹出对话框中 &quot;Upload files as ASCII&quot; 前的勾选。</p> <ul><li>-a 或 --ascii：以文本方式传输</li> <li>-b 或 --binary：以二进制方式传输，推荐使用</li> <li>-e 或 --escape：对所有控制字符转义，建议使用</li></ul></blockquote> <h2 id="磁盘管理"><a href="#磁盘管理" class="header-anchor">#</a> 磁盘管理</h2> <h3 id="创建与查询目录"><a href="#创建与查询目录" class="header-anchor">#</a> 创建与查询目录</h3> <h4 id="_1-mkdir-命令"><a href="#_1-mkdir-命令" class="header-anchor">#</a> 1）mkdir 命令</h4> <p>用于创建目录。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 在工作目录下，建立一个名为 www 的子目录</span>
+<span class="token function">mkdir</span> www
+
+<span class="token comment"># 在工作目录下的 www 目录中，建立一个名为 fedbook 的子目录。若 www 目录原本不存在，则建立一个。</span>
+<span class="token function">mkdir</span> -p www/fedbook
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h4 id="_2-ls-命令"><a href="#_2-ls-命令" class="header-anchor">#</a> 2）ls 命令</h4> <p>用于显示指定工作目录下之内容（列出目前工作目录所含之文件及子目录）。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 列出根目录下的所有目录</span>
+<span class="token function">ls</span> /
+
+<span class="token comment"># 列出目前工作目录下所有名称是 s 开头的文件，越新的排越后面</span>
+<span class="token function">ls</span> -ltr s*
+
+<span class="token comment"># 将 /bin 目录以下所有目录及文件详细资料列出</span>
+<span class="token function">ls</span> -lR /bin
+
+<span class="token comment"># 列出目前工作目录下所有文件及目录；目录于名称后加 &quot;/&quot;, 可执行档于名称后加 &quot;*&quot;</span>
+<span class="token function">ls</span> -AF
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><blockquote><p>语法格式：<code>ls [-alrtAFR] [name...]</code></p> <p>参数说明：</p> <ul><li>-a：显示所有文件及目录（<code>.</code> 开头的隐藏文件也会列出）</li> <li>-l：除文件名称外，亦将文件型态、权限、拥有者、文件大小等资讯详细列出</li> <li>-r：将文件以相反次序显示（原定依英文字母次序）</li> <li>-t：将文件依建立时间之先后次序列出</li> <li>-A：同 -a ，但不列出 &quot;.&quot;（目前目录）及 &quot;..&quot;（父目录）</li> <li>-F：在列出的文件名称后加一符号；例如可执行档则加 &quot;*&quot;，目录则加 &quot;/&quot;</li> <li>-R：若目录下有文件，则以下之文件亦皆依序列出</li></ul></blockquote> <h3 id="统计磁盘使用情况"><a href="#统计磁盘使用情况" class="header-anchor">#</a> 统计磁盘使用情况</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 以可读性较高的方式显示全部的文件系统</span>
+<span class="token function">df</span> -ah
+
+<span class="token comment"># 以可读性较高的方式显示文件大小</span>
+<span class="token function">ls</span> -alh
+
+<span class="token comment"># 查看当前目录磁盘总占用大小</span>
+<span class="token function">du</span> -hs
+
+<span class="token comment"># 查看当前目录下各个文件，文件夹占了多少空间，不会递归</span>
+<span class="token function">du</span> -hs *
+
+<span class="token comment"># 查看目录及子目录大小</span>
+<span class="token function">du</span> -Hh
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="打印树状目录结构"><a href="#打印树状目录结构" class="header-anchor">#</a> 打印树状目录结构</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># Ubuntu 安装 tree</span>
+<span class="token function">apt</span> <span class="token function">install</span> tree
+<span class="token comment"># CentOS 安装 tree</span>
+yum <span class="token function">install</span> tree
+
+<span class="token comment"># 打印当前目录下的树形结构</span>
+tree
+
+<span class="token comment"># 最多显示两级深度</span>
+tree -L <span class="token number">2</span>
+
+<span class="token comment"># 打印指定目录下的树形结构，并输出到文件</span>
+tree /home <span class="token operator">&gt;</span> tree.txt
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><blockquote><p>语法格式：<code>tree [-aACdDfFgilnNpqstux][-I &lt;范本样式&gt;][-P &lt;范本样式&gt;][目录...]</code></p> <p>参数说明（有很多，仅列举常用的）：</p> <ul><li>-a：显示所有文件和目录，包括隐藏文件、目录。</li> <li>-C：在文件和目录清单加上色彩，便于区分各种类型。</li> <li>-L：目录树的最大显示深度。</li> <li>-F：在执行文件，目录，Socket，符号连接，管道名称名称，各自加上&quot;*&quot;,&quot;/&quot;,&quot;=&quot;,&quot;@&quot;,&quot;|&quot;号。</li></ul></blockquote> <h2 id="网络通讯"><a href="#网络通讯" class="header-anchor">#</a> 网络通讯</h2> <h3 id="ifconfig-命令"><a href="#ifconfig-命令" class="header-anchor">#</a> ifconfig 命令</h3> <p>用于显示或设置网络设备。</p> <p>显示内容详解：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ifconfig</span>
+eth0      Link encap:Ethernet  HWaddr 00:50:56:BF:26:20  
+          inet addr:192.168.120.204  Bcast:192.168.120.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:8700857 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:31533 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:596390239 <span class="token punctuation">(</span><span class="token number">568.7</span> MiB<span class="token punctuation">)</span>  TX bytes:2886956 <span class="token punctuation">(</span><span class="token number">2.7</span> MiB<span class="token punctuation">)</span>
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:68 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:68 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:2856 <span class="token punctuation">(</span><span class="token number">2.7</span> KiB<span class="token punctuation">)</span>  TX bytes:2856 <span class="token punctuation">(</span><span class="token number">2.7</span> KiB<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><ul><li>第一行
+<ul><li>eth0 表示第一块网卡</li> <li>Link encap 表示该网卡位于 OSI 物理层的名称（Ethernet：以太网，Local Loopback：本地环回）</li> <li>HWaddr 表示网卡的物理地址，即MAC 地址</li></ul></li> <li>第二行
+<ul><li>inet addr 表示该网卡在 TCP/IP 网络中的IP 地址</li> <li>Bcast 表示广播地址</li> <li>Mask 表示子网掩码</li></ul></li> <li>第三行
+<ul><li>UP（代表网卡开启状态），RUNNING（代表网卡的网线被接上），MULTICAST（支持组播）</li> <li>MTU 表示最大传送单元，不同局域网类型的 MTU 值不一定相同，对以太网来说，MTU 的默认设置是 1500 个字节</li> <li>Metric 表示度量值，通常用于计算路由成本</li></ul></li> <li>第四行
+<ul><li>RX 表示接收的数据包情况统计</li> <li>RX packets: errors:0 dropped:0 overruns:0 frame:0 接受包数量/出错数量/丢失数量/过载数量/帧数</li></ul></li> <li>第五行
+<ul><li>TX 表示发送的数据包情况统计</li> <li>TX packets: errors:0 dropped:0 overruns:0 carrier:0 发送包数量/出错数量/丢失数量/过载数量/载波</li></ul></li> <li>第六行
+<ul><li>collisions 表示数据包冲突的次数</li> <li>txqueuelen 表示传送列队（Transfer Queue）长度</li></ul></li> <li>第七行
+<ul><li>RX 表示接收字节</li> <li>TX 表示发送字节</li></ul></li></ul> <h3 id="检测主机和端口连接情况"><a href="#检测主机和端口连接情况" class="header-anchor">#</a> 检测主机和端口连接情况</h3> <p>检测主机通不通：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 检测是否与主机连通，需要手动终止：Ctrl+C</span>
+<span class="token function">ping</span> www.baidu.com
+
+<span class="token comment"># 指定收到两次包后，自动退出</span>
+<span class="token function">ping</span> -c <span class="token number">2</span> www.baidu.com
+
+<span class="token comment"># 发送周期为 3 秒，设置发送包的大小为 1024 字节，设置 TTL 值为 255</span>
+<span class="token function">ping</span> -i <span class="token number">3</span> -s <span class="token number">1024</span> -t <span class="token number">255</span> www.baidu.com
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>检测端口通不通：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 监听 TCP 端口是否通</span>
+telnet <span class="token number">192.168</span>.10.50 <span class="token number">80</span>
+
+<span class="token comment"># 监听 UDP 端口是否通</span>
+<span class="token function">nc</span> -vuz <span class="token number">192.168</span>.10.50 <span class="token number">514</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="netstat-命令"><a href="#netstat-命令" class="header-anchor">#</a> netstat 命令</h3> <p>用于显示网络状态。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 显示所有连线中的端口</span>
+<span class="token function">netstat</span> -anp
+
+<span class="token comment"># 列出监听中的 TCP 端口</span>
+<span class="token function">netstat</span> -lntp
+
+<span class="token comment"># 列出监听中的 UDP 端口</span>
+<span class="token function">netstat</span> -lnup
+
+<span class="token comment"># 查询端口占用情况</span>
+<span class="token function">lsof</span> -i:port
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><blockquote><p>语法格式：<code>netstat [-acCeFghilMnNoprstuvVwx][-A&lt;网络类型&gt;][--ip]</code></p> <p>参数说明（太多了，仅列举常用的）：</p> <ul><li>-a 或 --all：显示所有连线中的 Socket。</li> <li>-l 或 --listening：显示监控中的服务器的 Socket。</li> <li>-n 或 --numeric：直接使用 IP 地址，而不通过域名服务器。</li> <li>-p 或 --programs：显示正在使用Socket的程序识别码和程序名称。</li> <li>-t 或 --tcp：显示 TCP 传输协议的连线状况。</li> <li>-u 或 --udp：显示 UDP 传输协议的连线状况。</li></ul></blockquote> <p>输出每个 IP 的连接数，以及总的各个状态的连接数：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">netstat</span> -n <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/^tcp/ {n=split($(NF-1),array,&quot;:&quot;);if(n&lt;=2)++S[array[(1)]];else++S[array[(4)]];++s[$NF];++N} END {for(a in S){printf(&quot;%-20s %s\n&quot;, a, S[a]);++I}printf(&quot;%-20s %s\n&quot;,&quot;TOTAL_IP&quot;,I);for(a in s) printf(&quot;%-20s %s\n&quot;,a, s[a]);printf(&quot;%-20s %s\n&quot;,&quot;TOTAL_LINK&quot;,N);}'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>统计所有连接状态：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">netstat</span> -n <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/^tcp/ {++state[$NF]} END {for(key in state) print key,&quot;\t&quot;,state[key]}'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>CLOSED：无连接是活动的或正在进行</li> <li>LISTEN：服务器在等待进入呼叫</li> <li>SYN_RECV：一个连接请求已经到达，等待确认</li> <li>SYN_SENT：应用已经开始，打开一个连接</li> <li>ESTABLISHED：正常数据传输状态</li> <li>FIN_WAIT1：应用说它已经完成</li> <li>FIN_WAIT2：另一边已同意释放</li> <li>ITMED_WAIT：等待所有分组死掉</li> <li>CLOSING：两边同时尝试关闭</li> <li>TIME_WAIT：主动关闭连接一端还没有等到另一端反馈期间的状态</li> <li>LAST_ACK：等待所有分组死掉</li></ul> <p>查找较多 time_wait 连接：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">netstat</span> -n<span class="token operator">|</span><span class="token function">grep</span> TIME_WAIT<span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'{print $5}'</span><span class="token operator">|</span><span class="token function">sort</span><span class="token operator">|</span><span class="token function">uniq</span> -c<span class="token operator">|</span><span class="token function">sort</span> -rn<span class="token operator">|</span><span class="token function">head</span> -n20
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="tcpdump-命令"><a href="#tcpdump-命令" class="header-anchor">#</a> tcpdump 命令</h3> <p>用于抓包。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 抓取经过 eth0 网卡的包，过滤条件为端口号 80</span>
+tcpdump -i eth0 port <span class="token number">80</span>
+
+<span class="token comment"># 抓本地环回的包</span>
+tcpdump -i lo port <span class="token number">80</span>
+
+<span class="token comment"># 将抓到的包导出为 test.pcap 文件</span>
+tcpdump -i lo port <span class="token number">80</span> -w test.pcap
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="系统管理"><a href="#系统管理" class="header-anchor">#</a> 系统管理</h2> <h3 id="添加、修改、删除用户"><a href="#添加、修改、删除用户" class="header-anchor">#</a> 添加、修改、删除用户</h3> <p>创建常规用户：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 创建用户，会自动创建 home 目录</span>
+adduser 用户名
+<span class="token comment"># 设置、修改密码</span>
+<span class="token function">passwd</span> 用户密码
+
+<span class="token comment"># 增加 sudo 权限</span>
+<span class="token function">vim</span> /etc/sudoers
+<span class="token comment"># 修改文件里面的</span>
+<span class="token comment"># root    ALL=(ALL) ALL</span>
+<span class="token comment"># 用户名    ALL=(ALL) ALL</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>删除用户：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 删除用户、密码、用户组，保留用户的家目录和用户的邮件目录</span>
+<span class="token function">userdel</span> testuser
+
+<span class="token comment"># 删除用户与其 home 目录和用户的邮件通知目录</span>
+<span class="token function">userdel</span> -r testuser
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>创建一个不能 ssh 登录的帐号（这类账号专门用于启动服务，只是让服务启动起来，但是不能登录系统 —— 提升安全性）：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">useradd</span> 用户名 -s /sbin/nologin -M
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>在 useradd 命令后跟了两个参数，它们分别表示：</p> <ul><li>-s：表示指定用户所用的 shell，此处为 <code>/sbin/nologin</code>，表示不登录</li> <li>-M：表示不创建用户主目录</li></ul></blockquote> <h3 id="date-命令"><a href="#date-命令" class="header-anchor">#</a> date 命令</h3> <p>用来显示或设定系统的日期与时间。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 直接显示日期与时间：Thu Mar 24 13:35:25 CST 2022</span>
+<span class="token function">date</span>
+
+<span class="token comment"># 自定义输出格式</span>
+<span class="token function">date</span> <span class="token string">&quot;+%Y_%m_%d %H-%M-%S&quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="最近登录信息列表"><a href="#最近登录信息列表" class="header-anchor">#</a> 最近登录信息列表</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 最近登录的 5 个账号</span>
+last -n <span class="token number">5</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="查找进程-ps-命令"><a href="#查找进程-ps-命令" class="header-anchor">#</a> 查找进程：ps 命令</h3> <p>用于显示当前进程的状态，类似于 Windows 的任务管理器。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 查找指定进程</span>
+<span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> 进程关键字
+
+<span class="token comment"># 显示进程信息</span>
+<span class="token function">ps</span> -A
+
+<span class="token comment"># 显示指定用户信息</span>
+<span class="token function">ps</span> -u 用户名
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><blockquote><p>语法格式：<code>ps [options] [--help]</code></p> <p>参数说明（ps 的参数非常多，在此仅列出几个常用的参数）：</p> <ul><li>-A：列出所有的进程</li> <li>-w：显示加宽可以显示较多的资讯</li> <li>-au：显示较详细的资讯</li> <li>-aux：显示所有包含其他使用者的行程</li></ul></blockquote> <p>显示内容详解（以 <code>ps -aux</code> 为例）：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token environment constant">USER</span>       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>USER：进程拥有者</li> <li>PID：pid</li> <li>%CPU：占用的 CPU 使用率</li> <li>%MEM：占用的内存使用率</li> <li>VSZ：占用的虚拟内存大小</li> <li>RSS：占用的内存大小</li> <li>TTY：终端的次要装置号码（minor device number of tty）</li> <li>STAT：该进程的状态
+<ul><li>D：无法中断的休眠状态（通常表示该进程正在进行 I/O 动作）</li> <li>R：正在运行或者在运行队列中等待</li> <li>S：休眠，在等待某个事件、信号</li> <li>T：暂停执行，进程接收到信息 SIGSTOP，SIGSTP，SIGTIN，SIGTOU 信号</li> <li>Z：不存在但暂时无法消除（僵死进程）</li> <li>W：没有足够的内存分页可分配</li> <li>&lt;：高优先级的行程</li> <li>N：低优先级的行程</li> <li>L：有内存分页分配并锁在内存内（即时系统或定制 I/O）</li></ul></li> <li>START：进程开始时间</li> <li>TIME：执行的时间</li> <li>COMMAND：所执行的指令</li></ul> <h3 id="监控服务器性能"><a href="#监控服务器性能" class="header-anchor">#</a> 监控服务器性能</h3> <h4 id="_1-top-命令"><a href="#_1-top-命令" class="header-anchor">#</a> 1）top 命令</h4> <p>用于实时显示 process 的动态。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 显示进程信息</span>
+<span class="token function">top</span>
+
+<span class="token comment"># 显示完整命令</span>
+<span class="token function">top</span> -c
+
+<span class="token comment"># 显示指定的进程信息</span>
+<span class="token function">top</span> -p 进程号
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>显示内容详解（以 <code>top -c</code> 为例）：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>PID <span class="token environment constant">USER</span>      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>PID：进程 id</li> <li>PPID：父进程 id</li> <li>RUSER：Real user name</li> <li>UID：进程所有者的用户 id</li> <li>USER：进程所有者的用户名</li> <li>GROUP：进程所有者的组名</li> <li>TTY：启动进程的终端名。不是从终端启动的进程则显示为 ?</li> <li>PR：优先级</li> <li>NI：nice 值。负值表示高优先级，正值表示低优先级</li> <li>P：最后使用的 CPU，仅在多 CPU 环境下有意义</li> <li>%CPU：上次更新到现在的 CPU 时间占用百分比</li> <li>TIME：进程使用的 CPU 时间总计，单位秒</li> <li>TIME+：进程使用的 CPU 时间总计，单位 1/100 秒</li> <li>%MEM：进程使用的物理内存百分比</li> <li>VIRT：进程使用的虚拟内存总量，单位 kb。VIRT=SWAP+RES</li> <li>SWAP：进程使用的虚拟内存中，被换出的大小，单位 kb</li> <li>RES：进程使用的、未被换出的物理内存大小，单位 kb，RES=CODE+DATA</li> <li>CODE：可执行代码占用的物理内存大小，单位 kb</li> <li>DATA：可执行代码以外的部分（数据段+栈）占用的物理内存大小，单位 kb</li> <li>SHR：共享内存大小，单位 kb</li> <li>nFLT：页面错误次数</li> <li>nDRT：最后一次写入到现在，被修改过的页面数</li> <li>S：进程状态。D=不可中断的睡眠状态，R=运行，S=睡眠，T=跟踪/停止，Z=僵尸进程</li> <li>COMMAND：命令名/命令行</li> <li>WCHAN：若该进程在睡眠，则显示睡眠中的系统函数名</li> <li>Flags：任务标志，参考 sched.h</li></ul> <h4 id="_2-free-命令"><a href="#_2-free-命令" class="header-anchor">#</a> 2）free 命令</h4> <p>用于显示内存状态（包括实体内存，虚拟的交换文件内存，共享内存区段，以及系统核心使用的缓冲区等）。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 显示内存使用信息</span>
+<span class="token function">free</span>
+
+<span class="token comment"># 以总和的形式查询内存的使用信息</span>
+<span class="token function">free</span> -t
+
+<span class="token comment"># 每 10s 执行一次命令</span>
+<span class="token function">free</span> -s <span class="token number">10</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><blockquote><p>语法格式：<code>free [-bkmotV][-s &lt;间隔秒数&gt;]</code></p> <p>参数说明：</p> <ul><li>-b：以 Byte 为单位显示内存使用情况。</li> <li>-k：以 KB 为单位显示内存使用情况。</li> <li>-m：以 MB 为单位显示内存使用情况。</li> <li>-h：以合适的单位显示内存使用情况，最大为三位数，自动计算对应的单位值。单位有：
+<ul><li>B = bytes</li> <li>K = kilos</li> <li>M = megas</li> <li>G = gigas</li> <li>T = teras</li></ul></li> <li>-o：不显示缓冲区调节列。</li> <li>-s&lt;间隔秒数&gt;：持续观察内存使用状况。</li> <li>-t：显示内存总和列。</li> <li>-V：显示版本信息。</li></ul></blockquote> <p>显示内容详解（以 <code>free -m</code> 为例）：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>              total        used        <span class="token function">free</span>      shared  buff/cache   available
+Mem:          <span class="token number">48257</span>       <span class="token number">26204</span>         <span class="token number">625</span>         <span class="token number">190</span>       <span class="token number">21427</span>       <span class="token number">21335</span>
+Swap:         <span class="token number">49105</span>        <span class="token number">1652</span>       <span class="token number">47453</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>行
+<ul><li>Mem：内存的使用情况。</li> <li>Swap：交换空间的使用情况。</li></ul></li> <li>列
+<ul><li>total：总的内存量</li> <li>used：被当前运行中的进程使用的内存量</li> <li>free：未被使用的内存量</li> <li>shared：在两个或多个进程之间共享的内存量</li> <li>buffers：内存中保留用于内核记录进程队列请求的内存量</li> <li>cache：在 RAM 中存储最近使用过的文件的页缓冲大小</li> <li>buff/cache 缓冲区和缓存总的使用内存量（被 buffer 和 cache 使用的物理内存大小）</li> <li>available 可用于启动新应用的可用内存量（不含交换分区）</li></ul></li></ul> <p>关系：total(48257M) = used(26204M) + free(625M) + buff/cache(21427M)，少许偏差是由于单位转换为 M 后造成的。</p> <p>更多的参考<a href="https://www.cnblogs.com/ultranms/p/9254160.html" target="_blank" rel="noopener noreferrer">linux下free命令详解<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <h3 id="shutdown-命令"><a href="#shutdown-命令" class="header-anchor">#</a> shutdown 命令</h3> <p>用来进行开关机。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 立即关机</span>
+<span class="token function">shutdown</span> -h now
+
+<span class="token comment"># 重新启动计算机</span>
+<span class="token function">shutdown</span> -r now
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="系统设置"><a href="#系统设置" class="header-anchor">#</a> 系统设置</h2> <h3 id="alias-和-unalias-命令"><a href="#alias-和-unalias-命令" class="header-anchor">#</a> alias 和 unalias 命令</h3> <p>alias 命令用于设置指令的别名，unalias 命令用于删除别名。</p> <blockquote><p>alias 的效力仅作用于本次登入的操作。</p></blockquote> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 列出目前所有的别名设置</span>
+<span class="token builtin class-name">alias</span>
+
+<span class="token comment"># 给命令设置别名</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ll</span><span class="token operator">=</span><span class="token string">'ls -alF'</span>
+
+<span class="token comment"># 显示别名</span>
+<span class="token builtin class-name">alias</span> ll
+
+<span class="token comment"># 删除别名</span>
+<span class="token builtin class-name">unalias</span> ll
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="清除历史命令记录"><a href="#清除历史命令记录" class="header-anchor">#</a> 清除历史命令记录</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>echo &gt; /root/.bash_history
+history -c
+
+# 清空指定用户的记录
+su - xxx
+echo &gt; ./.bash_history
+history -c
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="日常操作"><a href="#日常操作" class="header-anchor">#</a> 日常操作</h2> <h3 id="后台运行命令"><a href="#后台运行命令" class="header-anchor">#</a> 后台运行命令</h3> <p>用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 后台运行，并且有 nohup.out 输出</span>
+<span class="token function">nohup</span> xxx <span class="token operator">&amp;</span>
+
+<span class="token comment"># 后台运行，不输出任何日志</span>
+<span class="token function">nohup</span> xxx <span class="token operator">&gt;</span> /dev/null <span class="token operator">&amp;</span>
+
+<span class="token comment"># 后台运行，并将错误信息做标准输出到日志中 </span>
+<span class="token function">nohup</span> xxx <span class="token operator">&gt;</span>out.log <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">&amp;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="同步服务器时间"><a href="#同步服务器时间" class="header-anchor">#</a> 同步服务器时间</h3> <p>Linux 服务器运行久时，系统时间就会存在一定的误差，此时可以使用 ntpdate 进行时间同步。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 与中国国家授时中心的官方服务器同步</span>
+ntpdate -u <span class="token number">210.72</span>.145.44
+
+<span class="token comment"># 与 NTP 服务器（上海）同步</span>
+ntpdate -u ntp.api.bz
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="linux-命令大全"><a href="#linux-命令大全" class="header-anchor">#</a> Linux 命令大全</h2> <ul><li><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener noreferrer">Linux 命令大全<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p>（完）</p></div> <!----> <div class="content__content-bottom"></div> <footer class="page-meta"><div class="edit-link"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon edit-icon"><path d="M117.953 696.992 64.306 959.696l265.931-49.336 450.204-452.505-212.284-213.376-450.204 452.513zm496.384-296.326L219.039 797.993l-46.108-46.34L568.233 354.33l46.104 46.335zm345.357-122.99-114.45 115.04-212.288-213.377 114.45-115.035 212.288 213.371zm0 0" fill="currentColor"></path></svg> <a href="https://github.com/wenyuan/fedbook/edit/main/docs/basic-skills/linux/common-commands.md" target="_blank" rel="noopener noreferrer">编辑此页</a></div> <div class="meta-item update-time"><span class="label">上次编辑于:</span> <span class="info">2022年4月5日 16:50</span></div> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/basic-skills/linux/solution-to-vim-encoding/">
+        解决 vim 中文乱码问题
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon next-icon"><path d="M906.772 512c0 4.772-2.211 9.267-5.99 12.175L524.257 813.66a15.37 15.37 0 0 1-18.616.092 15.368 15.368 0 0 1-5.038-17.91l75.714-191.672h-443.73c-8.488 0-15.36-6.881-15.36-15.36v-153.6c0-8.489 6.872-15.36 15.36-15.36h443.73l-75.714-191.682a15.358 15.358 0 0 1 5.048-17.91c5.51-4.158 13.128-4.137 18.606.092l376.525 289.485a15.323 15.323 0 0 1 5.99 12.165z" fill="currentColor"></path></svg></a></span></p></div> <!----> <!----> <div class="content__page-bottom"></div></main> <!----></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.3369b0a4.js" defer></script><script src="/assets/js/vendors~layout-Layout.7790a1fa.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.801dfb38.js" defer></script><script src="/assets/js/page-常用命令.8e3a7759.js" defer></script>
+  </body>
+</html>
