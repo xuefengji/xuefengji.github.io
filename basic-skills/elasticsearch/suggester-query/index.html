@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>搜索词自动补全语法 | 前端修炼小册</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script charset="utf-8" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script charset="utf-8" src="/js/main.js"></script>
+    <link rel="alternate" type="application/atom+xml" href="https://www.fedbook.cn/atom.xml" title="前端修炼小册 Atom Feed">
+    <link rel="alternate" type="application/json" href="https://www.fedbook.cn/feed.json" title="前端修炼小册 JSON Feed">
+    <link rel="alternate" type="application/rss+xml" href="https://www.fedbook.cn/rss.xml" title="前端修炼小册 RSS Feed">
+    <meta name="description" content="Wenyuan&#39;s Front-End Development Book">
+    <meta property="og:url" content="/basic-skills/elasticsearch/suggester-query.html">
+    <meta property="og:site_name" content="前端修炼小册">
+    <meta property="og:title" content="搜索词自动补全语法">
+    <meta property="og:description" content="搜索词自动补全语法 前言 搜索词自动补全的功能可以改善用户的搜索体验。具体的表现形式就是当用户在搜索框输入部分内容后，出现对应的推荐选项，让用户可以快速选择。这种自动补全或纠错的功能在现代搜索引擎中都很常见。 想要实现这样的需求，可以使用 ES 提供的 Suggesters API。它的原理简单来说，就是 Suggesters 会将输入的文本分解为 toke">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh-CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="前端修炼小册">
+    <meta property="article:author" content="wenyuan">
+    
+    <link rel="preload" href="/assets/css/0.styles.ccbf91ab.css" as="style"><link rel="preload" href="/assets/js/app.34fc3e13.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Layout.a3786f42.js" as="script"><link rel="preload" href="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.a77e3a6c.js" as="script"><link rel="preload" href="/assets/js/page-搜索词自动补全语法.0045a2ec.js" as="script"><link rel="prefetch" href="/assets/js/layout-Blog.2136fbb1.js"><link rel="prefetch" href="/assets/js/layout-Layout.f12fcd54.js"><link rel="prefetch" href="/assets/js/layout-NotFound.3d8a7c0c.js"><link rel="prefetch" href="/assets/js/page-Arrayprototypeincludes().f5cfd5d0.js"><link rel="prefetch" href="/assets/js/page-Array扩展.6f58cbca.js"><link rel="prefetch" href="/assets/js/page-BFC.6c7e28ff.js"><link rel="prefetch" href="/assets/js/page-BigInt.69165cbc.js"><link rel="prefetch" href="/assets/js/page-B端产品文案指南.fa81d4ab.js"><link rel="prefetch" href="/assets/js/page-CSRF攻击.cde338ce.js"><link rel="prefetch" href="/assets/js/page-CSS.60568dc5.js"><link rel="prefetch" href="/assets/js/page-CSS引入方式.3841259e.js"><link rel="prefetch" href="/assets/js/page-CSS规范.a487fd32.js"><link rel="prefetch" href="/assets/js/page-CSS问题.c233a050.js"><link rel="prefetch" href="/assets/js/page-Class.137ead68.js"><link rel="prefetch" href="/assets/js/page-CodeReview.9dc2b37d.js"><link rel="prefetch" href="/assets/js/page-ES6-ES12新特性.5e281d0f.js"><link rel="prefetch" href="/assets/js/page-ES中的概念与名词.a6e96ba4.js"><link rel="prefetch" href="/assets/js/page-ES的安装.6dc9c5bb.js"><link rel="prefetch" href="/assets/js/page-Elasticsearch.a196c3c1.js"><link rel="prefetch" href="/assets/js/page-Flexbox布局.de059221.js"><link rel="prefetch" href="/assets/js/page-Function扩展.4e383bc2.js"><link rel="prefetch" href="/assets/js/page-Generator.8e415bf3.js"><link rel="prefetch" href="/assets/js/page-Git.7636af87.js"><link rel="prefetch" href="/assets/js/page-Git工作流—分支策略.10a5bfd2.js"><link rel="prefetch" href="/assets/js/page-Git提交信息规范.6bf52dd3.js"><link rel="prefetch" href="/assets/js/page-Grid布局.bbd48fb0.js"><link rel="prefetch" href="/assets/js/page-HTML.d5ab6cf5.js"><link rel="prefetch" href="/assets/js/page-HTML基本结构.18e9b412.js"><link rel="prefetch" href="/assets/js/page-HTML规范.fbba67d4.js"><link rel="prefetch" href="/assets/js/page-HTML问题.1af110e5.js"><link rel="prefetch" href="/assets/js/page-Home.88aad06c.js"><link rel="prefetch" href="/assets/js/page-JSON扩展.d00f7976.js"><link rel="prefetch" href="/assets/js/page-JavaScript.0e17c8a3.js"><link rel="prefetch" href="/assets/js/page-JavaScript手写函数.f10c27f7.js"><link rel="prefetch" href="/assets/js/page-JavaScript规范.79858b50.js"><link rel="prefetch" href="/assets/js/page-Map.762c11f4.js"><link rel="prefetch" href="/assets/js/page-Module.ef73ddd8.js"><link rel="prefetch" href="/assets/js/page-MySQL.92140e99.js"><link rel="prefetch" href="/assets/js/page-MySQL主键和自增ID.e2a910ad.js"><link rel="prefetch" href="/assets/js/page-MySQL常用命令.126c820b.js"><link rel="prefetch" href="/assets/js/page-MySQL数据库设计规范.e9f6fc9b.js"><link rel="prefetch" href="/assets/js/page-MySQL数据类型.423ab011.js"><link rel="prefetch" href="/assets/js/page-MySQL的安装与卸载.123330a7.js"><link rel="prefetch" href="/assets/js/page-Nginx.cee00623.js"><link rel="prefetch" href="/assets/js/page-Nginx安全访问控制.461a15a9.js"><link rel="prefetch" href="/assets/js/page-Nginx常用命令.920b1c1e.js"><link rel="prefetch" href="/assets/js/page-Nginx文件列表功能.4aa3d6af.js"><link rel="prefetch" href="/assets/js/page-Nginx的卸载.dcd55692.js"><link rel="prefetch" href="/assets/js/page-Nginx的安装.9f6dd92b.js"><link rel="prefetch" href="/assets/js/page-Nginx设置开机自启.45940d36.js"><link rel="prefetch" href="/assets/js/page-Nginx部署Https安全认证.2a014582.js"><link rel="prefetch" href="/assets/js/page-Nginx部署前后端分离项目.c7ecbb8c.js"><link rel="prefetch" href="/assets/js/page-Nginx限流常用模块.a1554260.js"><link rel="prefetch" href="/assets/js/page-Nginx页面安全认证.8fb5473f.js"><link rel="prefetch" href="/assets/js/page-Ngixn配置文件模板.d57da99f.js"><link rel="prefetch" href="/assets/js/page-Ngixn配置文件详解.a6f5c7e2.js"><link rel="prefetch" href="/assets/js/page-Number.c83dedb4.js"><link rel="prefetch" href="/assets/js/page-ObjectfromEntries().5c97bc1a.js"><link rel="prefetch" href="/assets/js/page-Object扩展.436e8421.js"><link rel="prefetch" href="/assets/js/page-Promise.8536caa5.js"><link rel="prefetch" href="/assets/js/page-PromiseallSettled().0cfa1ff6.js"><link rel="prefetch" href="/assets/js/page-Promiseany()和AggregateError.d22dedc8.js"><link rel="prefetch" href="/assets/js/page-Promiseprototypefinally().544f00d9.js"><link rel="prefetch" href="/assets/js/page-Proxy.cc793724.js"><link rel="prefetch" href="/assets/js/page-Python.08afc131.js"><link rel="prefetch" href="/assets/js/page-React.25028562.js"><link rel="prefetch" href="/assets/js/page-ReactHooks（内置）.8c52d280.js"><link rel="prefetch" href="/assets/js/page-ReactHooks（自定义）.6761e11d.js"><link rel="prefetch" href="/assets/js/page-ReactJSX.52eff984.js"><link rel="prefetch" href="/assets/js/page-Redis.2f5a532d.js"><link rel="prefetch" href="/assets/js/page-Redis数据类型.a300aeaa.js"><link rel="prefetch" href="/assets/js/page-Redis的安装与卸载.916df964.js"><link rel="prefetch" href="/assets/js/page-Redis缓存三大问题.4b63470b.js"><link rel="prefetch" href="/assets/js/page-Reflect.8d22b004.js"><link rel="prefetch" href="/assets/js/page-RegExp扩展.c07b31f5.js"><link rel="prefetch" href="/assets/js/page-Set.538299ae.js"><link rel="prefetch" href="/assets/js/page-String扩展.93b50dc9.js"><link rel="prefetch" href="/assets/js/page-Symbol.f7bed33c.js"><link rel="prefetch" href="/assets/js/page-Symbol扩展.394d7abb.js"><link rel="prefetch" href="/assets/js/page-Term查询语法.5c906b08.js"><link rel="prefetch" href="/assets/js/page-TypeScript.67949fcb.js"><link rel="prefetch" href="/assets/js/page-UML类图.f8d76c4e.js"><link rel="prefetch" href="/assets/js/page-V8引擎的工作原理.60758d35.js"><link rel="prefetch" href="/assets/js/page-Vue3源码中的基础工具函数.1bcf71c1.js"><link rel="prefetch" href="/assets/js/page-Vuejs.11f2f30a.js"><link rel="prefetch" href="/assets/js/page-Vue项目规范.7dc7dd8d.js"><link rel="prefetch" href="/assets/js/page-Webpack5.149bca71.js"><link rel="prefetch" href="/assets/js/page-asyncawait.2e26eb3a.js"><link rel="prefetch" href="/assets/js/page-clone速度过慢.75cfab41.js"><link rel="prefetch" href="/assets/js/page-forawaitof.d824d48a.js"><link rel="prefetch" href="/assets/js/page-gitrebase的两种用法.5fdee7f3.js"><link rel="prefetch" href="/assets/js/page-globalThis.271ef279.js"><link rel="prefetch" href="/assets/js/page-let和const.592c8cd5.js"><link rel="prefetch" href="/assets/js/page-npm、yarn、pnpm区别.6e3ae860.js"><link rel="prefetch" href="/assets/js/page-pull时发现代码冲突，如何解决.1cae743a.js"><link rel="prefetch" href="/assets/js/page-this指向.66039947.js"><link rel="prefetch" href="/assets/js/page-中介者模式.9a79b1c1.js"><link rel="prefetch" href="/assets/js/page-事件循环机制，微任务和宏任务的关系.f3cab30a.js"><link rel="prefetch" href="/assets/js/page-产品与人性28个心理学效应.cf63bd44.js"><link rel="prefetch" href="/assets/js/page-享元模式.b25964f3.js"><link rel="prefetch" href="/assets/js/page-代理模式.b41eb1f3.js"><link rel="prefetch" href="/assets/js/page-代码风格.01f615e7.js"><link rel="prefetch" href="/assets/js/page-伪元素和伪类.acbe5fbd.js"><link rel="prefetch" href="/assets/js/page-作用域.ffa0a6e1.js"><link rel="prefetch" href="/assets/js/page-使用Fabric执行SSH.c23ebb01.js"><link rel="prefetch" href="/assets/js/page-使用Paramiko执行SSH.5b9334f9.js"><link rel="prefetch" href="/assets/js/page-使用openpyxl处理新版本Excel.4dd994ef.js"><link rel="prefetch" href="/assets/js/page-使用smtplib发送电子邮件.dd1c2e3e.js"><link rel="prefetch" href="/assets/js/page-使用subprocess执行cmd.867477e8.js"><link rel="prefetch" href="/assets/js/page-使用telnetlib执行Telnet.9c46990a.js"><link rel="prefetch" href="/assets/js/page-使用xlrd处理旧版本Excel.27ce42c0.js"><link rel="prefetch" href="/assets/js/page-修改commit信息.9e220f28.js"><link rel="prefetch" href="/assets/js/page-修订FunctionprototypetoString().28c9bbf9.js"><link rel="prefetch" href="/assets/js/page-全文搜索语法.553bb8d9.js"><link rel="prefetch" href="/assets/js/page-公共变量、私有变量、保护变量.93399eeb.js"><link rel="prefetch" href="/assets/js/page-关于本站.789244c7.js"><link rel="prefetch" href="/assets/js/page-函数参数.a413f77c.js"><link rel="prefetch" href="/assets/js/page-函数类型.0bfdf347.js"><link rel="prefetch" href="/assets/js/page-函数组件设计模式.0bdb7389.js"><link rel="prefetch" href="/assets/js/page-函数装饰器.1ad1d632.js"><link rel="prefetch" href="/assets/js/page-刚刚的commit有误，想要撤回.b8f021a3.js"><link rel="prefetch" href="/assets/js/page-刚刚的push有误，想要撤回.9cffb848.js"><link rel="prefetch" href="/assets/js/page-前端登录方案总结.fe1961e9.js"><link rel="prefetch" href="/assets/js/page-前端路由原理.16b07700.js"><link rel="prefetch" href="/assets/js/page-动态引入.2463b890.js"><link rel="prefetch" href="/assets/js/page-包管理工具.ca6fca83.js"><link rel="prefetch" href="/assets/js/page-单例模式.d0361c8c.js"><link rel="prefetch" href="/assets/js/page-原型与原型链.8cb7c22e.js"><link rel="prefetch" href="/assets/js/page-原型模式.3b86814b.js"><link rel="prefetch" href="/assets/js/page-受控组件和非受控组件.c78ca8ba.js"><link rel="prefetch" href="/assets/js/page-变量与常量.6f0718b9.js"><link rel="prefetch" href="/assets/js/page-可选的CatchBinding.89e0d06f.js"><link rel="prefetch" href="/assets/js/page-可选链Optionalchaining.735f051f.js"><link rel="prefetch" href="/assets/js/page-同步与异步.73d50f82.js"><link rel="prefetch" href="/assets/js/page-同源策略.faa2a47c.js"><link rel="prefetch" href="/assets/js/page-命令模式.542461b6.js"><link rel="prefetch" href="/assets/js/page-响应式原理.c6aa8ba8.js"><link rel="prefetch" href="/assets/js/page-垃圾回收.ec92d34b.js"><link rel="prefetch" href="/assets/js/page-基本配置.c2eeb8b2.js"><link rel="prefetch" href="/assets/js/page-基础用法要点.cdac78f8.js"><link rel="prefetch" href="/assets/js/page-基础类型.59d2cf22.js"><link rel="prefetch" href="/assets/js/page-声明函数的六种方式.727a0228.js"><link rel="prefetch" href="/assets/js/page-备忘录模式.5ee2c863.js"><link rel="prefetch" href="/assets/js/page-复杂度分析.fd6aed6e.js"><link rel="prefetch" href="/assets/js/page-外观模式.f7419931.js"><link rel="prefetch" href="/assets/js/page-大文件分片上传和断点续传.28946d94.js"><link rel="prefetch" href="/assets/js/page-如何使用GitFlow工作流进行团队协作.1e5eb731.js"><link rel="prefetch" href="/assets/js/page-如何修改历史commits中的用户名和邮箱.243a3499.js"><link rel="prefetch" href="/assets/js/page-如何参与开源项目-提交PR与更新Fork分支.a96684d6.js"><link rel="prefetch" href="/assets/js/page-如何迁移仓库并保留commits记录.1e77efa6.js"><link rel="prefetch" href="/assets/js/page-字面量类型.0195046a.js"><link rel="prefetch" href="/assets/js/page-定位（position）.e91386fd.js"><link rel="prefetch" href="/assets/js/page-实例方法、类方法、静态方法.3080fe96.js"><link rel="prefetch" href="/assets/js/page-实现Objectcreate方法.184aaaa1.js"><link rel="prefetch" href="/assets/js/page-实现apply方法.32129a8a.js"><link rel="prefetch" href="/assets/js/page-实现bind方法.f8658abb.js"><link rel="prefetch" href="/assets/js/page-实现call方法.074f6cf0.js"><link rel="prefetch" href="/assets/js/page-实现instanceof运算符.df0988d3.js"><link rel="prefetch" href="/assets/js/page-实现new运算符.d201c2be.js"><link rel="prefetch" href="/assets/js/page-实现浅克隆（shallowClone）.4b8de5f7.js"><link rel="prefetch" href="/assets/js/page-实现深克隆（deepClone）.15232bbb.js"><link rel="prefetch" href="/assets/js/page-实现符合PromisesA+规范的Promise.b1f5d980.js"><link rel="prefetch" href="/assets/js/page-实现节流函数（throttle）.12a4265c.js"><link rel="prefetch" href="/assets/js/page-实现防抖函数（debounce）.2e792b8d.js"><link rel="prefetch" href="/assets/js/page-对象遍历的几种方式.da27b760.js"><link rel="prefetch" href="/assets/js/page-尾逗号Trailingcommas.4bd5d31d.js"><link rel="prefetch" href="/assets/js/page-工厂模式.d01edd77.js"><link rel="prefetch" href="/assets/js/page-已commit未push，想修改代码.1e3f5cf0.js"><link rel="prefetch" href="/assets/js/page-已commit未push，漏提交文件.d3cc7020.js"><link rel="prefetch" href="/assets/js/page-常用命令.aad14a0d.js"><link rel="prefetch" href="/assets/js/page-常用命令清单.062a829d.js"><link rel="prefetch" href="/assets/js/page-幂运算符.2cd4e8b3.js"><link rel="prefetch" href="/assets/js/page-建造者模式.c9717cd3.js"><link rel="prefetch" href="/assets/js/page-性能优化-产出代码.21791c2d.js"><link rel="prefetch" href="/assets/js/page-性能优化-构建速度.75cb0a3f.js"><link rel="prefetch" href="/assets/js/page-执行上下文和调用栈.69b5a1af.js"><link rel="prefetch" href="/assets/js/page-抽象工厂模式.9cdbdd00.js"><link rel="prefetch" href="/assets/js/page-接口类型与类型别名.c015390f.js"><link rel="prefetch" href="/assets/js/page-接口设计.9ea75833.js"><link rel="prefetch" href="/assets/js/page-数字分隔符.7fe02110.js"><link rel="prefetch" href="/assets/js/page-数据类型.fdf1bdd3.js"><link rel="prefetch" href="/assets/js/page-数据结构与算法.276262cd.js"><link rel="prefetch" href="/assets/js/page-数据结构之数组.fccb9a93.js"><link rel="prefetch" href="/assets/js/page-数据结构之链表.ce8db186.js"><link rel="prefetch" href="/assets/js/page-数组遍历的几种方式.2c7d968f.js"><link rel="prefetch" href="/assets/js/page-文案指南.fe19aa1b.js"><link rel="prefetch" href="/assets/js/page-文档基本操作.35de267d.js"><link rel="prefetch" href="/assets/js/page-文档规范.ec11e3a6.js"><link rel="prefetch" href="/assets/js/page-新的逻辑操作符.1fa6a470.js"><link rel="prefetch" href="/assets/js/page-更新日志.56cd0782.js"><link rel="prefetch" href="/assets/js/page-最佳实践-通用模板.adc97cd8.js"><link rel="prefetch" href="/assets/js/page-未完待续.7e51110d.js"><link rel="prefetch" href="/assets/js/page-枚举.aef4309c.js"><link rel="prefetch" href="/assets/js/page-栈空间和堆空间.60f82c24.js"><link rel="prefetch" href="/assets/js/page-核心概念.8ae5b4c8.js"><link rel="prefetch" href="/assets/js/page-桥接模式.0d7eff81.js"><link rel="prefetch" href="/assets/js/page-模板方法模式.ce4cfb87.js"><link rel="prefetch" href="/assets/js/page-模板编译.ebf1cc00.js"><link rel="prefetch" href="/assets/js/page-正向代理与反向代理.43b04d4b.js"><link rel="prefetch" href="/assets/js/page-泛型.29600092.js"><link rel="prefetch" href="/assets/js/page-浅克隆与深克隆.beb15277.js"><link rel="prefetch" href="/assets/js/page-浏览器内核与JavaScript引擎.04ceec11.js"><link rel="prefetch" href="/assets/js/page-浏览器宏观认识.b246c39e.js"><link rel="prefetch" href="/assets/js/page-浏览器相关.5d136979.js"><link rel="prefetch" href="/assets/js/page-浮动（float）.8c72ec42.js"><link rel="prefetch" href="/assets/js/page-渲染引擎的工作原理.b070be34.js"><link rel="prefetch" href="/assets/js/page-源码阅读与学习.117fc140.js"><link rel="prefetch" href="/assets/js/page-版本号定义规范.388d2c31.js"><link rel="prefetch" href="/assets/js/page-版本控制.25a6dad9.js"><link rel="prefetch" href="/assets/js/page-状态模式.9098a2a2.js"><link rel="prefetch" href="/assets/js/page-盒模型.8e794b68.js"><link rel="prefetch" href="/assets/js/page-空值合并运算符.50cb41d3.js"><link rel="prefetch" href="/assets/js/page-策略模式.37cb4c22.js"><link rel="prefetch" href="/assets/js/page-类变量和实例变量.036ad07a.js"><link rel="prefetch" href="/assets/js/page-类和实例.41c012ec.js"><link rel="prefetch" href="/assets/js/page-类型守卫.e19a0ce5.js"><link rel="prefetch" href="/assets/js/page-类的继承.e16f2cc1.js"><link rel="prefetch" href="/assets/js/page-类私有域.4be09380.js"><link rel="prefetch" href="/assets/js/page-类类型.0a7ab10f.js"><link rel="prefetch" href="/assets/js/page-组件渲染与更新.0dc97f32.js"><link rel="prefetch" href="/assets/js/page-组合查询语法.cbc2476d.js"><link rel="prefetch" href="/assets/js/page-组合模式.5f5fccae.js"><link rel="prefetch" href="/assets/js/page-经典布局.2da44dad.js"><link rel="prefetch" href="/assets/js/page-统计语法：聚合查询.4f3b3352.js"><link rel="prefetch" href="/assets/js/page-继承的八种方式.7023acec.js"><link rel="prefetch" href="/assets/js/page-编译器与解释器.7addef86.js"><link rel="prefetch" href="/assets/js/page-网络安全协议（HTTPS）.e3e7b027.js"><link rel="prefetch" href="/assets/js/page-职责链模式.9e619401.js"><link rel="prefetch" href="/assets/js/page-联合类型与交叉类型.8ae1fb36.js"><link rel="prefetch" href="/assets/js/page-虚拟DOM与diff算法.e58b101e.js"><link rel="prefetch" href="/assets/js/page-装饰器模式.d6e169f7.js"><link rel="prefetch" href="/assets/js/page-观察者模式.0eec37c6.js"><link rel="prefetch" href="/assets/js/page-解决vim中文乱码问题.bd0499cb.js"><link rel="prefetch" href="/assets/js/page-解决方案.4e5ba7e3.js"><link rel="prefetch" href="/assets/js/page-解构赋值.d7b2ec92.js"><link rel="prefetch" href="/assets/js/page-认知偏差知识手册.fa3cf8a7.js"><link rel="prefetch" href="/assets/js/page-设计原则.248bd817.js"><link rel="prefetch" href="/assets/js/page-设计模式.0a11c0d7.js"><link rel="prefetch" href="/assets/js/page-设计模式简介.7ef03fad.js"><link rel="prefetch" href="/assets/js/page-访问者模式和解释器模式.2a528a93.js"><link rel="prefetch" href="/assets/js/page-语义类标签.0973d868.js"><link rel="prefetch" href="/assets/js/page-语法规范.d00e650d.js"><link rel="prefetch" href="/assets/js/page-课外学习.3c01248a.js"><link rel="prefetch" href="/assets/js/page-调用函数的四种方式.cc12f8be.js"><link rel="prefetch" href="/assets/js/page-负载均衡.a75b3c01.js"><link rel="prefetch" href="/assets/js/page-跨站脚本攻击（XSS）.61672ea0.js"><link rel="prefetch" href="/assets/js/page-迭代器模式.d8263be8.js"><link rel="prefetch" href="/assets/js/page-适配器模式.a4fe6b0d.js"><link rel="prefetch" href="/assets/js/page-选择器与样式优先级.ee07a887.js"><link rel="prefetch" href="/assets/js/page-配置密钥实现免密操作.cab9f11d.js"><link rel="prefetch" href="/assets/js/page-长度和单位.69655dab.js"><link rel="prefetch" href="/assets/js/page-闭包.43f87f8a.js"><link rel="prefetch" href="/assets/js/page-面向对象编程.4f145627.js"><link rel="prefetch" href="/assets/js/page-高级用法特性.06ae6359.js"><link rel="prefetch" href="/assets/js/page-高级配置.0ce93c5a.js"><link rel="prefetch" href="/assets/js/page-高阶函数.3b78d72f.js"><link rel="prefetch" href="/assets/js/vendors~layout-Slide.7b7dada9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ccbf91ab.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-sidebar has-anchor"><header class="navbar"><!----> <div class="content__navbar-start"></div> <button title="Sidebar Button" class="sidebar-button"><span class="icon"></span></button> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="前端修炼小册" class="logo"> <!----> <span class="site-name can-hide">前端修炼小册</span></a> <!----> <div class="content__navbar-center"></div> <div class="links"><!----> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术规范" class="dropdown-title"><span class="title"><!---->
+        技术规范
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/style-guide/version-control/" class="nav-link"><!---->
+  版本控制
+</a></li><li class="dropdown-item"><a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li><li class="dropdown-item"><a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><a href="/style-guide/apis/" class="nav-link"><!---->
+  接口设计
+</a></li><li class="dropdown-item"><a href="/style-guide/product/" class="nav-link"><!---->
+  文案指南
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识" class="dropdown-title"><span class="title"><!---->
+        前端知识
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>基础</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>进阶</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/es6-and-beyond/" class="nav-link"><!---->
+  ECMAScript 6+
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/typescript/" class="nav-link"><!---->
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/browser/" class="nav-link"><!---->
+  浏览器相关
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>手写</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/javascript-handwritten/" class="nav-link"><!---->
+  JS 手写
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title"><!---->
+        工程化
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>框架</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-engineering/vuejs/" class="nav-link"><!---->
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/frontend-engineering/react/" class="nav-link"><!---->
+  React
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>工具</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-engineering/webpack/" class="nav-link"><!---->
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/frontend-engineering/package/" class="nav-link"><!---->
+  包管理工具
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="必知必会" class="dropdown-title"><span class="title"><!---->
+        必知必会
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>常用工具</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/basic-skills/git/" class="nav-link"><!---->
+  Git
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/nginx/" class="nav-link"><!---->
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/linux/common-commands/" class="nav-link"><!---->
+  Linux
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>数据库/中间件</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/basic-skills/mysql/" class="nav-link"><!---->
+  MySQL
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/redis/" class="nav-link"><!---->
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/elasticsearch/" class="nav-link router-link-active active"><!---->
+  Elasticsearch
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="深入学习" class="dropdown-title"><span class="title"><!---->
+        深入学习
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/in-depth-learning/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li><li class="dropdown-item"><a href="/in-depth-learning/design-patterns/" class="nav-link"><!---->
+  设计模式
+</a></li><li class="dropdown-item"><a href="/in-depth-learning/source-code/" class="nav-link"><!---->
+  源码阅读与学习
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端知识" class="dropdown-title"><span class="title"><!---->
+        后端知识
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/backend-knowledge/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目相关" class="dropdown-title"><span class="title"><!---->
+        项目相关
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/project/solutions/" class="nav-link"><!---->
+  解决方案
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+        其它
+      </span> <span class="arrow"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站内</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/extracurricular/" class="nav-link"><!---->
+  课外学习
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站外</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>线路</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://wenyuan.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div></nav> <!----> <!----> <!----> <div class="content__navbar-end"></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!----> <!----> <div class="content__sidebar-top"></div> <nav class="sidebar-nav-links"><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="技术规范" class="dropdown-title"><span class="title"><!---->
+      技术规范
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/style-guide/version-control/" class="nav-link"><!---->
+  版本控制
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/program/" class="nav-link"><!---->
+  代码风格
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/document/" class="nav-link"><!---->
+  文档规范
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/apis/" class="nav-link"><!---->
+  接口设计
+</a></li><li class="dropdown-item"><!----> <a href="/style-guide/product/" class="nav-link"><!---->
+  文案指南
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="前端知识" class="dropdown-title"><span class="title"><!---->
+      前端知识
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>基础</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/html/" class="nav-link"><!---->
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/css/" class="nav-link"><!---->
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/javascript/" class="nav-link"><!---->
+  JavaScript
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>进阶</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/es6-and-beyond/" class="nav-link"><!---->
+  ECMAScript 6+
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/typescript/" class="nav-link"><!---->
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/frontend-knowledge/browser/" class="nav-link"><!---->
+  浏览器相关
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>手写</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-knowledge/javascript-handwritten/" class="nav-link"><!---->
+  JS 手写
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title"><!---->
+      工程化
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>框架</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-engineering/vuejs/" class="nav-link"><!---->
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/frontend-engineering/react/" class="nav-link"><!---->
+  React
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>工具</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/frontend-engineering/webpack/" class="nav-link"><!---->
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/frontend-engineering/package/" class="nav-link"><!---->
+  包管理工具
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="必知必会" class="dropdown-title"><span class="title"><!---->
+      必知必会
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>常用工具</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/basic-skills/git/" class="nav-link"><!---->
+  Git
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/nginx/" class="nav-link"><!---->
+  Nginx
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/linux/common-commands/" class="nav-link"><!---->
+  Linux
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>数据库/中间件</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/basic-skills/mysql/" class="nav-link"><!---->
+  MySQL
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/redis/" class="nav-link"><!---->
+  Redis
+</a></li><li class="dropdown-subitem"><a href="/basic-skills/elasticsearch/" class="nav-link router-link-active active"><!---->
+  Elasticsearch
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="深入学习" class="dropdown-title"><span class="title"><!---->
+      深入学习
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/in-depth-learning/algorithm/" class="nav-link"><!---->
+  数据结构与算法
+</a></li><li class="dropdown-item"><!----> <a href="/in-depth-learning/design-patterns/" class="nav-link"><!---->
+  设计模式
+</a></li><li class="dropdown-item"><!----> <a href="/in-depth-learning/source-code/" class="nav-link"><!---->
+  源码阅读与学习
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="后端知识" class="dropdown-title"><span class="title"><!---->
+      后端知识
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/backend-knowledge/python/" class="nav-link"><!---->
+  Python
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="项目相关" class="dropdown-title"><span class="title"><!---->
+      项目相关
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/project/solutions/" class="nav-link"><!---->
+  解决方案
+</a></li></ul></div></div><div class="nav-item"><div class="mobile-dropdown-wrapper"><button type="button" aria-label="其它" class="dropdown-title"><span class="title"><!---->
+      其它
+    </span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站内</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/about/" class="nav-link"><!---->
+  关于本站
+</a></li><li class="dropdown-subitem"><a href="/extracurricular/" class="nav-link"><!---->
+  课外学习
+</a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>站外</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://github.com/wenyuan" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://www.wenyuanblog.com/gift.html" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  支持一下
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4 class="dropdown-subtitle"><span>线路</span></h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.fedbook.cn/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国内
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://wenyuan.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external"><!---->
+  国外
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div> <!----></nav> <!----> <div class="content__sidebar-center"></div> <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><!----> <span class="title">Elasticsearch 基础知识</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic-skills/elasticsearch/concepts-and-noun/" class="sidebar-link">ES 中的概念与名词</a></li><li><a href="/basic-skills/elasticsearch/document-crud/" class="sidebar-link">文档基本操作</a></li><li><a href="/basic-skills/elasticsearch/match-query/" class="sidebar-link">全文搜索语法</a></li><li><a href="/basic-skills/elasticsearch/term-query/" class="sidebar-link">Term 查询语法</a></li><li><a href="/basic-skills/elasticsearch/compound-query/" class="sidebar-link">组合查询语法</a></li><li><a href="/basic-skills/elasticsearch/suggester-query/" aria-current="page" class="active sidebar-link">搜索词自动补全语法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic-skills/elasticsearch/suggester-query/#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/basic-skills/elasticsearch/suggester-query/#term-suggester" class="sidebar-link">Term Suggester</a></li><li class="sidebar-sub-header"><a href="/basic-skills/elasticsearch/suggester-query/#phrase-suggester" class="sidebar-link">Phrase Suggester</a></li><li class="sidebar-sub-header"><a href="/basic-skills/elasticsearch/suggester-query/#completion-suggester" class="sidebar-link">Completion Suggester</a></li><li class="sidebar-sub-header"><a href="/basic-skills/elasticsearch/suggester-query/#context-suggester" class="sidebar-link">Context Suggester</a></li><li class="sidebar-sub-header"><a href="/basic-skills/elasticsearch/suggester-query/#总结" class="sidebar-link">总结</a></li><li class="sidebar-sub-header"><a href="/basic-skills/elasticsearch/suggester-query/#参考文档" class="sidebar-link">参考文档</a></li></ul></li><li><a href="/basic-skills/elasticsearch/aggregations/" class="sidebar-link">统计语法：聚合查询</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><!----> <span class="title">Elasticsearch 日常运维</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic-skills/elasticsearch/installation-of-elasticsearch/" class="sidebar-link">ES 的安装</a></li></ul></section></li></ul> <!----> <div class="content__sidebar-bottom"></div> <!----></aside> <main class="page"><nav class="breadcrumb disable"><!----></nav> <!----> <div class="content__page-top"></div> <div vocab="https://schema.org/" typeof="Article" class="page-title"><h1><!----> <span property="headline">搜索词自动补全语法</span></h1> <!----> <!----> <hr></div> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"><li class="anchor"><a href="/basic-skills/elasticsearch/suggester-query/#前言" class="anchor-link heading2"><div>前言</div></a></li><li class="anchor"><a href="/basic-skills/elasticsearch/suggester-query/#term-suggester" class="anchor-link heading2"><div>Term Suggester</div></a></li><li class="anchor"><a href="/basic-skills/elasticsearch/suggester-query/#phrase-suggester" class="anchor-link heading2"><div>Phrase Suggester</div></a></li><li class="anchor"><a href="/basic-skills/elasticsearch/suggester-query/#completion-suggester" class="anchor-link heading2"><div>Completion Suggester</div></a></li><li class="anchor"><a href="/basic-skills/elasticsearch/suggester-query/#context-suggester" class="anchor-link heading2"><div>Context Suggester</div></a></li><li class="anchor"><a href="/basic-skills/elasticsearch/suggester-query/#总结" class="anchor-link heading2"><div>总结</div></a></li><li class="anchor"><a href="/basic-skills/elasticsearch/suggester-query/#参考文档" class="anchor-link heading2"><div>参考文档</div></a></li></ul></div></aside></div> <!----> <div class="content__content-top"></div> <div class="theme-default-content content__default"><h1 id="搜索词自动补全语法"><a href="#搜索词自动补全语法" class="header-anchor">#</a> 搜索词自动补全语法</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>搜索词自动补全的功能可以改善用户的搜索体验。具体的表现形式就是当用户在搜索框输入部分内容后，出现对应的推荐选项，让用户可以快速选择。这种自动补全或纠错的功能在现代搜索引擎中都很常见。</p> <p>想要实现这样的需求，可以使用 ES 提供的 Suggesters API。它的原理简单来说，就是 Suggesters 会将输入的文本分解为 token（token 就是根据规则切分文本后一个个的词），然后在索引里查找相似的 Term。</p> <p>根据使用场景的不同，ES 提供了以下 4 种 Suggester：</p> <ul><li><strong>Term Suggester</strong>：基于单词的纠错补全。</li> <li><strong>Phrase Suggester</strong>：基于短语的纠错补全。</li> <li><strong>Completion Suggester</strong>：自动补全单词，输入词语的前半部分，自动补全单词。</li> <li><strong>Context Suggester</strong>：基于上下文的补全提示，可以实现上下文感知推荐。</li></ul> <h2 id="term-suggester"><a href="#term-suggester" class="header-anchor">#</a> Term Suggester</h2> <p>Term Suggester 提供了基于单词的纠错、补全功能，其工作原理是基于编辑距离（edit distance）来运作的，编辑距离的<strong>核心思想是一个词需要改变多少个字符就可以和另一个词一致</strong>。</p> <p>所以如果一个词转化为原词所需要改动的字符数越少，它越有可能是最佳匹配。（例如 <code>linvx</code> 通过改变一个字符 <code>v</code> 可以转化成 <code>linux</code>）</p> <p>Term Suggester 工作的时候，会先将输入的文本切分为一个个单词（称为 token），然后根据每个单词提供建议，所以其不会考虑输入文本间各个单词的关系。</p> <p>示例如下：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># Term Suggester，&quot;architture&quot; 是错误的拼写，正确的是 &quot;architecture&quot;</span>
+POST books/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;kernel architture&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  
+  <span class="token string">&quot;suggest&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;my_suggest&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;text&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;kernel architture&quot;</span>,
+      <span class="token string">&quot;term&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;suggest_mode&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;missing&quot;</span>,
+        <span class="token string">&quot;field&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;name&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>上述示例里，用户搜索词中的 <code>architture</code> 是错误的拼写。Suggester API 需要在 <code>suggest</code> 块中指定使用的参数。<code>my_suggest</code> 是这次建议的名字，是我们自定义的。<code>term</code> 指的是使用 Term Suggester，如果是 Phrase Suggester 则用的是 <code>phrase</code>。</p> <p>Term Suggester 比较常用的参数：</p> <ul><li><code>text</code>：指定需要产生建议的文本，一般是照搬用户的输入内容。</li> <li><code>field</code>：指定从文档的哪个字段中获取建议。</li> <li><code>suggest_mode</code>：设置建议的模式。其值有以下几个选项：
+<ul><li><code>missing</code>：如果索引中存在就不进行建议，默认的选项。上例中的 <code>kernel</code> 是存在索引中的，所以返回结果里这个词是没有建议的。</li> <li><code>popular</code>：推荐出现频率更高的词。</li> <li><code>always</code>：不管是否存在，都进行建议。</li></ul></li> <li><code>analyzer</code>：指定分词器来对输入文本进行分词，默认与 <code>field</code> 指定的字段设置的分词器一致。</li> <li><code>size</code>：为每个单词提供的最大建议数量。</li> <li><code>sort</code>：建议结果排序的方式，有以下两个选项：
+<ul><li><code>score</code>：先按相似性得分排序，然后按文档频率排序，最后按词项本身（字母顺序的等）排序。</li> <li><code>frequency</code>：先按文档频率排序，然后按相似性得分排序，最后按词项本身排序。</li></ul></li></ul> <p>下面是上述示例的返回结果：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 返回的结果</span>
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;1&quot;</span>,
+        <span class="token string">&quot;_source&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;book_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;4ee82462&quot;</span>,
+          <span class="token string">&quot;name&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;Dive into the Linux kernel architecture&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;suggest&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;my_suggest&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;text&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;kernel&quot;</span>,
+        <span class="token string">&quot;offset&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+        <span class="token string">&quot;length&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">6</span>,
+        <span class="token string">&quot;options&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span> <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;text&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;architture&quot;</span>,
+        <span class="token string">&quot;offset&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">7</span>,
+        <span class="token string">&quot;length&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">10</span>,
+        <span class="token string">&quot;options&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token string">&quot;text&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;architecture&quot;</span>,
+            <span class="token string">&quot;score&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0.8</span>,
+            <span class="token string">&quot;freq&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><p>从返回结果中可以看出，对于每个词语的建议结果，放在了 <code>options</code> 数组中。如果一个词语有多个建议，那么将按照 <code>sort</code> 参数指定的方式进行排序。示例中，由于 <code>kernel</code> 这个词是有存在的，并且设置了 <code>&quot;suggest_mode&quot;: &quot;missing&quot;</code>，所以不进行建议，其 <code>option</code> 是空的。</p> <h2 id="phrase-suggester"><a href="#phrase-suggester" class="header-anchor">#</a> Phrase Suggester</h2> <p>Term Suggester 产生的建议是基于每个单词的，如果想要针对整个短语或者一句话做建议，就有点无能为力了。</p> <p>而 Phrase Suggester 可以获取与用户输入文本相似的内容。它在前者的基础上增加了一些额外的逻辑，因为是短语形式的建议，所以会考量多个 term 间的关系，比如相邻的程度、词频等。</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># Phrase Suggester 使用示例</span>
+POST books/_search
+<span class="token punctuation">{</span>
+  
+  <span class="token string">&quot;suggest&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;my_suggest&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;text&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Brief Hestory Of Tome&quot;</span>,
+      <span class="token string">&quot;phrase&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;field&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;name&quot;</span>,
+        <span class="token string">&quot;highlight&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;pre_tag&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;em&gt;&quot;</span>,
+          <span class="token string">&quot;post_tag&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;/em&gt;&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 结果</span>
+<span class="token punctuation">{</span>
+  <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+  <span class="token string">&quot;suggest&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;my_suggest&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+        <span class="token string">&quot;options&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token string">&quot;text&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;brief history of time&quot;</span>,
+            <span class="token string">&quot;highlighted&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;brief &lt;em&gt;history&lt;/em&gt; of &lt;em&gt;time&lt;/em&gt;&quot;</span>,
+            <span class="token string">&quot;score&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0.030559132</span>
+          <span class="token punctuation">}</span>,
+          <span class="token punctuation">{</span>
+            <span class="token string">&quot;text&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;brief history of tome&quot;</span>,
+            <span class="token string">&quot;highlighted&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;brief &lt;em&gt;history&lt;/em&gt; of tome&quot;</span>,
+            <span class="token string">&quot;score&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0.025060574</span>
+          <span class="token punctuation">}</span>,
+          <span class="token punctuation">{</span>
+            <span class="token string">&quot;text&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;brief hestory of time&quot;</span>,
+            <span class="token string">&quot;highlighted&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;brief hestory of &lt;em&gt;time&lt;/em&gt;&quot;</span>,
+            <span class="token string">&quot;score&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0.0236486</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br></div></div><p>如上示例，<code>phrase</code> 指定使用 Phrase Suggester。从返回结果可以看出，&quot;options&quot; 返回了一个短语列表，并且因为 &quot;history&quot; 和 &quot;time&quot; 在一个文档里出现过，其可信度相对于其他来说更高，所以得分更高。</p> <p>因为使用了 <code>highlight</code> 选项，所以返回结果中被替换的词语会高亮显示。</p> <p>Phrase Suggester 比较常用的参数：</p> <ul><li><code>max_error</code>：指定最多可以拼写错误的词语的个数。</li> <li><code>confidence</code>：其作用是用来控制返回结果条数的。如果用户输入的数据（短语）得分为 <code>N</code>，那么返回结果的得分需要大于 <code>N * confidence</code>。confidence 默认值为 1.0。</li> <li><code>highlight</code>：高亮被修改后的词语。</li></ul> <h2 id="completion-suggester"><a href="#completion-suggester" class="header-anchor">#</a> Completion Suggester</h2> <p><strong>Completion Suggester 提供了自动补全的功能，其应用场景是用户每输入一个字符就需要返回匹配的结果给用户</strong>。</p> <p>在并发量大、用户输入速度快的时候，对服务的吞吐量来说是个不小的挑战。所以 Completion Suggester 不能像上面的几个 Suggester 那样简单通过倒排索引来实现，必须通过某些更高效的数据结构和算法才能满足需求。</p> <p><strong>Completion Suggester 在实现的时候会将 analyze（将文本分词，并且去除没用的词语，例如 is、at这样的词语） 后的数据进行编码，构建为 FST 并且和索引存放在一起</strong>。FST（<a href="https://en.wikipedia.org/wiki/Finite-state_transducer" target="_blank" rel="noopener noreferrer">finite-state transducer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）是一种高效的前缀查询索引。由于 FST 天生为前缀查询而生，所以其非常适合实现自动补全的功能。ES 会将整个 FST 加载到内存中，所以在使用 FST 进行前缀查询的时候效率是非常高效的。</p> <p>在使用 Completion Suggester 前需要定义 Mapping，对应的字段需要使用 <code>completion</code> type。</p> <p>比如构建一个新的 <code>books_completion</code> 索引，其 Mapping 和测试数据如下：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 先删除原来的索引和数据</span>
+DELETE books_completion
+
+<span class="token comment"># 新增 &quot;name_completion&quot; 字段做 Completion Suggester 测试, 其类型为 &quot;completion&quot;</span>
+PUT books_completion
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;mappings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;properties&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;book_id&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;keyword&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;text&quot;</span>,
+          <span class="token string">&quot;analyzer&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;standard&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;name_completion&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;completion&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;author&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;keyword&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;intro&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;text&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;double&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;date&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;settings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;number_of_shards&quot;</span><span class="token builtin class-name">:</span> <span class="token number">3</span>,
+    <span class="token string">&quot;number_of_replicas&quot;</span><span class="token builtin class-name">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 插入三条测试数据</span>
+PUT books_completion/_doc/1
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;book_id&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;4ee82462&quot;</span>,
+  <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Dive into the Linux kernel architecture&quot;</span>,
+  <span class="token string">&quot;name_completion&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Dive into the Linux kernel architecture&quot;</span>,
+  <span class="token string">&quot;author&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Wolfgang Mauerer&quot;</span>,
+  <span class="token string">&quot;intro&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;The content is comprehensive and in-depth, appreciate the infinite scenery of the Linux kernel.&quot;</span>,
+  <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token number">19.9</span>,
+  <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2010-06-01&quot;</span>
+<span class="token punctuation">}</span>
+
+PUT books_completion/_doc/2
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;book_id&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;4ee82463&quot;</span>,
+  <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;A Brief History Of Time&quot;</span>,
+  <span class="token string">&quot;name_completion&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;A Brief History Of Time&quot;</span>,
+  <span class="token string">&quot;author&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Stephen Hawking&quot;</span>,
+  <span class="token string">&quot;intro&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;A fascinating story that explores the secrets at the heart of time and space.&quot;</span>,
+  <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token number">9.9</span>,
+  <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;1988-01-01&quot;</span>
+<span class="token punctuation">}</span>
+
+PUT books_completion/_doc/3
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;book_id&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;4ee82464&quot;</span>,
+  <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Beginning Linux Programming 4th Edition&quot;</span>,
+  <span class="token string">&quot;name_completion&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Beginning Linux Programming 4th Edition&quot;</span>,
+  <span class="token string">&quot;author&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Neil Matthew、Richard Stones&quot;</span>,
+  <span class="token string">&quot;intro&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Describes the Linux system and other UNIX-style operating system on the program development&quot;</span>,
+  <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token number">12.9</span>,
+  <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2010-06-01&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br></div></div><p>在测试数据准备好后，可以执行下面 Completion Suggester 的使用示例：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># Completion Suggester </span>
+POST books_completion/_search
+<span class="token punctuation">{</span>
+  
+  <span class="token string">&quot;suggest&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;my_suggest&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;prefix&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;a brief hist&quot;</span>,
+      <span class="token string">&quot;completion&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;field&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;name_completion&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 结果</span>
+<span class="token punctuation">{</span>
+  <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+  <span class="token string">&quot;suggest&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;my_suggest&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;text&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;a brief hist&quot;</span>,
+        <span class="token string">&quot;offset&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+        <span class="token string">&quot;length&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">12</span>,
+        <span class="token string">&quot;options&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token string">&quot;text&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;A Brief History Of Time&quot;</span>,
+            <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2&quot;</span>,
+            <span class="token string">&quot;_source&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;book_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;4ee82463&quot;</span>,
+              <span class="token string">&quot;name_completion&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;A Brief History Of Time&quot;</span>,
+              <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><p>如上示例，在 <code>my_suggest</code> 中，<code>prefix</code> 指定了需要匹配的前缀数据，<code>completion</code> 中的 <code>field</code> 指定了需要匹配文档的哪个字段。返回结果中 <code>options</code> 包含了整个文档的数据。</p> <p>需要注意的是，Completion Suggester 在索引数据的时候经过了 analyze 阶段，所以使用不同的 analyzer（分词器） 会造成构建 FST 的数据不同，例如某些词（is、at 等停用词）被去除、某些词被转换（大小写等）。由于构建的数据不同，可能会影响查询匹配的结果。</p> <h2 id="context-suggester"><a href="#context-suggester" class="header-anchor">#</a> Context Suggester</h2> <p><strong>Context Suggester 是 Completion Suggester 的扩展，可以实现上下文感知推荐</strong>。例如当我们在编程类型的书籍中查询 <code>linu</code> 的时候，可以返回 linux 编程相关的书籍，但在人物自传类型的书籍中，将会返回 linus 的自传。要实现这个功能，可以在文档中加入分类信息，帮助我们做精准推荐。</p> <p>ES 支持两种类型的上下文：</p> <ul><li><strong>Category</strong>：任意字符串的分类。</li> <li><strong>Geo</strong>：地理位置信息。</li></ul> <p>下面演示如何基于任意字符串的分类来做上下文推荐。同样，在使用 Context Suggester 前，首先要创建 Mapping，然后在数据中加入相关的 Context 信息。下面是使用 Context Suggester 时的 Mapping：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment">#删除原来的索引</span>
+DELETE books_context
+
+<span class="token comment"># 创建用于测试 Context Suggester 的索引</span>
+PUT books_context
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;mappings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;properties&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;book_id&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;keyword&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;text&quot;</span>,
+          <span class="token string">&quot;analyzer&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;standard&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;name_completion&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;completion&quot;</span>,
+          <span class="token string">&quot;contexts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;book_type&quot;</span>,
+              <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;category&quot;</span>
+            <span class="token punctuation">}</span>  
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;author&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;keyword&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;intro&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;text&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;double&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;date&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;settings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;number_of_shards&quot;</span><span class="token builtin class-name">:</span> <span class="token number">3</span>,
+    <span class="token string">&quot;number_of_replicas&quot;</span><span class="token builtin class-name">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 插入三条测试数据</span>
+PUT books_context/_doc/4
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;book_id&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;4ee82465&quot;</span>,
+  <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Linux Programming&quot;</span>,
+  <span class="token string">&quot;name_completion&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;input&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">&quot;Linux Programming&quot;</span><span class="token punctuation">]</span>,
+    <span class="token string">&quot;contexts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;book_type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;program&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;author&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Richard Stones&quot;</span>,
+  <span class="token string">&quot;intro&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Happy to Linux Programming&quot;</span>,
+  <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token number">10.9</span>,
+  <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2022-06-01&quot;</span>
+<span class="token punctuation">}</span>
+
+PUT books_context/_doc/5
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;book_id&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;4ee82466&quot;</span>,
+  <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Linus Autobiography&quot;</span>,
+  <span class="token string">&quot;name_completion&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;input&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">&quot;Linus Autobiography&quot;</span><span class="token punctuation">]</span>,
+    <span class="token string">&quot;contexts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;book_type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;autobiography&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;author&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Linus&quot;</span>,
+  <span class="token string">&quot;intro&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Linus Autobiography&quot;</span>,
+  <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token number">14.9</span>,
+  <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2012-06-01&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br></div></div><p>如上所示的 Mapping，其中 <code>name_completion</code> 的类型还是为 <code>completion</code>，在 <code>contexts</code> 中有两个字段，其中 <code>type</code> 为上下文的类型，就是上面提到的 Category 和 Geo，本例子使用了 Category。而 <code>name</code> 则为上下文的名称（即哪个分类），本例子为 <code>book_type</code>。</p> <p>导入的数据中，<code>name_completion</code> 中的 <code>input</code> 字段用于内容匹配。<code>book_type</code> 的值有多个，<code>program</code> 是编程类的，<code>autobiography</code> 是自传类的。</p> <p>导入数据成功后，下面来看看 Context Suggester 的使用例子：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>POST books_context/_search
+<span class="token punctuation">{</span>
+  
+  <span class="token string">&quot;suggest&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;my_suggest&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;prefix&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;linu&quot;</span>,
+      <span class="token string">&quot;completion&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;field&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;name_completion&quot;</span>,
+        <span class="token string">&quot;contexts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;book_type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;program&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>如上示例，还是使用 <code>prefix</code> 字段来指定需要匹配的前缀数据，其将与 <code>input</code> 字段的数据进行匹配。而 <code>contexts</code> 中指定了 <code>book_type</code> 为 <code>program</code>。所以查询的意思是：在书本类别为 <code>program</code> 的数据里，推荐以 <code>linu</code> 开头的书本。</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <ul><li><strong>Term Suggester 提供基于单词的纠错、补全功能</strong>。其工作原理是基于编辑距离（edit distance）来运作的，编辑距离的核心思想是一个词需要改变多少个字符就可以和另一个词一致。Term Suggester 是根据每个单词提供建议，所以其不会考虑输入文本间各个单词的关系 。</li> <li><strong>Phrase Suggester 是基于短语的纠错补全的</strong>，不像Term Suggester 只能提供基于单词的纠错。所以其会考量多个 term 间的关系，比如相邻的程度、词频等。</li> <li><strong>Completion Suggester 提供自动补全单词的功能，输入词语的前半部分，自动补全整个单词</strong>。由于 Completion Suggester 需要比较高的性能，所以底层使用了 FST 来实现。需要注意的是，Completion Suggester 在写入数据时会将数据进行分词等操作，而不同的分词器分词后的结果不尽相同，这会导致构建的 FST 也是不同的，这样将会造成某些查询无法匹配到结果的现象。</li> <li><strong>Context Suggester 提供基于上下文的补全功能</strong>。当我们需要根据不同类别进行相关上下文补全的时候，Context Suggester 就派上用场了。Context Suggester 可以定义两种上下文类型：Category 和 Geo，其中我们今天详细讲解了 Category 类型的实例。</li></ul> <h2 id="参考文档"><a href="#参考文档" class="header-anchor">#</a> 参考文档</h2> <ul><li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/search-suggesters.html#global-suggest" target="_blank" rel="noopener noreferrer">Suggesters<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p>（完）</p></div> <!----> <div class="content__content-bottom"></div> <footer class="page-meta"><div class="edit-link"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon edit-icon"><path d="M117.953 696.992 64.306 959.696l265.931-49.336 450.204-452.505-212.284-213.376-450.204 452.513zm496.384-296.326L219.039 797.993l-46.108-46.34L568.233 354.33l46.104 46.335zm345.357-122.99-114.45 115.04-212.288-213.377 114.45-115.035 212.288 213.371zm0 0" fill="currentColor"></path></svg> <a href="https://github.com/wenyuan/fedbook/edit/main/docs/basic-skills/elasticsearch/suggester-query.md" target="_blank" rel="noopener noreferrer">编辑此页</a></div> <div class="meta-item update-time"><span class="label">上次编辑于:</span> <span class="info">2022年6月24日 11:09</span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/basic-skills/elasticsearch/compound-query/" class="prev"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon prev-icon"><path d="M906.783 588.79c-.02 8.499-6.882 15.36-15.38 15.37l-443.7-.01 75.704 191.682c2.52 6.42.482 13.763-5.038 17.91-5.52 4.168-13.138 4.147-18.616-.092L123.228 524.175a15.362 15.362 0 0 1-6-12.165c0-4.782 2.222-9.277 6-12.185L499.753 210.35a15.388 15.388 0 0 1 9.38-3.195c3.236 0 6.502 1.034 9.236 3.103 5.52 4.147 7.578 11.49 5.038 17.91L447.683 419.84l443.72-.01c8.498.01 15.36 6.881 15.36 15.36l.02 153.6z" fill="currentColor"></path></svg>
+        组合查询语法
+      </a></span> <span class="next"><a href="/basic-skills/elasticsearch/aggregations/">
+        统计语法：聚合查询
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon next-icon"><path d="M906.772 512c0 4.772-2.211 9.267-5.99 12.175L524.257 813.66a15.37 15.37 0 0 1-18.616.092 15.368 15.368 0 0 1-5.038-17.91l75.714-191.672h-443.73c-8.488 0-15.36-6.881-15.36-15.36v-153.6c0-8.489 6.872-15.36 15.36-15.36h443.73l-75.714-191.682a15.358 15.358 0 0 1 5.048-17.91c5.51-4.158 13.128-4.137 18.606.092l376.525 289.485a15.323 15.323 0 0 1 5.99 12.165z" fill="currentColor"></path></svg></a></span></p></div> <!----> <!----> <div class="content__page-bottom"></div></main> <!----></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.34fc3e13.js" defer></script><script src="/assets/js/vendors~layout-Layout.a3786f42.js" defer></script><script src="/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.a77e3a6c.js" defer></script><script src="/assets/js/page-搜索词自动补全语法.0045a2ec.js" defer></script>
+  </body>
+</html>
